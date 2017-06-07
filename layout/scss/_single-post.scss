@@ -1,0 +1,25 @@
+.content-post {
+    background-color: #FFF;
+    margin: 10px;
+    margin-left: 0;
+}
+
+@media (max-width: 767px){
+	.content-post {
+		margin-right: 0;
+	}
+}
+
+.post-meta-container {
+    padding: 10px;
+}
+
+ol.comment-list li {
+    height: auto !important;
+}
+
+ol.comment-list .parent {
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+}

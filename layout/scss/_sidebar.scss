@@ -1,0 +1,346 @@
+.custom-sidebar-widget {
+    margin: $main-margin;
+    margin-right: 0;
+}
+
+@media (max-width: 767px){
+    .custom-sidebar-widget {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .custom-sidebar-widget {
+        margin-left: 0;
+    }
+}
+
+/*=======================================
+=            About Us Wedget            =
+=======================================*/
+
+.dwwp-sidebar-custom-widget-about-us {
+    background-color: #fff;
+}
+
+.dwwp-sidebar-custom-widget-about-us h4 {
+    background-color: $color6;
+    color: #FFF;
+    padding: 10px;
+    margin: 0;
+}
+
+.dwwp-sidebar-custom-widget-about-us img {
+    max-width: 100%;
+}
+
+.dwwp-sidebar-custom-widget-about-us p {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+/*=====  End of About Us Wedget  ======*/
+
+/*===========================================
+=            Social Media Widget            =
+===========================================*/
+
+.social-media-icon-widget {
+    margin-top: 20px;
+}
+
+.social-media-icon-widget h4 {
+    background-color: $color4;
+    color: #FFF;
+    padding: 10px;
+    margin: 0;
+}
+
+.social-media-icon-widget i {
+    font-size: 30px;
+}
+
+.social-media-icon-widget a span {
+    position: relative;
+    bottom: 5px;
+}
+
+.social-media-icon-widget a:nth-of-type(1) {
+    display: block;
+    padding: 10px;
+    color: #FFF;
+    background-color: #dc4d3c;
+    margin-bottom: 20px;
+}
+
+.social-media-icon-widget a:nth-of-type(2) {
+    display: block;
+    padding: 10px;
+    color: #FFF;
+    background-color: #425c9d;
+    margin-bottom: 20px;
+}
+
+.social-media-icon-widget a:nth-of-type(3) {
+    display: block;
+    padding: 10px;
+    color: #FFF;
+    background-color: #44cefd;
+    margin-bottom: 20px;
+}
+
+.social-media-icon-widget a:nth-of-type(4) {
+    display: block;
+    padding: 10px;
+    color: #FFF;
+    background-color: #df6c5e;
+}
+
+/*=====  End of Social Media Widget  ======*/
+
+/*=========================================
+=            Go To Shop Widget            =
+=========================================*/
+
+.go-to-shop-widget div {
+    background-color: #6a67ce;
+    color: #FFF;
+    padding: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+
+.go-to-shop-widget div p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/*=====  End of Go To Shop Widget  ======*/
+
+/*===========================================
+=            Latest Posts Widget            =
+===========================================*/
+
+.latest-posts-blog-widget {
+    margin-top: 20px;
+    position: relative;
+}
+
+.latest-posts-blog-widget h4 {
+    background-color: $color3;
+    color: #FFF;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.latest-posts-blog-widget a.left.carousel-control {
+background-image: none;
+}
+
+.latest-posts-blog-widget a.right.carousel-control {
+    background-image: none;
+}
+
+.latest-posts-blog-widget .carousel-inner {
+    background-color: #FFF;
+}
+
+.latest-posts-blog-widget .carousel-inner img {
+    width: 100%;
+}
+
+.latest-posts-blog-widget a.left.carousel-control i {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    text-shadow: none;
+}
+
+.latest-posts-blog-widget a.right.carousel-control i {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    text-shadow: none;
+}
+
+.latest-posts-blog-widget .date {
+    background-color: #FFF;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-radius: 11px;
+
+    .day {
+    background-color: #e9e9e9;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    }
+
+    .mounth {
+    background-color: #4081d1;
+    color: #FFF;
+    width: 100%;
+    }
+}
+
+.latest-posts-blog-widget .carousel-caption {
+    bottom: 0;
+    color: #353535;
+    position: static;
+    padding: 10px;
+    text-align: left;
+
+    .info-for-the-post {
+        color: #8c8787;
+        margin: 0;
+    }
+
+    .decsription {
+        margin: 10px 0;
+        border-bottom: 1px solid #CCC;
+        border-top: 1px solid #CCC;
+        padding: 5px 0;
+    }
+}
+
+.latest-posts-blog-widget .carousel-caption h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/*=====  End of Latest Posts Widget  ======*/
+
+/*=============================================
+=            Top Liked Item Widget            =
+=============================================*/
+
+.top-items-shop-widget {
+    margin-top: 20px;
+
+    h4 {
+        background-color: $color4;
+        color: #FFF;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .carousel-caption {
+        bottom: 0;
+        color: #353535;
+        position: static;
+        padding: 10px;
+        text-align: left;
+
+        .info-for-the-post {
+            color: #8c8787;
+            margin: 0;
+        }
+
+        .decsription {
+            border-bottom: 1px solid #CCC;
+            border-top: 1px solid #CCC;
+            padding: 5px 0;
+        }
+    }
+
+    a.left.carousel-control i {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        text-shadow: none;
+    }
+
+    a.right.carousel-control i {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        text-shadow: none;
+    }
+
+    a.left.carousel-control {
+    background-image: none;
+    }
+
+    a.right.carousel-control {
+        background-image: none;
+    }
+
+    .carousel-inner {
+        background-color: #FFF;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    .info-item {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 11px;
+
+        .likes {
+            background-color: #1aafd0;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 0 10px;
+            border-radius: 4px;
+            font-family: sans-serif;
+        }
+        .price {
+            background-color: #ffb900;
+            color: #0e0e0e;
+            font-size: 15px;
+            padding: 0 10px;
+            border-radius: 4px;
+
+            sub {
+                text-decoration: line-through;
+                font-size: 15px;
+                color: #333;
+            }
+        }
+        .sale {
+            color: #ffb900;
+            font-size: 50px;
+            margin: 0;
+            margin-top: -15px;
+        }
+    }
+
+    .carousel-caption h5 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+
+}
+
+/*=====  End of Top Liked Item Widget  ======*/

@@ -1,0 +1,50 @@
+.dropdown-menu > .active > a,
+ .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, #6a67ce), color-stop(0.48, #ffb900));
+    outline: 0;
+}
+
+.input-group-addon {
+    padding: 0px 0px 0 12px;
+    font-size: 18px;
+    background-color: #FFF;
+    border-left: 1px solid #ccc !important;
+    border-top: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+input.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #CCC;
+    border-left: 0;
+}
+
+input.form-control {
+    border-left: 0;
+    border-radius: 0;
+}
+
+.input-group {
+    margin-top: 10px;
+}
+
+.btn-info {
+    color: #fff;
+    border-color: #46b8da;
+    border-radius: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #5bc0de), color-stop(1.0, #87CEFA));
+}
+
+.carousel-caption {
+    text-shadow: none;
+}
+
+@media (max-width: 767px){
+    a {
+        position: relative;
+        z-index: 1;
+    }
+}

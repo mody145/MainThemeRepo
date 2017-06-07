@@ -1,0 +1,12 @@
+.show_image img {
+    width: 100%;
+}
+
+#wpadminbar #wp-admin-bar-shop .ab-icon:before {
+    content: "\f174";
+    color: #ff9200;
+}
+
+.show_image img {
+    max-width: 100%;
+}

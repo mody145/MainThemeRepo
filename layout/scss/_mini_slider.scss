@@ -1,0 +1,32 @@
+.mini-slider {
+    background-color: #FFF;
+    margin: 10px;
+    margin-left: 0;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	.mini-slider {
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 767px){
+	.mini-slider {
+	    text-align: center;
+	    margin-right: 0;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+}
+
+.skitter.with-dots {
+    margin-bottom: 0;
+}
+
+.label_skitter p {
+    display: inline-block;
+}
+

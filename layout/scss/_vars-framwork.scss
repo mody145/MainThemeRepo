@@ -1,0 +1,51 @@
+
+	$color1: #eaeaea;
+	$color2: #ffffff;
+	$color3: #3be8b0;
+	$color4: #1aafd0;
+	$color5: #6a67ce;
+	$color6: #ffb900;
+	$color7: #fc636b;
+
+	$main-margin: 10px;
+	$main-padding: 10px;
+
+
+body {
+	background-color: $color1;
+	font-family: 'Dosis', sans-serif;
+}
+
+.nopadding {
+	padding: 0;
+	margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+a:link,
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+
+#wpadminbar #wp-admin-bar-shop .ab-icon:before {
+    content: "\f174";
+    color: #ff9200;
+}
+
+.grid-item {
+    width: 45%;
+    margin: 5px;
+}
+
+.parent {
+    margin-right: -15px;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+

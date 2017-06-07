@@ -1,0 +1,157 @@
+/*=============================================
+=            List Comments Section            =
+=============================================*/
+
+h2.comments-title {
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #FFF;
+    margin: 20px 0;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 767px){
+    h2.comments-title {
+        margin-right: 0;
+    }
+}
+
+ol.comment-list {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0;
+    position: relative;
+    list-style: none;
+}
+
+@media (max-width: 767px){
+    ol.comment-list {
+        margin-right: 0;
+    }
+}
+
+ol.children {
+    list-style: none;
+    background-color: #EEE;
+}
+
+@media (max-width: 767px){
+    ol.children {
+        padding-left: 5px;
+    }
+}
+
+.comment-body {
+    position: relative;
+    padding-top: 10px;
+}
+
+.comment-author.vcard img {
+    border-radius: 50%;
+    border: 2px solid #EEE;
+}
+
+span.says, .fn {
+    font-weight: bold;
+    font-style: initial;
+}
+
+.comment-meta.commentmetadata {
+    font-size: 12px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+ol.comment-list p {
+    padding: 10px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+ol.comment-list .reply {
+    margin-bottom: 15px;
+}
+
+h3.comment-reply-title {
+    margin: 20px 0;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFF;
+}
+
+@media (max-width: 767px){
+    h3.comment-reply-title {
+        margin-right: 0;
+    }
+}
+
+/*=====  End of List Comments Section  ======*/
+
+/*===========================================
+=            Coment Form Section            =
+===========================================*/
+
+.comment-form {
+    margin: 10px;
+    overflow: hidden;
+    padding: 10px;
+    margin-left: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+}
+
+@media (max-width: 767px){
+   .comment-form {
+    margin-right: 0;
+   } 
+}
+
+.comment-form textarea {
+    width: 35%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #DDD;
+}
+
+@media (max-width: 767px){
+    .comment-form textarea {
+        width: 95%
+    }
+}
+
+p.logged-in-as {
+    background-color: #FFF;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 0;
+    display:none;
+}
+
+.comment-form input {
+    width: 35%;
+    padding: 7px;
+    margin: 10px;
+    border: 1px solid #DDD;
+}
+
+@media (max-width: 767px){
+    .comment-form input {
+        width: 95%
+    }
+}
+
+p.form-submit {
+    width: 100%;
+}
+
+/*=====  End of Coment Form Section  ======*/

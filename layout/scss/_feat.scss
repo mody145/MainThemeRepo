@@ -1,0 +1,64 @@
+.feat {
+    margin: $main-margin;
+    margin-left: 0;
+    margin-top: $main-margin * 2;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .feat {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px){
+    .feat {
+        margin-right: 0;
+        margin-top: $main-margin;
+    }
+}
+
+.feat .box-feat,
+.feat .box-feat-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFF;
+}
+
+.feat .box-feat i {
+    font-size: 75px;
+    margin-bottom: 0px;
+}
+
+.feat .box-feat-2 i {
+    font-size: 75px;
+    margin-bottom: 0px;
+}
+
+.feat .box-feat {
+    background-color: $color4;
+    padding: $main-padding;
+    height: 300px;
+}
+
+@media (max-width: 767px){
+    .feat .box-feat {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.feat .box-feat-2 {
+    background-color: $color6;
+    padding: $main-padding;
+    height: 300px;
+}
+
+@media (max-width: 767px){
+    .feat .box-feat-2 {
+        width: 100%;
+    }
+}

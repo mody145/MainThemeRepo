@@ -1,0 +1,420 @@
+.site-header {
+    width: 100%;
+    height: 515px;
+    background-color: #FFF;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+}
+
+header.site-header img {
+    width: 100%;
+    position: relative;
+    top: -140px;
+}
+
+/*==========================================
+=            Brand Name Section            =
+==========================================*/
+
+.brand-name {
+    padding: 10px;
+    margin-left: 0;
+    padding-left: 0;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@media (max-width: 767px){
+    .brand-name {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+/*=====  End of Brand Name Section  ======*/
+
+/*=============================================
+=            Icon Like,Cart,Follow            =
+=============================================*/
+
+.icon-header1 {
+    margin: 10px;
+    font-size: 25px;
+    padding: 2px;
+    position: relative;
+    top: 12px;
+    text-align: right;
+}
+
+@media (max-width: 767px){
+    .icon-header1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .icon-header1 {
+        text-align: right;
+    }
+}
+
+.icon-header1 i {
+    padding: 11px;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-header1 i span {
+    position: absolute;
+    font-size: 11px;
+    color: #FFF;
+    width: 22px;
+    text-align: center;
+    border-radius: 8px;
+    height: 16px;
+    line-height: 18px;
+    top: -12px;
+    left: 11px;
+    font-family: arial;
+}
+
+.icon-header1 i:nth-of-type(1) span {
+    background-color: #6a67ce;
+}
+
+.icon-header1 i:nth-of-type(2) span {
+    background-color: #ffb900;
+}
+
+.icon-header1 i:nth-of-type(3) span {
+    background-color: #fc636b;
+}
+
+.icon-header1 i:nth-of-type(1) span:before {
+    content: '';
+    border-top: 7px solid #6a67ce;
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: -12px;
+    left: 4px;
+}
+
+.icon-header1 i:nth-of-type(2) span:before {
+    content: '';
+    border-top: 7px solid #ffb900;
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: -12px;
+    left: 4px;
+}
+
+.icon-header1 i:nth-of-type(3) span:before {
+    content: '';
+    border-top: 7px solid #fc636b;
+    border-bottom: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: -12px;
+    left: 4px;
+}
+
+nav.primary-menu ul li:nth-of-type(4) i {
+    position: relative;
+    top: 2px;
+}
+
+.icon-header1 i:nth-of-type(1) {
+    color: #6a67ce;
+}
+
+.icon-header1 i:nth-of-type(2) {
+    color: #ffb900;
+}
+
+.icon-header1 i:nth-of-type(3) {
+    color: #fc636b;
+}
+
+/*=====  End of Icon Like,Cart,Follow  ======*/
+
+/*===========================================
+=            Search Form Section            =
+===========================================*/
+
+.form-search {
+
+}
+
+.form-search input {
+    border: 0;
+    width: 80%;
+    position: relative;
+    left: 12%;
+}
+
+@media (max-width: 767px){
+    .form-search input {
+        left: 20%;
+    }
+}
+
+.form-search input:focus {
+    border: 0;
+    outline: none;
+}
+
+.search-overlay {
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFF;
+    margin-right: 0;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .search-overlay {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px){
+    .search-overlay {
+        margin-left: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.search-overlay:before {
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    z-index: 100;
+    content: "\e96d";
+    font-size: 24px;
+    color: #868686;
+}
+
+/*=====  End of Search Form Section  ======*/
+
+/*===========================================
+=            Login And Add Item             =
+===========================================*/
+
+.add-register-login {
+    padding: 10px;
+    margin: $main-margin;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .add-register-login{
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 767px){
+    .add-register-login {
+        margin: 10px 0px;
+    }
+}
+
+/*=====  End of Login And Add Item   ======*/
+
+/*===========================================
+=            Header Nenu Section            =
+===========================================*/
+
+nav.header-menu {
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+    background-color: #FFF;
+    border-left: 5px solid $color4;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    nav.header-menu {
+        margin-right: 0;
+    }
+}
+
+nav.header-menu .menu-headermenu-container > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-headermenu-container ul > li {
+    font-size: 19px;
+}
+
+ul.dropdown-menu li {
+    font-size: 15px;
+}
+
+ul.dropdown-menu li a {
+    color: #FFF;
+}
+
+.open > .dropdown-menu {
+    display: block;
+    border: 0;
+    position: absolute;
+    background-color: #ffb900;
+    color: #FFF;
+    box-shadow: none;
+    top: 43px;
+    width: 220px;
+    border-radius: 4px;
+}
+
+.dropdown-menu:before {
+    content: '';
+    border-top: 8px solid rgba(252, 99, 107, 0);
+    border-bottom: 8px solid rgb(255, 185, 0);
+    border-right: 8px solid rgba(0, 0, 0, 0);
+    border-left: 8px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 10px;
+    top: -16px;
+}
+
+.portfolio-container .dropdown-menu:after {
+    content: "\e9e5";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -16%;
+    left: 59%;
+    font-size: 78px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+.contact-container .dropdown-menu:after {
+    content: "\e929";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -14%;
+    left: 58%;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+.blog-container .dropdown-menu:after {
+    content: "\e9a8";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -19%;
+    left: 54%;
+    font-size: 87px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+.services-container .dropdown-menu:after {
+    content: "\e043";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -14%;
+    left: 58%;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+.about-container .dropdown-menu:after {
+    content: "\e9c3";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -14%;
+    left: 58%;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+.features-container .dropdown-menu:after {
+    content: "\e966";
+    font-family: 'icomoon', arial;
+    position: absolute;
+    top: -14%;
+    left: 58%;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.24);
+}
+
+
+.dropdown-menu > li > a:hover,
+ .dropdown-menu > li > a:focus {
+    color: #333330;
+    text-decoration: none;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.00, #FFFFFF), color-stop(0.48, #ffb900));
+}
+
+/*=====  End of Header Nenu Section  ======*/
+
+/*============================================
+=            Primary Menu Section            =
+============================================*/
+
+nav.primary-menu {
+    margin: 10px;
+}
+
+ul#menu-main li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.primary-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul#menu-main i {
+    font-size: 20px;
+}
+
+nav.primary-menu ul li {
+    width: 45px;
+    height: 45px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #FFF;
+}
+
+nav.primary-menu ul li i {
+    color: #FFF;
+}
+
+nav.primary-menu ul li:nth-of-type(1) {
+    background-color: $color3;
+}
+
+nav.primary-menu ul li:nth-of-type(2) {
+    background-color: $color5;
+}
+
+nav.primary-menu ul li:nth-of-type(3) {
+    background-color: $color6;
+}
+
+nav.primary-menu ul li:nth-of-type(4) {
+    background-color: $color7;
+}
+
+/*=====  End of Primary Menu Section  ======*/
