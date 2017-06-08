@@ -17,11 +17,11 @@
 
 		<!-- Header Here -->
 
-		<div class="col-md-12 nopadding hidden-xs">
+		<!-- <div class="col-md-12 nopadding hidden-xs">
 			<header class="site-header">
-				<!-- <img src="<?php //echo get_template_directory_uri() . '/layout/images/head.jpg' ?>"> -->
+				<img src="<?php //echo get_template_directory_uri() . '/layout/images/head.jpg' ?>">
 			</header>
-		</div>
+		</div> -->
 
 		<!-- End Header Here -->
 		<!-- Start Menu And Prand In Mobile Screen -->
@@ -74,28 +74,29 @@
 
 		<!-- End Icon Like | Follow | Cart -->
 		<!-- Login/Rgister Form And Add Item -->
-
-		<div class="col-md-4 col-sm-6 nopadding">
-			<div class="add-register-login">
-				<span class="login"><a href="#"><i class="icon-user"> </i> Login</a></span>
-				<span class="register"><a href="#"><i class="icon-script"> </i> Register</a></span>
-				<span class="new-item"><a href="#"><i class="icon-bulb"> </i> New Item</a></span>
+		<div class="col-md-7 col-sm-12 nopadding">
+			<div class="col-md-6 col-sm-6 nopadding">
+				<div class="add-register-login">
+					<span class="login"><a href="#"><i class="icon-user"> </i> Login</a></span>
+					<span class="register"><a href="#"><i class="icon-script"> </i> Register</a></span>
+					<span class="new-item"><a href="#"><i class="icon-bulb"> </i> New Item</a></span>
+				</div>
 			</div>
-		</div>
-
+		
 		<!-- End Login/Rgister Form And Add Item -->
 		<!-- Srart Form Search -->
 
-		<div class="col-md-3 col-sm-6 nopadding">
-			<div class="form-search">
-				<form>
-					<div class="search-overlay">
-						<input 
-						type="Search" 
-						name="product" 
-						placeholder="Search For You Product" />
-					</div>
-				</form>
+			<div class="col-md-6 col-sm-6 nopadding">
+				<div class="form-search">
+					<form>
+						<div class="search-overlay">
+							<input 
+							type="Search" 
+							name="product" 
+							placeholder="Search For You Product" />
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 

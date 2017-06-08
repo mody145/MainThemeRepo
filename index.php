@@ -41,12 +41,12 @@
 					$slides->the_post(); ?>
 					 
 				<li>
-					<h4><?php the_title(); ?></h4>
 					<a href="#cut">
 						<img src="<?php echo get_the_post_thumbnail_url(); ?>" class="" />
 					</a>
 					<div class="label_text">
 						<p>
+							<h4><?php the_title(); ?></h4>
 							<?php the_content(); ?>
 							<a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>" class="btn btn-xs btn-warning">See more</a>
 						</p>
@@ -159,7 +159,7 @@
 			<div class="post-image-home">
 				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 			</div>
-			<h3 class="bold post_title"><a href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a></h3>
+			<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
 			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a href="' . get_permalink() . '">Read More</a>'; ?></p>
 			<p class="info_post">
 				<span><?php echo '<spna class="bold"><i class="icon-user2"> </i> BY : </span>' . get_the_author(); ?></span>

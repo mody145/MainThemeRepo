@@ -349,8 +349,8 @@ class top_items_in_shop extends WP_Widget {
 				<?php } ?>
 					<a href="#"><img src="http://placehold.it/300/444" alt="Test"></a>
 					<div class="info-item">
-						<span class="likes"><?php echo $Row->Likes ?> <i class="icon-thumbs-o-up"></i></span>
-						<span class="price"><?php echo  '<span class="bold">' . $Row->Price . '</span>' . ' <i class="icon-dollar"></i>'; ?><?php if ($Row->i_price != 0 && $Row->i_price != NULL ) { echo " /<sub>" . $Row->i_price . " $</sub>"; } else { echo ''; } ?></span>
+						<span class="likes"><?php echo $Row->Likes ?><i class="icon-thumbs-o-up"></i></span>
+						<span class="price"><?php echo  '<span class="main-price">$ ' . $Row->Price . '</span>'; ?><?php if ($Row->i_price != 0 && $Row->i_price != NULL ) { echo "<span class='price-without-disc'>$ " . $Row->i_price . "</span>"; } else { echo ''; } ?></span>
 						<?php if ($Row->i_price != 0 && $Row->i_price != NULL ) { ?>
 						<span class="sale"><i class="icon-sale"></i></span>
 						<?php } else { echo ''; } ?>

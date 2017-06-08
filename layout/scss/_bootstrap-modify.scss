@@ -32,10 +32,20 @@ input.form-control {
 }
 
 .btn-info {
-    color: #fff;
+    color: #212121;
     border-color: #46b8da;
-    border-radius: 0;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #5bc0de), color-stop(1.0, #87CEFA));
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #ffffff), color-stop(1, #e0e4e6));    border: 0;
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #212121;
+    border-radius: 3px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #8BC34A), color-stop(1, #4CAF50));
+    border: 0;
+    font-weight: bold;
+    color: white;
 }
 
 .carousel-caption {

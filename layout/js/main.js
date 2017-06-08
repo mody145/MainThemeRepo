@@ -13,23 +13,28 @@ jQuery(document).ready(function($) {
 		columnWidth: ($('.parent').width() / 2)
 	});
 
+	// Run Skitter Slider
+	$(function() {
+		$('.skitter-large').skitter({
+
+			'dots'				: false,
+			'numbers'			: true,
+			'controls'			: true,
+			'hide_tools'		: true,
+			'with_animations' 	: ["paralell", "glassBlock", "swapBars"],
+			'theme' 			: 'clean',
+		});
+	});
+
+	// Run Bootstrap Carousel
+	$('.carousel').carousel();
+
 /*==================================================
 =            Modify Resent Posts Widget            =
 ==================================================*/
 
 	var resentPosts = $('.resent-posts-class').parent('div').addClass('resent-posts-container');
-
-	$(function() {
-		$('.skitter-large').skitter({
-
-			'dots': false,
-			'numbers': true,
-
-		});
-	});
-
-	$('.carousel').carousel();
-
+	
 /*=====  End of Modify Resent Posts Widget  ======*/
 
 /*===================================================
