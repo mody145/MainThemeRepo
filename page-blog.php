@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Start Sidebar -->
-<div class="col-md-3 hidden-xs nopadding">
+<div class="col-md-3 hidden-xs pull-right nopadding">
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 </div><!-- End Sidebar -->
 
@@ -58,15 +58,17 @@ if($posts->have_posts()) {
 
 		<!-- ||  Posts Content  || -->
 
-		<?php } 
+		<?php } ?>
 
-		echo '<div class="custom-pagination">';
-			echo paginate_links(array(
+		<?php wp_reset_postdata(); ?>
+
+		<?php } ?>
+
+		<?php echo '<div class="custom-pagination">';
+				echo paginate_links(array(
 				'total' => $posts->max_num_pages
 	 			));
-		echo '</div>';
-
-		} ?>
+			echo '</div>'; ?>
 	</div>
 </div>
 

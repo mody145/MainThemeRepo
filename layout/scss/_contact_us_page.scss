@@ -4,6 +4,14 @@
     padding: 10px;
     background-color: #FFF;
     overflow: hidden;
+
+    div.wpcf7-mail-sent-ng {
+        border: none;
+    }
+
+    div.wpcf7-validation-errors {
+        border: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -19,6 +27,10 @@
     }
 }
 
+.container-form-contact-us br {
+    display: none;
+}
+
 .container-form-contact-us form input {
     width: 95%;
 }
@@ -30,9 +42,9 @@
     border: 1px solid #ccc;
 }
 
-.container-form-contact-us form button {
-    position: relative;
+.container-form-contact-us form .submit {
     margin-top: 5px;
+    width: auto;
 }
 
 .touch-container {

@@ -13,7 +13,7 @@ $args 	= array(
 	'paged' 			=>$ourCurrentPage
 	);
 
-$posts 	= new WP_Query($args);
+$posts 	= new WP_Query( $args );
 
 // Start Loop All Posts
 if($posts->have_posts()) {
@@ -55,7 +55,11 @@ if($posts->have_posts()) {
 
 		<!-- ||  Posts Content  || -->
 
-		<?php }} ?>
+		<?php } ?>
+
+		<?php wp_reset_postdata(); ?>
+
+		<?php } ?>
 
 		</div>
 	</div>
@@ -64,9 +68,7 @@ if($posts->have_posts()) {
 			echo paginate_links(array(
 				'total' => $posts->max_num_pages
 	 			));
-		echo '</div>';
-
-		wp_reset_postdata(); ?>
+		echo '</div>'; ?>
 </div>
 
 <!-- Start Sidebar -->

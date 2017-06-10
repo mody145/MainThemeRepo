@@ -740,6 +740,4 @@ add_filter( 'manage_member_posts_custom_column', 'dwwp_add_value_to_column_membe
 /*=====  End of All Member Our Team Manage Coulmn  ======*/
 
 
-
-
  ?>

@@ -259,7 +259,11 @@ class latest_posts_blog extends WP_Widget {
 					</div>
 				</div>
 
-				<?php }} ?>
+			<?php } ?>
+
+			<?php wp_reset_query(); ?>
+
+			<?php } ?>
 
 			</div>
 

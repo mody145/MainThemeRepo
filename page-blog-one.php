@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <!-- Start Sidebar -->
-<div class="col-md-3 hidden-xs nopadding">
+<div class="col-md-3 col-sm-6 hidden-xs nopadding pull-right">
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 </div><!-- End Sidebar -->
 
-<div class="col-md-9 nopadding">
+<div class="col-md-9 col-sm-6 nopadding">
 	<div class="all-posts-blog">
 
 <?php
@@ -18,7 +18,7 @@ $args 	= array(
 	'paged' 			=>$ourCurrentPage
 	);
 
-$posts 	= new WP_Query($args);
+$posts 	= new WP_Query( $args );
 
 // Start Loop All Posts
 if($posts->have_posts()) {
@@ -27,21 +27,49 @@ if($posts->have_posts()) {
 
 		<!-- ||  Posts Content  || -->
 		
-			<?php get_template_part( 'content' ); ?>
+			<article class="post">
+				<div class="post-thumbnail-img">
+					<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<a href="<?php the_permalink(); ?>">
+						<?php echo '<img src="' . get_the_post_thumbnail_url() . '" />'; ?>
+					</a>
+					<p class="post-info">
+					<?php the_time('F j,Y g:i a'); ?>
+					 | By 
+					<?php the_author(); ?>
+					 | Posted In 
+					<?php 
+
+					$categories =  get_the_category();
+					$separator = ', ';
+					$output = '';
+
+					if ($categories) {
+						foreach ($categories as $category) {
+							$output .= "<a href='" . get_category_link($category->term_id) . "'>" . $category->cat_name . "</a>" . $separator;
+						}
+						echo trim($output, $separator);
+					} ?>
+						
+					</p>
+				</div>
+				<p class="some-content-post"><?php echo $str = substr(get_the_content(), 0, 180) . " ..." ?><a href="<?php echo the_permalink() ?>"> Read More</a></p>
+			</article>
 
 		<!-- ||  Posts Content  || -->
 
-		<?php } 
+		<?php } ?>
 
-		echo '<div class="custom-pagination">';
+		<?php wp_reset_postdata(); ?>
+
+		<?php } ?>
+
+		<?php echo '<div class="custom-pagination">';
 			echo paginate_links(array(
 				'total' => $posts->max_num_pages
 	 			));
-		echo '</div>';
+		echo '</div>'; ?>
 
-		wp_reset_postdata();
-
-		} ?>
 	</div>
 </div>
 

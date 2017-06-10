@@ -23,18 +23,18 @@
 
 <?php
 
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$ourCurrentPage = get_query_var( 'paged' );
 
-$posts = new WP_Query( array(
-    'post_type'      => 'post',
-    'posts_per_page' => 1,
-    'orderby'        => 'date',
-    'order'          => 'DESC',
-    'paged'          => $paged
-) );
+$args 	= array(
+	'post_type'  		=> 'post',
+	'posts_per_page' 	=> 6,
+	'paged' 			=>$ourCurrentPage
+	);
+
+$posts 	= new WP_Query( $args );
 
 // Start Loop All Posts
-
+if($posts->have_posts()) {
 	while($posts->have_posts()) {
 		$posts->the_post(); ?>
 
@@ -44,14 +44,17 @@ $posts = new WP_Query( array(
 
 		<!-- ||  Posts Content  || -->
 
-	<?php }
+		<?php } ?>
 
-		// Start Pagination
-		echo '<div class="custom-pagination">';
-		echo paginate_links();
+		<?php wp_reset_postdata(); ?>
+
+		<?php } ?>
+
+		<?php echo '<div class="custom-pagination">';
+			echo paginate_links(array(
+				'total' => $posts->max_num_pages
+	 			));
 		echo '</div>'; ?>
-
-		<?php wp_reset_query();  // Restore global post data ?>
 
 	</div>
 </div>
