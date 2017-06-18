@@ -1,0 +1,214 @@
+/*==========================================
+=            Widget Latest Item            =
+==========================================*/
+
+.top-items-shop-widget {
+    margin-top: 20px;
+
+    .item {
+        background-color: #FFF;
+        overflow: hidden;
+    }
+
+    .item img {
+        max-width: 100%;
+    }
+
+    span.sale {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: rgba(0, 160, 7, 0.56);
+        font-size: 50px;
+    }
+
+    .carousel-caption {
+        bottom: 0;
+        color: #353535;
+        position: static;
+        padding: 10px;
+        text-align: left;
+
+        span.discount-number {
+            margin: 0;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 2em;
+                padding: 5px;
+                height: 2em;
+                background: #67ce87;
+                text-align: center;
+                color: #fff;
+                border-radius: 50%;
+                line-height: 2em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+                position: relative;
+                top: -4px;
+            }
+        }
+
+        .info-for-the-post {
+            color: #8c8787;
+            margin: 0;
+        }
+
+        .decsription {
+            border-bottom: 1px solid #CCC;
+            border-top: 1px solid #CCC;
+            padding: 5px 0;
+        }
+    }
+
+    a.left.carousel-control i {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        text-shadow: none;
+    }
+
+    a.right.carousel-control i {
+        position: absolute;
+        top: -30px;
+        right: 0;
+        text-shadow: none;
+    }
+
+    a.left.carousel-control {
+    background-image: none;
+    }
+
+    a.right.carousel-control {
+        background-image: none;
+    }
+
+    .carousel-inner {
+        background-color: #FFF;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    .info-item {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 11px;
+        color: #5d5d5d;
+
+        .likes {
+            font-size: 17px;
+            font-family: sans-serif;
+            text-align: center;
+            display: inline-block;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 1em;
+                padding: 5px;
+                height: 1em;
+                background: rgb(94, 145, 255);
+                text-align: center;
+                color: #fff;
+                border-radius: 50%;
+                line-height: 1em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+            }
+
+            i {
+                padding-left: 5px;
+                position: relative;
+                left: -4px;
+            }
+        }
+
+        .price {
+            font-size: 15px;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 1em;
+                padding: 5px;
+                height: 1em;
+                background: #6a67ce;
+                text-align: center;
+                color: #fff;
+                border-radius: 50%;
+                line-height: 1em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+                position: relative;
+                top: -4px;
+            }
+
+            .main-price {
+                background-color: rgba(255, 255, 255, 0.56);
+                color: #333;
+                padding: 5px 10px;
+                font-size: 22px;
+            }
+
+            .price-without-disc {
+                text-decoration: line-through;
+                color: #444;
+                text-align: center;
+                padding: 5px 5px;
+                font-size: 15px;
+                display: block;
+                background-color: rgba(255, 255, 255, 0.56);
+                text-decoration-color: rgba(146, 146, 146, 0.58);
+                margin-top: 10px;
+                width: auto;
+                max-width: 70px;
+                opacity: 0.7;
+            }
+            .discount-number {
+                color: #eee;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .carousel-caption h5 {
+        font-size: 18px;
+    }
+
+}
+
+/*=====  End of Widget Latest Item  ======*/
+
+
+/*=========================================
+=            Go To Shop Widget            =
+=========================================*/
+
+.go-to-blog-widget div {
+    background-color: #fc636b;
+    color: #FFF;
+    padding: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+}
+
+.go-to-blog-widget div p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/*=====  End of Go To Shop Widget  ======*/

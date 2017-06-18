@@ -22,8 +22,8 @@ function ourWidgetsInit() {
 	register_widget( 'custom_widget_about_us' );
 	register_widget( 'social_media_icon_Widget' );
 	register_widget( 'go_to_shop_widget' );
+	register_widget( 'go_to_blog_widget' );
 	register_widget( 'latest_posts_blog' );
-	register_widget( 'top_items_in_shop' );
 }
 add_action('widgets_init', 'ourWidgetsInit');
 
@@ -287,123 +287,6 @@ class latest_posts_blog extends WP_Widget {
 
 /*=====  End of Widget Latest Posts In The Blog   ======*/
 
-/*========================================================
-=           	 Top Items In Shop Widget           	 =
-========================================================*/
-
-class top_items_in_shop extends WP_Widget {
-
-	public function __construct() {
-		parent::__construct('top_items', 'Top Items', array(
-				'description' => 'Top Items In Shop',
-			));
-	}
-	/* ---||  Form In Admin Page  ||--- */
-	public function form($instace) {
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id('Title_top'); ?>">Title : </label>
-			<input id="<?php echo $this->get_field_id('Title_top'); ?>" 
-			value="<?php echo $instace['Title_top'] ?>" 
-			name="<?php echo $this->get_field_name('Title_top'); ?>" 
-			type="text" 
-			class="widefat" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id('Items'); ?>">Count Of Items : </label>
-			<input id="<?php echo $this->get_field_id('Items'); ?>" 
-			value="<?php echo $instace['Items'] ?>" 
-			name="<?php echo $this->get_field_name('Items'); ?>" 
-			type="text" 
-			class="widefat" />
-		</p>		
-		<?php
-	}
-
-	/* ---||  Template Widget In site  ||--- */
-	public function Widget($args, $instace) {
-
-		echo $args['before_widget'];
-		echo '<div class="top-items-shop-widget">';
-
-		echo $args['before_title'];
-		echo '<i class="icon-thumbs-up"> </i> ' . $instace['Title_top'];
-		echo $args['after_title'];
-
-		global $wpdb;
-		$getRows = $wpdb->get_results( "SELECT * FROM items ORDER BY Likes DESC LIMIT " . $instace['Items'] . "" );
-
-		?>
-		<div id="top_items_widget" class="carousel slide" data-ride="carousel">
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-
-			<?php $i = 0; ?>
-
-			<!-- Loop All Info For Item -->
-			<?php foreach ($getRows as $Row) { ?>
-
-				<?php if ($i == 0) { ?>
-
-				<!-- Add Class Active -->
-				<div class="item <?php echo 'active'; ?>">
-				<?php }else { ?>
-				<div class="item <?php echo ''; ?>">
-				<?php } ?>
-					<a href="#"><img src="http://placehold.it/300/444" alt="Test"></a>
-					<div class="info-item">
-						<span class="likes"><?php echo $Row->Likes ?><i class="icon-thumbs-o-up"></i></span>
-						<span class="price"><?php echo  '<span class="main-price">$ ' . $Row->Price . '</span>'; ?><?php if ($Row->i_price != 0 && $Row->i_price != NULL ) { echo "<span class='price-without-disc'>$ " . $Row->i_price . "</span>"; } else { echo ''; } ?></span>
-						<?php if ($Row->i_price != 0 && $Row->i_price != NULL ) { ?>
-						<span class="sale"><i class="icon-sale"></i></span>
-						<?php } else { echo ''; } ?>
-					</div>
-					<div class="carousel-caption">
-						<a href="#"><h5><?php echo $Row->Name ?></h5></a>
-
-						<!-- Get Count Comments -->
-						<?php $countComments =  $wpdb->get_results( "SELECT * FROM comments WHERE item_id = " . $Row->Item_ID . "" ); ?>
-
-						<!-- Get Category Name -->
-						<?php $db = new Database(); ?>
-						<?php $getRows = $db->getRow( "SELECT items.*, categories.Name AS new_name FROM items INNER JOIN categories ON categories.ID = items.Cat_ID WHERE Item_ID = $Row->Item_ID" ); ?>
-
-						<!-- Get Outher Item -->
-						<?php $UserItem = $db->getRow( "SELECT items.*, categories.Name AS cate_name, users.Username AS user_name FROM items INNER JOIN categories ON categories.ID = items.Cat_ID INNER JOIN users ON users.UserID = items.Member_ID WHERE Item_ID = $Row->Item_ID" ); ?>
-
-						<p class="decsription"><?php echo $str = substr(filter_var($Row->Full_dis, FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="#">Read More</a>'; ?></p>
-						<p class="info-for-the-post"><span class="bold"><i class="icon-user2"> </i> By : </span> <?php echo $UserItem['user_name'] ?> | <span class="bold"><i class="icon-bubble"> </i> Commments : </span><?php echo count($countComments); ?></p>
-						<p class="info-for-the-post"><span class="bold"><i class="icon-stack"> </i> Category : </span> <?php echo $getRows['new_name']; ?> | <span class="bold"><i class="icon-tag"> </i> discount : </span>25%</p>
-					</div>
-				</div>
-
-				<?php $i++; ?>
-
-				<?php } ?>
-
-			</div>
-
-			<!-- Controls -->
-			<a class="left carousel-control" href="#top_items_widget" role="button" data-slide="prev">
-				<i class="icon-chevron-left2"></i>
-				<span class="sr-only">Previous</span>
-			</a>
-
-			<a class="right carousel-control" href="#top_items_widget" role="button" data-slide="next">
-				<i class="icon-chevron-right2"></i>
-				<span class="sr-only">Next</span>
-			</a>
-
-		</div>
-		<?php
-		echo '</div>';
-		echo $args['after_widget'];
-	}
-}
-
-/*=========  End of Top Items In Shop Widget  ==========*/
-
 /*=========================================================
 =            	  Create Social Media Widget              =
 =========================================================*/
@@ -530,6 +413,63 @@ class go_to_shop_widget extends WP_Widget {
 
 /*========  End of Section Custom Widget Go To Shop  =========*/
 
+/*==============================================================
+=            Section Custom Widget Go To Blog                  =
+==============================================================*/
+
+class go_to_blog_widget extends WP_Widget {
+	
+	public function __construct() {
+		parent::__construct('go_to_blog', 'Go To Blog', array(
+				'description' => 'Speed Link To Go Blog',
+			));
+	}
+
+	/* ---||  Form In Admin Page  ||--- */
+	public function form($instace) {
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id('Title_to_blog'); ?>">Title : </label>
+			<input id="<?php echo $this->get_field_id('Title_to_blog'); ?>" 
+			value="<?php echo $instace['Title_to_blog'] ?>" 
+			name="<?php echo $this->get_field_name('Title_to_blog'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('Link_blog'); ?>">Link : </label>
+			<input id="<?php echo $this->get_field_id('Link_blog'); ?>" 
+			value="<?php echo $instace['Link_blog'] ?>" 
+			name="<?php echo $this->get_field_name('Link_blog'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>	
+		<?php
+	}
+
+	/* ---||  Template Widget In site  ||--- */
+	public function Widget($args, $instace) {
+
+		echo $args['before_widget'];
+
+		echo '<div class="go-to-blog-widget">';
+
+		?>
+			<a href='<?php echo $instace['Link_blog'] ?>'>
+			<div>
+				<i class="icon-tv"></i>
+				<p>Our Blog</p>
+			</div>
+			</a>
+
+		<?php
+		echo '</div>';
+		echo $args['after_widget'];
+	}
+}
+
+/*========  End of Section Custom Widget Go To Blog  =========*/
+
 /*===================================================
 =            Create Custom Widget About Us          =
 ===================================================*/
@@ -575,4 +515,208 @@ class custom_widget_welcome extends WP_Widget {
 		<?php } }
 
 /*=============  End of Create Custom Widget  =============*/
+
+/*=================================================
+=            Widget Top Itemes In Shop            =
+=================================================*/
+
+function ourWidgetsInit_shop() {
+
+	register_sidebar(array(
+		'name' 			=> 'Shop Sidebar',
+		'id' 			=> 'shop-sidebar',
+		'description' 	=> 'This Widget Will Be Show If Plugin Shop Is Avtive',
+		'class' 		=> 'shop-sidebar-class',
+		'before_widget' => '<div class="custom-sidebar-widget">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+
+	register_widget( 'top_items_in_shop' );
+}
+add_action('widgets_init', 'ourWidgetsInit_shop');
+
+
+
+
+           	/* --|| Top Items In Shop Widget ||-- */          	 
+class top_items_in_shop extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct('top_items', 'Latest Items', array(
+				'description' => 'Top Items In Shop',
+			));
+	}
+	/* ---||  Form In Admin Page  ||--- */
+	public function form($instace) {
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id('Title_top'); ?>">Title : </label>
+			<input id="<?php echo $this->get_field_id('Title_top'); ?>" 
+			value="<?php echo $instace['Title_top'] ?>" 
+			name="<?php echo $this->get_field_name('Title_top'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('Items'); ?>">Count Of Items : </label>
+			<input id="<?php echo $this->get_field_id('Items'); ?>" 
+			value="<?php echo $instace['Items'] ?>" 
+			name="<?php echo $this->get_field_name('Items'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>		
+		<?php
+	}
+
+	/* ---||  Template Widget In site  ||--- */
+	public function Widget($args, $instace) {
+
+		echo $args['before_widget'];
+		echo '<div class="top-items-shop-widget">';
+
+		echo $args['before_title'];
+		echo '<i class="icon-thumbs-up"> </i> ' . $instace['Title_top'];
+		echo $args['after_title']; ?>
+
+		<div id="top_items_widget" class="carousel slide" data-ride="carousel">
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+
+			<?php $i = 0; ?>
+
+			<?php 
+
+			$woo = array(
+				'post_type' 		=> 'product',
+				'posts_per_page' 	=> 5,
+				'orderby' 			=> 'rating',
+				'stock' 			=> 1,
+				);
+			$shop = new WP_Query($woo);
+			while ($shop->have_posts()) {
+				$shop->the_post();
+				global $product; ?>
+
+			<!-- Loop All Info For Item -->
+
+				<?php if ($i == 0) { ?>
+
+				<!-- Add Class Active -->
+				<div class="item <?php echo 'active'; ?>">
+				<?php }else { ?>
+				<div class="item <?php echo ''; ?>">
+				<?php } ?>
+					<a href="<?php echo get_the_permalink(); ?>">
+						<?php if(has_post_thumbnail( $shop->post->ID )) { echo '<img src="' . get_the_post_thumbnail_url( $shop->post->ID ) . '" />'; } ?>
+					</a>
+
+						<?php if ( $product->is_on_sale() ) { ?>
+						<span class="sale"><i class="icon-sale"></i></span>
+						<?php } else { echo ''; } ?>
+
+					<div class="info-item">
+						<span class="likes">
+							<?php $rating = $product->get_average_rating(); ?>
+							<fieldset id='demo3' class="rating" data-toggle="tooltip" title="Can't Rating From Here ... You Can This From Item Page">
+			                	<div class="tooltip top" role="tooltip">
+									<div class="tooltip-arrow"></div>
+									<div class="tooltip-inner">
+									Can't Rating From Here ... You Can This From Item Page
+									</div>
+			                	</div>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
+			                    <label class = "full" for="1star53"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 4.5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
+			                    <label class="half" for="1star4half3"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 4) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
+			                    <label class = "full" for="1star43"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 3.5) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
+			                    <label class="half" for="1star3half3"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 3) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
+			                    <label class = "full" for="1star33"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 2.5) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
+			                    <label class="half" for="1star2half3"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 2) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
+			                    <label class = "full" for="1star23"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 1.5) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
+			                    <label class="half" for="1star1half3"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 1) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
+			                    <label class = "full" for="1star13"></label>
+
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 0.5) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
+			                    <label class="half" for="1starhalf3"></label>
+
+			                </fieldset>
+						</span>
+							<span class="price">
+							<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
+
+							if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
+							echo '</span>'; ?>
+							<!-- Check If On Sale -->
+							<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo ''; } ?>
+						</span>
+					</div>
+					<!-- Product Info -->
+					<div class="carousel-caption">
+						<a href="<?php echo get_the_permalink(); ?>"><h5><?php echo get_the_title(); ?></h5></a>
+						<?php if ( $product->is_on_sale() ) { ?>
+						<span class='discount-number'>This Item Have Discount <div class='numberCircle'><?php $discount = (($product->get_regular_price() - $product->get_sale_price()) * 100) / $product->get_regular_price(); echo floor($discount) . "%"; ?></div></span>
+						<?php } else { echo ''; } ?>
+
+						<p class="decsription"><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="#">Read More</a>'; ?></p>
+						<p class="info-for-the-post text-center"><span class="bold"><i class="icon-bubble"> </i></span><?php print_r($shop->post->comment_count); ?>
+						 | <span class="bold"><i class="icon-stack"> </i></span> 
+						 <!-- Get Categories Names -->
+						 <?php
+						  $cats = $product->get_category_ids(); 
+						  foreach ($cats as $cat) {
+
+						  	$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
+						  	echo ' [ ' . $term['name'] . ' ] ';
+						  }
+						  ?> 
+						 | <span class="bold"><i class="icon-tag"> </i></span><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?></p>
+					</div>
+				</div>
+
+				<?php $i++; ?>
+
+				<?php } ?>
+
+				<?php wp_reset_query(); ?>
+
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#top_items_widget" role="button" data-slide="prev">
+				<i class="icon-chevron-left2"></i>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<a class="right carousel-control" href="#top_items_widget" role="button" data-slide="next">
+				<i class="icon-chevron-right2"></i>
+				<span class="sr-only">Next</span>
+			</a>
+
+		</div>
+		<?php
+		echo '</div>';
+		echo $args['after_widget'];
+	}
+}
+
+/*=====  End of Widget Top Itemes In Shop  ======*/
 ?>

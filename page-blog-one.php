@@ -34,10 +34,11 @@ if($posts->have_posts()) {
 						<?php echo '<img src="' . get_the_post_thumbnail_url() . '" />'; ?>
 					</a>
 					<p class="post-info">
+					 <i class="icon-clock-o"></i> 
 					<?php the_time('F j,Y g:i a'); ?>
-					 | By 
-					<?php the_author(); ?>
-					 | Posted In 
+					 <i class="icon-pencil2"></i> By :
+					<?php the_author(); ?> 
+					 <i class="icon-folder-open"></i> Posted In : 
 					<?php 
 
 					$categories =  get_the_category();

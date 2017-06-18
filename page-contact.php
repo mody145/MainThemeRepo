@@ -8,15 +8,15 @@
 <!-- Get In Touch -->
 <div class="col-md-4 nopadding">
 	<div class="touch-container">
-		<h2>get in touch</h2>
-		<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has</p>
-		<p>8901 mamora road</p>
-		<p>Egypt do4 89GR</p>
-		<p>phone : +01208086359</p>
-		<p>fax : +56464564654</p>
-		<p>E-mail : Elpop102011@gmail.com</p>
+		<h2><?php echo esc_attr( get_option( 'title_get_touch', '' ) ); ?></h2>
+		<p><?php echo esc_attr( get_option( 'description_get_touch', '' ) ); ?></p>
+		<p><?php echo esc_attr( get_option( 'address_get_touch', '' ) ); ?></p>
+		<p><?php echo esc_attr( get_option( 'phone_get_touch', '' ) ); ?></p>
+		<p><?php echo esc_attr( get_option( 'fax_get_touch', '' ) ); ?></p>
+		<p><?php echo esc_attr( get_option( 'email_get_touch', '' ) ); ?></p>
 		<h3>Working Hours</h3>
-		<p><span class="">Monday – Saturday : </span> 08AM – 22PM</p>
+		<p><span class=""><?php echo esc_attr( get_option( 'hours_get_touch', '' ) ); ?></p>
+		<p>Best Regards,</p>
 	</div>
 </div><!-- Get In Touch -->
 

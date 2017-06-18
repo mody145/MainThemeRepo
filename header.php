@@ -74,6 +74,7 @@
 
 		<!-- End Icon Like | Follow | Cart -->
 		<!-- Login/Rgister Form And Add Item -->
+		
 		<div class="col-md-7 col-sm-12 nopadding">
 			<div class="col-md-6 col-sm-6 nopadding">
 				<div class="add-register-login">
@@ -103,12 +104,26 @@
 		<!-- End Form Search -->
 		<!-- navbar Header -->
 
-		<div class="col-md-9 col-sm-12 hidden-xs nopadding">
+		<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding">
 			<nav class="header-menu">
 				<?php 
 
 				$args1 = array(
 					'theme_location' => 'header',
+					'walker'         => new WP_Bootstrap_Navwalker()
+					);
+
+				wp_nav_menu( $args1 ); ?>
+			</nav>
+		</div>
+
+		<div class="col-md-9 col-sm-12 visible-sm nopadding">
+			<nav class="header-menu">
+				<?php 
+
+				$args1 = array(
+					'theme_location' => 'tablet',
+					'container_class' 	 => 'menu-headermenu-container',
 					'walker'         => new WP_Bootstrap_Navwalker()
 					);
 

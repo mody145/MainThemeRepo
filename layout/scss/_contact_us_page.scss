@@ -5,8 +5,10 @@
     background-color: #FFF;
     overflow: hidden;
 
-    div.wpcf7-mail-sent-ng {
+    div.wpcf7-response-output {
         border: none;
+        background-color: gainsboro;
+        margin-top: 10px;
     }
 
     div.wpcf7-validation-errors {

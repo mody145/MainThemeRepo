@@ -1,0 +1,55 @@
+.filter_result {
+
+	.carousel-caption {
+		position: static;
+		color: #6f6f6f;
+
+		h5 {
+		    font-size: 25px;
+		    font-weight: bold;
+		}
+	}
+
+	.item {
+
+		background-color: #FFF;
+	    margin-right: 10px;
+	    margin-bottom: 20px;
+	    position: relative;
+	    height: 200px;
+
+		span.price {
+		    display: block;
+		    text-align: center;
+		    position: relative;
+		    top: 23px;
+
+			span.price-without-disc {
+			    text-decoration: line-through;
+			    opacity: .5;
+			    font-size: large;
+			}
+		}
+
+		img {
+			max-height: 200px;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+
+		span.likes {
+		    position: absolute;
+		    top: 10px;
+		    right: 10px;
+		}
+
+		span.sale {
+		    position: absolute;
+		    top: 50px;
+		    right: 18px;
+		    font-size: 66px;
+		    color: #47bb6f;
+		}
+	}
+}

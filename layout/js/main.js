@@ -6,12 +6,28 @@ jQuery(document).ready(function($) {
 	// Masonry Item Width
 	$('.grid-item').width(($('.parent').width() / 2) - 20);
 	
-	// Run Masonry
+	// Run Masonry For Blog
 	$('.parent').masonry({
 		// options
 		itemSelector: '.grid-item',
 		columnWidth: ($('.parent').width() / 2)
 	});
+
+
+	// Masonry Item Width
+	$('.grid-item-shop').width(($('.parent-shop').width() / 3) - 20);
+
+	// Run Masonry For Shop
+	$('.parent-shop').masonry({
+		// options
+		itemSelector: '.grid-item-shop',
+		columnWidth: ($('.parent-shop').width() / 3)
+	});
+
+	$(window).resize(function() {
+		
+	});
+
 
 	// Run Skitter Slider
 	$(function() {
@@ -29,12 +45,6 @@ jQuery(document).ready(function($) {
 	// Run Bootstrap Carousel
 	$('.carousel').carousel();
 
-/*==================================================
-=            Modify Resent Posts Widget            =
-==================================================*/
-
-	var resentPosts = $('.resent-posts-class').parent('div').addClass('resent-posts-container');
-	
 /*=====  End of Modify Resent Posts Widget  ======*/
 
 /*===================================================
