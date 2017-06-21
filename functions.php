@@ -48,8 +48,6 @@ add_action( 'wp_enqueue_scripts', 'dwwp_styles_and_scripts' );
 
 function dwwp_admin_custom_script() {
 	wp_enqueue_media();
-	// Admin Css
-	wp_enqueue_style( 'admin-custom-style', get_template_directory_uri() . '/layout/css/admin-custom.css' );
 	// Admin Js
 	wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/layout/js/custom-admin.js', array('jquery'), '', true );
 	wp_enqueue_script( 'admin-custom-script' );
@@ -841,15 +839,19 @@ function touch_hours_callback() {
 
 /*=====  End of Add Submenu Page To Contact Foem 7  ======*/
 
-//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-/*add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-function jk_dequeue_styles( $enqueue_styles ) {
-	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-	return $enqueue_styles;
-}*/
+function woo_in_cart($product_id) {
+    global $woocommerce;
+ 
+    foreach($woocommerce->cart->get_cart() as $key => $val ) {
+        $_product = $val['data'];
+ 
+        if($product_id == $_product->id ) {
+            return true;
+        }
+    }
+ 
+    return false;
+}
 
 
  ?>

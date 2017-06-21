@@ -22,7 +22,6 @@ function ourWidgetsInit() {
 	register_widget( 'custom_widget_about_us' );
 	register_widget( 'social_media_icon_Widget' );
 	register_widget( 'go_to_shop_widget' );
-	register_widget( 'go_to_blog_widget' );
 	register_widget( 'latest_posts_blog' );
 }
 add_action('widgets_init', 'ourWidgetsInit');
@@ -140,7 +139,7 @@ class custom_widget_about_us extends WP_Widget {
 		echo '<div class="dwwp-sidebar-custom-widget-about-us">';
 
 		echo $one['before_title'];
-		echo '<i class="icon-microphone5"> </i> ' . $two['title1'];
+		echo '<i class="icon-pen-point-tip"> </i> ' . $two['title1'];
 		echo $one['after_title']; ?>
 	
 			<div><img src="<?php echo $two['author_box_image']; ?>" /></div>
@@ -334,6 +333,54 @@ class social_media_icon_Widget extends WP_Widget {
 			type="text" 
 			class="widefat" />
 		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('Dribbble'); ?>">Dribbble Link : </label>
+			<input id="<?php echo $this->get_field_id('Dribbble'); ?>" 
+			value="<?php echo $instace['Dribbble'] ?>" 
+			name="<?php echo $this->get_field_name('Dribbble'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('Vimeo'); ?>">Vimeo Link : </label>
+			<input id="<?php echo $this->get_field_id('Vimeo'); ?>" 
+			value="<?php echo $instace['Vimeo'] ?>" 
+			name="<?php echo $this->get_field_name('Vimeo'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('soundcloud'); ?>">soundcloud Link : </label>
+			<input id="<?php echo $this->get_field_id('soundcloud'); ?>" 
+			value="<?php echo $instace['soundcloud'] ?>" 
+			name="<?php echo $this->get_field_name('soundcloud'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('behance'); ?>">behance Link : </label>
+			<input id="<?php echo $this->get_field_id('behance'); ?>" 
+			value="<?php echo $instace['behance'] ?>" 
+			name="<?php echo $this->get_field_name('behance'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('instagram'); ?>">instagram Link : </label>
+			<input id="<?php echo $this->get_field_id('instagram'); ?>" 
+			value="<?php echo $instace['instagram'] ?>" 
+			name="<?php echo $this->get_field_name('instagram'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('github'); ?>">github Link : </label>
+			<input id="<?php echo $this->get_field_id('github'); ?>" 
+			value="<?php echo $instace['github'] ?>" 
+			name="<?php echo $this->get_field_name('github'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
 		<?php
 	}
 
@@ -348,6 +395,12 @@ class social_media_icon_Widget extends WP_Widget {
 			<a href='<?php echo $instace['facebook']; ?>'><i class="icon-facebook2"> </i> <span>Facebook</span></a>
 			<a href='<?php echo $instace['twitter'] ?>'><i class="icon-twitter2"> </i> <span>Twitter</span></a>
 			<a href='<?php echo $instace['google_plus'] ?>'><i class="icon-google-plus"> </i> <span>Google+</span></a>
+			<a href='<?php echo $instace['Dribbble'] ?>'><i class="icon-dribbble2"> </i> <span>Dribbble</span></a>
+			<a href='<?php echo $instace['Vimeo'] ?>'><i class="icon-vimeo"> </i> <span>Vimeo</span></a>
+			<a href='<?php echo $instace['soundcloud'] ?>'><i class="icon-soundcloud"> </i> <span>Soundcloud</span></a>
+			<a href='<?php echo $instace['behance'] ?>'><i class="icon-behance"> </i> <span>behance</span></a>
+			<a href='<?php echo $instace['instagram'] ?>'><i class="icon-instagram"> </i> <span>instagram</span></a>
+			<a href='<?php echo $instace['github'] ?>'><i class="icon-github"> </i> <span>github</span></a>
 		<?php
 		echo '</div>';
 		echo $args['after_widget'];
@@ -363,8 +416,8 @@ class social_media_icon_Widget extends WP_Widget {
 class go_to_shop_widget extends WP_Widget {
 	
 	public function __construct() {
-		parent::__construct('go_to_shop', 'Go To Shop', array(
-				'description' => 'Speed Link To Go Shop',
+		parent::__construct('go_to_shop', 'Go To ...', array(
+				'description' => 'Speed Link To Go ...',
 			));
 	}
 
@@ -382,8 +435,32 @@ class go_to_shop_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('Link'); ?>">Link : </label>
 			<input id="<?php echo $this->get_field_id('Link'); ?>" 
-			value="<?php echo $instace['Link'] ?>" 
+			value="<?php echo $instace['Link']; ?>" 
 			name="<?php echo $this->get_field_name('Link'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('icon_go_to_shop'); ?>">Icon : </label>
+			<input id="<?php echo $this->get_field_id('icon_go_to_shop'); ?>" 
+			value="<?php echo $instace['icon_go_to_shop']; ?>" 
+			name="<?php echo $this->get_field_name('icon_go_to_shop'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('icon_go_to_shop_color'); ?>">Color : </label>
+			<input id="<?php echo $this->get_field_id('icon_go_to_shop_color'); ?>" 
+			value="<?php echo $instace['icon_go_to_shop_color']; ?>" 
+			name="<?php echo $this->get_field_name('icon_go_to_shop_color'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('Background-Color'); ?>">Background-Color : </label>
+			<input id="<?php echo $this->get_field_id('Background-Color'); ?>" 
+			value="<?php echo $instace['Background-Color']; ?>" 
+			name="<?php echo $this->get_field_name('Background-Color'); ?>" 
 			type="text" 
 			class="widefat" />
 		</p>	
@@ -399,9 +476,9 @@ class go_to_shop_widget extends WP_Widget {
 
 		?>
 			<a href='<?php echo $instace['Link'] ?>'>
-			<div>
-				<i class="icon-basket"></i>
-				<p>Shopping Now</p>
+			<div style="color:<?php echo $instace['icon_go_to_shop_color'] ?>;background-color: <?php echo $instace['Background-Color'] ?>">
+				<?php echo $instace['icon_go_to_shop']; ?>
+				<p><?php echo $instace['Title_to_shop']; ?></p>
 			</div>
 			</a>
 
@@ -411,64 +488,7 @@ class go_to_shop_widget extends WP_Widget {
 	}
 }
 
-/*========  End of Section Custom Widget Go To Shop  =========*/
-
-/*==============================================================
-=            Section Custom Widget Go To Blog                  =
-==============================================================*/
-
-class go_to_blog_widget extends WP_Widget {
-	
-	public function __construct() {
-		parent::__construct('go_to_blog', 'Go To Blog', array(
-				'description' => 'Speed Link To Go Blog',
-			));
-	}
-
-	/* ---||  Form In Admin Page  ||--- */
-	public function form($instace) {
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id('Title_to_blog'); ?>">Title : </label>
-			<input id="<?php echo $this->get_field_id('Title_to_blog'); ?>" 
-			value="<?php echo $instace['Title_to_blog'] ?>" 
-			name="<?php echo $this->get_field_name('Title_to_blog'); ?>" 
-			type="text" 
-			class="widefat" />
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id('Link_blog'); ?>">Link : </label>
-			<input id="<?php echo $this->get_field_id('Link_blog'); ?>" 
-			value="<?php echo $instace['Link_blog'] ?>" 
-			name="<?php echo $this->get_field_name('Link_blog'); ?>" 
-			type="text" 
-			class="widefat" />
-		</p>	
-		<?php
-	}
-
-	/* ---||  Template Widget In site  ||--- */
-	public function Widget($args, $instace) {
-
-		echo $args['before_widget'];
-
-		echo '<div class="go-to-blog-widget">';
-
-		?>
-			<a href='<?php echo $instace['Link_blog'] ?>'>
-			<div>
-				<i class="icon-tv"></i>
-				<p>Our Blog</p>
-			</div>
-			</a>
-
-		<?php
-		echo '</div>';
-		echo $args['after_widget'];
-	}
-}
-
-/*========  End of Section Custom Widget Go To Blog  =========*/
+/*========  End of Section Custom Widget Go To ... =========*/
 
 /*===================================================
 =            Create Custom Widget About Us          =
@@ -577,7 +597,7 @@ class top_items_in_shop extends WP_Widget {
 		echo '<div class="top-items-shop-widget">';
 
 		echo $args['before_title'];
-		echo '<i class="icon-thumbs-up"> </i> ' . $instace['Title_top'];
+		echo '<i class="icon-chronometer"> </i> ' . $instace['Title_top'];
 		echo $args['after_title']; ?>
 
 		<div id="top_items_widget" class="carousel slide" data-ride="carousel">
@@ -628,34 +648,35 @@ class top_items_in_shop extends WP_Widget {
 									</div>
 			                	</div>
 
+			                	<!-- Start -->
 			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
 			                    <label class = "full" for="1star53"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 4.5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4.5 && $rating < 5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
 			                    <label class="half" for="1star4half3"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 4) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4 && $rating < 4.5) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
 			                    <label class = "full" for="1star43"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 3.5) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3.5 && $rating < 4) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
 			                    <label class="half" for="1star3half3"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 3) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3 && $rating < 3.5) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
 			                    <label class = "full" for="1star33"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 2.5) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2.5 && $rating < 3) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
 			                    <label class="half" for="1star2half3"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 2) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2 && $rating < 2.5) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
 			                    <label class = "full" for="1star23"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 1.5) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1.5 && $rating < 2) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
 			                    <label class="half" for="1star1half3"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 1) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1 && $rating < 1.5) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
 			                    <label class = "full" for="1star13"></label>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 0.5) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
+			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 0.5 && $rating < 1) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
 			                    <label class="half" for="1starhalf3"></label>
 
 			                </fieldset>

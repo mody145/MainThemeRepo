@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -66,40 +68,36 @@
 
 		<div class="col-md-3 col-sm-6 nopadding">
 			<div class="icon-header1">
-				<i class="icon-check2"><span id="items-follow">12</span></i>
-				<i class="icon-heart7"><span id="items-whitelist">3</span></i>
-				<i class="icon-add_shopping_cart"><span id="items-cart">5</span></i>
+
+				<a href="<?php echo home_url( 'dashpoard' ); ?>"><i class="icon-check2"><span id="items-follow">0</span></i></a>
+
+				<!-- Get Count Of Items In List Follow -->
+				<?php $items_unique = array_unique($_SESSION['follow']); ?>
+				<a href="<?php echo home_url( 'wishlist' ); ?>"><i class="icon-heart7"><span id="items-whitelist"><?php echo count($items_unique); ?></span></i></a>
+
+				<!-- Get Count Of Items In List Cart -->
+				<?php $_cartQty = count( WC()->cart->get_cart() ); ?>
+				<a href="<?php echo home_url( 'cart' ); ?>"><i class="icon-add_shopping_cart"><span id="items-cart"><?php echo $_cartQty; ?></span></i></a>
 			</div>
 		</div>
 
 		<!-- End Icon Like | Follow | Cart -->
 		<!-- Login/Rgister Form And Add Item -->
 		
-		<div class="col-md-7 col-sm-12 nopadding">
-			<div class="col-md-6 col-sm-6 nopadding">
+			<div class="col-md-4 col-sm-12 nopadding">
 				<div class="add-register-login">
-					<span class="login"><a href="#"><i class="icon-user"> </i> Login</a></span>
-					<span class="register"><a href="#"><i class="icon-script"> </i> Register</a></span>
-					<span class="new-item"><a href="#"><i class="icon-bulb"> </i> New Item</a></span>
+					Test
 				</div>
 			</div>
 		
 		<!-- End Login/Rgister Form And Add Item -->
 		<!-- Srart Form Search -->
 
-			<div class="col-md-6 col-sm-6 nopadding">
+			<div class="col-md-3 col-sm-12 nopadding">
 				<div class="form-search">
-					<form>
-						<div class="search-overlay">
-							<input 
-							type="Search" 
-							name="product" 
-							placeholder="Search For You Product" />
-						</div>
-					</form>
+					Test
 				</div>
 			</div>
-		</div>
 
 		<!-- End Form Search -->
 		<!-- navbar Header -->

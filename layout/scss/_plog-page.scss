@@ -22,28 +22,28 @@ h1.post-title {
     position: absolute;
     top: 10px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 5px 10px;
     font-size: 28px;
     z-index: 99;
 }
 
 h1.post-title a {
-    color: rgba(255, 255, 255, 0.64);
+    color: rgba(0, 0, 0, 0.64);
 }
 
 .post-thumbnail-img .post-info {
     position: absolute;
     top: 75px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 2px 5px;
-    color: rgba(255, 255, 255, 0.64);
+    color: rgba(0, 0, 0, 0.6);
     z-index: 99;
 }
 
 .post-thumbnail-img .post-info a {
-	color: rgba(255, 255, 255, 0.80);
+	color: rgba(0, 0, 0, 0.8);
 }
 
 p.some-content-post {

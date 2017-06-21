@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="col-md-12 nopadding">
-	<h1>Profile Page</h1>
+	<?php echo do_shortcode('[woocommerce_my_account]' ); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -32,20 +32,17 @@ input.form-control {
 }
 
 .btn-info {
-    color: #212121;
-    border-color: #46b8da;
+    color: #ffffff !important;
     border-radius: 3px;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #ffffff), color-stop(1, #e0e4e6));    border: 0;
-    font-weight: bold;
+    border: 0;
+    background-color: #08f;
 }
 
 .btn-primary {
-    color: #212121;
     border-radius: 3px;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.48, #8BC34A), color-stop(1, #4CAF50));
     border: 0;
-    font-weight: bold;
-    color: white;
+    color: white !important;
+    background-color: #00a950;
 }
 
 .carousel-caption {

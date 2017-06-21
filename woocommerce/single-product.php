@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 /**
  * The Template for displaying all single products
  *
@@ -23,11 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header(); ?>
 
 <!-- Start Sidebar Shop -->
-<div class='col-md-3 nopadding pull-right'>
+<div class='col-md-3 hidden-xs nopadding pull-right'>
 	<!-- Sidebar Shop -->
 	<?php dynamic_sidebar( 'shop-sidebar' ); ?>
 </div><!-- End Sidebar Shop -->
-
 
 <div class="col-md-9 nopadding">
 	<!-- Start Container Singel Product Here -->
@@ -88,7 +90,7 @@ get_header(); ?>
 			<div class="col-md-6 nopadding">
 				<div class="meta_product">
 					<?php the_title( '<h1 class="product_title entry-title">', '</h1>' ); ?>
-					<?php $average = $product->get_average_rating(); ?>
+					<?php $rating = $product->get_average_rating(); ?>
 					<?php $review_count = $product->get_review_count(); ?>
 
 					<!-- Start Section Rating -->
@@ -99,36 +101,36 @@ get_header(); ?>
 							Can't Rating From Here ... You Can This From Item Page
 							</div>
 		            	</div>
-		            	<!-- Start -->
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
-		                <label class = "full" for="1star53"></label>
+	                	<!-- Start -->
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
+	                    <label class = "full" for="1star53"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 4.5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
-		                <label class="half" for="1star4half3"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4.5 && $rating < 5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
+	                    <label class="half" for="1star4half3"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 4) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
-		                <label class = "full" for="1star43"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4 && $rating < 4.5) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
+	                    <label class = "full" for="1star43"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 3.5) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
-		                <label class="half" for="1star3half3"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3.5 && $rating < 4) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
+	                    <label class="half" for="1star3half3"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 3) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
-		                <label class = "full" for="1star33"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3 && $rating < 3.5) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
+	                    <label class = "full" for="1star33"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 2.5) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
-		                <label class="half" for="1star2half3"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2.5 && $rating < 3) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
+	                    <label class="half" for="1star2half3"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 2) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
-		                <label class = "full" for="1star23"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2 && $rating < 2.5) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
+	                    <label class = "full" for="1star23"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 1.5) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
-		                <label class="half" for="1star1half3"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1.5 && $rating < 2) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
+	                    <label class="half" for="1star1half3"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 1) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
-		                <label class = "full" for="1star13"></label>
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1 && $rating < 1.5) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
+	                    <label class = "full" for="1star13"></label>
 
-		                <input class="stars" disabled='disabled' type="checkbox" <?php if ($average == 0.5) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
-		                <label class="half" for="1starhalf3"></label> 
+	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 0.5 && $rating < 1) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
+	                    <label class="half" for="1starhalf3"></label>
 
 		            </fieldset><!-- End Section Rating -->
 					
@@ -137,9 +139,58 @@ get_header(); ?>
 		            <p class="short_description"><?php the_content(); ?></p>
 		            <p class="price"><?php echo $product->get_price_html(); ?></p>
 
-		            <?php //echo '<pre>'; print_r($product); echo '</pre>'; ?>
-
 				<!--====  End of Title | Rate | Description  ====-->
+
+				<!--================================================
+				=            Add To Cart Button Section            =
+				=================================================-->
+				
+				<?php
+					// Git List Products In Cart 
+					$items = $woocommerce->cart->get_cart();
+					// Creat Empty Array
+					$cart_list = array();
+					// Add All ID Products To Empty Array
+					foreach($items as $item) { 
+						$cart_list[] = $item['product_id']; } ?>
+
+					<!-- Check If This Item In Cart -->
+					<?php if (in_array($product->get_id(), $cart_list)) { ?>
+						<!-- If True Echo ... -->
+						<div class="add-to-cart-container-true">
+							<h3><i id="cart_icon" class="icon-cart-arrow-down"></i></h3>
+						</div>
+
+					<?php } else { ?>
+						<!-- If False Echo ... -->
+						<div class="add-to-cart-container-false">
+							<h3><a id="add_to_cart_shop" data-id="<?php echo $product->get_id(); ?>" data-link="<?php echo get_template_directory_uri() . '/Ajax/add_cart.php/?add-to-cart=' . $product->get_id() . '' ?>" href="<?php echo $link_add_to_cart; ?>"><i id="cart_icon" class="icon-cart-plus"></i></a></h3>
+						</div>
+
+					<?php } ?>
+				
+				<!--====  End of Add To Cart Button Section  ====-->
+
+				<!--===============================================
+				=            Add To White List Button             =
+				================================================-->
+
+				<!-- Check If This Item In Current List -->
+				<?php if (in_array($product->get_id(), $_SESSION['follow'])) { ?>
+					<!-- If True Echo ... -->
+					<div class="add-to-follow-container-false">
+						<h3><a id="unfollow" href="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="unfollow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart6"></i></a></h3>
+					</div>
+
+				<?php } else { ?>
+					<!-- If False Echo ... -->
+					<div class="add-to-follow-container-true">
+						<h3><a id="follow" href="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="follow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart5"></i></a></h3>
+					</div>
+
+				<?php } ?>
+				
+				<!--====  End of Add To White List Button   ====-->
 
 				<!--==============================================
 				=            Section Get Meta Product            =
@@ -179,6 +230,8 @@ get_header(); ?>
 			
 			<div class="col-md-6 nopadding">
 				<div class="images_gallery">
+				<div class="img_gallary_box"><img src="<?php echo $image[0]; ?>" width="200px" /></div>
+
 					<?php foreach( $attachment_ids as $attachment_id ) { ?>
 					
 						<?php echo '<div class="img_gallary_box"><img src="' . $image_link = wp_get_attachment_url( $attachment_id ) . '" width="200px" /></div>'; } ?>
@@ -194,6 +247,16 @@ get_header(); ?>
 		<!-- Add Tabs ( Reveiws And ) -->
 		<div class="clearfix"></div>
 		<div class="col-md-12 nopadding">
+
+		<?php 
+			global $product;
+			$id = $product->id;
+
+			$id.",";
+			$args = array ('post_type' => 'product', 'post_id' => $id);
+			$comments = get_comments( $args );
+			wp_list_comments( array( 'callback' => 'woocommerce_comments' ), $comments);
+		?>
 			<?php wc_get_template_part( 'single', 'product-reviews' ) ?>
 		</div>
 

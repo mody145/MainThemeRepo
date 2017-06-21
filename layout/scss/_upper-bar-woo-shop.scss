@@ -8,24 +8,29 @@
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: 10px;
-	    background-color: #ffb900;
-	    color: #fff;
+	    background-color: #ffffff;
+        color: #807c7c;
 	    width: 100%;
 	    margin-left: -10px;
+        border-left: 2px solid #6a67ce;
 	}
 
 	p.path-shop {
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: 10px;
-	    background-color: #fc636b;
-	    color: #fff;
+	    background-color: #ffffff;
+	    color: #8a8787;
 	    width: 100%;
+
+		i {
+		    color: #ffb96f;
+		}
 	}
 
 	a:link, a:hover, a:visited {
 	    text-decoration: none;
-	    color: #fff;
+	    color: #3a3939;
 	}
 
 	form.woocommerce-ordering {

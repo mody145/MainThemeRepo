@@ -11,6 +11,12 @@
     align-items: center;
 }
 
+@media (max-width: 767px){
+    .page-about-us-container {
+        display: block;
+    }
+}
+
 .page-about-us-container > div {
     height: 100%;
 }

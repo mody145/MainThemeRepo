@@ -64,24 +64,35 @@
 
     a.left.carousel-control i {
         position: absolute;
-        top: -30px;
-        left: 0;
+        top: -28px;
+        right: 35px;
         text-shadow: none;
+        border: 1px solid #FFF;
+        padding-right: 1px;
+        color: #FFF;
+        border-radius: 2px;
     }
 
     a.right.carousel-control i {
         position: absolute;
-        top: -30px;
-        right: 0;
+        top: -28px;
+        right: 11px;
         text-shadow: none;
+        border: 1px solid #FFF;
+        padding-left: 1px;
+        color: #FFF;
+        border-radius: 2px;
     }
 
     a.left.carousel-control {
     background-image: none;
+    font-size: 15px;
+    position: static;
     }
 
     a.right.carousel-control {
         background-image: none;
+        font-size: 15px;
     }
 
     .carousel-inner {
@@ -162,9 +173,9 @@
                 text-decoration: line-through;
                 color: #444;
                 text-align: center;
-                padding: 5px 5px;
+                padding: 2px 5px;
                 font-size: 15px;
-                display: block;
+                display: inline-block;
                 background-color: rgba(255, 255, 255, 0.56);
                 text-decoration-color: rgba(146, 146, 146, 0.58);
                 margin-top: 10px;

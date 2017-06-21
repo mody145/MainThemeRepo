@@ -172,6 +172,152 @@ jQuery(document).ready(function($) {
 	});		
 	
 	/*=====  End of Section Filter Shop  ======*/
+
+	/*===========================================
+	=            Section Add To Follow          =
+	===========================================*/
+	
+	$('h3').on('click', '.follow', function(e) {
+
+		var id = $(this).attr('data-id');
+		var addUrl = $('#follow').attr('data-add');
+		var removeUrl = $('#follow').attr('data-remove');
+		
+		$.post(addUrl, {id : id}, function (data) {
+
+			$('#items-whitelist').html(data);
+
+		})
+		
+			.done(function (d) {
+
+				$('#follow').html("<i id='follow_icon' class='icon-heart6'></i>");
+				$('#follow').removeClass('follow').addClass('unfollow');
+				$('#follow').attr('id', 'unfollow');
+				$('#follow_icon').css('color', 'rgba(252, 99, 107, 0.94)');
+			})
+		
+		e.preventDefault();
+	});
+	
+	/*=====  End of Section Add To Follow  ======*/
+	
+	/*===============================================
+	=            Section Remove Folloing            =
+	===============================================*/
+	
+	$('h3').on('click', '.unfollow', function(e) {
+
+		var id = $(this).attr('data-id');
+		var addUrl = $('#unfollow').attr('data-add');
+		var removeUrl = $('#unfollow').attr('data-remove');
+		
+		/*$.post(removeUrl, {id : id}, function (data) {
+
+			$('#items-whitelist').html(data);
+
+		})
+		
+			.done(function (d) {
+
+				$('#unfollow').html("<i id='follow_icon' class='icon-heart5'></i>");
+				$('#unfollow').removeClass('unfollow').addClass('follow');
+				$('#unfollow').attr('id', 'follow');
+				$('i#follow_icon').css({color: 'rgba(71, 187, 111, 0.93)'});
+			})*/
+
+		e.preventDefault();
+	});
+	
+	
+	/*=====  End of Section Remove Folloing  ======*/
+
+	/*=============================================
+	=            Section Add To Cart             =
+	=============================================*/
+	
+	$('#add_to_cart_shop').on('click', function(event) {
+
+		var Url = $(this).attr('data-link');
+		var id = $(this).attr('data-id');
+
+		/*$.post(Url, {id : id}, function (data) {
+
+			$('#items-cart').html(data);
+			console.log(data);
+
+		})
+		
+			.done(function (d) {
+
+				$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-cart-arrow-down"></i>');
+				$('#cart_icon').css({color: 'rgba(252, 99, 107, 0.94)'});
+			})*/
+		
+		event.preventDefault();
+	});
+	
+	/*=====  End of Section Add To Cart   ======*/
+
+	/*===============================================
+	=            Section Empty WhiteList            =
+	===============================================*/
+	
+	$('.empty_white_list').on('click', function(event) {
+
+		var Url = $('.empty_white_list a').attr('href');
+		console.log(Url);
+
+		$.ajax({
+			url: Url,
+			type: 'POST',
+			data: {param1: 'value1'},
+		})
+		.done(function(data) {
+			console.log(data);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Empty WhiteList  ======*/
+
+	/*=============================================
+	=            Section Add To Cart             =
+	=============================================*/
+	
+	$('body').on('click', '#add_to_cart_shop_archive', function(event) {
+
+		var Url = $(this).attr('data-link');
+		var id = $(this).attr('data-id');
+		var itemParent = $(this).parent();
+		var parentOverLay = itemParent.parent().parent().parent().find('#parent_overlay');
+
+		$.post(Url, {id : id}, function (data) {
+
+			$('#items-cart').html(data);
+
+		})
+		
+			.done(function (d) {
+
+				itemParent.hide(100);
+				parentOverLay.append('<div class="overlay"> <i class="icon-cart-arrow-down"></i> </div>')
+				//console.log(overLay);
+			})
+		
+		event.preventDefault();
+	});
+	
+	/*=====  End of Section Add To Cart   ======*/
 	
 
 });

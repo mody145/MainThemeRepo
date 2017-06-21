@@ -21,7 +21,7 @@ header.site-header img {
     margin-left: 0;
     padding-left: 0;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 @media (max-width: 767px){
@@ -81,7 +81,7 @@ header.site-header img {
 }
 
 .icon-header1 i:nth-of-type(1) span {
-    background-color: #6a67ce;
+    background-color: #6a67ce !important;
 }
 
 .icon-header1 i:nth-of-type(2) span {
@@ -131,7 +131,7 @@ nav.primary-menu ul li:nth-of-type(4) i {
 }
 
 .icon-header1 i:nth-of-type(1) {
-    color: #6a67ce;
+    color: #ffb900 !important
 }
 
 .icon-header1 i:nth-of-type(2) {
@@ -149,58 +149,25 @@ nav.primary-menu ul li:nth-of-type(4) i {
 ===========================================*/
 
 .form-search {
-
-}
-
-.form-search input {
-    border: 0;
-    width: 80%;
-    position: relative;
-    left: 12%;
-}
-
-@media (max-width: 767px){
-    .form-search input {
-        left: 20%;
-    }
-}
-
-.form-search input:focus {
-    border: 0;
-    outline: none;
-}
-
-.search-overlay {
-    position: relative;
     margin: 10px;
-    padding: 10px;
     background-color: #FFF;
+    padding: 10px;
     margin-right: 0;
+    margin-left: 10px;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
-    .search-overlay {
-        margin-left: 0;
+    .form-search {
+        margin-left: 0px;
     }
 }
 
 @media (max-width: 767px){
-    .search-overlay {
-        margin-left: 0;
+    .form-search {
+        margin-left: 0px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-}
-
-.search-overlay:before {
-    font-family: 'icomoon' !important;
-    position: absolute;
-    top: 4px;
-    left: 10px;
-    z-index: 100;
-    content: "\e96d";
-    font-size: 24px;
-    color: #868686;
 }
 
 /*=====  End of Search Form Section  ======*/
@@ -213,9 +180,7 @@ nav.primary-menu ul li:nth-of-type(4) i {
     padding: 10px;
     margin: $main-margin;
     background-color: #FFF;
-    display: flex;
-    justify-content: space-around;
-    font-size: 16px;
+    margin-right: 10px;
 }
 
 @media (min-width: 768px) and (max-width: 991px){

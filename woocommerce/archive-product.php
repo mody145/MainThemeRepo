@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php get_header(); ?>
 
 <!-- Start Sidebar Shop -->
@@ -47,7 +48,8 @@
 				add_action( 'woo_my_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
 				do_action('woo_my_custom_breadcrumb'); ?>
 		</div>
-
+		<?php print_r($sub_category) ?>
+		<!-- Show Count Result -->
 		<div class="col-md-6 nopadding">
 			<p class="woocommerce-result-count">
 				<?php
@@ -66,7 +68,8 @@
 				}
 				?>
 			</p>
-		</div>
+		</div><!-- Show Count Result -->
+
 	</div><!-- End Upper bar In Shop -->
 </div><!-- Upperbar -->
 
@@ -81,7 +84,7 @@
 
 		<form id="filter_shop" method="POST" action="<?php echo get_template_directory_uri() . '/Ajax/filter_shop.php' ?>">
 			<select id="order" class="select-option" name="order">
-				<option value="">----</option>
+				<option value="">-- ORDERING --</option>
 				<option value="date" data-order="DESC">Newest First</option>
 				<option value="date" data-order="ASC">Oldest First</option>
 				<option value="_regular_price" data-order="DESC">DESC Price</option>
@@ -99,7 +102,7 @@
 			$categories = get_categories( $args ); ?>
 
 			<select id="category" class="category select-option" name="category">
-				<option value="">----</option>
+				<option value="">-- CATEGORIES --</option>
 			<?php foreach ($categories as $cat) { ?>
 				<option value="<?php echo $cat->slug ?>"><?php echo $cat->name; ?></option>
 			<?php } ?>

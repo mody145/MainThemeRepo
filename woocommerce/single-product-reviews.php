@@ -37,11 +37,18 @@ if ( ! comments_open() ) {
 			}
 		?></h2>
 
-		<?php if ( have_comments() ) : ?>
+			<?php if ( have_comments() ) : ?>
 
-			<ol class="commentlist">
-				<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
-			</ol>
+			<ol class="comment-list">
+				<?php
+					wp_list_comments( array(
+						'style'      => 'ol',
+						'short_ping' => true,
+					) );
+				?>
+			</ol><!-- .comment-list -->
+
+			
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 				echo '<nav class="woocommerce-pagination">';
@@ -55,7 +62,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
+			<!-- <p class="woocommerce-noreviews"><?php //_e( 'There are no reviews yet.', 'woocommerce' ); ?></p> -->
 
 		<?php endif; ?>
 	</div>
