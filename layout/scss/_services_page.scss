@@ -1,13 +1,13 @@
 .container-services {
-    background-color: #FFF;
-    padding: 10px;
-    margin: 10px 0;
+    background-color: $color2;
+    padding: $main-padding;
+    margin: $main-margin 0;
 }
 
 .service-boxes {
     display: flex;
     justify-content: space-between;
-    margin: 21px;
+    margin: $main-margin * 2;
     flex-wrap: wrap;
 }
 
@@ -17,10 +17,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
-    color: #FFF;
+    padding: $main-padding * 2;
+    color: $color2;
     flex-grow: 1;
-    margin: 20px;
+    margin: $main-margin * 2;
 }
 
 .price {
@@ -30,7 +30,7 @@
 .title {
     font-size: 35px;
     font-weight: bold;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid $color2;
 }
 
 sub {
@@ -38,25 +38,25 @@ sub {
 }
 
 .plan:nth-of-type(1) {
-    background-color: #6a67ce;
+    background-color: $color5;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
 }
 
 .plan:nth-of-type(2) {
-    background-color: #ffb900;
+    background-color: $color6;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
 }
 
 .plan:nth-of-type(3) {
-    background-color: #fc636b;
+    background-color: $color7;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
 }
 
 .plan:nth-of-type(4) {
-    background-color: #3be8b0;
+    background-color: $color3;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
 }
@@ -70,8 +70,8 @@ p.text-blow {
 .other-services {
     overflow: hidden;
     text-align: center;
-    background-color: #EEE;
-    margin: 40px;
+    background-color: $color1;
+    margin: $main-margin * 4;
 }
 
 .other-services i {
@@ -83,10 +83,10 @@ p.text-blow {
 }
 
 .container-about-our-services {
-    background-color: #FFF;
-    margin: 10px;
-    margin-top: 20px;
+    background-color: $color2;
+    margin: $main-margin;
+    margin-top: $main-margin * 2;
     margin-right: 0;
     margin-left: 0;
-    padding: 10px;
+    padding: $main-padding;
 }

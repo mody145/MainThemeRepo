@@ -194,7 +194,7 @@ jQuery(document).ready(function($) {
 				$('#follow').html("<i id='follow_icon' class='icon-heart6'></i>");
 				$('#follow').removeClass('follow').addClass('unfollow');
 				$('#follow').attr('id', 'unfollow');
-				$('#follow_icon').css('color', 'rgba(252, 99, 107, 0.94)');
+				$('#follow_icon').css('color', '#0088ff');
 			})
 		
 		e.preventDefault();
@@ -212,7 +212,7 @@ jQuery(document).ready(function($) {
 		var addUrl = $('#unfollow').attr('data-add');
 		var removeUrl = $('#unfollow').attr('data-remove');
 		
-		/*$.post(removeUrl, {id : id}, function (data) {
+		$.post(removeUrl, {id : id}, function (data) {
 
 			$('#items-whitelist').html(data);
 
@@ -223,8 +223,8 @@ jQuery(document).ready(function($) {
 				$('#unfollow').html("<i id='follow_icon' class='icon-heart5'></i>");
 				$('#unfollow').removeClass('unfollow').addClass('follow');
 				$('#unfollow').attr('id', 'follow');
-				$('i#follow_icon').css({color: 'rgba(71, 187, 111, 0.93)'});
-			})*/
+				$('i#follow_icon').css({color: '#777'});
+			})
 
 		e.preventDefault();
 	});
@@ -241,7 +241,7 @@ jQuery(document).ready(function($) {
 		var Url = $(this).attr('data-link');
 		var id = $(this).attr('data-id');
 
-		/*$.post(Url, {id : id}, function (data) {
+		$.post(Url, {id : id}, function (data) {
 
 			$('#items-cart').html(data);
 			console.log(data);
@@ -251,8 +251,8 @@ jQuery(document).ready(function($) {
 			.done(function (d) {
 
 				$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-cart-arrow-down"></i>');
-				$('#cart_icon').css({color: 'rgba(252, 99, 107, 0.94)'});
-			})*/
+				$('#cart_icon').css({color: '#0088ff'});
+			})
 		
 		event.preventDefault();
 	});
@@ -290,9 +290,9 @@ jQuery(document).ready(function($) {
 	
 	/*=====  End of Section Empty WhiteList  ======*/
 
-	/*=============================================
-	=            Section Add To Cart             =
-	=============================================*/
+	/*========================================================
+	=            Section Add To Cart ( Archive )             =
+	========================================================*/
 	
 	$('body').on('click', '#add_to_cart_shop_archive', function(event) {
 
@@ -317,7 +317,128 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 	});
 	
-	/*=====  End of Section Add To Cart   ======*/
+	/*=====  End of Section Add To Cart ( Archive )   ======*/
+
+	/*=======================================================
+	=            Section Add To Follow ( Archive )          =
+	=======================================================*/
+	
+	$('h3').on('click', '.follow_archive', function(e) {
+
+		var id = $(this).attr('data-id');
+		var addUrl = $(this).attr('data-add');
+
+		var thisItem = $(this);
+		
+		$.post(addUrl, {id : id}, function (data) {
+
+			$('#items-whitelist').html(data);
+
+		})
+		
+			.done(function (d) {
+
+				thisItem.html("<i id='follow_icon' class='icon-heart6'></i>");
+				thisItem.removeClass('follow_archive').addClass('unfollow_archive');
+				thisItem.attr('id', 'unfollow');
+				thisItem.find('#follow_icon').css('color', '#0088ff');
+			})
+		
+		e.preventDefault();
+	});
+	
+	/*=====  End of Section Add To Follow ( Archive )  ======*/
+	
+	/*===========================================================
+	=            Section Remove Folloing ( Archive )            =
+	===========================================================*/
+	
+	$('h3').on('click', '.unfollow_archive', function(e) {
+
+		var id = $(this).attr('data-id');
+		var removeUrl = $(this).attr('data-remove');
+
+		var thisItem = $(this);
+
+		$.post(removeUrl, {id : id}, function (data) {
+
+			$('#items-whitelist').html(data);
+
+		})
+		
+			.done(function (d) {
+
+				thisItem.html("<i id='follow_icon' class='icon-heart5'></i>");
+				thisItem.removeClass('unfollow_archive').addClass('follow_archive');
+				thisItem.attr('id', 'follow');
+				thisItem.find('#follow_icon').css({color: '#777'});
+			})
+
+		e.preventDefault();
+	});
+	
+	
+	/*=====  End of Section Remove Folloing ( Archive )  ======*/
+
+	/*==============================================================
+	=            Section Add Like Button To ( Arshive )            =
+	==============================================================*/
+	
+	$('body').on('click', '#like', function(e) {
+
+		var id = $(this).attr('data-id');
+		var addUrl = $(this).attr('data-add');
+		var removeUrl = $(this).attr('data-remove');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.likes-count');
+		
+		$.post(addUrl, {id : id}, function (data) {
+
+			result.html(data);
+
+		})
+		
+			.done(function (d) {
+
+				thisItem.html("<i id='unlike_icon' class='icon-check'></i>");
+				thisItem.attr('id', 'unlike');
+			})
+		
+		e.preventDefault();
+	});
+
+	/*=====  End of Section Add Like Button To ( Arshive )  ======*/
+
+	/*================================================================
+	=            Section Add UnLike Button To ( Arshive )            =
+	================================================================*/
+	
+	$('body').on('click', '#unlike', function(e) {
+
+		var id = $(this).attr('data-id');
+		var addUrl = $(this).attr('data-add');
+		var removeUrl = $(this).attr('data-remove');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.likes-count');
+		
+		$.post(removeUrl, {id : id}, function (data) {
+
+			result.html(data);
+
+		})
+		
+			.done(function (d) {
+
+				thisItem.html("<i id='like_icon' class='icon-thumbs-up'></i>");
+				thisItem.attr('id', 'like');
+			})
+		
+		e.preventDefault();
+	});
+
+	/*=====  End of Section Add UnLike Button To ( Arshive )  ======*/	
+
+
 	
 
 });

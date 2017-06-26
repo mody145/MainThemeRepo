@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 15px;
+    padding-top: $main-padding + 5;
 
     .carousel {
         position: relative;
@@ -41,11 +41,9 @@
     }
 
     .carousel-caption {
-        position: absolute;
-        bottom: 20px;
-        z-index: 10;
-        padding-top: 20px;
-        color: #656565;
+        position: static;
+        padding-top: $main-padding * 2;
+        color: $infoColor;
         text-align: center;
         text-shadow: none;
     }
@@ -74,7 +72,7 @@
         margin: 1px;
         text-indent: -999px;
         cursor: pointer;
-        background-color: #03A9F4;
+        background-color: $color5;
         border-radius: 10px;
     }
 
@@ -101,7 +99,7 @@
 @media (max-width: 767px){
     .testimonials {
         margin-right: 0 !important;
-        margin-top: 20px !important;
+        margin-top: $main-margin !important;
     }
 }
 

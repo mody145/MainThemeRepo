@@ -3,10 +3,10 @@
 ==========================================*/
 
 .top-items-shop-widget {
-    margin-top: 20px;
+    margin-top: $main-margin * 2;
 
     .item {
-        background-color: #FFF;
+        background-color: $color2;
         overflow: hidden;
     }
 
@@ -18,15 +18,15 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        color: rgba(0, 160, 7, 0.56);
+        color: $color10;
         font-size: 50px;
     }
 
     .carousel-caption {
         bottom: 0;
-        color: #353535;
+        color: $color8;
         position: static;
-        padding: 10px;
+        padding: $main-padding;
         text-align: left;
 
         span.discount-number {
@@ -35,11 +35,11 @@
             .numberCircle {
                 font: 12px Arial, sans-serif;
                 width: 2em;
-                padding: 5px;
+                padding: $main-padding / 2;
                 height: 2em;
-                background: #67ce87;
+                background: $color10;
                 text-align: center;
-                color: #fff;
+                color: $color2;
                 border-radius: 50%;
                 line-height: 2em;
                 box-sizing: content-box;
@@ -51,14 +51,13 @@
         }
 
         .info-for-the-post {
-            color: #8c8787;
+            color: $infoColor;
             margin: 0;
         }
 
         .decsription {
-            border-bottom: 1px solid #CCC;
-            border-top: 1px solid #CCC;
-            padding: 5px 0;
+            color: $paragraphColor;
+            padding: $main-padding / 2 0;
         }
     }
 
@@ -67,9 +66,9 @@
         top: -28px;
         right: 35px;
         text-shadow: none;
-        border: 1px solid #FFF;
+        border: 1px solid $color2;
         padding-right: 1px;
-        color: #FFF;
+        color: $color2;
         border-radius: 2px;
     }
 
@@ -78,9 +77,9 @@
         top: -28px;
         right: 11px;
         text-shadow: none;
-        border: 1px solid #FFF;
+        border: 1px solid $color2;
         padding-left: 1px;
-        color: #FFF;
+        color: $color2;
         border-radius: 2px;
     }
 
@@ -96,7 +95,7 @@
     }
 
     .carousel-inner {
-        background-color: #FFF;
+        background-color: $color2;
     }
 
     .carousel-inner img {
@@ -112,7 +111,7 @@
         flex-direction: column;
         justify-content: center;
         border-radius: 11px;
-        color: #5d5d5d;
+        color: $infoColor;
 
         .likes {
             font-size: 17px;
@@ -123,11 +122,11 @@
             .numberCircle {
                 font: 12px Arial, sans-serif;
                 width: 1em;
-                padding: 5px;
+                padding: $main-padding / 2;
                 height: 1em;
                 background: rgb(94, 145, 255);
                 text-align: center;
-                color: #fff;
+                color: $color2;
                 border-radius: 50%;
                 line-height: 1em;
                 box-sizing: content-box;
@@ -136,7 +135,7 @@
             }
 
             i {
-                padding-left: 5px;
+                padding-left: $main-padding / 2;
                 position: relative;
                 left: -4px;
             }
@@ -148,11 +147,11 @@
             .numberCircle {
                 font: 12px Arial, sans-serif;
                 width: 1em;
-                padding: 5px;
+                padding: $main-padding / 2;
                 height: 1em;
-                background: #6a67ce;
+                background: $color5;
                 text-align: center;
-                color: #fff;
+                color: $color2;
                 border-radius: 50%;
                 line-height: 1em;
                 box-sizing: content-box;
@@ -164,28 +163,28 @@
 
             .main-price {
                 background-color: rgba(255, 255, 255, 0.56);
-                color: #333;
-                padding: 5px 10px;
+                color: $color8;
+                padding: $main-padding / 2 $main-padding;
                 font-size: 22px;
             }
 
             .price-without-disc {
                 text-decoration: line-through;
-                color: #444;
+                color: $infoColor;
                 text-align: center;
                 padding: 2px 5px;
                 font-size: 15px;
                 display: inline-block;
                 background-color: rgba(255, 255, 255, 0.56);
                 text-decoration-color: rgba(146, 146, 146, 0.58);
-                margin-top: 10px;
+                margin-top: $main-margin;
                 width: auto;
                 max-width: 70px;
                 opacity: 0.7;
             }
             .discount-number {
-                color: #eee;
-                margin-top: 10px;
+                color: $color1;
+                margin-top: $main-margin;
             }
         }
     }
@@ -198,14 +197,13 @@
 
 /*=====  End of Widget Latest Item  ======*/
 
-
 /*=========================================
 =            Go To Shop Widget            =
 =========================================*/
 
 .go-to-blog-widget div {
-    background-color: #fc636b;
-    color: #FFF;
+    background-color: $color7;
+    color: $color1;
     padding: 10px;
     height: 250px;
     display: flex;
@@ -214,12 +212,12 @@
     align-items: center;
     font-size: 120px;
     font-weight: bold;
-    margin: 10px 0 20px;
+    margin: $main-margin 0 $main-margin * 2;
 }
 
 .go-to-blog-widget div p {
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: $main-margin * 2;
 }
 
 /*=====  End of Go To Shop Widget  ======*/

@@ -1,5 +1,5 @@
 .all-posts-blog {
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
 }
 
@@ -23,7 +23,7 @@ h1.post-title {
     top: 10px;
     left: 0;
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 5px 10px;
+    padding: $main-padding / 2 $main-padding;
     font-size: 28px;
     z-index: 99;
 }
@@ -37,7 +37,7 @@ h1.post-title a {
     top: 75px;
     left: 0;
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 2px 5px;
+    padding: 2px $main-padding / 2;
     color: rgba(0, 0, 0, 0.6);
     z-index: 99;
 }
@@ -47,25 +47,25 @@ h1.post-title a {
 }
 
 p.some-content-post {
-    padding: 10px;
-    background-color: #FFF;
-    margin-bottom: 20px;
-    border-bottom: 5px solid #ffb900;
+    padding: $main-padding;
+    background-color: $color2;
+    margin-bottom: $main-margin * 2;
+    border-bottom: 5px solid $color6;
 }
 
 .custom-pagination {
-    padding: 5px;
+    padding: $main-padding / 2;
     text-align: center;
 }
 
 .custom-pagination a {
-    background-color: #FFF;
+    background-color: $color2;
     padding: 6px;
     margin: 2px;
 }
 
 .custom-pagination .page-numbers.current {
     margin: 2px;
-    background-color: #FFF;
+    background-color: $color2;
     padding: 6px;
 }

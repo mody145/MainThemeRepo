@@ -20,13 +20,13 @@
 =======================================*/
 
 .dwwp-sidebar-custom-widget-about-us {
-    background-color: #fff;
+    background-color: $color2;
 }
 
 .dwwp-sidebar-custom-widget-about-us h4 {
     background-color: $color7;
-    color: #FFF;
-    padding: 10px;
+    color: $color2;
+    padding: $main-padding;
     margin: 0;
 }
 
@@ -35,8 +35,7 @@
 }
 
 .dwwp-sidebar-custom-widget-about-us p {
-    text-align: center;
-    padding: 10px;
+    padding: $main-padding;
     margin: 0;
 }
 
@@ -47,23 +46,26 @@
 ===========================================*/
 
 .social-media-icon-widget {
-    margin-top: 20px;
+    margin-top: $main-margin * 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background-color: $color2;
+    padding: $main-padding;
+    padding-bottom: 0;
 }
 
 .social-media-icon-widget h4 {
     background-color: $color4;
-    color: #FFF;
-    padding: 10px;
+    color: $color2;
+    padding: $main-padding;
     margin: 0;
 }
 
 .social-media-icon-widget a {
     width: calc(50% - 12px);
-    margin: 10px 0;
+    margin: $main-margin 0;
     text-align: center;
     border-radius: 2px;
 }
@@ -79,15 +81,15 @@
 
 .social-media-icon-widget a:nth-of-type(1) {
     display: block;
-    padding: 10px;
-    color: #FFF;
+    padding: $main-padding;
+    color: $color2;
     background-color: #dc4d3c;
     margin-top: 0;
 }
 
 .social-media-icon-widget a:nth-of-type(2) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #425c9d;
     margin-top: 0;
@@ -95,56 +97,56 @@
 
 .social-media-icon-widget a:nth-of-type(3) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #44cefd;
 }
 
 .social-media-icon-widget a:nth-of-type(4) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #df6c5e;
 }
 
 .social-media-icon-widget a:nth-of-type(5) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #f7659c !important;
 }
 
 .social-media-icon-widget a:nth-of-type(6) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #35c6ea !important;
 }
 
 .social-media-icon-widget a:nth-of-type(7) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #ff7e30 !important;
 }
 
 .social-media-icon-widget a:nth-of-type(8) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #1879fd !important;
 }
 
 .social-media-icon-widget a:nth-of-type(9) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #3897f0 !important;
 }
 
 .social-media-icon-widget a:nth-of-type(10) {
     display: block;
-    padding: 10px;
+    padding: $main-padding;
     color: #FFF;
     background-color: #3f91cb !important;
 }
@@ -158,7 +160,7 @@
 .go-to-shop-widget div {
     background-color: #6a67ce;
     color: #FFF;
-    padding: 10px;
+    padding: $main-padding;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -166,12 +168,12 @@
     align-items: center;
     font-size: 120px;
     font-weight: bold;
-    margin: 10px 0 20px;
+    margin: $main-margin 0 $main-margin * 2;
 }
 
 .go-to-shop-widget div p {
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: $main-margin * 2;
 }
 
 /*=====  End of Go To Shop Widget  ======*/
@@ -181,14 +183,14 @@
 ===========================================*/
 
 .latest-posts-blog-widget {
-    margin-top: 20px;
+    margin-top: $main-margin * 2;
     position: relative;
 }
 
 .latest-posts-blog-widget h4 {
     background-color: $color5;
-    color: #FFF;
-    padding: 10px;
+    color: $color2;
+    padding: $main-padding;
     margin: 0;
 }
 
@@ -204,7 +206,7 @@ position: static;
 }
 
 .latest-posts-blog-widget .carousel-inner {
-    background-color: #FFF;
+    background-color: $color2;
 }
 
 .latest-posts-blog-widget .carousel-inner img {
@@ -216,9 +218,9 @@ position: static;
     top: -28px;
     right: 35px;
     text-shadow: none;
-    border: 1px solid #FFF;
+    border: 1px solid $color2;
     padding-right: 1px;
-    color: #FFF;
+    color: $color2;
     border-radius: 2px;
 }
 
@@ -227,14 +229,14 @@ position: static;
     top: -28px;
     right: 11px;
     text-shadow: none;
-    border: 1px solid #FFF;
+    border: 1px solid $color2;
     padding-left: 1px;
-    color: #FFF;
+    color: $color2;
     border-radius: 2px;
 }
 
 .latest-posts-blog-widget .date {
-    background-color: #FFF;
+    background-color: $color2;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -265,21 +267,20 @@ position: static;
 
 .latest-posts-blog-widget .carousel-caption {
     bottom: 0;
-    color: #353535;
+    color: $color8;
     position: static;
-    padding: 10px;
+    padding: $main-padding;
     text-align: left;
 
     .info-for-the-post {
-        color: #8c8787;
+        color: $infoColor;
         margin: 0;
     }
 
     .decsription {
-        margin: 10px 0;
-        border-bottom: 1px solid #CCC;
-        border-top: 1px solid #CCC;
-        padding: 5px 0;
+        margin: $main-margin 0;
+        color: $paragraphColor;
+        padding: $main-padding / 2 0;
     }
 }
 
@@ -298,8 +299,8 @@ position: static;
 
     h4 {
         background-color: $color4;
-        color: #FFF;
-        padding: 10px;
+        color: $color2;
+        padding: $main-padding;
         margin: 0;
     }
 
@@ -344,4 +345,80 @@ position: static;
 
 /*=====  End of Top Liked Item Widget  ======*/
 
+/*==============================================
+=            Our Categories Section            =
+==============================================*/
+
+.list_categories {
+
+    li {
+        list-style: none;
+        margin: 5px 0;
+        border: 1px solid #DDD;
+        padding: 5px;
+        background-color: #fff;
+
+        a:before {
+            content: "\f114";
+            font-family: 'icomoon' !important;
+            margin-right: 5px;
+            color: $color6;
+        }
+
+        span.count {
+            float: right;
+            background-color: $color1;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color2;
+        }
+    }
+
+    li:nth-of-type(1) span.count {
+        background-color: $color3;
+    }
+
+    li:nth-of-type(2) span.count {
+        background-color: $color4;
+    }
+
+    li:nth-of-type(3) span.count {
+        background-color: $color5;
+    }
+
+    li:nth-of-type(4) span.count {
+        background-color: $color6;
+    }
+
+    li:nth-of-type(5) span.count {
+        background-color: $color7;
+    }
+
+    li:nth-of-type(6) span.count {
+        background-color: $color3;
+    }
+
+    li:nth-of-type(7) span.count {
+        background-color: $color4;
+    }
+
+    li:nth-of-type(8) span.count {
+        background-color: $color5;
+    }
+
+    li:nth-of-type(9) span.count {
+        background-color: $color6;
+    }
+
+    li:nth-of-type(10) span.count {
+        background-color: $color7;
+    }
+
+}
+
+/*=====  End of Our Categories Section  ======*/
 

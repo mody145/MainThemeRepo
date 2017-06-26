@@ -1,14 +1,14 @@
 .container-form-contact-us {
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
-    padding: 10px;
-    background-color: #FFF;
+    padding: $main-padding;
+    background-color: $color2;
     overflow: hidden;
 
     div.wpcf7-response-output {
         border: none;
         background-color: gainsboro;
-        margin-top: 10px;
+        margin-top: $main-margin;
     }
 
     div.wpcf7-validation-errors {
@@ -38,8 +38,8 @@
 }
 
 .container-form-contact-us form textarea {
-    padding: 5px;
-    margin-top: 10px;
+    padding: $main-padding / 2;
+    margin-top: $main-margin;
     width: 100%;
     border: 1px solid #ccc;
 }
@@ -50,8 +50,8 @@
 }
 
 .touch-container {
-    padding: 10px;
-    margin: 10px;
+    padding: $main-padding;
+    margin: $main-margin;
     margin-right: 0;
     height: 100%;
     display: flex;
@@ -59,21 +59,21 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: #FFF;
+    background-color: $color2;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
     .touch-container {
         margin-left: 0;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: $main-margin * 2;
+        margin-bottom: $main-margin * 2;
     }
 }
 
 @media (max-width: 767px) {
     .touch-container {
         margin-left: 0;
-        margin-top: 20px;
+        margin-top: $main-margin * 2;
     }
 }
 

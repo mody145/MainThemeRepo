@@ -1,9 +1,9 @@
 .all-posts-blog-page-3 .post {
-    background-color: #FFF;
-    margin: 10px;
+    background-color: $color2;
+    margin: $main-margin;
     margin-left: 0;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: $main-margin * 2;
+    padding: $main-padding;
     position: relative;
 }
 
@@ -14,7 +14,7 @@
 .all-posts-blog-page-3 .post-meta div.image {
     width: 30%;
     height: auto;
-    margin-right: 10px;
+    margin-right: $main-margin;
     margin-bottom: 0;
 }
 
@@ -22,14 +22,14 @@
 	width: 65%;
 
     p.post-information {
-        color: #afacac;
+        color: $infoColor;
     }
 }
 
 .all-posts-blog-page-3 .post-meta .info h3 {
     margin: 0;
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-bottom: $main-margin;
 }
 
 .all-posts-blog-page-3 .post-meta .info p {

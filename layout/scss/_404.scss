@@ -1,6 +1,6 @@
 .container-404-page {
-    background-color: #FFF;
-    margin: 10px;
+    background-color: $color2;
+    margin: $main-margin;
     margin-left: 0;
     margin-right: 0;
     display: flex;
@@ -12,5 +12,5 @@
 
 .container-404-page i {
     font-size: 200px;
-    color: #fc636b;
+    color: $color7;
 }

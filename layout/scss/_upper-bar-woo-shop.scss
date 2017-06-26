@@ -1,36 +1,35 @@
 .upper-bar-woo-shop {
     overflow: hidden;
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
     margin-right: 0;
 
 	p.woocommerce-result-count {
 	    margin: 0;
 	    margin-bottom: 0px !important;
-	    padding: 10px;
-	    background-color: #ffffff;
-        color: #807c7c;
+	    padding: $main-padding;
+	    background-color: $color2;
+        color: $infoColor;
 	    width: 100%;
-	    margin-left: -10px;
-        border-left: 2px solid #6a67ce;
+	    margin-left: -$main-margin;
 	}
 
 	p.path-shop {
 	    margin: 0;
 	    margin-bottom: 0px !important;
-	    padding: 10px;
-	    background-color: #ffffff;
-	    color: #8a8787;
+	    padding: $main-padding;
+	    background-color: $color2;
+	    color: $infoColor;
 	    width: 100%;
 
 		i {
-		    color: #ffb96f;
+		    color: $color6;
 		}
 	}
 
 	a:link, a:hover, a:visited {
 	    text-decoration: none;
-	    color: #3a3939;
+	    color: $color8;
 	}
 
 	form.woocommerce-ordering {
@@ -41,8 +40,8 @@
 	
 	form.woocommerce-ordering select {
 	    width: 100%;
-	    padding: 10px;
-	    margin-left: 10px;
+	    padding: $main-padding;
+	    margin-left: $main-margin;
 	}	
 }
 

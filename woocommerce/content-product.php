@@ -65,17 +65,7 @@
 		                </fieldset><!-- End Section Rating -->
 
 					</span>
-					<!--================================================
-					=            Add To Cart Button Section            =
-					=================================================-->
-					
-					<?php 
-					if( woo_in_cart( $product->id ) ) {
-					  //echo '<h1>ADDED TO CART</h1>';
-					}
-					 ?>
 
-					<!--====  End of Add To Cart Button Section  ====-->
 					<span class="price">
 						<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
 
@@ -103,19 +93,52 @@
 					<!-- =======  FOLLOW  ======== -->
 					
 					<!-- Check If This Item In Current List -->
-					<?php if (in_array($product->get_id(), $_SESSION['follow'])) { ?>
+					<?php if(isset($_SESSION['follow'])) { $array_follow = $_SESSION['follow']; } else { $array_follow = array(); } ?>
+					<?php if (in_array($product->get_id(), $array_follow)) { ?>
 						<!-- If True Echo ... -->
 						<div class="add-to-follow-container-false">
-							<h3><a id="unfollow" href="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="unfollow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart6"></i></a></h3>
+							<h3><a id="unfollow" href="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="unfollow_archive" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart6"></i></a></h3>
 						</div>
 
 					<?php } else { ?>
 						<!-- If False Echo ... -->
 						<div class="add-to-follow-container-true">
-							<h3><a id="follow" href="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="follow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart5"></i></a></h3>
+							<h3><a id="follow" href="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="follow_archive" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart5"></i></a></h3>
 						</div>
 
-					<?php } ?>
+						<?php } ?>
+
+				<!--=============================================
+				=             Button Like And Unlike            =
+				==============================================-->
+
+				<?php //$countItems = get_post_meta( $product->get_id(), 'likes', true ); echo '<pre>'; print_r($countItems); echo '</pre>'; ?>
+
+				<?php if (in_array($product->get_id(), $_SESSION['likes'])) { ?>
+
+				<div class="like-container">
+					<button class="btn btn-info btn-xs" type="button">
+						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
+							<i id="like_icon" class="icon-check"></i>
+						</a>
+						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					</button>
+				</div>
+
+				<?php } else { ?>
+
+				<div class="like-container">
+					<button class="btn btn-info btn-xs" type="button">
+						<a id="like" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
+							<i id="like_icon" class="icon-thumbs-up"></i>
+						</a>
+						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					</button>
+				</div>
+
+				<?php } ?>
+
+				<!--====  End of  Button Like And Unlike  ====-->
 				
 				<!--====  End of Section Add To Cart And Follow  ====-->
 				
@@ -123,21 +146,28 @@
 
 					<a href="<?php echo get_the_permalink(); ?>"><h5><?php echo get_the_title(); ?></h5></a>
 					<?php if ( $product->is_on_sale() ) { ?>
-					<span class='discount-number'>This Item Have Discount <div class='numberCircle'><?php $discount = (($product->get_regular_price() - $product->get_sale_price()) * 100) / $product->get_regular_price(); echo floor($discount) . "%"; ?></div></span>
+					<span class='discount-number'><div class='numberCircle'><?php $discount = (($product->get_regular_price() - $product->get_sale_price()) * 100) / $product->get_regular_price(); echo floor($discount) . "%"; ?></div></span>
 					<?php } else { echo ''; } ?>
 
 					<p class="decsription"><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="' . get_the_permalink() . '">Read More</a>'; ?></p>
-					<p class="info-for-the-post text-center"><span class="bold"><i class="icon-bubble"> </i></span><?php echo $product->get_review_count(); ?>
-					 | <span class="bold"><i class="icon-stack"> </i></span> 
-					 <!-- Get Categories Names -->
-					 <?php
-					  $cats = $product->get_category_ids(); 
-					  foreach ($cats as $cat) {
-					  	// Get Names For Each Category
-					  	$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
-					  	echo ' [ ' . $term['name'] . ' ] ';
-					  }
-					  ?> 
-					 | <span class="bold"><i class="icon-tag"> </i></span><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?></p>
+					<p class="info-for-the-post text-center">
+
+						<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> 
+						&nbsp;<i class="icon-bubble"> </i> <?php print_r($shop->post->comment_count); ?>
+						&nbsp;<i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>
+						<!-- <i class="icon-stack"> </i> -->  
+						<!-- Get Categories Names -->
+						<?php
+						/*$cats = $product->get_category_ids(); 
+						foreach ($cats as $cat) {
+
+							$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
+							echo $term['name'] . ',';
+						}*/
+						?> 
+						&nbsp;<i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
+						&nbsp;<i class="icon-tag"> </i><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?>
+
+					</p>
 				</div>
 			</div><!-- End Masonry Grid -->

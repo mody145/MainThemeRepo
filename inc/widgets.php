@@ -3,32 +3,6 @@
 require 'Database.class.php';
 
 /*==================================================
-=                Register Sidebar          		  =
-==================================================*/
-
-function ourWidgetsInit() {
-
-	register_sidebar(array(
-		'name' 			=> 'Right Sidebar',
-		'id' 			=> 'right-sidebar',
-		'description' 	=> 'The Widgets Sidebar Will Be Here At The Right',
-		'class' 		=> 'right-sidebar-class',
-		'before_widget' => '<div class="custom-sidebar-widget">',
-		'after_widget' 	=> "</div>\n",
-		'before_title' 	=> '<h4>',
-		'after_title' 	=> "</h4>\n",
-		));
-
-	register_widget( 'custom_widget_about_us' );
-	register_widget( 'social_media_icon_Widget' );
-	register_widget( 'go_to_shop_widget' );
-	register_widget( 'latest_posts_blog' );
-}
-add_action('widgets_init', 'ourWidgetsInit');
-
-/*==========  End of Register Sidebar  ===========*/
-
-/*==================================================
 =                ( Footer1 ) Sidebar          	  =
 ==================================================*/
 
@@ -95,6 +69,57 @@ add_action('widgets_init', 'ourWidgetsInit_footer3');
 /*==========  End of ( Footer3 ) Sidebar  ===========*/
 
 /*==================================================
+=                Register Sidebar          		  =
+==================================================*/
+
+function ourWidgetsInit() {
+
+	register_sidebar(array(
+		'name' 			=> 'Right Sidebar',
+		'id' 			=> 'right-sidebar',
+		'description' 	=> 'The Widgets Sidebar Will Be Here At The Right',
+		'class' 		=> 'right-sidebar-class',
+		'before_widget' => '<div class="custom-sidebar-widget">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+
+	register_widget( 'custom_widget_about_us' );
+	register_widget( 'social_media_icon_Widget' );
+	register_widget( 'go_to_shop_widget' );
+	register_widget( 'latest_posts_blog' );
+	register_widget( 'custom_categories_wigdet' );
+	register_widget( 'custom_shop_categories_wigdet' );
+}
+add_action('widgets_init', 'ourWidgetsInit');
+
+/*==========  End of Register Sidebar  ===========*/
+
+/*=================================================
+=            Section Shop Sidebar Regi            =
+=================================================*/
+
+function ourWidgetsInit_shop() {
+
+	register_sidebar(array(
+		'name' 			=> 'Shop Sidebar',
+		'id' 			=> 'shop-sidebar',
+		'description' 	=> 'This Widget Will Be Show If Plugin Shop Is Avtive',
+		'class' 		=> 'shop-sidebar-class',
+		'before_widget' => '<div class="custom-sidebar-widget">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+
+	register_widget( 'top_items_in_shop' );
+}
+add_action('widgets_init', 'ourWidgetsInit_shop');
+
+/*=====  End of Section Shop Sidebar Regi  ======*/
+
+/*==================================================
 =                Welcome Widget  	          	   =
 ==================================================*/
 
@@ -115,6 +140,27 @@ function ourWidgetsInit_welcome() {
 
 }
 add_action('widgets_init', 'ourWidgetsInit_welcome');
+
+/*============  End of Welcome Widget  =============*/
+
+/*==================================================
+=                Welcome Widget  	          	   =
+==================================================*/
+
+function ourWidgetsInit_subscribe() {
+
+	register_sidebar(array(
+		'name' 			=> 'Subscribe',
+		'id' 			=> 'subscribe_widget',
+		'description' 	=> 'The Widget Box To Subscribe',
+		'class' 		=> 'subscribe-widget-class',
+		'before_widget' => '<div class="custom-widget-welcome">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+}
+add_action('widgets_init', 'ourWidgetsInit_subscribe');
 
 /*============  End of Welcome Widget  =============*/
 
@@ -143,7 +189,7 @@ class custom_widget_about_us extends WP_Widget {
 		echo $one['after_title']; ?>
 	
 			<div><img src="<?php echo $two['author_box_image']; ?>" /></div>
-			<p><?php echo $two['author_bio']; ?></p>
+			<p><?php echo $two['author_bio']; ?> ... </p>
 
 		<?php echo $one['after_widget'];
 		echo '</div>'; }
@@ -254,7 +300,7 @@ class latest_posts_blog extends WP_Widget {
 					<div class="carousel-caption">
 						<a href="<?php echo get_permalink(); ?>"><h5><?php echo the_title(); ?></h5></a>
 						<p class="decsription"><?php echo $str = substr(get_the_content(), 0, 70) . ' ... <a href="' . get_permalink() . '">Read More</a>'; ?></p>
-						<p class="info-for-the-post"><span class="bold"><i class="icon-user2"> </i> By : </span> <?php echo get_the_author(); ?> | <span class="bold"><i class="icon-bubble"> </i> Commments : </span> <?php echo  get_comments_number(); ?></p>
+						<p class="info-for-the-post"><i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?></p>
 					</div>
 				</div>
 
@@ -532,32 +578,14 @@ class custom_widget_welcome extends WP_Widget {
 			<textarea id="<?php echo $this->get_field_id('welcome_msg'); ?>" name="<?php echo $this->get_field_name('welcome_msg'); ?>" class="widefat" rows="5" /><?php if(isset($two['welcome_msg'])) { echo $two['welcome_msg']; } ?></textarea>
 		</p>
 
-		<?php } }
+	<?php } 
+}
 
 /*=============  End of Create Custom Widget  =============*/
 
 /*=================================================
 =            Widget Top Itemes In Shop            =
 =================================================*/
-
-function ourWidgetsInit_shop() {
-
-	register_sidebar(array(
-		'name' 			=> 'Shop Sidebar',
-		'id' 			=> 'shop-sidebar',
-		'description' 	=> 'This Widget Will Be Show If Plugin Shop Is Avtive',
-		'class' 		=> 'shop-sidebar-class',
-		'before_widget' => '<div class="custom-sidebar-widget">',
-		'after_widget' 	=> "</div>\n",
-		'before_title' 	=> '<h4>',
-		'after_title' 	=> "</h4>\n",
-		));
-
-	register_widget( 'top_items_in_shop' );
-}
-add_action('widgets_init', 'ourWidgetsInit_shop');
-
-
 
 
            	/* --|| Top Items In Shop Widget ||-- */          	 
@@ -698,18 +726,23 @@ class top_items_in_shop extends WP_Widget {
 						<?php } else { echo ''; } ?>
 
 						<p class="decsription"><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="#">Read More</a>'; ?></p>
-						<p class="info-for-the-post text-center"><span class="bold"><i class="icon-bubble"> </i></span><?php print_r($shop->post->comment_count); ?>
-						 | <span class="bold"><i class="icon-stack"> </i></span> 
-						 <!-- Get Categories Names -->
-						 <?php
-						  $cats = $product->get_category_ids(); 
-						  foreach ($cats as $cat) {
+						<p class="info-for-the-post">
+							<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> 
+							&nbsp;<i class="icon-bubble"> </i> <?php print_r($shop->post->comment_count); ?>
+							&nbsp;<i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>
+							<!-- <i class="icon-stack"> </i> -->  
+							<!-- Get Categories Names -->
+							<?php
+							/*$cats = $product->get_category_ids(); 
+							foreach ($cats as $cat) {
 
-						  	$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
-						  	echo ' [ ' . $term['name'] . ' ] ';
-						  }
-						  ?> 
-						 | <span class="bold"><i class="icon-tag"> </i></span><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?></p>
+								$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
+								echo $term['name'] . ',';
+							}*/
+							?> 
+							&nbsp;<i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
+							&nbsp;<i class="icon-tag"> </i><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?>
+						  </p>
 					</div>
 				</div>
 
@@ -740,4 +773,129 @@ class top_items_in_shop extends WP_Widget {
 }
 
 /*=====  End of Widget Top Itemes In Shop  ======*/
+
+/*===============================================
+=            Widget Catigories Blog             =
+===============================================*/
+
+class custom_categories_wigdet extends WP_Widget {
+	
+	public function __construct() {
+		parent::__construct('categories_list', 'List Categories', array(
+				'description' => 'Custom Widget List Of Categories',
+			));
+	}
+
+	/* ---||  Form In Admin Page  ||--- */
+
+	public function form($instace) { ?>
+
+		<p> <!-- Title Field -->
+			<label for="<?php echo $this->get_field_id('categories_title2'); ?>">Title : </label>
+			<input id="<?php echo $this->get_field_id('categories_title2'); ?>" 
+			value="<?php echo $instace['categories_title2'] ?>" 
+			name="<?php echo $this->get_field_name('categories_title2'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+
+	<?php } 
+
+	/* ---||  Template Widget In site  ||--- */
+
+	public function Widget($args, $instace) {
+		
+		echo $args['before_widget']; ?>
+
+		<div class="list_categories">
+
+		<?php
+
+		$links = wp_list_categories( array(
+			'show_count' 			=> true,
+			'style' 				=> 'list',
+			'hide_title_if_empty' 	=> true,
+	        'order'               	=> 'DESC',
+	        'orderby'             	=> 'count',
+	        'echo' 					=> 0,
+	        'separator' 			=> '',
+	        'title_li' 				=> '',
+	        'hierarchical' 			=> false
+			) );
+
+		$links = str_replace('</a> (', '</a> <span class="count">', $links);
+		$links = str_replace(')', '</span>', $links);
+
+		echo $links;
+
+		echo '</div>'; 
+		echo $args['after_widget'];
+	}
+}
+
+/*=====  End of Widget Catigories Blog   ======*/
+
+/*===============================================
+=            Widget Catigories Shop             =
+===============================================*/
+
+class custom_shop_categories_wigdet extends WP_Widget {
+	
+	public function __construct() {
+		parent::__construct('shop_categories_list', 'Shop List Categories', array(
+				'description' => 'Custom Widget List Of Shop Categories',
+			));
+	}
+
+	/* ---||  Form In Admin Page  ||--- */
+
+	public function form($instace) { ?>
+
+		<p> <!-- Title Field -->
+			<label for="<?php echo $this->get_field_id('shop_categories_title2'); ?>">Title : </label>
+			<input id="<?php echo $this->get_field_id('shop_categories_title2'); ?>" 
+			value="<?php echo $instace['shop_categories_title2'] ?>" 
+			name="<?php echo $this->get_field_name('shop_categories_title2'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+
+	<?php } 
+
+	/* ---||  Template Widget In site  ||--- */
+
+	public function Widget($args, $instace) {
+		
+		echo $args['before_widget']; ?>
+
+		<div class="list_categories">
+
+		<?php
+
+		$links = wp_list_categories( array(
+			'show_count' 			=> true,
+			'style' 				=> 'list',
+			'hide_title_if_empty' 	=> true,
+	        'order'               	=> 'DESC',
+	        'orderby'             	=> 'count',
+	        'echo' 					=> 0,
+	        'separator' 			=> '',
+	        'title_li' 				=> '',
+	        'taxonomy' 				=> 'product_cat',
+	        'hierarchical' 			=> false
+			) );
+
+		$links = str_replace('</a> (', '</a> <span class="count">', $links);
+		$links = str_replace(')', '</span>', $links);
+
+		echo $links;
+
+		echo '</div>'; 
+		echo $args['after_widget'];
+	}
+}
+
+/*=====  End of Widget Catigories Shop   ======*/
+
+
 ?>

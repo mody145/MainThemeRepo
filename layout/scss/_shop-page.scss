@@ -1,17 +1,17 @@
 .shop-container {
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
-    margin-top: 10px;
-    margin-right: -10px;
+    margin-top: $main-margin;
+    margin-right: -$main-margin;
 
 	.parent-shop {
 
 
 		.item {
 		    position: relative;
-		    background-color: #FFF;
+		    background-color: $color2;
 		    overflow: hidden;
-		    margin-bottom: 20px;
+		    margin-bottom: $main-margin * 2;
 		    border: 1px solid #DDD;
 		}
 
@@ -19,18 +19,18 @@
 		    position: absolute;
 		    top: 0;
 		    left: 0;
-		    background-color: #FFF;
+		    background-color: $color2;
 		    width: 100%;
 		    height: 100%;
 		    opacity: .7;
-		    z-index: 1;
+		    z-index: 5;
 
 			i {
 			    position: absolute;
 			    top: 35%;
 			    right: 45%;
 			    font-size: 60px;
-			    color: rgb(252, 99, 107);
+			    color: $infoColor;
 			}
 		}
 
@@ -42,53 +42,128 @@
 		    position: absolute;
 		    top: 20px;
 		    right: 20px;
-		    color: rgba(0, 160, 7, 0.56);
+		    color: $color10;
 		    font-size: 50px;
 		}
 
 		.carousel-caption {
 		    bottom: 0;
-		    color: #353535;
-		    position: static;
-		    padding: 10px;
+		    color: $color8;
+		    position: relative;
+		    top: 0 !important;
+		    left: 0 !important;
+		    right: 0 !important;
+		    padding: $main-padding;
 		    text-align: left;
+		    z-index: 3;
+
+			.add-to-cart-container-false {
+			    display: inline-block;
+				position: absolute;
+			    right: 10px;
+			    top: 10px;
+
+			    h3 {
+			    	margin: 0 !important;
+
+					i {
+					    color: $infoColor;
+					}
+			    }
+			}
+
+			.add-to-follow-container-false, 
+			.add-to-follow-container-true {
+			    display: inline-block;
+				position: absolute;
+			    right: 35px;
+			    top: 10px;
+
+
+			    h3 {
+			    	margin: 0 !important;
+			    }
+			}
+
+			.add-to-follow-container-false h3 i {
+				color: $color10;
+			}
+
+			.add-to-follow-container-true h3 i {
+				color: $infoColor;
+			}
 
 			a.add_to_cart_shop_archive {
+
+			}
+
+			.like-container {
+			    display: inline-block;
 			    position: absolute;
-			    top: 15px;
-			    right: 15px;
+			    right: 65px;
+			    top: 13px;
+
+			    button {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					cursor: default;
+			    }
+
+			    #like {
+					font-size: 14px;
+					color: $color2;
+					position: relative;
+					top: -1px;
+					margin-right: 5px;
+			    }
+
+			    #unlike {
+					font-size: 14px;
+					color: $color2;
+					position: relative;
+					top: 1px;
+					margin-right: 5px;
+			    }
 			}
 
 		    span.discount-number {
-		        margin: 0;
+			    margin: 0;
+			    position: absolute;
+			    top: 11px;
+			    right: 118px;
 
 		        .numberCircle {
 		            font: 12px Arial, sans-serif;
 		            width: 2em;
-		            padding: 5px;
+		            padding: 2px;
 		            height: 2em;
-		            background: #67ce87;
+		            background: $color10;
 		            text-align: center;
-		            color: #fff;
+		            color: $color2;
 		            border-radius: 50%;
 		            line-height: 2em;
 		            box-sizing: content-box;
 		            display: inline-block;
 		            margin-right: 4px;
 		            position: relative;
-		            top: -4px;
+		            top: -1px;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				    text-align: center;
 		        }
 		    }
 
 		    .info-for-the-post {
-		        color: #8c8787;
+		        color: $infoColor;
 		        margin: 0;
 		    }
 
 		    .decsription {
-		        border-bottom: 1px solid #CCC;
-		        border-top: 1px solid #CCC;
-		        padding: 5px 0;
+		        border-bottom: 1px solid $color1;
+		        border-top: 1px solid $color1;
+		        padding: $main-padding / 2 0;
 		    }
 		}
 
@@ -115,7 +190,7 @@
 		}
 
 		.carousel-inner {
-		    background-color: #FFF;
+		    background-color: $color2;
 		}
 
 		.carousel-inner img {
@@ -131,7 +206,7 @@
 		    flex-direction: column;
 		    justify-content: center;
 		    border-radius: 11px;
-		    color: #5d5d5d;
+		    color: $infoColor;
 
 		    .likes {
 		        font-size: 17px;
@@ -142,11 +217,11 @@
 		        .numberCircle {
 		            font: 12px Arial, sans-serif;
 		            width: 1em;
-		            padding: 5px;
+		            padding: $main-padding / 2;
 		            height: 1em;
 		            background: rgb(94, 145, 255);
 		            text-align: center;
-		            color: #fff;
+		            color: $color2;
 		            border-radius: 50%;
 		            line-height: 1em;
 		            box-sizing: content-box;
@@ -167,11 +242,11 @@
 		        .numberCircle {
 		            font: 12px Arial, sans-serif;
 		            width: 1em;
-		            padding: 5px;
+		            padding: $main-padding / 2;
 		            height: 1em;
-		            background: #6a67ce;
+		            background: $color5;
 		            text-align: center;
-		            color: #fff;
+		            color: $color2;
 		            border-radius: 50%;
 		            line-height: 1em;
 		            box-sizing: content-box;
@@ -183,16 +258,16 @@
 
 		        .main-price {
 				    background-color: rgba(255, 255, 255, 0.56);
-				    color: #333;
-				    padding: 5px 10px;
+				    color: $color8;
+				    padding: $main-padding / 2 $main-padding;
 				    font-size: 22px;
 		        }
 
 		        .price-without-disc {
 				    text-decoration: line-through;
-				    color: #444;
+				    color: $color8;
 				    text-align: center;
-				    padding: 2px 5px;
+				    padding: 2px $main-padding / 2;
 				    font-size: 15px;
 				    background-color: rgba(255, 255, 255, 0.56);
 				    text-decoration-color: rgba(146, 146, 146, 0.58);
@@ -201,8 +276,8 @@
 				    opacity: 0.7;
 		        }
 		        .discount-number {
-		            color: #eee;
-		            margin-top: 10px;
+		            color: $color1;
+		            margin-top: $main-margin;
 		        }
 		    }
 		}

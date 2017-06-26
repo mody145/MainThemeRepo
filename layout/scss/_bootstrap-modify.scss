@@ -1,7 +1,7 @@
 .dropdown-menu > .active > a,
  .dropdown-menu > .active > a:hover,
   .dropdown-menu > .active > a:focus {
-    color: #fff;
+    color: $color2;
     text-decoration: none;
     background: -webkit-gradient(linear, left top, right top, color-stop(0, #6a67ce), color-stop(0.48, #ffb900));
     outline: 0;
@@ -10,7 +10,7 @@
 .input-group-addon {
     padding: 0px 0px 0 12px;
     font-size: 18px;
-    background-color: #FFF;
+    background-color: $color2;
     border-left: 1px solid #ccc !important;
     border-top: 1px solid #ccc !important;
     border-bottom: 1px solid #ccc !important;
@@ -28,11 +28,11 @@ input.form-control {
 }
 
 .input-group {
-    margin-top: 10px;
+    margin-top: $main-margin;
 }
 
 .btn-info {
-    color: #ffffff !important;
+    color: $color2 !important;
     border-radius: 3px;
     border: 0;
     background-color: #08f;
@@ -41,8 +41,8 @@ input.form-control {
 .btn-primary {
     border-radius: 3px;
     border: 0;
-    color: white !important;
-    background-color: #00a950;
+    color: $color2 !important;
+    background-color: #42b72a;
 }
 
 .carousel-caption {

@@ -36,6 +36,8 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'easying-js', get_template_directory_uri() . '/layout/js/jquery.easing.1.3.js', array('jquery'), '', true );
 	// Masonry
 	wp_enqueue_script( 'Masonry', get_template_directory_uri() . '/layout/js/masonry.pkgd.min.js', array('jquery'), '', true );
+	// For Sticky Sidebar
+	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/layout/js/jquery.sticky-kit.js', array('jquery'), '', true );
 	// Enqueue JQuery
 	wp_enqueue_script( 'jquery' );
 	// Ajax JQuery
@@ -48,6 +50,9 @@ add_action( 'wp_enqueue_scripts', 'dwwp_styles_and_scripts' );
 
 function dwwp_admin_custom_script() {
 	wp_enqueue_media();
+	// Admin Css
+	wp_enqueue_style( 'admin-css', get_template_directory_uri() . '/layout/css/custom-admin.css?' . time() . '' );
+
 	// Admin Js
 	wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/layout/js/custom-admin.js', array('jquery'), '', true );
 	wp_enqueue_script( 'admin-custom-script' );
@@ -839,6 +844,10 @@ function touch_hours_callback() {
 
 /*=====  End of Add Submenu Page To Contact Foem 7  ======*/
 
+/*============================================================
+=            WooCommerce Check if Product In Cart            =
+============================================================*/
+
 function woo_in_cart($product_id) {
     global $woocommerce;
  
@@ -852,6 +861,140 @@ function woo_in_cart($product_id) {
  
     return false;
 }
+
+/*=====  End of WooCommerce Check if Product In Cart  ======*/
+
+/*=================================================================
+=            WooCommerce Add Meta ( Like ) To Database            =
+=================================================================*/
+
+// Function To Check If Product Has Meta ( Likes ) Or Nor
+// If Not This Function Will Echo ( 0 )
+function check_if_has_meta_likes($id) {
+
+	$newLikesNum = '';
+
+	if ( metadata_exists( 'post', $id, 'likes' ) ) {
+
+		$newLikesNum = get_post_meta( $id, 'likes', true ); 
+
+	} else {
+
+		$newLikesNum = '0'; 
+	}
+	return $newLikesNum;
+}
+
+// Function To Increament++ Number ( Likes )
+// If This Product Has Not Meta ( Likes ) Will Create Meta And Add Value 1
+function icreament_meta_likes($id) {
+
+	if ( metadata_exists( 'post', $id, 'likes' ) ) {
+
+		$likesNum = get_post_meta( $id, 'likes', true );
+
+		update_post_meta( $id, 'likes', $likesNum+1 );
+		$_SESSION['likes'][] = $id;
+
+		$newList = array_unique($_SESSION['likes']);
+
+		$_SESSION['likes'] = $newList;
+
+		$newLikesNum = get_post_meta( $id, 'likes', true );
+	} else {
+
+		add_post_meta( $id, 'likes', 1 );
+
+		$newLikesNum = get_post_meta( $id, 'likes', true );
+		$_SESSION['likes'][] = $id;
+	}
+	return $newLikesNum;
+}
+
+// Function To increase-- Number ( Likes )
+// If This Product Has Not Meta ( Likes ) Will Create Meta And Add Value 1
+function increase_meta_likes($id) {
+
+	if ( metadata_exists( 'post', $id, 'likes' ) && get_post_meta( $id, 'likes', true ) !== 0 ) {
+
+		$likesNum = get_post_meta( $id, 'likes', true );
+
+		if ($likesNum == 0) { $newLikesNum == 0; } else {
+
+			update_post_meta( $id, 'likes', $likesNum-1 );
+
+			$items_unique = array_unique($_SESSION['likes']);
+
+			$_SESSION['likes'] = $items_unique;
+
+			$newItems = $_SESSION['likes'];
+
+			$key = array_search($id, $newItems);
+
+			unset($newItems[$key]);
+
+			$_SESSION['likes'] = $newItems;
+		}
+
+		$newLikesNum = get_post_meta( $id, 'likes', true );	
+
+	} else {
+
+		add_post_meta( $id, 'likes', 0 );
+
+		$newLikesNum = get_post_meta( $id, 'likes', true );	
+	}
+
+
+	return $newLikesNum;
+}
+
+/*=====  End of WooCommerce Add Meta ( Like ) To Database  ======*/
+
+/*===============================================================
+=            Icreament Views For Posts - Increament             =
+===============================================================*/
+
+	// Icreament Post Views
+	function increament_post_views($id) {
+		if (metadata_exists( 'post', $id, 'views' )) {
+			$Last_views = get_post_meta( $id, 'views', true );
+			update_post_meta( $id, 'views', $Last_views+1 );
+			$views = get_post_meta( $id, 'views', true );
+			$_SESSION['views'][] = $id;
+		} else {
+			add_post_meta( $id, 'views', 1 );
+			$views = get_post_meta( $id, 'views', true );
+			$_SESSION['views'][] = $id;
+		}
+		return $views;
+	}
+	// Get Views For Post
+	function get_views_for_post($id) {
+		if (metadata_exists( 'post', $id, 'views' )) {
+			$views = get_post_meta( $id, 'views', true );
+		} else {
+			$views = 0;
+		}
+		return $views;
+	}
+
+/*=====  End of Icreament Views For Posts - Increament   ======*/
+
+/*============================================================
+=            Get Count Of Items Follow If Exists             =
+============================================================*/
+
+function get_count_session_items_if_exists( $session ) {
+	if ( isset( $session ) ) {
+		$count = count( $session );
+	} else {
+		$count = 0;
+	}
+	return $count;
+}
+
+/*=====  End of Get Count Of Items Follow If Exists   ======*/
 
 
  ?>

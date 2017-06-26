@@ -5,10 +5,10 @@
 h2.comments-title {
     font-size: 17px;
     font-weight: bold;
-    background-color: #FFF;
-    margin: 20px 0;
-    margin-right: 10px;
-    padding: 10px;
+    background-color: $color2;
+    margin: $main-margin*2 0;
+    margin-right: $main-margin;
+    padding: $main-padding;
 }
 
 @media (max-width: 767px){
@@ -18,9 +18,9 @@ h2.comments-title {
 }
 
 ol.comment-list {
-    background-color: #FFF;
-    padding: 10px;
-    margin: 10px;
+    background-color: $color2;
+    padding: $main-padding;
+    margin: $main-margin;
     margin-left: 0;
     position: relative;
     list-style: none;
@@ -34,7 +34,7 @@ ol.comment-list {
 
 ol.children {
     list-style: none;
-    background-color: #EEE;
+    background-color: $color1;
 }
 
 @media (max-width: 767px){
@@ -45,7 +45,7 @@ ol.children {
 
 .comment-body {
     position: relative;
-    padding-top: 10px;
+    padding-top: $main-padding;
 }
 
 .comment-author.vcard img {
@@ -66,23 +66,23 @@ span.says, .fn {
 }
 
 ol.comment-list p {
-    padding: 10px;
+    padding: $main-padding;
     margin-bottom: 0;
     font-style: italic;
 }
 
 ol.comment-list .reply {
-    margin-bottom: 15px;
+    margin-bottom: $main-margin + 5;
 }
 
 h3.comment-reply-title {
-    margin: 20px 0;
-    margin-right: 10px;
-    padding: 10px;
+    margin: $main-margin*2 0;
+    margin-right: $main-margin;
+    padding: $main-padding;
     font-size: 19px;
     font-weight: bold;
     text-align: center;
-    background-color: #FFF;
+    background-color: $color2;
 }
 
 @media (max-width: 767px){
@@ -98,16 +98,16 @@ h3.comment-reply-title {
 ===========================================*/
 
 .comment-form {
-    margin: 10px;
+    margin: $main-margin;
     overflow: hidden;
-    padding: 10px;
+    padding: $main-padding;
     margin-left: 0;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FFF;
+    background-color: $color2;
 }
 
 @media (max-width: 767px){
@@ -118,8 +118,8 @@ h3.comment-reply-title {
 
 .comment-form textarea {
     width: 35%;
-    padding: 10px;
-    margin: 10px;
+    padding: $main-padding;
+    margin: $main-margin;
     border: 1px solid #DDD;
 }
 
@@ -130,9 +130,9 @@ h3.comment-reply-title {
 }
 
 p.logged-in-as {
-    background-color: #FFF;
+    background-color: $color2;
     padding: 5px;
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
     display:none;
 }
@@ -140,7 +140,7 @@ p.logged-in-as {
 .comment-form input {
     width: 35%;
     padding: 7px;
-    margin: 10px;
+    margin: $main-margin;
     border: 1px solid #DDD;
 }
 

@@ -6,6 +6,15 @@
 	$color5: #6a67ce;
 	$color6: #ffb900;
 	$color7: #fc636b;
+	$color8: #333;
+	$color9: #42b72a;
+	$color10: #0088ff;
+
+	$infoColor: #777;
+	$paragraphColor: #000;
+
+	$green: #42b72a;
+	$blue: #08f;
 
 	$main-margin: 10px;
 	$main-padding: 10px;
@@ -23,6 +32,13 @@ body {
 
 .bold {
     font-weight: bold;
+}
+
+.align-v {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 

@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+
 <!-- Start Sidebar Shop -->
 <div class='col-md-3 hidden-xs nopadding pull-right'>
 	<!-- Sidebar Shop -->
@@ -192,6 +193,38 @@ get_header(); ?>
 				
 				<!--====  End of Add To White List Button   ====-->
 
+				<!--=============================================
+				=             Button Like And Unlike            =
+				==============================================-->
+
+				<?php //$countItems = get_post_meta( $product->get_id(), 'likes', true ); echo '<pre>'; print_r($countItems); echo '</pre>'; ?>
+
+				<?php if (in_array($product->get_id(), $_SESSION['likes'])) { ?>
+
+				<div class="like-container">
+					<button class="btn btn-info btn-sm" type="button">
+						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
+							<i id="like_icon" class="icon-check"></i>
+						</a>
+						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					</button>
+				</div>
+
+				<?php } else { ?>
+
+				<div class="like-container">
+					<button class="btn btn-info btn-sm" type="button">
+						<a id="like" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
+							<i id="like_icon" class="icon-thumbs-up"></i>
+						</a>
+						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					</button>
+				</div>
+
+				<?php } ?>
+
+				<!--====  End of  Button Like And Unlike  ====-->
+				
 				<!--==============================================
 				=            Section Get Meta Product            =
 				===============================================-->

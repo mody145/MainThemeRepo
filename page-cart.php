@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php get_header(); ?>
 
 <?php

@@ -1,10 +1,13 @@
 <?php get_header(); ?>
+
 <!--=====================================
 =            Sidebar Section            =
 ======================================-->
 
-	<div class='col-md-3 nopadding pull-right'>
+	<div class='col-md-3 hidden-xs hidden-sm nopadding pull-right'>
+
 		<?php dynamic_sidebar( 'right-sidebar' ); ?>
+
 	</div>
 	<div class="clearfix hidden-md hidden-lg"></div>
 
@@ -81,6 +84,80 @@
 		</div>
 	</div><!-- End Section Features -->
 
+	<!-- Start Grid Images -->
+	<div class="col-md-12 nopadding">
+		<div class="container-grid-images">
+
+			<div class="buttons-section">
+				Top Four
+			</div>
+
+			<div class="grid-images">
+
+				<div class="col-md-6 col-sm-12 nopadding">
+					<div class="image-box align-v">
+						<img src="http://placehold.it/500x700/700">
+					</div>
+					<div class="info">
+						<h3>test</h3>
+						<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+						<span>
+							<i class="icon-time2"> </i> 25 June 2015, 
+							<i class="icon-comment-o"> </i> 5, 
+							<i class="icon-like"> </i> 12, 
+						</span>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-4 nopadding">
+					<div class="image-box align-v">
+						<img src="http://placehold.it/500x700/700">
+					</div>
+					<div class="info">
+						<h3>test</h3>
+						<p>is simply dummy text of the printing and typesetting industry. Lorem </p>
+						<span>
+							<i class="icon-time2"> </i> 25 June 2015, 
+							<i class="icon-comment-o"> </i> 5, 
+							<i class="icon-like"> </i> 12, 
+						</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 nopadding">
+					<div class="image-box align-v">
+						<img src="http://placehold.it/500x700/700">
+					</div>
+					<div class="info">
+						<h3>test</h3>
+						<span>
+							<i class="icon-time2"> </i> 25 June 2015, 
+							<i class="icon-comment-o"> </i> 5, 
+							<i class="icon-like"> </i> 12, 
+						</span>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-4 nopadding">
+					<div class="image-box align-v">
+						<img src="http://placehold.it/500x700/700">
+					</div>
+					<div class="info">
+						<h3>test</h3>
+						<span>
+							<i class="icon-time2"> </i> 25 June 2015, 
+							<i class="icon-comment-o"> </i> 5, 
+							<i class="icon-like"> </i> 12, 
+						</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div><!-- Start Grid Images -->
+
+	<div class="clearfix"></div>
+
+
 	<!-- Section Testimonials -->
 	<div class="testimonials hidden-xs">
 		<div class="container-testimonials">
@@ -142,10 +219,9 @@
 
 	<!-- Section Services -->
 	<div class="services">
-		<div class="col-md-6"></div>
-		<div class="col-md-6"></div>
-		<div class="col-md-6"></div>
-		<div class="col-md-6"></div>
+		<div class="services-container">
+			Test
+		</div>
 	</div><!-- Section Services -->
 
 	<!-- Start Section Latest Posts -->
@@ -157,13 +233,13 @@
         
 		<div class="col-md-6 col-sm-6">
 			<div class="post-image-home">
-				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+				<img src="http://placehold.it/350/333<?php //echo get_the_post_thumbnail_url(); ?>">
 			</div>
 			<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
-			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a href="' . get_permalink() . '">Read More</a>'; ?></p>
+			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="btn btn-info btn-sm" href="' . get_permalink() . '">Read More</a>'; ?></p>
 			<p class="info_post">
-				<span><?php echo '<spna class="bold"><i class="icon-user2"> </i> BY : </span>' . get_the_author(); ?></span>
-				<span><?php echo '<spna class="bold"> <i class="icon-clock2"> </i> IN : </span>' .  get_the_date(); ?></span>
+				<i class="icon-user2"> </i><?php echo get_the_author(); ?>
+				<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
 			</p>
 		</div>
 

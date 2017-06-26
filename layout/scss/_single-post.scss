@@ -1,6 +1,6 @@
 .content-post {
-    background-color: #FFF;
-    margin: 10px;
+    background-color: $color2;
+    margin: $main-margin;
     margin-left: 0;
 }
 
@@ -11,7 +11,27 @@
 }
 
 .post-meta-container {
-    padding: 10px;
+    padding: $main-padding;
+    position: relative;
+
+    .like-container {
+        position: absolute;
+        top: 33px;
+        right: 25px;
+
+        i {
+            color: #FFF !important;
+            font-size: 20px;
+            padding: 0 10px;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    p.info_post {
+        color: $infoColor;
+    }
+
 }
 
 ol.comment-list li {
@@ -22,4 +42,47 @@ ol.comment-list .parent {
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
+}
+
+.subscribe-container {
+    background-color: $color6;
+    padding: $main-padding;
+    margin: $main-margin;
+    margin-left: 0;
+    margin-top: $main-margin * 2;
+
+    form.es_shortcode_form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: 100px;
+
+        .es_textbox {
+            padding-bottom: 0;
+        }
+
+        .es_button {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        label {
+            display: none;
+        }
+
+        #es_txt_name_pg {
+            display: none;
+        }
+
+        input#es_txt_email_pg {
+            padding: $main-padding / 2;
+            width: 385px;
+        }
+
+        input#es_txt_button_pg {
+            padding: $main-padding / 2;
+        }
+    }
 }

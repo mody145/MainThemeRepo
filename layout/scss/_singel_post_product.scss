@@ -8,7 +8,7 @@ section.related.products {
 
 	.meta_product {
 	    margin: 10px;
-	    background-color: #FFF;
+	    background-color: $color2;
 	    padding: 10px;
 	    margin-top: 20px;
 	    margin-right: 0;
@@ -26,13 +26,13 @@ section.related.products {
 		    right: 25px;
 
 			i {
-			    font-size: 60px;
-			    color: #47bb6f;
+			    font-size: 45px;
+			    color: $infoColor;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: #1aafd0;
+			    color: $color4;
 			}
 		}
 
@@ -42,45 +42,91 @@ section.related.products {
 		    right: 25px;
 
 			i {
-			    font-size: 60px;
-			    color: #fc636b;
+			    font-size: 45px;
+			    color: $color10;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: #1aafd0;
+			    color: $color4;
 			}
 		}
 
 		.add-to-follow-container-true {
 		    position: absolute;
 		    top: 10px;
-		    right: 102px;
+		    right: 85px;
 
 			i {
-			    font-size: 60px;
-			    color: #47bb6f;
+			    font-size: 45px;
+			    color: $infoColor;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: #1aafd0;
+			    color: $color4;
 			}
 		}
 
 		.add-to-follow-container-false {
 		    position: absolute;
 		    top: 10px;
-		    right: 102px;
+		    right: 85px;
 
 			i {
-			    font-size: 60px;
-			    color: #fc636b;
+			    font-size: 45px;
+			    color: $color10;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: #1aafd0;
+			    color: $color4;
+			}
+		}
+
+		.like-container {
+		    display: inline-block;
+		    position: absolute;
+		    right: 150px;
+		    top: 34px;
+
+			button {
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    text-align: center;
+			    cursor: default;
+			}
+
+		    #like {
+			    font-size: 20px;
+			    color: $color2;
+			    margin-right: 5px;
+			    position: relative;
+			    top: -2px;
+		    }
+
+		    #unlike {
+			    font-size: 20px;
+			    color: $color2;
+			    margin-right: 5px;
+			    position: relative;
+			    top: -2px;
+		    }
+		}
+
+		.count_of_views {
+		    position: absolute;
+		    top: 26px;
+		    right: 246px;
+
+			.number {
+			    font-size: 17px;
+			}
+
+			i {
+			    font-size: 45px;
+			    color: $color3;
 			}
 		}
 
@@ -97,19 +143,19 @@ section.related.products {
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: 10px;
-	    background-color: #ffffff;
-	    color: #9e9e9e;
+	    background-color: $color2;
+	    color: $color1;
 	    width: 100%;
 
 		a:link, 
 		a:hover, 
 		a:visited {
 		    text-decoration: none;
-		    color: #545151;
+		    color: $infoColor;
 		}
 
 		i {
-		    color: #ffb900;
+		    color: $color6;
 		}
 	}
 
@@ -127,7 +173,7 @@ section.related.products {
 	}
 
 	.images_gallery {
-	    background-color: #fff;
+	    background-color: $color2;
 	    margin: 10px;
 	    margin-right: 0;
 	    display: flex;
@@ -156,7 +202,7 @@ section.related.products {
 	}
 
 	.woocommerce-Reviews {
-		background-color: #FFF;
+		background-color: $color2;
 	    padding: 10px;
 	    margin: 10px;
 	    margin-right: 0;
@@ -168,7 +214,7 @@ section.related.products {
 	}
 
 	.comment.byuser {
-	    background-color: #fff;
+	    background-color: $color2;
 	    list-style: none;
 	    padding: 10px;
 	    margin: 10px;
@@ -189,7 +235,7 @@ section.related.products {
 
 				p.meta {
 				    margin-top: 10px;
-				    color: #9c9c9c;
+				    color: $infoColor;
 				}	
 	    	}
 	    }

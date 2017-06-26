@@ -3,8 +3,8 @@
 ==========================================*/
 
 .page-about-us-container {
-    background-color: #FFF;
-    margin: 10px 0;
+    background-color: $color2;
+    margin: $main-margin 0;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@
     align-items: center;
     height: 100%;
     text-align: center;
-    padding: 20px;
+    padding: $main-padding;
 }
 
 /*=====  End of How Are We Section  ======*/
@@ -44,7 +44,7 @@
 .team-box {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    margin: $main-margin*2 0;
     flex-wrap: wrap;
 }
 
@@ -53,7 +53,7 @@
     height: 200px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: $main-margin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,20 +88,20 @@
     font-weight: bold;
     font-size: 16px;
     background: rgba(255, 255, 255, 0.92);
-    color: #333;
+    color: $color8;
     padding: 5px 10px;
 }
 
 span.social-media-team a {
-    color: #fff;
+    color: $color2;
 }
 
 span.social-media-team {
     position: absolute;
     top: 65px;
     left: 0;
-    padding: 0px 10px;
-    color: #333;
+    padding: 0px $main-padding;
+    color: $color8;
     background-color: rgba(255, 255, 255, 0.92);
     font-size: 23px;
 }
@@ -110,9 +110,9 @@ span.social-media-team {
     position: absolute;
     top: 40px;
     left: 0px;
-    padding: 2px 10px;
+    padding: 2px $main-padding;
     background-color: rgba(255, 255, 255, 0.92);
-    color: #333;
+    color: $color8;
     font-size: 13px;
 }
 
@@ -131,22 +131,22 @@ span.social-media-team {
 }
 
 .our-team-container {
-    background-color: #FFF;
-    margin-top: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
+    background-color: $color2;
+    margin-top: $main-margin;
+    padding: $main-padding;
+    margin-bottom: $main-margin;
 }
 
 .our-team-container h3 {
     margin-top: 0;
-    padding: 20px
+    padding: $main-padding*2;
 }
 
 .our-experiance-container {
-    background-color: #FFF;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    background-color: $color2;
+    padding: $main-padding*2;
+    margin-top: $main-margin*2;
+    margin-bottom: $main-margin;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -3,7 +3,7 @@
 }
 
 .su-spoiler-title {
-    background-color: #FFF;
+    background-color: $color2;
 }
 
 .su-spoiler-title {
@@ -11,10 +11,10 @@
 }
 
 .how-are-we {
-    background-color: #FFF;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    background-color: $color2;
+    padding: $main-padding;
+    margin-top: $main-margin;
+    margin-bottom: $main-margin * 2;
 }
 
 @media (max-width: 767px){

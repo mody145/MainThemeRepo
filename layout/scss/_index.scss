@@ -1,5 +1,5 @@
 .welcome {
-    background-color: #FFF;
+    background-color: $color2;
     margin: $main-margin;
     margin-left: 0;
     padding: $main-padding;
@@ -17,7 +17,7 @@
 }
 
 .welcome p {
-    padding: 5px;
+    padding: $main-padding / 2;
     margin-bottom: 0;
 
 }
@@ -26,7 +26,7 @@
     margin: 0;
     position: relative;
     bottom: 5px;
-    padding: 5px;
+    padding: $main-padding / 2;
     width: 43%;
 
 }
@@ -34,5 +34,124 @@
 @media (min-width: 768px) and (max-width: 991px){
     .welcome h3 {
         width: 55%
+    }
+}
+
+.container-grid-images {
+    
+    .buttons-section {
+        background-color: $color2;
+        margin: $main-margin;
+        margin-left: 0;
+        padding: $main-padding;
+        margin-bottom: -$main-margin;
+    }
+
+    .grid-images {
+        margin: $main-margin;
+        margin-left: 0;
+
+         > div {
+            overflow: hidden;
+        }
+
+        > div:first-of-type {
+            height: 500px;
+
+            .info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: $main-margin + 5;
+
+                h3 {
+                    color: $color2;
+                    font-size: 40px;
+                }
+
+                p {
+                   color: $color2; 
+                }
+
+                span {
+                    color: $color2;
+                }
+            }
+        }
+
+        > div:nth-of-type(2) {
+            height: 300px;
+
+            .info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: $main-margin + 5;
+
+                h3 {
+                    color: $color2;
+                    font-size: 40px;
+                }
+
+                p {
+                   color: $color2; 
+                }
+
+                span {
+                    color: $color2;
+                }
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            > div:nth-of-type(2) {
+                height: 200px;
+            }
+        }
+
+        > div:nth-of-type(3),
+        > div:nth-of-type(4) {
+            height: 200px;
+
+            .info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: $main-margin + 5;
+
+                h3 {
+                    color: $color2;
+                    font-size: 40px;
+                }
+
+                p {
+                   color: $color2; 
+                }
+
+                span {
+                    color: $color2;
+                }
+            }
+        }
+
+        .image-box {
+            border: 1px solid rgba(255, 255, 255, 0);
+            width: 100%;
+            height: 100% !important;
+            overflow: hidden;
+
+            img {
+                width: 100%
+            }
+        }
+
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container-grid-images {
+        margin-right: -$main-margin;
+        margin-top: $main-margin * 2;
+        margin-bottom: -$main-margin;
     }
 }

@@ -1,14 +1,14 @@
 .container-porfolio {
-    margin: 10px;
+    margin: $main-margin;
     margin-left: 0;
-    background-color: #FFF;
+    background-color: $color2;
     margin-right: 0;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
 	.container-porfolio {
-		margin-bottom: 20px;
-	    padding-bottom: 10px;
+		margin-bottom: $main-margin * 2;
+	    padding-bottom: $main-padding;
 	}
 }
 
@@ -17,7 +17,7 @@
 }
 
 .right-block {
-    padding: 10px;
+    padding: $main-padding;
 }
 
 #p-main-slider_2 .slider-content-wrapper .image-block_2 {

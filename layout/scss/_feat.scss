@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #FFF;
+    color: $color2;
 }
 
 .feat .box-feat i {
@@ -47,7 +47,7 @@
 @media (max-width: 767px){
     .feat .box-feat {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: $main-margin * 2;
     }
 }
 
