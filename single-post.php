@@ -71,7 +71,37 @@
 		if ( comments_open() || get_comments_number() ) :
 			comments_template();
 		endif;
-	 ?>
+	?>
+
+	<!--===========================================
+	=            Section Related Posts            =
+	============================================-->
+
+	<div class="latest-posts-blog">	
+	<?php
+
+	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID) ) );
+	if( $related ) foreach( $related as $post ) {
+	setup_postdata($post); ?>
+		
+			<div class="col-md-6 col-sm-6">
+				<div class="post-image-home">
+					<img src="http://placehold.it/350/333<?php //echo get_the_post_thumbnail_url(); ?>">
+				</div>
+				<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
+				<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="btn btn-info btn-sm" href="' . get_permalink() . '">Read More</a>'; ?></p>
+				<p class="info_post">
+					<i class="icon-user2"> </i><?php echo get_the_author(); ?>
+					<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
+				</p>
+			</div>
+
+	<?php }
+	wp_reset_postdata(); ?>
+	</div>
+	
+	<!--====  End of Section Related Posts  ====-->
+	
 	 
 </div>
 

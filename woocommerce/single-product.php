@@ -324,6 +324,7 @@ foreach ($terms as $term) {
 
 				$r_products = new WP_Query( array(
 					'post_type' 		=> 'product',
+					'post__not_in' 		=> array($id),
 					'posts_per_page' 	=> 3,
 					'stock' 			=> 1,
 				    'tax_query' => array(
