@@ -185,7 +185,7 @@ get_header(); ?>
 				================================================-->
 
 				<!-- Check If This Item In Current List -->
-				<?php if (in_array($product->get_id(), $_SESSION['follow'])) { ?>
+				<?php if (isset($_SESSION['follow'])) { $arrayFollow = $_SESSION['follow']; } else { $arrayFollow = array(); } if (in_array($product->get_id(), $arrayFollow)) { ?>
 					<!-- If True Echo ... -->
 					<div class="add-to-follow-container-false">
 						<h3><a id="unfollow" href="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="unfollow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart6"></i></a></h3>
@@ -205,7 +205,7 @@ get_header(); ?>
 				=             Button Like And Unlike            =
 				==============================================-->
 
-				<?php if (in_array($product->get_id(), $_SESSION['likes'])) { ?>
+				<?php if (isset($_SESSION['likes'])) { $arrayLikes = $_SESSION['likes']; } else { $arrayLikes = array(); } if (in_array($product->get_id(), $arrayLikes)) { ?>
 
 				<div class="like-container">
 					<button class="btn btn-info btn-sm" type="button">

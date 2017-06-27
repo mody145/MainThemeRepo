@@ -114,7 +114,7 @@
 
 				<?php //$countItems = get_post_meta( $product->get_id(), 'likes', true ); echo '<pre>'; print_r($countItems); echo '</pre>'; ?>
 
-				<?php if (in_array($product->get_id(), $_SESSION['likes'])) { ?>
+				<?php if (isset($_SESSION['likes'])) { $arrayLikes = $_SESSION['likes']; } else { $arrayLikes = array(); } if (in_array($product->get_id(), $arrayLikes)) { ?>
 
 				<div class="like-container">
 					<button class="btn btn-info btn-xs" type="button">

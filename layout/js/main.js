@@ -13,22 +13,6 @@ jQuery(document).ready(function($) {
 		columnWidth: ($('.parent').width() / 2)
 	});
 
-
-	// Masonry Item Width
-	$('.grid-item-shop').width(($('.parent-shop').width() / 3) - 20);
-
-	// Run Masonry For Shop
-	$('.parent-shop').masonry({
-		// options
-		itemSelector: '.grid-item-shop',
-		columnWidth: ($('.parent-shop').width() / 3)
-	});
-
-	$(window).resize(function() {
-		
-	});
-
-
 	// Run Skitter Slider
 	$(function() {
 		$('.skitter-large').skitter({

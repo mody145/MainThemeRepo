@@ -13,7 +13,7 @@
 				=             Button Like And Unlike            =
 				==============================================-->
 
-				<?php if (in_array(get_the_id(), $_SESSION['likes'])) { ?>
+				<?php if (isset($_SESSION['likes'])) { $arrayLikes = $_SESSION['likes']; } else { $arrayLikes = array(); } if (in_array(get_the_id(), $arrayLikes)) { ?>
 
 				<div class="like-container">
 					<button class="btn btn-info" type="button">

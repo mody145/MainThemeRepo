@@ -1109,5 +1109,99 @@ section.related.products {
 
 /*=====  End of Section Related Products  ======*/
 /*=====  End of Section Singel Product Woo  ======*/
+/*====================================================
+=            Section Cart Page Woocommrce            =
+====================================================*/
+.parent-cart-page {
+  background-color: #fff;
+  margin: 10px 0; }
+  .parent-cart-page form.woocommerce-cart-form {
+    padding: 20px; }
+    .parent-cart-page form.woocommerce-cart-form table {
+      padding: 10px;
+      width: 100%; }
+      .parent-cart-page form.woocommerce-cart-form table thead {
+        padding: 10px; }
+        .parent-cart-page form.woocommerce-cart-form table thead tr th {
+          background-color: #fc636b;
+          padding: 5px;
+          color: #ffffff; }
+      .parent-cart-page form.woocommerce-cart-form table tbody {
+        padding: 10px; }
+        .parent-cart-page form.woocommerce-cart-form table tbody tr td {
+          background-color: #eaeaea;
+          border: 1px solid #dadada;
+          padding: 5px; }
+          .parent-cart-page form.woocommerce-cart-form table tbody tr td div.quantity {
+            text-align: center; }
+            .parent-cart-page form.woocommerce-cart-form table tbody tr td div.quantity input {
+              padding: 5px; }
+          .parent-cart-page form.woocommerce-cart-form table tbody tr td div.coupon {
+            padding: 5px; }
+            .parent-cart-page form.woocommerce-cart-form table tbody tr td div.coupon input#coupon_code {
+              padding: 5px;
+              width: 50%; }
+            .parent-cart-page form.woocommerce-cart-form table tbody tr td div.coupon input[name="apply_coupon"] {
+              padding: 5px;
+              width: 45%; }
+          .parent-cart-page form.woocommerce-cart-form table tbody tr td input[name="update_cart"] {
+            padding: 10px;
+            width: 15%; }
+        .parent-cart-page form.woocommerce-cart-form table tbody tr td.product-thumbnail {
+          text-align: center; }
+        .parent-cart-page form.woocommerce-cart-form table tbody tr td.product-remove {
+          text-align: center; }
+
+.cart-collaterals {
+  margin: 10px 0;
+  margin-top: 20px;
+  background-color: #ffffff; }
+  .cart-collaterals .cart_totals {
+    padding: 10px; }
+
+/*=====  End of Section Cart Page Woocommrce  ======*/
+/*==================================================
+=            Section Checkout Page Woo             =
+==================================================*/
+.checkout-container {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff; }
+  .checkout-container input {
+    padding: 10px;
+    border: 1px solid #c7c7c7; }
+
+/*=====  End of Section Checkout Page Woo   ======*/
+/*=================================================
+=            Section Profile Page Woo             =
+=================================================*/
+.profile-container {
+  background-color: #fff;
+  margin: 10px 0; }
+  .profile-container .woocommerce nav.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    margin: 0px;
+    padding: 15px; }
+    .profile-container .woocommerce nav.woocommerce-MyAccount-navigation ul li {
+      background-color: #eaeaea;
+      margin: 5px;
+      padding: 5px; }
+  .profile-container form.woocomerce-form.woocommerce-form-login.login {
+    border: none;
+    border-radius: 0;
+    width: 500px;
+    margin: auto;
+    text-align: center; }
+    .profile-container form.woocomerce-form.woocommerce-form-login.login input {
+      padding: 5px;
+      border: 1px solid #DDD; }
+  .profile-container .woocommerce-MyAccount-content {
+    padding: 10px 15px;
+    margin: 10px; }
+  .profile-container .woocommerce-MyAccount-content input {
+    padding: 5px;
+    border: 1px solid #d2d2d2; }
+
+/*=====  End of Section Profile Page Woo   ======*/
 
 /*# sourceMappingURL=shop.css.map */
