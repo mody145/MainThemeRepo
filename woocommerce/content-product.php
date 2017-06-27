@@ -1,7 +1,7 @@
 			<?php global $query; global $product; ?>
 
 			<!-- Start Masonry Grid -->
-			<div class="grid-item-shop item">
+			<div class="col-md-4 nopadding">
 				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>">
 					<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
 

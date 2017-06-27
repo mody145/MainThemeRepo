@@ -4,8 +4,15 @@
     margin-top: $main-margin;
     margin-right: -$main-margin;
 
-	.parent-shop {
-
+	.parent-shop-container {
+        overflow: hidden;
+        margin-right: 10px;
+        margin-left: -10px;
+        margin-top: -10px;
+        
+        > div {
+            border: 10px solid transparent;
+        }
 
 		.item {
 		    position: relative;
@@ -56,6 +63,7 @@
 		    padding: $main-padding;
 		    text-align: left;
 		    z-index: 3;
+            background-color: $color2;
 
 			.add-to-cart-container-false {
 			    display: inline-block;
@@ -108,6 +116,7 @@
 					align-items: center;
 					justify-content: space-between;
 					cursor: default;
+					background-color: $color5;
 			    }
 
 			    #like {
@@ -288,4 +297,8 @@
 
 	}
 
+}
+
+.shop-pagination {
+    margin-bottom: 20px;
 }

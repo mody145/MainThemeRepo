@@ -24,8 +24,8 @@
 }
 
 .dwwp-sidebar-custom-widget-about-us h4 {
-    background-color: $color7;
-    color: $color2;
+    background-color: $color2;
+    color: $color8;
     padding: $main-padding;
     margin: 0;
 }
@@ -188,8 +188,8 @@
 }
 
 .latest-posts-blog-widget h4 {
-    background-color: $color5;
-    color: $color2;
+    background-color: $color2;
+    color: $color8;
     padding: $main-padding;
     margin: 0;
 }
@@ -218,9 +218,9 @@ position: static;
     top: -28px;
     right: 35px;
     text-shadow: none;
-    border: 1px solid $color2;
+    border: 1px solid $infoColor;
     padding-right: 1px;
-    color: $color2;
+    color: $infoColor;
     border-radius: 2px;
 }
 
@@ -229,9 +229,9 @@ position: static;
     top: -28px;
     right: 11px;
     text-shadow: none;
-    border: 1px solid $color2;
+    border: 1px solid $infoColor;
     padding-left: 1px;
-    color: $color2;
+    color: $infoColor;
     border-radius: 2px;
 }
 
@@ -298,8 +298,8 @@ position: static;
     margin-top: 20px;
 
     h4 {
-        background-color: $color4;
-        color: $color2;
+        background-color: $color2;
+        color: $color8;
         padding: $main-padding;
         margin: 0;
     }

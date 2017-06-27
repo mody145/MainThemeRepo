@@ -135,10 +135,18 @@ get_header(); ?>
 
 		            </fieldset><!-- End Section Rating -->
 					
-		            <p class="reviews_count"> <?php echo ' [ ' . $review_count . ' ] Reviews' ?></p>
+		            <p class="reviews_count"> <?php echo '&nbsp;[&nbsp;' . $review_count . '&nbsp;]&nbsp;<i class="icon-user-o"></i>' ?></p>
 		            <p class="short_description"><?php echo $product->short_description; ?></p>
 		            <p class="short_description"><?php the_content(); ?></p>
-		            <p class="price"><?php echo $product->get_price_html(); ?></p>
+					
+					<?php if (! empty($product->get_sale_price())) { ?>
+					
+					<p class="price"><?php echo '<i class="icon-usd"> </i> ' . $product->get_sale_price(); ?></p>
+					<p class="price_regular"><?php echo '<i class="icon-usd"> </i> ' . $product->get_regular_price(); ?></p>
+					
+					<?php } else { ?>
+					<p class="price"><?php echo '<i class="icon-usd"> </i> ' . $product->get_price(); ?></p>
+					<?php } ?>
 
 				<!--====  End of Title | Rate | Description  ====-->
 
@@ -197,8 +205,6 @@ get_header(); ?>
 				=             Button Like And Unlike            =
 				==============================================-->
 
-				<?php //$countItems = get_post_meta( $product->get_id(), 'likes', true ); echo '<pre>'; print_r($countItems); echo '</pre>'; ?>
-
 				<?php if (in_array($product->get_id(), $_SESSION['likes'])) { ?>
 
 				<div class="like-container">
@@ -245,7 +251,6 @@ get_header(); ?>
 						<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
 						<?php do_action( 'woocommerce_product_meta_end' ); ?>
-
 					</div>
 				</div>
 			</div>
@@ -275,23 +280,75 @@ get_header(); ?>
 			<!--====  End of Get All Images For Product  ====-->
 			
 
-		<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop. ?>
 
-		<!-- Add Tabs ( Reveiws And ) -->
-		<div class="clearfix"></div>
-		<div class="col-md-12 nopadding">
+			<!--==================================================
+			=            Section Comments And Reviews            =
+			===================================================-->
+			
+			<!-- Add Tabs ( Reveiws And Comments ) -->
+			<div class="clearfix"></div>
+			<div class="col-md-12 nopadding">
 
-		<?php 
-			global $product;
-			$id = $product->id;
+			<?php 
+				global $product;
+				$id = $product->id;
 
-			$id.",";
-			$args = array ('post_type' => 'product', 'post_id' => $id);
-			$comments = get_comments( $args );
-			wp_list_comments( array( 'callback' => 'woocommerce_comments' ), $comments);
-		?>
-			<?php wc_get_template_part( 'single', 'product-reviews' ) ?>
-		</div>
+				$id.",";
+				$args = array ('post_type' => 'product', 'post_id' => $id);
+				$comments = get_comments( $args );
+				wp_list_comments( array( 'callback' => 'woocommerce_comments' ), $comments);
+			?>
+				<?php wc_get_template_part( 'single', 'product-reviews' ) ?>
+			</div>
+			
+			<!--====  End of Section Comments And Reviews  ====-->
+			
+			
+			<!--==============================================
+			=            Section Related Products            =
+			===============================================-->
+			
+			<div class="clearfix"></div>
+			<h3 class="r_products">Reilated Products</h3>
+			
+			<!-- Start Related Products -->
+			<div class="container-reilated-products">
+				<?php
+
+global $post;
+$terms = get_the_terms( $post->ID, 'product_cat' );
+foreach ($terms as $term) {
+   $term_id = $term->term_id;
+}
+
+				$r_products = new WP_Query( array(
+					'post_type' 		=> 'product',
+					'posts_per_page' 	=> 3,
+					'stock' 			=> 1,
+				    'tax_query' => array(
+				        array(
+				            'taxonomy' 	=> 'product_cat',
+				            'terms' 	=> $term_id,
+				            'operator' 	=> 'IN',
+				        )
+				    )
+
+				) );
+
+				if ($r_products->have_posts()) {
+					while ($r_products->have_posts()) {
+						$r_products->the_post();
+
+						wc_get_template_part( 'content', 'product' );
+					}
+				}
+			
+				?>
+			</div><!-- End Related Products -->
+			
+			<!--====  End of Section Related Products  ====-->
+			
 
 	</div><!-- Start Container Singel Product Here -->
 </div>

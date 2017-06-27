@@ -21,11 +21,11 @@ jQuery(document).ready(function($) {
 		
 		if (orderBy == '') {
 			// Hide Main Container And Show If Filter
-			$('.parent-shop').fadeIn(200);
+			$('.parent-shop-container').fadeIn(200);
 			$('.shop-pagination').fadeIn(200);
 		} else {
 			
-			$('.parent-shop').hide(200);
+			$('.parent-shop-container').hide(200);
 			$('.shop-pagination').hide(200);
 		}
 		// Start Send Data By Ajax
@@ -52,11 +52,11 @@ jQuery(document).ready(function($) {
 		
 		if (category == '') {
 			
-			$('.parent-shop').fadeIn(200);
+			$('.parent-shop-container').fadeIn(200);
 			$('.shop-pagination').fadeIn(200);
 		} else {
 			
-			$('.parent-shop').hide(200);
+			$('.parent-shop-container').hide(200);
 			$('.shop-pagination').hide(200);
 		}
 		// Start Send Data By Ajax
@@ -82,11 +82,11 @@ jQuery(document).ready(function($) {
 		
 		if (tag == '') {
 			
-			$('.parent-shop').fadeIn(200);
+			$('.parent-shop-container').fadeIn(200);
 			$('.shop-pagination').fadeIn(200);
 		} else {
 			
-			$('.parent-shop').hide(200);
+			$('.parent-shop-container').hide(200);
 			$('.shop-pagination').hide(200);
 		}
 		// Start Send Data By Ajax
@@ -112,11 +112,11 @@ jQuery(document).ready(function($) {
 		
 		if (name == '') {
 			
-			$('.parent-shop').fadeIn(200);
+			$('.parent-shop-container').fadeIn(200);
 			$('.shop-pagination').fadeIn(200);
 		} else {
 			
-			$('.parent-shop').hide(200);
+			$('.parent-shop-container').hide(200);
 			$('.shop-pagination').hide(200);
 		}
 		// Start Send Data By Ajax
@@ -147,11 +147,11 @@ jQuery(document).ready(function($) {
 		
 		if (price_from == '' && price_to == '') {
 			
-			$('.parent-shop').fadeIn(200);
+			$('.parent-shop-container').fadeIn(200);
 			$('.shop-pagination').fadeIn(200);
 		} else {
 			
-			$('.parent-shop').hide(200);
+			$('.parent-shop-container').hide(200);
 			$('.shop-pagination').hide(200);
 		}
 		// Start Send Data By Ajax
@@ -194,7 +194,7 @@ jQuery(document).ready(function($) {
 				$('#follow').html("<i id='follow_icon' class='icon-heart6'></i>");
 				$('#follow').removeClass('follow').addClass('unfollow');
 				$('#follow').attr('id', 'unfollow');
-				$('#follow_icon').css('color', '#0088ff');
+				$('#follow_icon').css('color', '#6a67ce');
 			})
 		
 		e.preventDefault();
@@ -251,7 +251,7 @@ jQuery(document).ready(function($) {
 			.done(function (d) {
 
 				$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-cart-arrow-down"></i>');
-				$('#cart_icon').css({color: '#0088ff'});
+				$('#cart_icon').css({color: '#6a67ce'});
 			})
 		
 		event.preventDefault();
@@ -341,7 +341,7 @@ jQuery(document).ready(function($) {
 				thisItem.html("<i id='follow_icon' class='icon-heart6'></i>");
 				thisItem.removeClass('follow_archive').addClass('unfollow_archive');
 				thisItem.attr('id', 'unfollow');
-				thisItem.find('#follow_icon').css('color', '#0088ff');
+				thisItem.find('#follow_icon').css('color', '#6a67ce');
 			})
 		
 		e.preventDefault();
