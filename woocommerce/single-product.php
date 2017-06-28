@@ -134,6 +134,9 @@ get_header(); ?>
 	                    <label class="half" for="1starhalf3"></label>
 
 		            </fieldset><!-- End Section Rating -->
+
+		            <!-- Increament Views -->
+		            <?php increament_post_views( $product->get_id() ) ?>
 					
 		            <p class="reviews_count"> <?php echo '&nbsp;[&nbsp;' . $review_count . '&nbsp;]&nbsp;<i class="icon-user-o"></i>' ?></p>
 		            <p class="short_description"><?php echo $product->short_description; ?></p>
@@ -223,7 +226,7 @@ get_header(); ?>
 						<a id="like" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
 							<i id="like_icon" class="icon-thumbs-up"></i>
 						</a>
-						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+						<span class="badge likes-count"><?php if (metadata_exists( 'post', $product->get_id(), 'likes' )) { echo get_post_meta( $product->get_id(), 'likes', true ); } else { echo '0'; } ?></span>
 					</button>
 				</div>
 
@@ -316,11 +319,11 @@ get_header(); ?>
 			<div class="container-reilated-products">
 				<?php
 
-global $post;
-$terms = get_the_terms( $post->ID, 'product_cat' );
-foreach ($terms as $term) {
-   $term_id = $term->term_id;
-}
+				global $post;
+				$terms = get_the_terms( $post->ID, 'product_cat' );
+				foreach ($terms as $term) {
+				   $term_id = $term->term_id;
+				}
 
 				$r_products = new WP_Query( array(
 					'post_type' 		=> 'product',

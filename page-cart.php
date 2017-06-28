@@ -21,11 +21,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
-
-wc_print_notices(); ?>
+} ?>
 
 <div class="parent-cart-page">
+
+<?php wc_print_notices(); ?>
 
 	<?php do_action( 'woocommerce_before_cart' ); ?>
 

@@ -1203,5 +1203,83 @@ section.related.products {
     border: 1px solid #d2d2d2; }
 
 /*=====  End of Section Profile Page Woo   ======*/
+/*====================================
+=            Page  Follow            =
+====================================*/
+.parent-follow-page {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0; }
+
+/*=====  End of Page  Follow  ======*/
+/*======================================
+=            Dashboard Page            =
+======================================*/
+.parent-dashboard-page {
+  overflow: hidden;
+  background-color: #fff;
+  margin: 10px 0; }
+  .parent-dashboard-page .boxes h4 {
+    margin-left: 10px; }
+  .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box1 {
+    background-color: #ffb900;
+    border: 10px solid #ffffff;
+    color: #ffffff; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box1 .head {
+      background-color: #333;
+      padding: 10px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box1 .body .item {
+      position: relative;
+      padding: 10px; }
+      .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box1 .body .item h5 {
+        font-size: 30px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box1 .body .item:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box2 {
+    background-color: #6a67ce;
+    border: 10px solid #ffffff;
+    color: #ffffff; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box2 .head {
+      background-color: #333;
+      padding: 10px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box2 .body .item {
+      position: relative;
+      padding: 10px; }
+      .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box2 .body .item h5 {
+        font-size: 30px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(1) .box2 .body .item:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box1 {
+    background-color: #fc636b;
+    border: 10px solid #ffffff;
+    color: #ffffff; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box1 .head {
+      background-color: #333;
+      padding: 10px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box1 .body .item {
+      position: relative;
+      padding: 10px; }
+      .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box1 .body .item h5 {
+        font-size: 30px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box1 .body .item:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box2 {
+    background-color: #1aafd0;
+    border: 10px solid #ffffff;
+    color: #ffffff; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box2 .head {
+      background-color: #333;
+      padding: 10px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box2 .body .item {
+      position: relative;
+      padding: 10px; }
+      .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box2 .body .item h5 {
+        font-size: 30px; }
+    .parent-dashboard-page .boxes div.parent-box:nth-of-type(2) .box2 .body .item:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.1); }
+  .parent-dashboard-page .you-orders {
+    padding: 10px; }
+
+/*=====  End of Dashboard Page  ======*/
 
 /*# sourceMappingURL=shop.css.map */

@@ -132,7 +132,7 @@
 						<a id="like" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
 							<i id="like_icon" class="icon-thumbs-up"></i>
 						</a>
-						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+						<span class="badge likes-count"><?php if (metadata_exists( 'post', $product->get_id(), 'likes' )) { echo get_post_meta( $product->get_id(), 'likes', true ); } else { echo '0'; } ?></span>
 					</button>
 				</div>
 
