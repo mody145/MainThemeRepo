@@ -1,0 +1,48 @@
+.profile-container {
+	background-color: $color2;
+	margin: $main-margin 0;
+
+	.woocommerce {
+
+		nav.woocommerce-MyAccount-navigation {
+
+			ul {
+			    list-style: none;
+			    margin: 0px;
+			    padding: $main-padding + 5;
+
+			    li {
+					background-color: $color1;
+    				margin: $main-margin / 2;
+    				padding: $main-padding / 2;
+			    }
+			}
+		}
+	}
+
+	form.woocomerce-form.woocommerce-form-login.login {
+	    border: none;
+	    border-radius: 0;
+	    width: 500px;
+	    margin: auto;
+	    text-align: center;
+
+	    input {
+		    padding: $main-padding / 2;
+		    border: 1px solid #DDD;
+	    }
+	}
+
+	.woocommerce-MyAccount-content {
+	    padding: $main-padding $main-padding + 5;
+	    margin: $main-margin;
+	}
+
+	.woocommerce-MyAccount-content {
+
+		input {
+			padding: $main-margin / 2;
+		    border: 1px solid #d2d2d2;
+		}
+	}
+}

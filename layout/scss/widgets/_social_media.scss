@@ -1,0 +1,111 @@
+/*===========================================
+=            Social Media Widget            =
+===========================================*/
+
+.social-media-icon-widget {
+    margin-top: $main-margin * 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $color2;
+    padding: $main-padding;
+    padding-bottom: 0;
+}
+
+.social-media-icon-widget h4 {
+    background-color: $color4;
+    color: $color2;
+    padding: $main-padding;
+    margin: 0;
+}
+
+.social-media-icon-widget a {
+    width: calc(50% - 12px);
+    margin: $main-margin 0;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.social-media-icon-widget i {
+    font-size: 20px;
+}
+
+.social-media-icon-widget a span {
+    position: relative;
+    bottom: 2px;
+}
+
+.social-media-icon-widget a:nth-of-type(1) {
+    display: block;
+    padding: $main-padding;
+    color: $color2;
+    background-color: #dc4d3c;
+    margin-top: 0;
+}
+
+.social-media-icon-widget a:nth-of-type(2) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #425c9d;
+    margin-top: 0;
+}
+
+.social-media-icon-widget a:nth-of-type(3) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #44cefd;
+}
+
+.social-media-icon-widget a:nth-of-type(4) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #df6c5e;
+}
+
+.social-media-icon-widget a:nth-of-type(5) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #f7659c !important;
+}
+
+.social-media-icon-widget a:nth-of-type(6) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #35c6ea !important;
+}
+
+.social-media-icon-widget a:nth-of-type(7) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #ff7e30 !important;
+}
+
+.social-media-icon-widget a:nth-of-type(8) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #1879fd !important;
+}
+
+.social-media-icon-widget a:nth-of-type(9) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #3897f0 !important;
+}
+
+.social-media-icon-widget a:nth-of-type(10) {
+    display: block;
+    padding: $main-padding;
+    color: #FFF;
+    background-color: #3f91cb !important;
+}
+
+/*=====  End of Social Media Widget  ======*/

@@ -1,0 +1,235 @@
+/*==========================================
+=            Widget Latest Item            =
+==========================================*/
+
+.top-items-shop-widget {
+    margin-top: $main-margin *2;
+
+    h4 {
+        background-color: $color2;
+        color: $color8;
+        padding: $main-padding;
+        margin: 0;
+    }
+
+}
+
+.top-items-shop-widget {
+    margin-top: $main-margin * 2;
+
+    .item {
+        background-color: $color2;
+        overflow: hidden;
+    }
+
+    .item img {
+        max-width: 100%;
+    }
+
+    span.sale {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: $color10;
+        font-size: 50px;
+    }
+
+    .carousel-caption {
+        bottom: 0;
+        color: $color8;
+        position: static;
+        padding: $main-padding;
+        text-align: left;
+
+        span.discount-number {
+            margin: 0;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 2em;
+                padding: $main-padding /  2;
+                height: 2em;
+                background: $color3;
+                text-align: center;
+                color: $color2;
+                border-radius: 50%;
+                line-height: 2em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+                position: relative;
+                top: -4px;
+            }
+        }
+
+        .info-for-the-post {
+            color: $infoColor;
+            margin: 0;
+        }
+
+        .decsription {
+            color: $infoColor;
+            padding: $main-padding /  2 0;
+        }
+    }
+
+    a.left.carousel-control i {
+        position: absolute;
+        top: -28px;
+        right: 35px;
+        text-shadow: none;
+        padding-right: 1px;
+        color: #b1b1b1;
+        border-radius: 2px;
+        font-size: 20px;
+    }
+
+    a.right.carousel-control i {
+        position: absolute;
+        top: -28px;
+        right: 11px;
+        text-shadow: none;
+        padding-left: 1px;
+        color: #b1b1b1;
+        border-radius: 2px;
+        font-size: 20px;
+    }
+
+    a.left.carousel-control {
+    background-image: none;
+    font-size: $font-size - 5;
+    position: static;
+    }
+
+    a.right.carousel-control {
+        background-image: none;
+        font-size: $font-size - 5;
+    }
+
+    .carousel-inner {
+        background-color: $color2;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    .info-item {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 11px;
+        color: $infoColor;
+
+        .likes {
+            font-size: $font-size - 3;
+            font-family: sans-serif;
+            text-align: center;
+            display: inline-block;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 1em;
+                padding: $main-padding /  2;
+                height: 1em;
+                background: rgb(94, 145, 255);
+                text-align: center;
+                color: $color2;
+                border-radius: 50%;
+                line-height: 1em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+            }
+
+            i {
+                padding-left: $main-padding /  2;
+                position: relative;
+                left: -4px;
+            }
+        }
+
+        .price {
+            font-size: 15px;
+
+            .numberCircle {
+                font: 12px Arial, sans-serif;
+                width: 1em;
+                padding: $main-padding /  2;
+                height: 1em;
+                background: $color5;
+                text-align: center;
+                color: $color2;
+                border-radius: 50%;
+                line-height: 1em;
+                box-sizing: content-box;
+                display: inline-block;
+                margin-right: 4px;
+                position: relative;
+                top: -4px;
+            }
+
+            .main-price {
+                background-color: rgba(255, 255, 255, 0.56);
+                color: $color8;
+                padding: $main-padding /  2 $main-padding;
+                font-size: 22px;
+            }
+
+            .price-without-disc {
+                text-decoration: line-through;
+                color: $infoColor;
+                text-align: center;
+                padding: 2px 5px;
+                font-size: 15px;
+                display: inline-block;
+                background-color: rgba(255, 255, 255, 0.56);
+                text-decoration-color: rgba(146, 146, 146, 0.58);
+                margin-top: $main-margin;
+                width: auto;
+                max-width: 70px;
+                opacity: 0.7;
+            }
+            .discount-number {
+                color: $color1;
+                margin-top: $main-margin;
+            }
+        }
+    }
+
+    .carousel-caption h5 {
+        font-size: $font-size - 2;
+    }
+
+}
+
+/*=====  End of Widget Latest Item  ======*/
+
+/*=========================================
+=            Go To Shop Widget            =
+=========================================*/
+
+.go-to-blog-widget div {
+    background-color: $color7;
+    color: $color1;
+    padding: $main-padding;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    font-weight: bold;
+    margin: $main-margin 0 $main-margin * 2;
+}
+
+.go-to-blog-widget div p {
+    font-size: $font-size - 4;
+    margin-top: $main-margin * 2;
+}
+
+/*=====  End of Go To Shop Widget  ======*/

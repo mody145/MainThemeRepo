@@ -79,7 +79,7 @@ get_header(); ?>
 				<!-- Featuer Image For Product -->
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 				<div class="main_image_product">
-					<img src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
+					<img id="main_image_product_single" src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
 				</div>
 			</div>
 			<!--====  End of Section Get Main Image   ====-->
@@ -91,49 +91,10 @@ get_header(); ?>
 			<div class="col-md-6 nopadding">
 				<div class="meta_product">
 					<?php the_title( '<h1 class="product_title entry-title">', '</h1>' ); ?>
-					<?php $rating = $product->get_average_rating(); ?>
+
 					<?php $review_count = $product->get_review_count(); ?>
 
-					<!-- Start Section Rating -->
-					<fieldset id='demo3' class="rating" data-toggle="tooltip" title="Can't Rating From Here ... You Can This From Item Page">
-		            	<div class="tooltip top" role="tooltip">
-							<div class="tooltip-arrow"></div>
-							<div class="tooltip-inner">
-							Can't Rating From Here ... You Can This From Item Page
-							</div>
-		            	</div>
-	                	<!-- Start -->
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
-	                    <label class = "full" for="1star53"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4.5 && $rating < 5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
-	                    <label class="half" for="1star4half3"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4 && $rating < 4.5) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
-	                    <label class = "full" for="1star43"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3.5 && $rating < 4) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
-	                    <label class="half" for="1star3half3"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3 && $rating < 3.5) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
-	                    <label class = "full" for="1star33"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2.5 && $rating < 3) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
-	                    <label class="half" for="1star2half3"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2 && $rating < 2.5) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
-	                    <label class = "full" for="1star23"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1.5 && $rating < 2) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
-	                    <label class="half" for="1star1half3"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1 && $rating < 1.5) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
-	                    <label class = "full" for="1star13"></label>
-
-	                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 0.5 && $rating < 1) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
-	                    <label class="half" for="1starhalf3"></label>
-
-		            </fieldset><!-- End Section Rating -->
+					<?php wc_get_template_part( 'content', 'rating' ); ?>
 
 		            <!-- Increament Views -->
 		            <?php increament_post_views( $product->get_id() ) ?>
@@ -157,26 +118,21 @@ get_header(); ?>
 				=            Add To Cart Button Section            =
 				=================================================-->
 				
-				<?php
-					// Git List Products In Cart 
-					$items = $woocommerce->cart->get_cart();
-					// Creat Empty Array
-					$cart_list = array();
-					// Add All ID Products To Empty Array
-					foreach($items as $item) { 
-						$cart_list[] = $item['product_id']; } ?>
-
 					<!-- Check If This Item In Cart -->
-					<?php if (in_array($product->get_id(), $cart_list)) { ?>
+					<?php if( woo_in_cart( $product->id ) ) { ?>
 						<!-- If True Echo ... -->
 						<div class="add-to-cart-container-true">
-							<h3><i id="cart_icon" class="icon-cart-arrow-down"></i></h3>
+							<h3><i id="cart_icon" class="icon-shopping-bag"></i></h3>
 						</div>
 
 					<?php } else { ?>
 						<!-- If False Echo ... -->
 						<div class="add-to-cart-container-false">
-							<h3><a id="add_to_cart_shop" data-id="<?php echo $product->get_id(); ?>" data-link="<?php echo get_template_directory_uri() . '/Ajax/add_cart.php/?add-to-cart=' . $product->get_id() . '' ?>" href="<?php echo $link_add_to_cart; ?>"><i id="cart_icon" class="icon-cart-plus"></i></a></h3>
+							<h3>
+								<a href="#" id="add_to_cart_shop" data-id="<?php echo $product->get_id(); ?>">
+									<i id="cart_icon" class="icon-add_shopping_cart"></i>
+								</a>
+							</h3>
 						</div>
 
 					<?php } ?>
@@ -188,16 +144,24 @@ get_header(); ?>
 				================================================-->
 
 				<!-- Check If This Item In Current List -->
-				<?php if (isset($_SESSION['follow'])) { $arrayFollow = $_SESSION['follow']; } else { $arrayFollow = array(); } if (in_array($product->get_id(), $arrayFollow)) { ?>
+				<?php if (check_if_is_product_in_session( $_SESSION['follow'], $product->get_id() ) == true) { ?>
 					<!-- If True Echo ... -->
 					<div class="add-to-follow-container-false">
-						<h3><a id="unfollow" href="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="unfollow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart6"></i></a></h3>
+						<h3>
+							<a id="unfollow" href="#" data-id="<?php echo $product->get_id() ?>" class="unfollow">
+								<i id="follow_icon" class="icon-heart8"></i>
+							</a>
+						</h3>
 					</div>
 
 				<?php } else { ?>
 					<!-- If False Echo ... -->
 					<div class="add-to-follow-container-true">
-						<h3><a id="follow" href="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-id="<?php echo $product->get_id() ?>" class="follow" data-add="<?php echo get_template_directory_uri() . '/Ajax/add_follow.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/remove_follow.php' ?>"><i id="follow_icon" class="icon-heart5"></i></a></h3>
+						<h3>
+							<a id="follow" href="#" data-id="<?php echo $product->get_id() ?>" class="follow">
+								<i id="follow_icon" class="icon-heart-o"></i>
+							</a>
+						</h3>
 					</div>
 
 				<?php } ?>
@@ -208,11 +172,11 @@ get_header(); ?>
 				=             Button Like And Unlike            =
 				==============================================-->
 
-				<?php if (isset($_SESSION['likes'])) { $arrayLikes = $_SESSION['likes']; } else { $arrayLikes = array(); } if (in_array($product->get_id(), $arrayLikes)) { ?>
+				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
 					<button class="btn btn-info btn-sm" type="button">
-						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
+						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
 							<i id="like_icon" class="icon-check"></i>
 						</a>
 						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
@@ -223,10 +187,10 @@ get_header(); ?>
 
 				<div class="like-container">
 					<button class="btn btn-info btn-sm" type="button">
-						<a id="like" data-id="<?php echo $product->get_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
-							<i id="like_icon" class="icon-thumbs-up"></i>
+						<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
+							<i id="like_icon" class="icon-thumbs-o-up"></i>
 						</a>
-						<span class="badge likes-count"><?php if (metadata_exists( 'post', $product->get_id(), 'likes' )) { echo get_post_meta( $product->get_id(), 'likes', true ); } else { echo '0'; } ?></span>
+						<span class="badge likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
 					</button>
 				</div>
 

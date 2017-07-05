@@ -1,0 +1,132 @@
+/*=================================================
+=            Section FullScrean Search            =
+=================================================*/
+
+.search_fullscrean {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(106, 103, 206, 0.88);
+    z-index: 1000;
+    display: none;
+
+    .in_center {
+        width: 100%;
+        height: 100%;
+
+        form {
+
+            input[type="text"] {
+                background-color: transparent;
+                border: 0;
+                border-bottom: 2px solid #fff;
+                max-width: 500px;
+                min-width: 250px;
+                padding: $main-padding;
+                font-size: $font-size +  15;
+                color: $color2;
+            }
+
+            input[type="text"]:focus, 
+            input[type="text"]:hover, 
+            input[type="text"]:active, 
+            input[type="text"]:visited {
+                outline: none;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: $color2;
+                font-size: $font-size +  15;
+            }
+
+            .radio {
+                margin: 5px 2px;
+                display: inline-flex;
+
+                input[type="radio"] {
+                    position: absolute;
+                    opacity: 0;
+                    + .radio-label {
+
+                        &:before {
+                        content: "\ea22";
+                        font-family: 'icomoon' !important;
+                        cursor: pointer;
+                        margin-right: 5px;
+                        transition: all 250ms ease;
+                        }
+                    }
+                    &:checked {
+                        + .radio-label {
+
+                            &:before {
+                            content: "\ea1b";
+                            font-family: 'icomoon' !important;
+                            }
+                        }
+                    }
+                    &:focus {
+
+                        + .radio-label {
+
+                            &:before {
+                            outline: none;
+                            border-color: $color2;
+                            }
+                        }
+                    }
+                    + .radio-label {
+
+                        &:empty {
+                            
+                            &:before {
+                            margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            label {
+            margin: 7px 2px;
+            padding: 3px;
+            color: $color2;
+            font-weight: normal;
+            cursor: pointer;
+            }
+
+        }
+
+        span.wating-search {
+            color: $color2;
+        }
+
+        .results_search {
+            width: 50%;
+            color: rgba(255, 255, 255, 0.75);
+            text-align: left;
+            padding: $main-padding;
+            font-size: $font-size - 5;
+            margin: auto;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .close-search {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-size: $font-size +  20;
+        cursor: pointer;
+        color: $color2;
+    }
+}
+
+/*=====  End of Section FullScrean Search  ======*/

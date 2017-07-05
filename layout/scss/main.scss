@@ -2,23 +2,21 @@
 =            FrameWork And vars            =
 ==========================================*/
 
-@import "vars-framwork";
+@import "framework/vars_framwork";
+@import "framework/bootstrap_modify";
 
 /*=====  End of FrameWork And vars  ======*/
-
-/*========================================
-=            Bootstrap Modify            =
-========================================*/
-
-@import "bootstrap-modify";
-
-/*=====  End of Bootstrap Modify  ======*/
 
 /*======================================
 =            Header Section            =
 ======================================*/
 
-@import "header";
+@import "header/header";
+@import "header/header_menu";
+@import "header/icons_follow_cart_orders";
+@import "header/primary_menu";
+@import "header/search_full_screan";
+@import "header/total_cart";
 
 /*=====  End of Header Section  ======*/
 
@@ -26,7 +24,13 @@
 =            Sidebar Section            =
 =======================================*/
 
-@import "sidebar";
+@import "widgets/about_us";
+@import "widgets/go_to";
+@import "widgets/latest_posts";
+@import "widgets/our_categories";
+@import "widgets/sidebar";
+@import "widgets/social_media";
+@import "widgets/widget-latest-item";
 
 /*=====  End of Sidebar Section  ======*/
 
@@ -34,144 +38,74 @@
 =            Index Content            =
 =====================================*/
 
-@import "index";
+@import "index_page/feat";
+@import "index_page/grid_images";
+@import "index_page/index";
+@import "index_page/latest_post_blog";
+@import "index_page/mini_slider";
+@import "index_page/services";
+@import "index_page/testimonials";
 
 /*=====  End of Index Content  ======*/
 
-/*====================================
-=             Mini Slider            =
-====================================*/
+/*======================================
+=            Section Pages             =
+======================================*/
 
-@import "mini_slider";
+@import "pages/404";
+@import "pages/about_us_page";
+@import "pages/contact_us_page";
+@import "pages/help_page";
+@import "pages/plog-page";
+@import "pages/plog_page_three";
+@import "pages/plog_page_two";
+@import "pages/portfolio_page";
+@import "pages/services_page";
+@import "pages/single-post";
 
-/*=====  End of  Mini slider  ======*/
+/*=====  End of Section Pages   ======*/
 
-/*====================================
-=            Feat Section            =
-====================================*/
+/*===================================
+=            Blog Boxes             =
+===================================*/
 
-@import "feat";
+@import "blog_boxes/comments";
 
-/*=====  End of Feat Section  ======*/
+/*=====  End of Blog Boxes   ======*/
 
-/*=====================================
-=            Boxes Section            =
-=====================================*/
+/*===================================
+=            Shop Pages             =
+===================================*/
 
-@import "testimonials";
+@import "shop_pages/cart_page";
+@import "shop_pages/checkout_page";
+@import "shop_pages/dashboard_page";
+@import "shop_pages/follow_page";
+@import "shop_pages/profile_page";
+@import "shop_pages/shop-page";
+@import "shop_pages/singel_post_product";
 
-/*=====  End of Boxes Section  ======*/
+/*=====  End of Shop Pages   ======*/
 
-/*=====================================
-=            Section Services        =
-=====================================*/
+/*==================================
+=            Shop Boxes            =
+==================================*/
 
-@import "services";
+@import "shop_boxes/content_result_filter_shop";
+@import "shop_boxes/filter_products";
+@import "shop_boxes/related_products";
+@import "shop_boxes/upper-bar-woo-shop";
 
-/*====  End of Section Services  ====*/
+/*=====  End of Shop Boxes  ======*/
 
 /*======================================
 =            Section Footer            =
 ======================================*/
 
-@import "footer";
+@import "footer/footer";
 
 /*=====  End of Section Footer  ======*/
 
-/*=====================================
-=            Latest Posts             =
-=====================================*/
 
-@import "latest_post_blog";
-
-/*=====  End of Latest Posts   ======*/
-
-/*======================================
-=            Blog Page Section         =
-======================================*/
-
-@import "plog-page";
-
-/*====  End of Blog Page Section  ====*/
-
-/*=======================================
-=            Single Post Section        =
-=======================================*/
-
-@import "single-post";
-
-/*===  End of Single Post Section  ====*/
-
-/*=======================================
-=            Contact Us Page            =
-=======================================*/
-
-@import "contact_us_page";
-
-/*=====  End of Contact Us Page  ======*/
-
-/*======================================
-=            Portfolio Page            =
-======================================*/
-
-@import "portfolio_page";
-
-/*=====  End of Portfolio Page  ======*/
-
-/*======================================
-=            Services Page             =
-======================================*/
-
-@import "services_page";
-
-/*=====  End of Services Page   ======*/
-
-/*=====================================
-=            About Us Page            =
-=====================================*/
-
-@import "about_us_page";
-
-/*=====  End of About Us Page  ======*/
-
-/*==================================
-=            Help Page             =
-==================================*/
-
-@import "help_page";
-
-/*=====  End of Help Page   ======*/
-
-/*========================================
-=            Comments Section            =
-========================================*/
-
-@import "comments";
-
-/*=====  End of Comments Section  ======*/
-
-/*======================================
-=            Blog Page Two             =
-======================================*/
-
-@import "plog_page_two";
-
-/*=====  End of Blog Page Two   ======*/
-
-/*======================================
-=            Page 404 Error            =
-======================================*/
-
-@import "404";
-
-/*=====  End of Page 404 Error  ======*/
-
-/*======================================
-=            Bog Page Three            =
-======================================*/
-
-@import "plog_page_three";
-
-/*=====  End of Bog Page Three  ======*/
 
 

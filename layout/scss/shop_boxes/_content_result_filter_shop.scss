@@ -1,0 +1,327 @@
+.result_search_shop {
+    overflow: hidden;
+    margin-right: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    
+    > div {
+        border: 10px solid transparent;
+    }
+
+	.item {
+	    position: relative;
+	    background-color: $color2;
+	    overflow: hidden;
+	    margin-bottom: $main-margin * 2;
+	    border: 1px solid #DDD;
+	}
+
+	.overlay {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    background-color: $color2;
+	    width: 100%;
+	    height: 100%;
+	    opacity: .8;
+	    z-index: 5;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+
+		i {
+		    font-size: 45px;
+		    color: #6a67ce;
+		    display: block;
+		    background-color: #ddd;
+		    width: 75px;
+		    height: 75px;
+		    line-height: 72px;
+		    text-align: center;
+		    border-radius: 50%;
+		}
+	}
+
+	.item img {
+	    max-width: 100%;
+	}
+
+	span.sale {
+	    position: absolute;
+	    top: 20px;
+	    right: 20px;
+	    color: $color10;
+	    font-size: 50px;
+	}
+
+	.carousel-caption {
+	    bottom: 0;
+	    color: $color8;
+	    position: relative;
+	    top: 0 !important;
+	    left: 0 !important;
+	    right: 0 !important;
+	    padding: $main-padding;
+	    text-align: left;
+	    z-index: 3;
+        background-color: $color2;
+
+		.add-to-cart-container-false {
+		    display: inline-block;
+			position: absolute;
+		    right: 10px;
+		    top: 10px;
+
+		    h3 {
+		    	margin: 0 !important;
+
+				i {
+				    color: $color10;
+				}
+		    }
+		}
+
+		.add-to-follow-container-false, 
+		.add-to-follow-container-true {
+		    display: inline-block;
+			position: absolute;
+		    right: 35px;
+		    top: 10px;
+
+
+		    h3 {
+		    	margin: 0 !important;
+		    }
+		}
+
+		.add-to-follow-container-false h3 i {
+			color: $color10;
+		}
+
+		.add-to-follow-container-true h3 i {
+			color: $color10;
+		}
+
+		a.add_to_cart_shop_archive {
+
+		}
+
+		.like-container {
+		    display: inline-block;
+		    position: absolute;
+		    right: 65px;
+		    top: 13px;
+
+		    button {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				cursor: default;
+				background-color: $color5;
+		    }
+
+			#like {
+			    font-size: 14px;
+			    color: $color2;
+			    position: relative;
+			    top: -1px;
+			    margin-right: $main-margin / 2;
+			    width: 15px;
+			    height: 21px;
+
+				i {
+				    position: absolute;
+				    top: 1px;
+				    left: -5px;
+				    font-size: 21px;
+				}
+			}
+
+			span.badge.likes-count {
+			    color: $color10;
+			}
+
+		    #unlike {
+				font-size: $font-size - 6;
+				color: $color2;
+				position: relative;
+				top: 1px;
+				margin-right: $main-margin /  2;
+				width: 15px;
+			    height: 21px;
+
+				i {
+				    position: absolute;
+				    top: -1px;
+				    left: -3px;
+				    font-size: 21px;
+				}
+		    }
+
+			span.badge.likes-count {
+			    color: $color10;
+			}
+		}
+
+	    span.discount-number {
+		    margin: 0;
+		    position: absolute;
+		    top: 11px;
+		    right: 118px;
+
+	        .numberCircle {
+	            font: 12px Arial, sans-serif;
+	            width: 2em;
+	            padding: 2px;
+	            height: 2em;
+	            background: $color3;
+	            text-align: center;
+	            color: $color2;
+	            border-radius: 50%;
+	            line-height: 2em;
+	            box-sizing: content-box;
+	            display: inline-block;
+	            position: relative;
+	            top: -1px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    text-align: center;
+	        }
+	    }
+
+	    .info-for-the-post {
+	        color: $infoColor;
+	        margin: 0;
+	    }
+
+	    .decsription {
+	        border-bottom: 1px solid $color1;
+	        border-top: 1px solid $color1;
+	        padding: $main-padding /  2 0;
+	    }
+	}
+
+	a.left.carousel-control i {
+	    position: absolute;
+	    top: -30px;
+	    left: 0;
+	    text-shadow: none;
+	}
+
+	a.right.carousel-control i {
+	    position: absolute;
+	    top: -30px;
+	    right: 0;
+	    text-shadow: none;
+	}
+
+	a.left.carousel-control {
+	background-image: none;
+	}
+
+	a.right.carousel-control {
+	    background-image: none;
+	}
+
+	.carousel-inner {
+	    background-color: $color2;
+	}
+
+	.carousel-inner img {
+	    width: 100%;
+	}
+
+	.info-item {
+	    position: absolute;
+	    top: 20px;
+	    left: 0px;
+	    padding: 0px;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    border-radius: 11px;
+	    color: $infoColor;
+
+	    .likes {
+	        font-size: 17px;
+	        font-family: sans-serif;
+	        text-align: center;
+	        display: inline-block;
+
+	        .numberCircle {
+	            font: 12px Arial, sans-serif;
+	            width: 1em;
+	            padding: $main-padding /  2;
+	            height: 1em;
+	            background: rgb(94, 145, 255);
+	            text-align: center;
+	            color: $color2;
+	            border-radius: 50%;
+	            line-height: 1em;
+	            box-sizing: content-box;
+	            display: inline-block;
+	            margin-right: 4px;
+	        }
+
+	        i {
+	            padding-left: 5px;
+	            position: relative;
+	            left: -4px;
+	        }
+	    }
+
+	    .price {
+	        font-size: 15px;
+
+	        .numberCircle {
+	            font: 12px Arial, sans-serif;
+	            width: 1em;
+	            padding: $main-padding /  2;
+	            height: 1em;
+	            background: $color5;
+	            text-align: center;
+	            color: $color2;
+	            border-radius: 50%;
+	            line-height: 1em;
+	            box-sizing: content-box;
+	            display: inline-block;
+	            margin-right: 4px;
+	            position: relative;
+	            top: -4px;
+	        }
+
+	        .main-price {
+			    background-color: rgba(255, 255, 255, 0.56);
+			    color: $color8;
+			    padding: $main-padding /  2 $main-padding;
+			    font-size: $font-size + 2;
+	        }
+
+	        .price-without-disc {
+			    text-decoration: line-through;
+			    color: $color8;
+			    text-align: center;
+			    padding: 2px $main-padding /  2;
+			    font-size: $font-size - 5;
+			    background-color: rgba(255, 255, 255, 0.56);
+			    text-decoration-color: rgba(146, 146, 146, 0.58);
+			    width: auto;
+			    max-width: 70px;
+			    opacity: 0.7;
+		        margin-left: -5px;
+			    display: inline-block;
+	        }
+	        .discount-number {
+	            color: $color1;
+	            margin-top: $main-margin;
+	        }
+	    }
+	}
+
+	.carousel-caption h5 {
+	    font-size: $font-size - 2;
+	}
+
+}
+

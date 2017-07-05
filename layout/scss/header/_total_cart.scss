@@ -1,0 +1,140 @@
+/*===========================================
+=            Total Cart Section            =
+===========================================*/
+
+.total-cart {
+    margin: $main-margin;
+    background-color: $color2;
+    padding: $main-padding;
+    margin-right: 0;
+    margin-left: $main-margin;
+    color: $infoColor;
+
+    span.update-total {
+        margin: $main-margin + 5;
+        cursor: pointer;
+        position: relative;
+
+        span.show-value-box-dropdown {
+            position: absolute;
+            background-color: rgba(0, 136, 255, 0.89);
+            color: $color1;
+            top: 28px;
+            left: -143px;
+            padding: $main-padding;
+            z-index: 50;
+            min-width: 200px;
+            display: none;
+
+            .items {
+                overflow: hidden;
+                padding: 2px;
+
+                &:nth-child(even) {
+                    background-color: rgba(255, 255, 255, 0.14);
+                }
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                margin: $main-margin 0 $main-margin / 2;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -20px;
+                right: 40px;
+                border-bottom: 10px solid rgba(0, 136, 255, 0.89);
+                border-top: 10px solid rgba(255, 255, 255, 0);
+                border-right: 10px solid rgba(255, 255, 255, 0);
+                border-left: 10px solid rgba(255, 255, 255, 0);
+            }
+        }
+    }
+
+    span.calc-total {
+        margin: $main-margin + 5;
+        cursor: pointer;
+        position: relative;
+
+        span.calc-total-box-dropdown {
+            position: absolute;
+            width: 280px;
+            background-color: rgba(0, 136, 255, 0.89);
+            top: 28px;
+            right: -62px;
+            z-index: 50;
+            display: none;
+
+            span.select-country {
+                color: $color2;
+                display: block;
+                padding: $main-padding;
+            }
+
+            form {
+                display: block;
+
+                select {
+                    padding: $main-padding / 2;
+                    margin: $main-margin / 2;
+                }
+
+                span.text-center.convert_result {
+                    font-size: $font-size - 5;
+                    color: $color2;
+                }
+            }
+
+            #save_country {
+                margin: $main-margin;
+            }
+        }
+
+        span.calc-total-box-dropdown:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: 58px;
+            border-bottom: 10px solid rgba(0, 136, 255, 0.89);
+            border-top: 10px solid rgba(255, 255, 255, 0);
+            border-right: 10px solid rgba(255, 255, 255, 0);
+            border-left: 10px solid rgba(255, 255, 255, 0);
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .total-cart {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 767px){
+    .total-cart {
+        margin-left: 0px;
+        margin-top: $main-margin * 2;
+        margin-bottom: $main-margin * 2;
+    }
+}
+
+.search-in-header {
+    margin: $main-margin;
+    padding: $main-padding;
+    background-color: $color2;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    i {
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        font-size: $font-size + 5;
+        color: #a5a5a5;
+    }
+}
+
+/*=====  End of Total Cart Section  ======*/

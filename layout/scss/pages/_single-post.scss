@@ -1,0 +1,145 @@
+.content-post {
+    background-color: $color2;
+    margin: $main-margin;
+    margin-left: 0;
+}
+
+@media (max-width: 767px){
+	.content-post {
+		margin-right: 0;
+	}
+}
+
+.post-meta-container {
+    padding: $main-padding;
+    position: relative;
+
+    .like-container {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 35px;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: default;
+            background-color: $color5;
+        }
+
+        #like {
+            font-size: $font-size - 6;
+            color: $color2;
+            position: relative;
+            top: -1px;
+            margin-right: $main-margin /  2;
+            width: 15px;
+            height: 21px;
+
+            i {
+                position: absolute;
+                top: 1px;
+                left: -5px;
+                font-size: 21px;
+            }
+        }
+
+        span.badge.likes-count {
+            color: $color10;
+        }
+
+        #unlike {
+            font-size: $font-size - 6;
+            color: $color2;
+            position: relative;
+            top: 1px;
+            margin-right: $main-margin / 2;
+            width: 15px;
+            height: 21px;
+
+            i {
+                position: absolute;
+                top: -1px;
+                left: -3px;
+                font-size: 21px;
+            }
+        }
+
+        span.badge.likes-count {
+            color: $color10;
+        }
+    }
+
+    p.info_post {
+        color: $infoColor;
+    }
+
+}
+
+ol.comment-list li {
+    height: auto !important;
+}
+
+ol.comment-list .parent {
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.subscribe-container {
+    background-color: $color6;
+    padding: $main-padding;
+    margin: $main-margin;
+    margin-left: 0;
+    margin-top: $main-margin * 2;
+    color: $color2;
+
+    form.es_shortcode_form {
+        text-align: center;
+        max-height: 100px;
+
+        .es_textbox {
+            padding-bottom: 0;
+            display: inline-block;
+        }
+
+        .es_button {
+            padding-top: 0;
+            padding-bottom: 0;
+            display: inline-block;
+        }
+
+        .es_msg {
+            padding-top: $main-padding / 2;
+            padding-bottom: $main-padding / 2;
+            color: #fc636b;
+            margin-bottom: $main-margin + 5;
+        }
+
+        label {
+            display: none;
+        }
+
+        #es_txt_name_pg {
+            display: none;
+        }
+
+        input#es_txt_email_pg {
+            padding: $main-padding / 2;
+            width: 385px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #fff;
+        }
+
+        input#es_txt_button_pg {
+            padding: $main-padding / 2;
+            border: 1px solid rgba(252, 99, 107, 0.84);
+            background-color: #fc636b;
+            color: $color2;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+}

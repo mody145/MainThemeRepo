@@ -1,0 +1,92 @@
+/*===========================================
+=            Header Nenu Section            =
+===========================================*/
+
+nav.header-menu {
+    padding: $main-padding;
+    margin: $main-margin $main-margin $main-margin 0px;
+    background-color: $color2;
+    border-left: 5px solid $color4;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    nav.header-menu {
+        margin-right: 0;
+    }
+}
+
+nav.header-menu .menu-headermenu-container > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-headermenu-container ul > li {
+    font-size: 19px;
+}
+
+ul.dropdown-menu li {
+    font-size: $font-size - 5;
+    border-bottom: 1px solid #ddd;
+}
+
+ul.dropdown-menu li:last-of-type {
+    font-size: $font-size - 5;
+    border-bottom: 0;
+}
+
+ul.dropdown-menu li a {
+    color: $infoColor;
+}
+
+a.dropdown-toggle {
+    display: block;
+    height: 150%;
+}
+
+span.caret {
+    border: none;
+    font-family: 'icomoon' !important;
+    font-size: small;
+}
+
+span.caret:before {
+    content: "\f107";
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: -8px;
+}
+
+a.dropdown-toggle:hover ~ ul.dropdown-menu {
+    display: block !important;
+}
+
+#menu-headermenu .dropdown-menu {
+    border: 0;
+    position: absolute;
+    background-color: $color2;
+    color: #1f1f1f !important;
+    box-shadow: none;
+    top: 34px;
+    width: 220px;
+    border-radius: 0;
+    border-top: 2px solid #1aafd0;
+    transition: all 5s ease;
+    display: none;
+}
+
+#menu-headermenu ul.dropdown-menu:hover {
+    display: block;
+} 
+
+.dropdown-menu > li > a:hover,
+ .dropdown-menu > li > a:focus {
+	color: $color8;
+    text-decoration: none;
+    background-color: $color1;
+}
+
+/*=====  End of Header Nenu Section  ======*/

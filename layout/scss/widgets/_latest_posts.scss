@@ -1,0 +1,112 @@
+/*===========================================
+=            Latest Posts Widget            =
+===========================================*/
+
+.latest-posts-blog-widget {
+    margin-top: $main-margin * 2;
+    position: relative;
+}
+
+.latest-posts-blog-widget h4 {
+    background-color: $color2;
+    color: $color8;
+    padding: $main-padding;
+    margin: 0;
+}
+
+.latest-posts-blog-widget a.left.carousel-control {
+background-image: none;
+font-size: $font-size - 5;
+position: static;
+}
+
+.latest-posts-blog-widget a.right.carousel-control {
+    background-image: none;
+    font-size: $font-size - 5;
+}
+
+.latest-posts-blog-widget .carousel-inner {
+    background-color: $color2;
+}
+
+.latest-posts-blog-widget .carousel-inner img {
+    width: 100%;
+}
+
+.latest-posts-blog-widget a.left.carousel-control i {
+    position: absolute;
+    top: -28px;
+    right: 35px;
+    text-shadow: none;
+    padding-right: 1px;
+    color: #b1b1b1;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.latest-posts-blog-widget a.right.carousel-control i {
+    position: absolute;
+    top: -28px;
+    right: 11px;
+    text-shadow: none;
+    padding-left: 1px;
+    color: #b1b1b1;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.latest-posts-blog-widget .date {
+    background-color: $color2;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-radius: 11px;
+
+    .day {
+    background-color: #e9e9e9;
+    width: 100%;
+    font-size: $font-size + 2;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    }
+
+    .mounth {
+    background-color: #4081d1;
+    color: $color2;
+    width: 100%;
+    }
+}
+
+.latest-posts-blog-widget .carousel-caption {
+    bottom: 0;
+    color: $color8;
+    position: static;
+    padding: $main-padding;
+    text-align: left;
+
+    .info-for-the-post {
+        color: $infoColor;
+        margin: 0;
+    }
+
+    .decsription {
+        margin: $main-margin 0;
+        color: $infoColor;
+        padding: $main-padding /  2 0;
+    }
+}
+
+.latest-posts-blog-widget .carousel-caption h5 {
+    font-size: $font-size - 2;
+    margin: 0;
+}
+
+/*=====  End of Latest Posts Widget  ======*/

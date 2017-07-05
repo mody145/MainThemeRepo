@@ -1,0 +1,84 @@
+.parent-cart-page {
+	background-color: $color2;
+    margin: 10px 0;
+    form.woocommerce-cart-form {
+    	padding: $main-padding *2;
+    	table {
+    		padding: $main-padding;
+    		width: 100%;
+    		thead {
+    			padding: $main-padding;
+    			tr {
+
+    				th {
+					    background-color: $color2;
+					    padding: 5px;
+					    color: #716b6b;
+					    border: 1px solid rgba(221, 221, 221, 0.7);
+    				}
+    			}
+    		}
+    		tbody {
+    			padding: $main-padding;
+    			tr {
+
+    				td {
+					    background-color: $color2;
+					    border: 1px solid rgba(218, 218, 218, 0.48);
+					    padding: $main-padding / 2;
+					    div.quantity {
+					    	text-align: center;
+					    	input {
+							    padding: $main-padding / 2;
+							    border: 1px solid #d4d4d4;
+							    text-align: center;
+							    border-radius: 2px;
+						    }
+					    }
+					    div.coupon {
+					    	padding: $main-padding / 2;
+							input#coupon_code {
+							    padding: $main-padding / 2;
+							    width: 50%;
+							}
+							input[name="apply_coupon"] {
+							    padding: $main-padding / 2;
+							    width: 45%;
+							    height: 29px;
+							}
+					    }
+						input[name="update_cart"] {
+						    padding: $main-padding;
+						    width: 15%;
+						    height: 40px;
+						}
+    				}
+					td.product-thumbnail {
+					    text-align: center;
+					}
+					td.product-remove {
+					    text-align: center;
+					}
+    			}
+    		}
+    	}
+    }
+}
+
+.cart-collaterals {
+    margin: $main-margin 0;
+    margin-top: $main-margin *2;
+    background-color: $color2;
+	.cart_totals {
+		padding: $main-padding;
+	    border: 1px solid rgba(221, 221, 221, 0.75);
+	    margin-right: $main-margin *2;
+	    margin-bottom: $main-margin *2;
+	}
+	.wc-proceed-to-checkout {
+	    margin-right: $main-margin;
+	    a {
+	    	color: $color8;
+	    }
+	}
+}

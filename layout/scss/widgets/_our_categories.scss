@@ -1,0 +1,76 @@
+/*==============================================
+=            Our Categories Section            =
+==============================================*/
+
+.list_categories {
+    background-color: $color2;
+    padding: 5px;
+    li {
+        list-style: none;
+        margin: $main-margin / 2 0;
+        padding: $main-padding / 2;
+        background-color: $color2;
+
+        a:before {
+            content: "\f114";
+            font-family: 'icomoon' !important;
+            margin-right: $main-margin / 2;
+            color: $color6;
+        }
+
+        span.count {
+            float: right;
+            background-color: $color1;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color2;
+        }
+    }
+
+    li:nth-of-type(1) span.count {
+        background-color: $color3;
+    }
+
+    li:nth-of-type(2) span.count {
+        background-color: $color4;
+    }
+
+    li:nth-of-type(3) span.count {
+        background-color: $color5;
+    }
+
+    li:nth-of-type(4) span.count {
+        background-color: $color6;
+    }
+
+    li:nth-of-type(5) span.count {
+        background-color: $color7;
+    }
+
+    li:nth-of-type(6) span.count {
+        background-color: $color3;
+    }
+
+    li:nth-of-type(7) span.count {
+        background-color: $color4;
+    }
+
+    li:nth-of-type(8) span.count {
+        background-color: $color5;
+    }
+
+    li:nth-of-type(9) span.count {
+        background-color: $color6;
+    }
+
+    li:nth-of-type(10) span.count {
+        background-color: $color7;
+    }
+
+}
+
+/*=====  End of Our Categories Section  ======*/

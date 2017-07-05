@@ -1,0 +1,185 @@
+
+	$color1: #eaeaea;
+	$color2: #ffffff;
+	$color3: #3be8b0;
+	$color4: #1aafd0;
+	$color5: #6a67ce;
+	$color6: #ffb900;
+	$color7: #fc636b;
+	$color8: #333;
+	$color9: #42b72a;
+	$color10: $color5;
+
+	$infoColor: #777;
+	$font-size: 20px;
+
+	$green: #42b72a;
+	$blue: #08f;
+
+	$main-margin: 10px;
+	$main-padding: 10px;
+
+.color1 {
+	background-color: $color1;
+}
+.color2 {
+	background-color: $color2;
+}
+.color3 {
+	background-color: $color3;
+}
+.color4 {
+	background-color: $color4;
+}
+.color5 {
+	background-color: $color5;
+}
+.color6 {
+	background-color: $color6;
+}
+.color7 {
+	background-color: $color7;
+}
+.color8 {
+	background-color: $color8;
+}
+.color9 {
+	background-color: $color9;
+}
+.color10 {
+	background-color: $color10;
+}
+
+.infoColor {
+	background-color: $infoColor;
+}
+
+.green {
+	background-color: $green;
+}
+.blue {
+	background-color: $blue;
+}
+
+body {
+	background-color: $color1;
+	font-family: 'Dosis', sans-serif;
+	overflow: hidden;
+}
+
+.nopadding {
+	padding: 0;
+	margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.align-v {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+a:link,
+a:hover,
+a:visited {
+	text-decoration: none;
+	color: $color5;
+}
+
+.grid-item {
+    width: 45%;
+    margin: $main-margin /  2;
+}
+
+.parent {
+    margin-right: -15px;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+.round-info-span {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 7px;
+    font-size: $font-size - 8;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    color: #909090;
+}
+
+.tooltip.bottom .tooltip-inner {
+	background-color: $color5;
+}
+
+.tooltip.bottom .tooltip-arrow {
+      border-bottom-color: $color5;
+}
+
+.tooltip.left .tooltip-inner {
+	background-color: $color6;
+}
+
+.tooltip.left .tooltip-arrow {
+      border-left-color: $color6;
+}
+
+.tooltip.right .tooltip-inner {
+	background-color: $color4;
+}
+
+.tooltip.right .tooltip-arrow {
+      border-right-color: $color4;
+}
+
+.tooltip.top .tooltip-inner {
+	background-color: $color4;
+}
+
+.tooltip.top .tooltip-arrow {
+      border-top-color: $color4;
+}
+
+/* Start Reating System */
+
+.rating { 
+    border: none;
+    float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+    margin: 0px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before { 
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label { 
+    color: #ddd; 
+    float: right; 
+}
+
+.rating > input:checked ~ label, 
+.rating:not(:checked) > label:hover,  
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }    
+
+/* End Reating System */

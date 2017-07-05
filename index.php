@@ -87,69 +87,61 @@
 	<!-- Start Grid Images -->
 	<div class="col-md-12 nopadding">
 		<div class="container-grid-images">
-
+			
 			<div class="buttons-section">
 				Top Four
+				<span class="pull-right">
+					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_rating"><i class="icon-star-o"></i>&nbsp;Rating</span>
+					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
+					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_views"><i class="icon-eye3"></i>&nbsp;views</span>
+					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
+					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="rand"><i class="icon-random"></i>&nbsp;Random</span>
+				</span>
 			</div>
 
 			<div class="grid-images">
+				<!-- <span class="overlay"><i class="icon-refresh3"></i></span> -->
 
-				<div class="col-md-6 col-sm-12 nopadding">
-					<div class="image-box align-v">
-						<img src="http://placehold.it/500x700/700">
-					</div>
-					<div class="info">
-						<h3>test</h3>
-						<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-						<span>
-							<i class="icon-time2"> </i> 25 June 2015, 
-							<i class="icon-comment-o"> </i> 5, 
-							<i class="icon-like"> </i> 12, 
-						</span>
-					</div>
-				</div>
+			<?php // Sorting By Rating
 
-				<div class="col-md-6 col-sm-4 nopadding">
+				$args = array(
+					'post_type' 		=> 'product',
+					'stock' 			=> 1,
+					'posts_per_page' 	=> 4,
+					'orderby' 			=> 'rand'
+					);
+
+				$query = new WP_Query( $args );
+
+				if($query->have_posts()) {
+					while($query->have_posts()) {
+						$query->the_post(); ?>
+
+				<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding'; } ?>">
 					<div class="image-box align-v">
-						<img src="http://placehold.it/500x700/700">
+						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					</div>
 					<div class="info">
-						<h3>test</h3>
-						<p>is simply dummy text of the printing and typesetting industry. Lorem </p>
+						<h3><?php echo get_the_title(); ?></h3>
+
+						<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+						<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
+						<?php } else { echo ''; } ?>
 						<span>
-							<i class="icon-time2"> </i> 25 June 2015, 
-							<i class="icon-comment-o"> </i> 5, 
-							<i class="icon-like"> </i> 12, 
-						</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 nopadding">
-					<div class="image-box align-v">
-						<img src="http://placehold.it/500x700/700">
-					</div>
-					<div class="info">
-						<h3>test</h3>
-						<span>
-							<i class="icon-time2"> </i> 25 June 2015, 
-							<i class="icon-comment-o"> </i> 5, 
-							<i class="icon-like"> </i> 12, 
+							<i class="icon-time2"> </i> <?php echo get_the_date(); ?>,
+
+							<?php if ($query->current_post == 0 || $query->current_post == 1) { ?> 
+							<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
+							<?php } else { echo ''; } ?>
+
+							<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+							<i class="icon-eye3"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
+							<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 						</span>
 					</div>
 				</div>
 
-				<div class="col-md-3 col-sm-4 nopadding">
-					<div class="image-box align-v">
-						<img src="http://placehold.it/500x700/700">
-					</div>
-					<div class="info">
-						<h3>test</h3>
-						<span>
-							<i class="icon-time2"> </i> 25 June 2015, 
-							<i class="icon-comment-o"> </i> 5, 
-							<i class="icon-like"> </i> 12, 
-						</span>
-					</div>
-				</div>
+				<?php }} ?>
 
 			</div>
 		</div>
@@ -238,8 +230,10 @@
 			<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
 			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="btn btn-info btn-sm" href="' . get_permalink() . '">Read More</a>'; ?></p>
 			<p class="info_post">
-				<i class="icon-user2"> </i><?php echo get_the_author(); ?>
-				<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
+				<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+				<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
+				<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+				<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
 			</p>
 		</div>
 

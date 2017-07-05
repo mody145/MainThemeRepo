@@ -1,0 +1,115 @@
+.site-header {
+    width: 100%;
+    height: 515px;
+    background-color: $color2;
+    margin: 0 0 $main-margin 0;
+    overflow: hidden;
+}
+
+header.site-header img {
+    width: 100%;
+    position: relative;
+    top: -140px;
+}
+
+/*==========================================
+=            Brand Name Section            =
+==========================================*/
+
+.brand-name {
+    padding: $main-padding;
+    margin-left: 0;
+    padding-left: 0;
+    font-weight: bold;
+    font-size: $font-size +  8;
+}
+
+@media (max-width: 767px){
+    .brand-name {
+        text-align: center;
+        margin-bottom: $main-margin * 2;
+    }
+}
+
+
+/*=====  End of Brand Name Section  ======*/
+
+/*===========================================
+=            Login And Add Item             =
+===========================================*/
+
+.add-register-login {
+    padding: $main-padding;
+    margin: $main-margin;
+    background-color: $color2;
+    margin-right: $main-margin;
+
+    .login-register {
+        color: #8a8a8a;
+
+        a.header_login:before {
+            content: "\f2c0";
+            font-family: 'icomoon' !important;
+            margin: $main-margin / 2;
+        }
+
+        a.header_signup:before {
+            content: "\f234";
+            font-family: 'icomoon' !important;
+            margin: $main-margin / 2;
+        }
+
+        span.phoe-span-3, 
+        span.phoe-span-2 {
+            display: none;
+        }
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .add-register-login{
+        margin: $main-margin 0;
+    }
+}
+
+@media (max-width: 767px){
+    .add-register-login {
+        margin: $main-margin 0px;
+    }
+}
+
+/*=====  End of Login And Add Item   ======*/
+
+/*===============================================
+=            Section Loading Overlay            =
+===============================================*/
+
+.loading_overlay {
+    background-color: #e8e8e8;
+    color: $color8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99998;
+}
+
+.loading_overlay span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+/*=====  End of Section Loading Overlay  ======*/
+
+
+
+

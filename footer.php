@@ -5,25 +5,25 @@
 						<footer class="site-footer">
 
 						<!--=====================================
-						=            Sidebar Section            =
+						=            widget  Section            =
 						======================================-->
 
 							<div class='col-md-3 col-sm-6 nopadding pull-right text-center'>
 								<?php dynamic_sidebar( 'footer3_sidebar' ); ?>
 							</div>
 
-						<!--====  End of Sidebar Section  ====-->
+						<!--====  End of widget  Section  ====-->
 						<!--=====================================
-						=            Sidebar Section            =
+						=            widget  Section            =
 						======================================-->
 
 							<div class='col-md-3 col-sm-6 col-xs-12 nopadding pull-right'>
 								<?php dynamic_sidebar( 'footer2_sidebar' ); ?>
 							</div>
 
-						<!--====  End of Sidebar Section  ====-->
+						<!--====  End of widget  Section  ====-->
 						<!--=====================================
-						=            Sidebar Section            =
+						=            widget  Section            =
 						======================================-->
 
 							<div class='col-md-3 hidden-xs hidden-sm nopadding pull-right'>
@@ -34,9 +34,9 @@
 								</div>
 							</div>
 
-						<!--====  End of Sidebar Section  ====-->
+						<!--====  End of widget  Section  ====-->
 						<!--=====================================
-						=            Sidebar Section            =
+						=            widget  Section            =
 						======================================-->
 
 							<div class='col-md-3 hidden-xs hidden-sm nopadding pull-right'>
@@ -53,7 +53,7 @@
 							</div>
 							
 
-						<!--====  End of Sidebar Section  ====-->
+						<!--====  End of widget  Section  ====-->
 
 						</footer>
 					</div>

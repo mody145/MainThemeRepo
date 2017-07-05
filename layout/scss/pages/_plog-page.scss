@@ -1,0 +1,106 @@
+.all-posts-blog {
+    margin: $main-margin;
+    margin-left: 0;
+}
+
+@media (max-width: 767px) {
+    .all-posts-blog {
+        margin-right: 0;
+    }
+}
+
+.post-thumbnail-img {
+	width: 100%;
+    position: relative;
+
+    span.date-bost {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        padding: 3px 7px;
+        color: #676767;
+        font-family: 'Russo One', cursive;
+    }
+
+    span.date-bost span {
+        display: block;
+        text-align: center;
+        line-height: 21px;
+    }
+
+    span.year {
+        color: #34bbce;
+        border-top: 2px solid #34bbce;
+        margin-top: 2px;
+    }
+
+    span.date-bost .day {
+        font-size: 35px;
+        margin-top: 4px;
+        padding-bottom: 2px;
+        text-transform: uppercase;
+    }
+}
+
+article.post img {
+    width: 100%;
+}
+
+h1.post-title {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: $main-padding /  2 $main-padding;
+    font-size: 28px;
+    z-index: 99;
+}
+
+h1.post-title a {
+    color: rgba(0, 0, 0, 0.64);
+}
+
+.post-thumbnail-img .post-info {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2px $main-padding /  2;
+    color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+
+.post-thumbnail-img p.info_post-2 {
+    position: absolute;
+    top: 105px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.post-thumbnail-img .post-info a {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+p.some-content-post {
+    padding: $main-padding;
+    background-color: $color2;
+    margin-bottom: $main-margin * 2;
+    border-bottom: 5px solid $color6;
+}
+
+.custom-pagination {
+    padding: $main-padding /  2;
+    text-align: center;
+}
+
+.custom-pagination a {
+    background-color: $color2;
+    padding: 6px;
+    margin: 2px;
+}
+
+.custom-pagination .page-numbers.current {
+    margin: 2px;
+    background-color: $color2;
+    padding: 6px;
+}

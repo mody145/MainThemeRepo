@@ -1,7 +1,5 @@
 <?php
 
-require 'Database.class.php';
-
 /*==================================================
 =                ( Footer1 ) Sidebar          	  =
 ==================================================*/
@@ -144,25 +142,21 @@ add_action('widgets_init', 'ourWidgetsInit_welcome');
 /*============  End of Welcome Widget  =============*/
 
 /*==================================================
-=                Welcome Widget  	          	   =
+=                Cart Widget  	            	   =
 ==================================================*/
 
-function ourWidgetsInit_subscribe() {
+function ourWidgetsInit_cart_value() {
 
 	register_sidebar(array(
-		'name' 			=> 'Subscribe',
-		'id' 			=> 'subscribe_widget',
-		'description' 	=> 'The Widget Box To Subscribe',
-		'class' 		=> 'subscribe-widget-class',
-		'before_widget' => '<div class="custom-widget-welcome">',
-		'after_widget' 	=> "</div>\n",
-		'before_title' 	=> '<h4>',
-		'after_title' 	=> "</h4>\n",
+		'name' 			=> 'Cart Value',
+		'id' 			=> 'cart_value_widget',
+		'description' 	=> 'The Widget Box To Show Cart Value'
+
 		));
 }
-add_action('widgets_init', 'ourWidgetsInit_subscribe');
+add_action('widgets_init', 'ourWidgetsInit_cart_value');
 
-/*============  End of Welcome Widget  =============*/
+/*============  End of Cart Widget  =============*/
 
 /*===================================================
 =            Create Custom Widget About Us          =
@@ -300,7 +294,12 @@ class latest_posts_blog extends WP_Widget {
 					<div class="carousel-caption">
 						<a href="<?php echo get_permalink(); ?>"><h5><?php echo the_title(); ?></h5></a>
 						<p class="decsription"><?php echo $str = substr(get_the_content(), 0, 70) . ' ... <a href="' . get_permalink() . '">Read More</a>'; ?></p>
-						<p class="info-for-the-post"><i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?></p>
+						<p class="info-for-the-post">
+							<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+							<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
+							<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+							<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
+						</p>
 					</div>
 				</div>
 
@@ -669,12 +668,6 @@ class top_items_in_shop extends WP_Widget {
 						<span class="likes">
 							<?php $rating = $product->get_average_rating(); ?>
 							<fieldset id='demo3' class="rating" data-toggle="tooltip" title="Can't Rating From Here ... You Can This From Item Page">
-			                	<div class="tooltip top" role="tooltip">
-									<div class="tooltip-arrow"></div>
-									<div class="tooltip-inner">
-									Can't Rating From Here ... You Can This From Item Page
-									</div>
-			                	</div>
 
 			                	<!-- Start -->
 			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
@@ -726,23 +719,23 @@ class top_items_in_shop extends WP_Widget {
 						<?php } else { echo ''; } ?>
 
 						<p class="decsription"><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="#">Read More</a>'; ?></p>
-						<p class="info-for-the-post">
-							<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> 
-							&nbsp;<i class="icon-bubble"> </i> <?php print_r($shop->post->comment_count); ?>
-							&nbsp;<i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>
-							<!-- <i class="icon-stack"> </i> -->  
-							<!-- Get Categories Names -->
-							<?php
-							/*$cats = $product->get_category_ids(); 
-							foreach ($cats as $cat) {
+							<p class="info-for-the-post text-center">
 
-								$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
-								echo $term['name'] . ',';
-							}*/
-							?> 
-							&nbsp;<i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
-							&nbsp;<i class="icon-tag"> </i><?php if ( $product->is_on_sale() ) {  echo floor($discount) . "%"; }else{ echo "No"; } ?>
-						  </p>
+								<i class="icon-thumbs-o-up"> </i> <span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+								&nbsp;<i class="icon-bubble"> </i> <span class="round-info-span"><?php echo comments_number( '0', '1', '%' ); ?></span>
+								&nbsp;<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?></span>
+								<!-- <i class="icon-stack"> </i> -->  
+								<!-- Get Categories Names -->
+								<?php
+								/*$cats = $product->get_category_ids(); 
+								foreach ($cats as $cat) {
+
+									$term = get_term_by( 'id', $cat, 'product_cat', 'ARRAY_A' );
+									echo $term['name'] . ',';
+								}*/
+								?> 
+								&nbsp;<i class="icon-clock-o"></i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
+							</p>
 					</div>
 				</div>
 

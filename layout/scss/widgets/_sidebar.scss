@@ -1,0 +1,19 @@
+.custom-sidebar-widget {
+    margin: $main-margin;
+    margin-right: 0;
+}
+
+@media (max-width: 767px){
+    .custom-sidebar-widget {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .custom-sidebar-widget {
+        margin-left: 0;
+    }
+}
+
+
+

@@ -19,7 +19,7 @@
 <?php get_header(); ?>
 
 <div class="col-md-9 nopadding">
-	<div class="all-posts-blog-page-3">
+	<div class="all-posts-blog-page-3 for-pagination">
 
 <?php
 
@@ -40,7 +40,7 @@ if($posts->have_posts()) {
 
 		<!-- ||  Posts Content  || -->
 		
-			<?php get_template_part( 'content-plog-3', get_post_format() ); ?>
+			<?php get_template_part( 'template/content-plog-3', get_post_format() ); ?>
 
 		<!-- ||  Posts Content  || -->
 

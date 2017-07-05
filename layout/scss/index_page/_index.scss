@@ -1,0 +1,38 @@
+.welcome {
+    background-color: $color2;
+    margin: $main-margin;
+    margin-left: 0;
+    padding: $main-padding;
+    border-left: 5px solid $color6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .welcome {
+        margin-right: 0;
+    }
+}
+
+.welcome p {
+    padding: $main-padding /  2;
+    margin-bottom: 0;
+
+}
+
+.welcome h3 {
+    margin: 0;
+    position: relative;
+    bottom: 5px;
+    padding: $main-padding /  2;
+    width: 43%;
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .welcome h3 {
+        width: 55%
+    }
+}

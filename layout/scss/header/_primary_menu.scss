@@ -1,0 +1,56 @@
+/*============================================
+=            Primary Menu Section            =
+============================================*/
+
+nav.primary-menu {
+    margin: $main-margin;
+}
+
+ul#menu-main li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.primary-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul#menu-main i {
+    font-size: $font-size;
+}
+
+nav.primary-menu ul li {
+    width: 45px;
+    height: 45px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: $color2;
+}
+
+nav.primary-menu ul li i {
+    color: $color2;
+}
+
+nav.primary-menu ul li:nth-of-type(1) {
+    background-color: $color3;
+}
+
+nav.primary-menu ul li:nth-of-type(2) {
+    background-color: $color5;
+}
+
+nav.primary-menu ul li:nth-of-type(3) {
+    background-color: $color6;
+}
+
+nav.primary-menu ul li:nth-of-type(4) {
+    background-color: $color7;
+}
+
+/*=====  End of Primary Menu Section  ======*/

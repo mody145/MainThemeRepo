@@ -136,7 +136,7 @@ if (is_product_category()) {
 <div class="col-md-9 nopadding">
 	<!-- Start Container Shop -->
 	<div class="shop-container">
-		<div class="parent-shop">
+		<div class="parent-shop-container for-pagination">
 		<?php 
 		while ($query->have_posts()) {
 			$query->the_post();

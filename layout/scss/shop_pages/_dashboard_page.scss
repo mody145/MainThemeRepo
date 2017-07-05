@@ -1,0 +1,145 @@
+.parent-dashboard-page {
+    overflow: hidden;
+    background-color: $color2;
+    margin: $main-margin 0;
+
+    .boxes {
+
+    	h4 {
+    		margin-left: $main-margin;
+    	}
+
+		div.parent-box:nth-of-type(1) .box1 {
+		    background-color: $color6;
+		    border: 10px solid $color2;
+		    color: $color2;
+		    .head {
+				background-color: $color8;
+			    padding: $main-padding;
+		    }
+		    .body {
+		    	
+		    	.item {
+		    		position: relative;
+		    		padding: $main-padding;
+		    		h5 {
+	    			    font-size: $font-size;
+					    font-weight: bold;
+				        margin-top: 0;
+					    i {
+					    	font-size: 30px;
+					    }
+		    		}
+		    		a {
+		    			color: $color2;
+		    		}
+		    	}
+				.item:nth-child(even) {
+				    background-color: rgba(255, 255, 255, 0.1);
+				}
+		    }
+		}
+
+		div.parent-box:nth-of-type(1) .box2 {
+		    background-color: $color5;
+		    border: 10px solid $color2;
+		    color: $color2;
+		    .head {
+				background-color: $color8;
+			    padding: $main-padding;
+		    }
+		    .body {
+		    	
+		    	.item {
+		    		position: relative;
+		    		padding: $main-padding;
+		    		h5 {
+	    			    font-size: $font-size;
+					    font-weight: bold;
+					    margin-top: 0;
+					    i {
+					    	font-size: 30px;
+					    }
+		    		}
+		    		a {
+		    			color: $color2;
+		    		}
+		    	}
+				.item:nth-child(even) {
+				    background-color: rgba(255, 255, 255, 0.1);
+				}
+		    }
+		}
+
+		div.parent-box:nth-of-type(2) .box1 {
+		    background-color: $color7;
+		    border: 10px solid $color2;
+		    color: $color2;
+		    .head {
+				background-color: $color8;
+			    padding: $main-padding;
+		    }
+		    .body {
+		    	
+		    	.item {
+		    		position: relative;
+		    		padding: $main-padding;
+		    		h5 {
+	    			    font-size: $font-size;
+					    font-weight: bold;
+					    margin-top: 0;
+					    i {
+					    	font-size: 30px;
+					    }
+		    		}
+		    		a {
+		    			color: $color2;
+		    		}
+		    	}
+				.item:nth-child(even) {
+				    background-color: rgba(255, 255, 255, 0.1);
+				}
+		    }
+		}
+
+		div.parent-box:nth-of-type(2) .box2 {
+		    background-color: $color4;
+		    border: 10px solid $color2;
+		    color: $color2;
+		    .head {
+				background-color: $color8;
+			    padding: $main-padding;
+		    }
+		    .body {
+		    	
+		    	.item {
+		    		position: relative;
+		    		padding: $main-padding;
+		    		h5 {
+	    			    font-size: $font-size;
+					    font-weight: bold;
+					    margin-top: 0;
+					    i {
+					    	font-size: 30px;
+					    }
+		    		}
+		    		a {
+		    			color: $color2;
+		    		}
+		    	}
+				.item:nth-child(even) {
+				    background-color: rgba(255, 255, 255, 0.1);
+				}
+		    }
+		}
+	}
+
+	.you-orders {
+	    padding: $main-padding;
+	}
+
+	p.info-for-the-post {
+    	color: rgba(255, 255, 255, 0.63);
+    	margin-top: -$main-margin;
+	}
+}

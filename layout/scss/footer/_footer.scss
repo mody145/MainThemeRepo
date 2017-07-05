@@ -1,0 +1,77 @@
+#footer_for_sticky {
+    overflow: hidden;
+}
+
+.site-footer {
+	margin: $main-margin 0;
+	overflow: hidden;
+	background-color: $color2;
+	padding: $main-padding * 2;
+	margin-bottom: 0;
+}
+
+@media (max-width: 767px){
+    .site-footer {
+        padding: 0;
+        margin-top: $main-margin * 2;
+    }
+}
+
+.site-footer > div {
+
+}
+
+@media (max-width: 767px){
+    .custom-sidebar-widget-footer2 {
+        text-align: center;
+    }
+}
+
+.custom-sidebar-widget-footer2 ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 23px;
+}
+
+.menu-footer-menu-links-container ul li {
+    line-height: 27px;
+}
+
+.menu-footer-menu-links-container ul li:before {
+    content: "\ea20";
+    font-family: 'icomoon' !important;
+    margin-right: $main-margin /  2;
+}
+
+.menu-footer-menu-links-container ul li:before {
+    color: $color4;
+}
+
+.custom-sidebar-widget-footer2 ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    flex-wrap: wrap;
+    margin-left: -40px;
+}
+
+@media (max-width: 767px){
+    .custom-sidebar-widget-footer2 ul {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.custom-sidebar-widget-footer2 ul li a img {
+    max-width: 80px;
+    margin: $main-margin /  2;
+    border: 4px solid #DDD;
+}

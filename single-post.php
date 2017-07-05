@@ -49,8 +49,10 @@
 
 				<h1><?php echo the_title(); ?></h1>
 				<p class="info_post">
-					<i class="icon-user2"> </i><?php echo get_the_author(); ?>
-					<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> <i class="icon-bubble"> </i> <?php echo  get_comments_number(); ?>  <i class="icon-eye"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> <i class="icon-clock-o"> </i> <?php echo get_the_date(); ?>
+					<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+					<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
+					<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+					<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
 				</p>
 				<p class="container-content">
 					<?php echo get_the_content(); ?>
@@ -63,6 +65,8 @@
 	</div>
 
 	<div class="subscribe-container">
+		<h3 class="text-center" style="font-family: 'Russo One';"><i class="icon-news"></i>&nbsp; NEWSLETTER</h3>
+		<p class="text-center">Sign up for our newsletter to get up-to-date from us</p>
 		<?php echo do_shortcode( '[email-subscribers namefield="YES" desc="" group="Public"]' ); ?>
 	</div>
 
