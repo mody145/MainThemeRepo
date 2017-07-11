@@ -184,6 +184,17 @@ function check_if_is_product_in_session( $sessionArray, $pro_id ) {
 
 /*=====  End of Check If Is Product In Session Array  ======*/
 
+/*=======================================================
+=            Just Pre ( HTML ) Code For Show            =
+=======================================================*/
+
+function pre($var) {
+	echo '<pre>';
+	print_r($var);
+	echo '</pre>';
+}
+
+/*=====  End of Just Pre ( HTML ) Code For Show  ======*/
 
 
 ?>

@@ -86,3 +86,90 @@ select:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: black !important;
 }
+
+.panel-primary {
+    border-color: transparent;
+    margin-left: 10px;
+}
+
+.panel-heading {
+    padding: 0px 5px;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #78CFBF;
+    border-color: #78CFBF;
+    overflow: hidden;
+    text-align: center;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.panel-body {
+    padding: 5px;
+    background-color: #82DACA;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Droid Sans', sans-serif;
+    position: relative;
+}
+
+.panel-body:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    bottom: -10px;
+    left: 49%;
+    border-top: 5px solid rgb(130, 218, 202);
+    border-bottom: 5px solid rgba(130, 218, 202, 0);
+    border-right: 5px solid rgba(130, 218, 202, 0);
+    border-left: 5px solid rgba(130, 218, 202, 0);
+}
+
+/*======================================
+=            Tooltip Modify            =
+======================================*/
+
+.tooltip.bottom .tooltip-inner {
+    background-color: $color5;
+}
+
+.tooltip.bottom .tooltip-arrow {
+      border-bottom-color: $color5;
+}
+
+.tooltip.left .tooltip-inner {
+    background-color: $color6;
+}
+
+.tooltip.left .tooltip-arrow {
+      border-left-color: $color6;
+}
+
+.tooltip.right .tooltip-inner {
+    background-color: $color4;
+}
+
+.tooltip.right .tooltip-arrow {
+      border-right-color: $color4;
+}
+
+.tooltip.top .tooltip-inner {
+    background-color: $color4;
+}
+
+.tooltip.top .tooltip-arrow {
+      border-top-color: $color4;
+}
+
+/*=====  End of Tooltip Modify  ======*/

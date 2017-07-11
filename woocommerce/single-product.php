@@ -40,7 +40,7 @@ get_header(); ?>
 		=            Section breadcrumb             =
 		==========================================-->
 		
-		<div class="col-md-12 nopadding">
+		<div class="col-md-12 nopadding wow fadeIn">
 			<!-- Start breadcrumb Here -->
 			<div class="breadcrumb_singel_product">
 				<?php add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' ); ?>
@@ -75,7 +75,7 @@ get_header(); ?>
 			==============================================-->
 
 			<div class="clearfix"></div>
-			<div class="col-md-6 nopadding">
+			<div class="col-md-6 nopadding wow fadeIn">
 				<!-- Featuer Image For Product -->
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 				<div class="main_image_product">
@@ -88,29 +88,50 @@ get_header(); ?>
 			=            Title | Rate | Description            =
 			=================================================-->
 			
-			<div class="col-md-6 nopadding">
+			<div class="col-md-6 nopadding wow fadeIn">
 				<div class="meta_product">
+
+					<div class="panel-primary">
+						<div class="panel-heading">
+							<?php wc_get_template_part( 'content', 'rating' ); ?>
+						</div>
+						<div class="panel-body">
+							<span class="price">
+								<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
+
+								if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
+								echo '</span>'; ?>
+								<!-- Check If On Sale -->
+								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo '<span class="no-disc">No Disc</span>'; } ?>
+							</span>
+						</div>
+					</div>
+
 					<?php the_title( '<h1 class="product_title entry-title">', '</h1>' ); ?>
 
 					<?php $review_count = $product->get_review_count(); ?>
 
-					<?php wc_get_template_part( 'content', 'rating' ); ?>
-
 		            <!-- Increament Views -->
 		            <?php increament_post_views( $product->get_id() ) ?>
 					
-		            <p class="reviews_count"> <?php echo '&nbsp;[&nbsp;' . $review_count . '&nbsp;]&nbsp;<i class="icon-user-o"></i>' ?></p>
 		            <p class="short_description"><?php echo $product->short_description; ?></p>
 		            <p class="short_description"><?php the_content(); ?></p>
 					
-					<?php if (! empty($product->get_sale_price())) { ?>
-					
-					<p class="price"><?php echo '<i class="icon-usd"> </i> ' . $product->get_sale_price(); ?></p>
-					<p class="price_regular"><?php echo '<i class="icon-usd"> </i> ' . $product->get_regular_price(); ?></p>
-					
-					<?php } else { ?>
-					<p class="price"><?php echo '<i class="icon-usd"> </i> ' . $product->get_price(); ?></p>
-					<?php } ?>
+					<?php
+
+					if (isset($_COOKIE['Country_Currency'])) {
+
+						$the_main_price = $product->get_price();
+						$currency = $_COOKIE['Country_Currency'];
+
+						$byCurrency = convertCurrency($the_main_price, 'USD', $currency);
+						echo '<p class="price-currency"><i class="icon-quote2"></i>&nbsp;In Your Country :&nbsp;' . $currency . '&nbsp;<span class="bold">' . $byCurrency . '</span></p>';
+
+					} else {
+						echo '<p class="note-currency"><i class="icon-times"></i>&nbsp;You Do not Choose Your Currency</p>';
+					}
+
+					?>
 
 				<!--====  End of Title | Rate | Description  ====-->
 
@@ -175,23 +196,19 @@ get_header(); ?>
 				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
-					<button class="btn btn-info btn-sm" type="button">
 						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
 							<i id="like_icon" class="icon-check"></i>
 						</a>
-						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
-					</button>
+						<span class="round-info-span likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-					<button class="btn btn-info btn-sm" type="button">
 						<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
 							<i id="like_icon" class="icon-thumbs-o-up"></i>
 						</a>
-						<span class="badge likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
-					</button>
+						<span class="round-info-span likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
 				</div>
 
 				<?php } ?>
@@ -215,7 +232,7 @@ get_header(); ?>
 
 						<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
-						<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+						<?php echo wc_get_product_tag_list( $product->get_id(), '  ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
 						<?php do_action( 'woocommerce_product_meta_end' ); ?>
 					</div>
@@ -233,14 +250,14 @@ get_header(); ?>
 			$attachment_ids = $product->get_gallery_attachment_ids(); ?>
 
 			
-			<div class="col-md-6 nopadding">
-				<div class="images_gallery">
-				<div class="img_gallary_box"><img src="<?php echo $image[0]; ?>" width="200px" /></div>
+			<div class="col-md-6 nopadding wow fadeIn">
+				<div class="gallery-box">
+					<div class="owl-carousel owl-theme">
 
-					<?php foreach( $attachment_ids as $attachment_id ) { ?>
-					
-						<?php echo '<div class="img_gallary_box"><img src="' . $image_link = wp_get_attachment_url( $attachment_id ) . '" width="200px" /></div>'; } ?>
-					
+						<?php foreach( $attachment_ids as $attachment_id ) { ?>
+					    	<div class="img_gallary_box item"><img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id ) ?>" data-number="<?php $i++; echo $i; ?>" /></div>
+					    <?php } ?>
+					</div>
 				</div>
 			</div>
 			
@@ -255,20 +272,25 @@ get_header(); ?>
 			
 			<!-- Add Tabs ( Reveiws And Comments ) -->
 			<div class="clearfix"></div>
-			<div class="col-md-12 nopadding">
-
+			<div class="col-md-12 nopadding wow fadeIn">
+				<div class="container-comments">
+					<div class="comments-container">
+						<ul id="comments-list" class="comments-list">
 			<?php 
-				global $product;
+
 				$id = $product->id;
 
-				$id.",";
 				$args = array ('post_type' => 'product', 'post_id' => $id);
 				$comments = get_comments( $args );
 				wp_list_comments( array( 'callback' => 'woocommerce_comments' ), $comments);
 			?>
-				<?php wc_get_template_part( 'single', 'product-reviews' ) ?>
+						</ul>
+					</div>
+				</div>
+			<?php wc_get_template_part( 'single', 'product-reviews' ) ?>
 			</div>
 			
+
 			<!--====  End of Section Comments And Reviews  ====-->
 			
 			
@@ -277,10 +299,10 @@ get_header(); ?>
 			===============================================-->
 			
 			<div class="clearfix"></div>
-			<h3 class="r_products">Reilated Products</h3>
+			<h3 class="r_products wow fadeIn">Reilated Products</h3>
 			
 			<!-- Start Related Products -->
-			<div class="container-reilated-products">
+			<div class="container-reilated-products wow fadeIn">
 				<?php
 
 				global $post;

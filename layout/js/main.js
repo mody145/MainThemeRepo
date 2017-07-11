@@ -64,21 +64,43 @@ jQuery(document).ready(function($) {
 
 	$('input').attr('autocomplete', 'off');
 
+
+	$('.owl-carousel').owlCarousel({
+	    loop:true,
+	    margin:10,
+	    responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        },
+	        600:{
+	            items:3,
+	            nav:false
+	        },
+	        1000:{
+	            items:5,
+	            nav:true,
+	            loop:false
+	        }
+	    }
+	});
+
 /*=====  End of Modify Resent Posts Widget  ======*/
 
 /*===================================================
 =            Add Class To Comment Button            =
 ===================================================*/
 
-	$('input.submit').addClass('btn btn-info');
+	//$('input.submit').addClass('btn btn-info');
 
-	$('td.product-remove a').html('<i class="icon-remove"></i>');
+	//$('td.product-remove a').html('<i class="icon-remove"></i>');
 
-	$("input[name='apply_coupon']").addClass('btn btn-info');
+	//$("input[name='apply_coupon']").addClass('btn btn-info');
 
-	$("input[name='update_cart']").addClass('btn btn-primary');
+	//$("input[name='update_cart']").addClass('btn btn-primary');
 
-	$(".wc-proceed-to-checkout a").addClass('btn btn-primary');
+	///$(".wc-proceed-to-checkout a").addClass('btn btn-primary');
 
 	$(".woocomerce-form woocommerce-form-login .form-row input[type='submit']").addClass('btn btn-primary');
 
@@ -103,32 +125,6 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Section Gallery Single Product  ======*/
 
-/*=================================================
-=            Toggle Dropdown Calc Box             =
-=================================================*/
-	
-	$('body').on('mouseenter', '.calc-total', function(event) {
-
-		var box = $('span.calc-total-box-dropdown');
-
-		box.fadeIn(200);
-
-		event.preventDefault();
-		/* Act on the event */
-	});
-
-	$('body').on('mouseleave', '.calc-total', function(event) {
-
-		var box = $('span.calc-total-box-dropdown');
-
-		box.fadeOut(200);
-
-		event.preventDefault();
-		/* Act on the event */
-	});
-
-/*=====  End of Toggle Dropdown Calc Box   ======*/
-
 /*===============================================
 =            Section Overlay Loading            =
 ===============================================*/
@@ -148,43 +144,26 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Section Overlay Loading  ======*/
 
-/*======================================================
-=            Toggle Dropdown View Cart Box             =
-======================================================*/
+/*===============================================
+=            Empty Content Box Posts            =
+===============================================*/
+
+	$('body').on('mouseleave', '.dropdown-menu', function(event) {
+
+		$('.get-posts-in-menu').html('');
+
+		event.preventDefault();
+		/* Act on the event */
+	});
 	
-	$('body').on('mouseenter', '#update_total_cart', function(event) {
+/*=====  End of Empty Content Box Posts  ======*/
 
-		var box = $('span.show-value-box-dropdown');
-		var Url = box.attr('data-link');
-
-		box.fadeIn(200);
-
-		$.get(Url, function(data) {
-			box.html(data);
-		});
-
-		event.preventDefault();
-		/* Act on the event */
-	});
-
-	$('body').on('mouseleave', '#update_total_cart', function(event) {
-
-		var box = $('span.show-value-box-dropdown');
-		var Url = box.attr('data-link');
-
-		box.fadeOut(200);
-
-		$.get(Url, function(data) {
-			box.html(data);
-		});
-
-		event.preventDefault();
-		/* Act on the event */
-	});
-
-/*=====  End of Toggle Dropdown View Cart Box   ======*/
+/*==============================================
+=            Section Preload Imaegs            =
+==============================================*/
 
 
-    /*********************/
 
-}); 
+/*=====  End of Section Preload Imaegs  ======*/
+
+});

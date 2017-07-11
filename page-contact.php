@@ -7,7 +7,7 @@
 </div>
 <!-- Get In Touch -->
 <div class="col-md-4 nopadding">
-	<div class="touch-container">
+	<div class="touch-container wow fadeIn">
 		<h2><?php echo esc_attr( get_option( 'title_get_touch', '' ) ); ?></h2>
 		<p><?php echo esc_attr( get_option( 'description_get_touch', '' ) ); ?></p>
 		<p><?php echo esc_attr( get_option( 'address_get_touch', '' ) ); ?></p>

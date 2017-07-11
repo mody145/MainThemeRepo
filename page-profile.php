@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="col-md-12 nopadding">
-	<div class="profile-container">
+	<div class="profile-container wow fadeIn">
 		<?php echo do_shortcode('[woocommerce_my_account]' ); ?>
 	</div>
 </div>
@@ -10,14 +10,14 @@
 
 <div class="col-md-12 nopadding">
 
-	<div class="parent-dashboard-page">
+	<div class="parent-dashboard-page wow fadeIn">
 
 		<div class="boxes">
 			<!-- <h4 class="bold">Your Latest</h4> -->
 
 			<div class="col-md-6 nopadding parent-box">
 
-				<div class="col-md-12 nopadding">
+				<div class="col-md-12 nopadding wow fadeIn">
 					<div class="box1">
 						<div class="head">Latest 5 Views Posts</div>
 						<div class="body">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-12 nopadding">
+				<div class="col-md-12 nopadding wow fadeIn">
 					<div class="box2">
 						<div class="head">Latest 5 Products You Are Liked</div>
 						<div class="body">
@@ -124,7 +124,7 @@
 
 			<div class="col-md-6 nopadding parent-box">
 
-				<div class="col-md-12 nopadding">
+				<div class="col-md-12 nopadding wow fadeIn">
 					<div class="box1">
 						<div class="head">Latest 5 Views Products</div>
 						<div class="body">
@@ -180,7 +180,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-12 nopadding">
+				<div class="col-md-12 nopadding wow fadeIn">
 					<div class="box2">
 						<div class="head">Latest 5 Items You Are Follow</div>
 						<div class="body">

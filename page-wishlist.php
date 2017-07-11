@@ -9,7 +9,7 @@
 
 	<?php if (! empty($_SESSION['follow'])) { ?>
 
-	<table class="table table-bordered">
+	<table class="table table-bordered wow fadeIn">
 		<thead>
 			<tr>
 				<td><h5 class="bold">Name</h5></td>
@@ -94,11 +94,11 @@
 			<?php }} ?>
 		</tbody>
 		</table>
-	<div class="empty_white_list"><a class="btn btn-primary" href="#">Empty White List</a></div>
+	<div class="empty_white_list wow fadeIn"><a class="btn btn-primary" href="#">Empty White List</a></div>
 
 		<?php } else { ?>
 
-		<h3 class="text-center"><i class="icon-close"></i>&nbsp; You List Is Empty &nbsp;<i class="icon-sad"></i></h3>
+		<h3 class="text-center wow fadeIn"><i class="icon-close"></i>&nbsp; You List Is Empty &nbsp;<i class="icon-sad"></i></h3>
 
 		<?php } ?>
 		

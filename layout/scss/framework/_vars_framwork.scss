@@ -8,7 +8,7 @@
 	$color7: #fc636b;
 	$color8: #333;
 	$color9: #42b72a;
-	$color10: $color5;
+	$color10: #82DACA;
 
 	$infoColor: #777;
 	$font-size: 20px;
@@ -18,48 +18,6 @@
 
 	$main-margin: 10px;
 	$main-padding: 10px;
-
-.color1 {
-	background-color: $color1;
-}
-.color2 {
-	background-color: $color2;
-}
-.color3 {
-	background-color: $color3;
-}
-.color4 {
-	background-color: $color4;
-}
-.color5 {
-	background-color: $color5;
-}
-.color6 {
-	background-color: $color6;
-}
-.color7 {
-	background-color: $color7;
-}
-.color8 {
-	background-color: $color8;
-}
-.color9 {
-	background-color: $color9;
-}
-.color10 {
-	background-color: $color10;
-}
-
-.infoColor {
-	background-color: $infoColor;
-}
-
-.green {
-	background-color: $green;
-}
-.blue {
-	background-color: $blue;
-}
 
 body {
 	background-color: $color1;
@@ -115,40 +73,58 @@ a:visited {
     color: #909090;
 }
 
-.tooltip.bottom .tooltip-inner {
+/*====================================
+=            Color JQuery            =
+====================================*/
+
+.color1 {
+	background-color: $color1;
+}
+.color2 {
+	background-color: $color2;
+}
+.color3 {
+	background-color: $color3;
+}
+.color4 {
+	background-color: $color4;
+}
+.color5 {
 	background-color: $color5;
 }
-
-.tooltip.bottom .tooltip-arrow {
-      border-bottom-color: $color5;
-}
-
-.tooltip.left .tooltip-inner {
+.color6 {
 	background-color: $color6;
 }
-
-.tooltip.left .tooltip-arrow {
-      border-left-color: $color6;
+.color7 {
+	background-color: $color7;
+}
+.color8 {
+	background-color: $color8;
+}
+.color9 {
+	background-color: $color9;
+}
+.color10 {
+	background-color: $color10;
 }
 
-.tooltip.right .tooltip-inner {
-	background-color: $color4;
+.infoColor {
+	background-color: $infoColor;
 }
 
-.tooltip.right .tooltip-arrow {
-      border-right-color: $color4;
+.green {
+	background-color: $green;
+}
+.blue {
+	background-color: $blue;
 }
 
-.tooltip.top .tooltip-inner {
-	background-color: $color4;
-}
+/*=====  End of Color JQuery  ======*/
 
-.tooltip.top .tooltip-arrow {
-      border-top-color: $color4;
-}
-
-/* Start Reating System */
-
+/*=====================================
+=            Rating System            =
+=====================================*/
+  
 .rating { 
     border: none;
     float: left;
@@ -180,6 +156,113 @@ a:visited {
 .rating > input:checked + label:hover, 
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, 
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }    
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }  
+  
+/*=====  End of Rating System  ======*/
 
-/* End Reating System */
+/*=====================================
+=            Small Spinner            =
+=====================================*/
+
+.parent-spinners {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    color: #6a67ce;
+}
+
+/*=====  End of Small Spinner  ======*/
+
+/*=======================================
+=            Spinner Loading            =
+=======================================*/
+
+.sk-folding-cube {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+          animation: sk-foldCubeAngle 2.4s infinite linear both;
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  -webkit-transform: scale(1.1) rotateZ(90deg);
+          transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  -webkit-transform: scale(1.1) rotateZ(180deg);
+          transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  -webkit-transform: scale(1.1) rotateZ(270deg);
+          transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; 
+}
+.sk-folding-cube .sk-cube4:before {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  } 
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+            transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; 
+  } 25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+            transform: perspective(140px) rotateX(0deg);
+    opacity: 1; 
+  } 90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+    opacity: 0; 
+  }
+}
+
+/*=====  End of Spinner Loading  ======*/

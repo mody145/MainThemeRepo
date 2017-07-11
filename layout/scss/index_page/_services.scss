@@ -2,10 +2,82 @@
     margin-right: $main-margin;
     margin-top: $main-margin *2;
     overflow: hidden;
+
+    .buttons-section {
+        background-color: $color2;
+        margin-left: 0;
+        margin-right: 0;
+        padding: $main-padding;
+        margin-bottom: -$main-margin;
+
+        .Sorting_grid {
+            padding: 3px;
+            background-color: $color1;
+            color: #696767;
+            margin: 0 2px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
     
-    .services-container {
+    .services-container-box {
         background-color: $color2;
         padding: $main-padding;
+        overflow: hidden;
+        position: relative;
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .item {
+            margin: 3px;
+            padding: 10px;
+            background-color: #eee;
+
+            i {
+                color: $infoColor;
+            }
+
+            .media-heading {
+                margin-top: 30px;
+                margin-bottom: 5px;
+            }
+
+            .media-left a {
+                width: 150px;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border-radius: 3px;
+            }
+        }
+
+        .item.one {
+
+            .img-box {
+                overflow: hidden;
+                height: 368px;
+                border-radius: 5px;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
     }
 }
 

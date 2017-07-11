@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <!-- Start Sidebar -->
-<div class="col-md-3 hidden-xs pull-right nopadding">
+<div class="col-md-3 hidden-xs pull-right nopadding wow fadeIn">
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 </div><!-- End Sidebar -->
 
-<div class="col-md-9 nopadding">
-	<div class="all-posts-blog">
+<div class="col-md-9 nopadding wow fadeIn">
+	<div class="all-posts-blog for-pagination">
 
 <?php
 

@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<i class="icon-magnifier"></i>');
+				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
 
 			},
 			error: function() {
@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<i class="icon-magnifier"></i>');
+				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -91,7 +91,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<i class="icon-magnifier"></i>');
+				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -114,7 +114,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<i class="icon-magnifier"></i>');
+				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -142,7 +142,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<i class="icon-magnifier"></i>');
+				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -163,20 +163,31 @@ jQuery(document).ready(function($) {
 	$('h3').on('click', '.follow', function(e) {
 
 		var id = $(this).attr('data-id');
-		
-		$.post(MyAjax.ajaxurl, {id : id, action: 'add_follow'}, function (data) {
+		var that = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'add_follow'},
+			beforeSend: function() {
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+			}
+		})
+		.done(function(data) {
 
 			$('#items-whitelist').html(data);
 
+			$('#follow').html("<i id='follow_icon' class='icon-heart8'></i>");
+			$('#follow').removeClass('follow').addClass('unfollow');
+			$('#follow').attr('id', 'unfollow');
+			$('#follow_icon').css('color', color10);
 		})
-		
-			.done(function (d) {
-
-				$('#follow').html("<i id='follow_icon' class='icon-heart8'></i>");
-				$('#follow').removeClass('follow').addClass('unfollow');
-				$('#follow').attr('id', 'unfollow');
-				$('#follow_icon').css('color', color5);
-			})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
 		e.preventDefault();
 	});
@@ -190,11 +201,15 @@ jQuery(document).ready(function($) {
 	$('h3').on('click', '.unfollow', function(e) {
 
 		var id = $(this).attr('data-id');
+		var that = $(this);
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
 			type: 'POST',
 			data: {id : id, action: 'remove_follow'},
+			beforeSend: function() {
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+			}
 		})
 		.done(function(data) {
 			$('#items-whitelist').html(data);
@@ -202,7 +217,7 @@ jQuery(document).ready(function($) {
 			$('#unfollow').html("<i id='follow_icon' class='icon-heart-o'></i>");
 			$('#unfollow').removeClass('unfollow').addClass('follow');
 			$('#unfollow').attr('id', 'follow');
-			$('i#follow_icon').css({color: infoColor});
+			$('i#follow_icon').css({color: color10});
 		})
 		.fail(function() {
 			console.log("error");
@@ -224,23 +239,50 @@ jQuery(document).ready(function($) {
 	$('#add_to_cart_shop').on('click', function(event) {
 
 		var id = $(this).attr('data-id');
+		var that = $(this);
 
-		$.post(MyAjax.ajaxurl, {id : id, action: 'add_to_cart_single_post'}, function (data) {
-
-			$('#items-cart').html(data);
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'add_to_cart_single_post'},
+			beforeSend: function() {
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+			}
 		})
-		
-			.done(function (d) {
+		.done(function(data) {
+			$('#items-cart').html(data);
 
-				$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-shopping-bag"></i>');
-				$('#cart_icon').css({color: color5});
+			$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-shopping-bag"></i>');
+			$('#cart_icon').css({color: color10});
 
-				var updateLink = $('#update_total_cart').attr('data-link');
-				var oldResult = $('.total-number');
-				$.get(updateLink, function(data) {
-					oldResult.html(data);
-				});
+			var updateLink = $('#update_total_cart').attr('data-link');
+			var oldResult = $('.total-number');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action: 'updata_cart_in_header'},
+				beforeSend: function() {
+					oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+				}
 			})
+			.done(function(data) {
+				oldResult.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
 		event.preventDefault();
 	});
@@ -254,16 +296,21 @@ jQuery(document).ready(function($) {
 	$('.empty_white_list').on('click', function(event) {
 
 		var thisElement = $(this);
+		var that = $(this);
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
 			type: 'POST',
 			data: {param1: 'value1', action: 'empty_whitelist'},
+			beforeSend: function() {
+				that.html('<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>');
+			}
 		})
 		.done(function(data) {
 			$('.parent-follow-page table').slideUp(150);
 			thisElement.hide(100);
 			$('.parent-follow-page').prepend('<h3 class="text-center"><i class="icon-close"></i>&nbsp; You List Is Empty &nbsp;<i class="icon-sad"></i></h3>')
+			$('#items-whitelist').html(0);
 
 		})
 		.fail(function() {
@@ -289,24 +336,51 @@ jQuery(document).ready(function($) {
 		var id = $(this).attr('data-id');
 		var itemParent = $(this).parent();
 		var parentOverLay = itemParent.parent().parent().parent().find('#parent_overlay');
-		
-		$.post(MyAjax.ajaxurl, {id : id, action: 'add_to_cart_single_post'}, function (data) {
+		var that = $(this);
 
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'add_to_cart_single_post'},
+			beforeSend: function() {
+				that.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
 			$('#items-cart').html(data);
 
-		})
-		
-			.done(function (d) {
+			itemParent.hide(100);
+			parentOverLay.append('<div class="overlay"> <i class="icon-shopping-bag"></i> </div>');
 
-				itemParent.hide(100);
-				parentOverLay.append('<div class="overlay"> <i class="icon-shopping-bag"></i> </div>');
+			var updateLink = $('#update_total_cart').attr('data-link');
+			var oldResult = $('.total-number');
 
-				var updateLink = $('#update_total_cart').attr('data-link');
-				var oldResult = $('.total-number');
-				$.get(updateLink, function(data) {
-					oldResult.html(data);
-				});
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action: 'updata_cart_in_header'},
+				beforeSend: function() {
+					oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+				}
+			})
+			.done(function(data) {
+				oldResult.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
 			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
 		
 		event.preventDefault();
 	});
@@ -317,16 +391,18 @@ jQuery(document).ready(function($) {
 	=            Section Add To Follow ( Archive )          =
 	=======================================================*/
 	
-	$('h3').on('click', '.follow_archive', function(e) {
+	$('h3').on('click', 'a.follow_archive', function(e) {
 
 		var id = $(this).attr('data-id');
-
 		var thisItem = $(this);
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
 			type: 'POST',
 			data: {id : id, action: 'add_follow'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
 		})
 		.done(function(data) {
 
@@ -335,7 +411,7 @@ jQuery(document).ready(function($) {
 			thisItem.html("<i id='follow_icon' class='icon-heart8'></i>");
 			thisItem.removeClass('follow_archive').addClass('unfollow_archive');
 			thisItem.attr('id', 'unfollow');
-			thisItem.find('#follow_icon').css('color', color5);
+			thisItem.find('#follow_icon').css('color', color10);
 		})
 		.fail(function() {
 			console.log("error");
@@ -353,25 +429,33 @@ jQuery(document).ready(function($) {
 	=            Section Remove Folloing ( Archive )            =
 	===========================================================*/
 	
-	$('h3').on('click', '.unfollow_archive', function(e) {
+	$('h3').on('click', 'a.unfollow_archive', function(e) {
 
 		var id = $(this).attr('data-id');
-
 		var thisItem = $(this);
 
-		$.post(MyAjax.ajaxurl, {id : id, action: 'remove_follow'}, function (data) {
-
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'remove_follow'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
 			$('#items-whitelist').html(data);
 
+			thisItem.html("<i id='follow_icon' class='icon-heart-o'></i>");
+			thisItem.removeClass('unfollow_archive').addClass('follow_archive');
+			thisItem.attr('id', 'follow');
+			thisItem.find('#follow_icon').css({color: color10});
 		})
-		
-			.done(function (d) {
-
-				thisItem.html("<i id='follow_icon' class='icon-heart-o'></i>");
-				thisItem.removeClass('unfollow_archive').addClass('follow_archive');
-				thisItem.attr('id', 'follow');
-				thisItem.find('#follow_icon').css({color: color5});
-			})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 
 		e.preventDefault();
 	});
@@ -388,18 +472,28 @@ jQuery(document).ready(function($) {
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
 		var result = thisItem.parent().parent().find('.likes-count');
-		
-		$.post(MyAjax.ajaxurl, {id : id, action: 'like_product'}, function (data) {
 
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'like_product'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
 			result.html(data);
 
+			thisItem.html("<i id='unlike_icon' class='icon-check'></i>");
+			thisItem.attr('id', 'unlike');
 		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
-			.done(function (d) {
-
-				thisItem.html("<i id='unlike_icon' class='icon-check'></i>");
-				thisItem.attr('id', 'unlike');
-			})
 		
 		e.preventDefault();
 	});
@@ -415,18 +509,28 @@ jQuery(document).ready(function($) {
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
 		var result = thisItem.parent().parent().find('.likes-count');
-		
-		$.post(MyAjax.ajaxurl, {id : id, action: 'unlike_product'}, function (data) {
 
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'unlike_product'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
 			result.html(data);
 
+			thisItem.html("<i id='like_icon' class='icon-thumbs-o-up'></i>");
+			thisItem.attr('id', 'like');
 		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
-			.done(function (d) {
-
-				thisItem.html("<i id='like_icon' class='icon-thumbs-o-up'></i>");
-				thisItem.attr('id', 'like');
-			})
 		
 		e.preventDefault();
 	});
@@ -442,23 +546,47 @@ jQuery(document).ready(function($) {
 		var id = $(this).attr('data-id'); 
 		var thisElement = $(this);
 
-		$.post(MyAjax.ajaxurl, {id : id, action: 'add_to_cart_single_post'}, function (data) {
-
-			$('#items-cart').html(data);
-			console.log(data);
-
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'add_to_cart_single_post'},
+			beforeSend: function() {
+				thisElement.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
 		})
-		
-			.done(function (d) {
+		.done(function(data) {
+			$('#items-cart').html(data);
 
-				thisElement.replaceWith('<button disabled="disabled" class="btn btn-success btn-sm"><i class="icon-check3"></i>&nbsp;In Cart</button>');
+			thisElement.replaceWith('<button disabled="disabled" class="btn btn-success btn-sm"><i class="icon-check3"></i>&nbsp;In Cart</button>');
 
-				var updateLink = $('#update_total_cart').attr('data-link');
-				var oldResult = $('.total-number');
-				$.get(updateLink, function(data) {
-					oldResult.html(data);
-				});
+			var updateLink = $('#update_total_cart').attr('data-link');
+			var oldResult = $('.total-number');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action: 'updata_cart_in_header'},
+				beforeSend: function() {
+					oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+				}
 			})
+			.done(function(data) {
+				oldResult.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
 		event.preventDefault();
 	});
@@ -472,19 +600,30 @@ jQuery(document).ready(function($) {
 	$('body').on('click', '.remove_from_whitelist_page', function(e) {
 
 		var id = $(this).attr('data-id');
-
 		var thisItem = $(this);
 		var parentTd = thisItem.parent().parent(); 
 
-		$.post(MyAjax.ajaxurl, {id : id, action: 'remove_follow'}, function (data) {
-
-			$('#items-whitelist').html(data);
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'remove_follow'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
 		})
+		.done(function(data) {
+			$('#items-whitelist').html(data);
+
+			parentTd.css('background-color', color1);
+			parentTd.hide(400);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 		
-			.done(function (d) {
-				parentTd.css('background-color', color1);
-				parentTd.hide(400);
-			})
 
 		e.preventDefault();
 	});
@@ -506,7 +645,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rating: rating, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="icon-refresh3"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -539,7 +678,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {like: like, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="icon-refresh3"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -572,7 +711,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {views: views, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="icon-refresh3"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -605,7 +744,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {comments: comments, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="icon-refresh3"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -638,7 +777,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rand: rand, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="icon-refresh3"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -672,19 +811,23 @@ jQuery(document).ready(function($) {
 		var Country_Currency = $(this).val();
 		var	price_All = $('.total-number').text();
 
-		$.ajax(MyAjax.ajaxurl, { data: {Country_Currency : Country_Currency, price_All : price_All, action: 'calc_all_value_cart'},
-			type: "POST",
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {Country_Currency : Country_Currency, price_All : price_All, action: 'calc_all_value_cart'},
 			beforeSend: function() {
-				$('.convert_result').html('<i class="icon-check"></i>');
-			},
-			error: function(response) {
-				alert(response); 
-			},
-			success: function(data) {
-				$('.convert_result').html(data);
-			}	
+				$('.convert_result').html('<i class="fa fa-spinner fa-pulse"></i>'); }
+		})
+		.done(function(data) {
+			$('.convert_result').html(data);
+		})
+		.fail(function(response) {
+			alert(response);
+		})
+		.always(function() {
+			console.log("complete");
 		});
-
+		
 	});
 	
 	/*=====  End of Calc Value Cart By Country  ======*/
@@ -702,7 +845,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {country: country, action: 'calc_all_value_cart'},
 			beforeSend: function() {
-				$('.convert_result').html('<i class="icon-check"></i>');
+				$('.convert_result').html('<i class="fa fa-spinner fa-pulse"></i>');
 			}
 		})
 		.done(function(data) {
@@ -776,6 +919,7 @@ jQuery(document).ready(function($) {
 		var closeSearch = $('.close-search');
 
 		elementForm.fadeIn(400);
+		$('#search-text').focus();
 
 		closeSearch.click(function() {
 
@@ -794,7 +938,10 @@ jQuery(document).ready(function($) {
 			$.ajax({
 				url: MyAjax.ajaxurl,
 				type: 'POST',
-				data: dataForm
+				data: dataForm,
+				beforeSend: function() {
+					$('.results_search').html('<i class="fa fa-spinner fa-pulse fa-2x"></i>');
+				}
 			})
 			.done(function(data) {
 				$('.results_search').html(data);
@@ -815,5 +962,254 @@ jQuery(document).ready(function($) {
 	});
 
 	/*=====  End of Section Search From Fullscreen  ======*/
+
+	/*======================================================
+	=            Toggle Dropdown View Cart Box             =
+	======================================================*/
+		
+		$('body').on('mouseenter', '#update_total_cart', function(event) {
+
+			var box = $('span.show-value-box-dropdown');
+			var Url = box.attr('data-link');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<i class="fa fa-spinner fa-pulse fa-2x"></i>');
+				}
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+
+			event.preventDefault();
+			/* Act on the event */
+		});
+
+	/*=====  End of Toggle Dropdown View Cart Box   ======*/
+
+	/*========================================================
+	=            Section GrigIPosts In Index Page            =
+	========================================================*/
+	
+	$('body').on('click', '#sorting_posts_by_latest', function(e) {
+
+		var latest = 'latest';
+		var thisElement = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {latest: latest, action: 'sorting_grid_bosts_in_blog_box'},
+			beforeSend: function() {
+				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			$('.services-container-box').html(data);
+			thisElement.siblings('span').css({
+				backgroundColor: color1,
+				color: '#696767'
+			});
+			thisElement.css({
+				backgroundColor: blue,
+				color: color2
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
+		e.preventDefault();
+	});
+
+	$('body').on('click', '#sorting_posts_by_like', function(e) {
+
+		var like = 'like'; 
+		var thisElement = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {like: like, action: 'sorting_grid_bosts_in_blog_box'},
+			beforeSend: function() {
+				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			$('.services-container-box').html(data);
+			thisElement.siblings('span').css({
+				backgroundColor: color1,
+				color: '#696767'
+			});
+			thisElement.css({
+				backgroundColor: blue,
+				color: color2
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
+		e.preventDefault();
+	});
+
+	$('body').on('click', '#sorting_posts_by_views', function(e) {
+
+		var views = 'views'; 
+		var thisElement = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {views: views, action: 'sorting_grid_bosts_in_blog_box'},
+			beforeSend: function() {
+				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			$('.services-container-box').html(data);
+			thisElement.siblings('span').css({
+				backgroundColor: color1,
+				color: '#696767'
+			});
+			thisElement.css({
+				backgroundColor: blue,
+				color: color2
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
+		e.preventDefault();
+	});
+
+	$('body').on('click', '#sorting_posts_by_comments', function(e) {
+
+		var comments = 'comments'; 
+		var thisElement = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {comments: comments, action: 'sorting_grid_bosts_in_blog_box'},
+			beforeSend: function() {
+				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			$('.services-container-box').html(data);
+			thisElement.siblings('span').css({
+				backgroundColor: color1,
+				color: '#696767'
+			});
+			thisElement.css({
+				backgroundColor: blue,
+				color: color1
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
+		e.preventDefault();
+	});
+
+	$('body').on('click', '#sorting_posts_rand', function(e) {
+
+		var rand = 'rand'; 
+		var thisElement = $(this);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {rand: rand, action: 'sorting_grid_bosts_in_blog_box'},
+			beforeSend: function() {
+				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			$('.services-container-box').html(data);
+			thisElement.siblings('span').css({
+				backgroundColor: color1,
+				color: '#696767'
+			});
+			thisElement.css({
+				backgroundColor: blue,
+				color: color2
+			});
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+
+		e.preventDefault();
+	});
+	
+	/*=====  End of Section GrigPosts In Index Page  ======*/
+
+	/*========================================================
+	=            Section Box Posts In Header Menu            =
+	========================================================*/
+
+	var menu = $('#menu-headermenu').has('.dropdown-menu');
+
+	var dropDown = menu.find('.dropdown-menu');
+
+	dropDown.append('<div class="get-posts-in-menu"></div>');
+
+	var dropDownMenu = $('#menu-headermenu').has('.dropdown-menu').find('.dropdown-menu');
+
+	// When Mouse On Category
+	$(dropDownMenu).on('mouseenter', 'li', function(event) {
+
+		var linkCategory = $(this).find('a').attr('href');
+
+		var boxResult = $('.get-posts-in-menu');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {linkCategory: linkCategory, action: 'get_posts_by_category_in_header_menu'},
+			beforeSend: function() {
+				boxResult.prepend('<span class="ovlay-loading"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+		})
+		.done(function(data) {
+			boxResult.html(data);
+			$('.post-image-box').removeClass('preload');
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Box Posts In Header Menu  ======*/
 
 });

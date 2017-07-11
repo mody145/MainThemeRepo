@@ -2,7 +2,7 @@
 				<div class="clearfix"></div>
 				<div id="footer_for_sticky">
 					<div class="col-md-12 nopadding">
-						<footer class="site-footer">
+						<footer class="site-footer wow fadeIn">
 
 						<!--=====================================
 						=            widget  Section            =
@@ -63,5 +63,6 @@
 		</div>
 		<!-- End Of Container -->
 	<?php wp_footer(); ?>
+	<script>new WOW().init();</script>
 	</body>
 </html>

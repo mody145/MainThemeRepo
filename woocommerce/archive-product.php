@@ -2,13 +2,13 @@
 <?php get_header(); ?>
 
 <!-- Start Sidebar Shop -->
-<div class='col-md-3 nopadding pull-right'>
+<div class='col-md-3 nopadding pull-right wow fadeIn'>
 	<!-- Sidebar Shop -->
 	<?php dynamic_sidebar( 'shop-sidebar' ); ?>
 </div><!-- End Sidebar Shop -->
 
 <!-- Upperbar -->
-<div class="col-md-9 nopadding">
+<div class="col-md-9 nopadding wow fadeIn">
 	<!-- Start Upper bar In Shop -->
 	<div class="upper-bar-woo-shop">
 
@@ -45,7 +45,7 @@
 </div><!-- Upperbar -->
 
 <!-- Start Filter Products -->
-<div class="col-md-9 nopadding">
+<div class="col-md-9 nopadding wow fadeIn">
 	<!-- Start Conatiner Filter -->
 	<div class="container-filter">
 	<?php add_query_arg( array(
@@ -91,7 +91,7 @@
 <div class="clearfix hidden-md hidden-lg"></div>
 <div class="col-md-9 nopadding">
 	<!-- Start Container Shop -->
-	<div class="shop-container">
+	<div class="shop-container wow fadeIn">
 		<div class="parent-shop-container for-pagination">
 
 	<?php
@@ -110,7 +110,7 @@
 		while ($query->have_posts()) {
 			$query->the_post();
 			global $product; ?>
-
+			
 			<?php wc_get_template_part( 'content', 'product' ); ?>
 
 			<?php } ?>
@@ -126,11 +126,11 @@
 				</div>
 
 			</div>
+			<!-- Here Is Result Filter -->
+			<div class="result_search_shop for-pagination for-load-more">
+				
+			</div><!-- Here Is Result Filter -->
 		</div>
-		<!-- Here Is Result Filter -->
-		<div class="result_search_shop for-pagination for-load-more">
-			
-		</div><!-- Here Is Result Filter -->
 	</div><!-- End Container Shop -->
 
 <?php get_footer(); ?>

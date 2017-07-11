@@ -3,10 +3,10 @@
 ===========================================*/
 
 nav.header-menu {
-    padding: $main-padding;
     margin: $main-margin $main-margin $main-margin 0px;
     background-color: $color2;
-    border-left: 5px solid $color4;
+    perspective: 800px;
+    z-index: 2;
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -21,15 +21,19 @@ nav.header-menu .menu-headermenu-container > ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    position: relative;
+    z-index: 2;
 }
 
-.menu-headermenu-container ul > li {
-    font-size: 19px;
+.menu-headermenu-container > ul > li {
+    font-size: $font-size - 2;
+    position: static;
+    padding: $main-padding;
 }
 
 ul.dropdown-menu li {
     font-size: $font-size - 5;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.6);
 }
 
 ul.dropdown-menu li:last-of-type {
@@ -37,8 +41,80 @@ ul.dropdown-menu li:last-of-type {
     border-bottom: 0;
 }
 
+div.get-posts-in-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.46, #eaeaea), color-stop(1.0, #FFFFFF));
+    color: $color8;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid $color2;
+    border-left: none;
+
+    .ovlay-loading {
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0.46, #eaeaea), color-stop(1.0, #FFFFFF));
+        transition: all .5s ease;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            position: relative;
+            z-index: 200;
+            color: $color8;
+        }
+    }
+
+    .post-box {
+        width: 25%;
+        border: 10px solid transparent;
+        padding-top: 15px;
+
+        .preload {
+            position: relative;
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                position: absolute;
+            }
+        }
+
+        .post-image-box {
+            max-width: 100%;
+            height: 132px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+
+            img {
+                max-width: 140%;
+            }
+        }
+
+        .info-box {
+            color: #6b6a6a;
+        }
+    }
+}
+
 ul.dropdown-menu li a {
     color: $infoColor;
+    padding: $main-padding;
 }
 
 a.dropdown-toggle {
@@ -55,32 +131,33 @@ span.caret {
 span.caret:before {
     content: "\f107";
     display: block;
-    position: absolute;
-    top: 8px;
-    right: -8px;
+    position: relative;
+    top: -10px;
+    right: 0;
 }
 
-a.dropdown-toggle:hover ~ ul.dropdown-menu {
-    display: block !important;
+.dropdown:hover .dropdown-menu {
+    transform: rotateX(0deg);
+    opacity: 1;
 }
 
-#menu-headermenu .dropdown-menu {
+.dropdown-menu {
     border: 0;
     position: absolute;
     background-color: $color2;
     color: #1f1f1f !important;
     box-shadow: none;
-    top: 34px;
-    width: 220px;
+    top: 45px;
+    width: 100%;
     border-radius: 0;
-    border-top: 2px solid #1aafd0;
-    transition: all 5s ease;
-    display: none;
-}
-
-#menu-headermenu ul.dropdown-menu:hover {
+    margin: 0;
+    padding: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    transition: all .5s ease;
     display: block;
-} 
+    opacity: 0;
+}
 
 .dropdown-menu > li > a:hover,
  .dropdown-menu > li > a:focus {

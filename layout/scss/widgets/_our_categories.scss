@@ -5,6 +5,7 @@
 .list_categories {
     background-color: $color2;
     padding: 5px;
+    margin-bottom: $main-margin * 2;
     li {
         list-style: none;
         margin: $main-margin / 2 0;

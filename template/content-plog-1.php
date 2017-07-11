@@ -1,6 +1,6 @@
 		<!-- ||  Posts Content  || -->
 		
-			<article class="post">
+			<article class="post wow fadeIn">
 				<div class="post-thumbnail-img">
 
 					<span class="date-bost">

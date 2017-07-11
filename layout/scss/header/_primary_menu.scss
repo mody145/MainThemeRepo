@@ -6,12 +6,6 @@ nav.primary-menu {
     margin: $main-margin;
 }
 
-ul#menu-main li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 nav.primary-menu ul {
     padding: 0;
     margin: 0;
@@ -31,10 +25,39 @@ nav.primary-menu ul li {
     text-align: center;
     border-radius: 50%;
     color: $color2;
+    position: relative;
+}
+
+nav.primary-menu ul li:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 105%;
+    height: 105%;
+    background: $color1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+}
+
+nav.primary-menu ul li:hover:before {
+    transform: scale(1);
 }
 
 nav.primary-menu ul li i {
     color: $color2;
+    position: absolute;
+    width: 100%;
+    line-height: 50px;
+    font-size: 25px !important;
+    top: -3px;
+    left: 0px;
+    transition: .5s ease-in-out;
+}
+
+nav.primary-menu ul li i:hover {
+    color: $color5 !important;
 }
 
 nav.primary-menu ul li:nth-of-type(1) {

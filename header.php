@@ -6,8 +6,10 @@
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 		<title><?php if(is_home()) { echo bloginfo( 'name' ); } else { echo wp_title( $sep = '-' ); } ?></title>
 		<?php wp_head(); ?>
 	</head>
@@ -31,7 +33,14 @@
 
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
-		<span>TEST</span>
+		<span>
+			<div class="sk-folding-cube">
+				<div class="sk-cube1 sk-cube"></div>
+				<div class="sk-cube2 sk-cube"></div>
+				<div class="sk-cube4 sk-cube"></div>
+				<div class="sk-cube3 sk-cube"></div>
+			</div>
+		</span>
 	</div><!-- Section Overlay Loading -->
 
 	<!-- Section Search FullScrean -->
@@ -123,7 +132,7 @@
 			<!-- Start Brand Here -->
 
 			<div class="col-md-2 col-sm-6 nopadding hidden-xs">
-				<div class="brand-name">
+				<div class="brand-name wow fadeIn">
 					<a href="<?php echo home_url(); ?>">Brand Name</a>
 				</div>
 			</div>
@@ -132,7 +141,7 @@
 			<!-- Start Icon Like | Follow | Cart -->
 
 			<div class="col-md-3 col-sm-6 nopadding">
-				<div class="icon-header1">
+				<div class="icon-header1 wow fadeIn">
 
 					<a href="<?php echo home_url( 'dashpoard' ); ?>"><i class="icon-check2" data-toggle="tooltip" data-placement="bottom" title="Your Orders"><span id="items-follow">0</span></i></a>
 
@@ -151,7 +160,7 @@
 				<div class="col-md-4 col-sm-12 nopadding">
 
 					<div class="col-md-6 nopadding">
-						<div class="add-register-login">
+						<div class="add-register-login wow fadeIn">
 							<div class="login-register text-center">
 								<?php echo do_shortcode('[lsphe-header]' ); ?>
 							</div>
@@ -159,7 +168,7 @@
 					</div>
 
 					<div class="col-md-6 nopadding">
-						<div class="search-in-header" data-toggle="tooltip" data-placement="bottom" title="Click To FullScrean Search">&nbsp;
+						<div class="search-in-header wow fadeIn" data-toggle="tooltip" data-placement="bottom" title="Click To FullScrean Search">&nbsp;
 							<i class="icon-search"></i>
 						</div>
 					</div>
@@ -170,7 +179,7 @@
 			<!-- Srart Form Search -->
 
 				<div class="col-md-3 col-sm-12 nopadding">
-					<div class="total-cart text-center">
+					<div class="total-cart text-center wow fadeIn">
 						<?php 
 
 						global $woocommerce;
@@ -201,7 +210,7 @@
 
 								<?php if (isset($_COOKIE['Country_Currency'])) { ?>
 
-								<a id="save_country" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-success btn-sm" data-country="<?php echo $_COOKIE['Country_Currency']; ?>">Calc By&nbsp;-&nbsp;<?php echo $_COOKIE['Country_Currency']; ?></a>
+								<a id="save_country" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-default btn-sm" data-country="<?php echo $_COOKIE['Country_Currency']; ?>">Calc By&nbsp;-&nbsp;<?php echo $_COOKIE['Country_Currency']; ?></a>
 
 								<?php } ?>
 
@@ -213,21 +222,22 @@
 			<!-- End Form Search -->
 			<!-- navbar Header -->
 
-			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding">
-				<nav class="header-menu">
+			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding" style="z-index: 2;">
+				<nav class="header-menu wow fadeIn">
 					<?php 
 
 					$args1 = array(
-						'theme_location' => 'header',
-						'walker'         => new WP_Bootstrap_Navwalker()
+						'theme_location' 	=> 'header',
+						'walker'         	=> new WP_Bootstrap_Navwalker()
 						);
 
 					wp_nav_menu( $args1 ); ?>
+
 				</nav>
 			</div>
 
-			<div class="col-md-9 col-sm-12 visible-sm nopadding">
-				<nav class="header-menu">
+			<div class="col-md-9 col-sm-12 visible-sm nopadding" style="z-index: 2;">
+				<nav class="header-menu wow fadeIn">
 					<?php 
 
 					$args1 = array(
@@ -244,7 +254,7 @@
 			<!-- Navbar Primary -->
 
 			<div class="col-md-3 col-sm-12 nopadding">
-				<nav class="primary-menu">
+				<nav class="primary-menu wow fadeIn">
 					<?php 
 
 					$args = array(

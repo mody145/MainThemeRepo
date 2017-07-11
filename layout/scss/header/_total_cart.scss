@@ -9,22 +9,35 @@
     margin-right: 0;
     margin-left: $main-margin;
     color: $infoColor;
+    position: relative;
+    perspective: 800px;
+    z-index: 2;
 
     span.update-total {
         margin: $main-margin + 5;
         cursor: pointer;
-        position: relative;
+
+        &:hover span.show-value-box-dropdown {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
 
         span.show-value-box-dropdown {
             position: absolute;
-            background-color: rgba(0, 136, 255, 0.89);
-            color: $color1;
-            top: 28px;
-            left: -143px;
-            padding: $main-padding;
+            background-color: rgba(255, 255, 255, 0.89);
+            color: #5d5d5d;
+            top: 40px;
+            left: 0;
+            padding: 10px;
             z-index: 50;
-            min-width: 200px;
-            display: none;
+            min-width: 100%;
+            border: 1px solid #eaeaea;
+            border-top: none;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            transform-style: preserve-3d;
+            transition: all .5s ease;
+            opacity: 0;
 
             .items {
                 overflow: hidden;
@@ -40,36 +53,36 @@
                 justify-content: space-between;
                 margin: $main-margin 0 $main-margin / 2;
             }
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: -20px;
-                right: 40px;
-                border-bottom: 10px solid rgba(0, 136, 255, 0.89);
-                border-top: 10px solid rgba(255, 255, 255, 0);
-                border-right: 10px solid rgba(255, 255, 255, 0);
-                border-left: 10px solid rgba(255, 255, 255, 0);
-            }
         }
     }
 
     span.calc-total {
         margin: $main-margin + 5;
         cursor: pointer;
-        position: relative;
+
+        &:hover span.calc-total-box-dropdown {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
 
         span.calc-total-box-dropdown {
             position: absolute;
-            width: 280px;
-            background-color: rgba(0, 136, 255, 0.89);
-            top: 28px;
-            right: -62px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.89);
+            top: 40px;
+            right: 0;
             z-index: 50;
-            display: none;
+            color: #333;
+            border: 1px solid #eaeaea;
+            border-top: none;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            transform-style: preserve-3d;
+            transition: all .5s ease;
+            opacity: 0;
 
             span.select-country {
-                color: $color2;
+                color: $infoColor;
                 display: block;
                 padding: $main-padding;
             }
@@ -84,24 +97,13 @@
 
                 span.text-center.convert_result {
                     font-size: $font-size - 5;
-                    color: $color2;
+                    color: $infoColor;
                 }
             }
 
             #save_country {
                 margin: $main-margin;
             }
-        }
-
-        span.calc-total-box-dropdown:before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: 58px;
-            border-bottom: 10px solid rgba(0, 136, 255, 0.89);
-            border-top: 10px solid rgba(255, 255, 255, 0);
-            border-right: 10px solid rgba(255, 255, 255, 0);
-            border-left: 10px solid rgba(255, 255, 255, 0);
         }
     }
 }

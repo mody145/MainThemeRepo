@@ -14,6 +14,50 @@ section.related.products {
 	    margin-right: 0;
         position: relative;
 
+		p.price-currency {
+		    display: inline-block;
+		    background-color: #78cfbf;
+		    color: #fff;
+		    padding: 2px 5px;
+		    font-size: 15px;
+		    margin: 16px 0px;
+		    border-radius: 5px;
+		}
+
+		p.note-currency {
+		    display: inline-block;
+		    background-color: #78cfbf;
+		    color: #fff;
+		    padding: 2px 5px;
+		    font-size: 15px;
+		    margin: 16px 0px;
+		    border-radius: 5px;
+		}
+
+		.panel-primary {
+		    max-width: 130px;
+		    margin-top: 10px;
+
+		    > .panel-heading {
+		    	font-size: 13px;
+		    }
+
+			span.main-price i {
+			    font-size: 10px;
+			    position: relative;
+			    top: -10px;
+			}
+
+			span.price-without-disc {
+			    font-size: 13px;
+			    text-decoration: line-through;
+			}
+
+			span.no-disc {
+			    font-size: 12px;
+			}
+		}
+
 		h1.product_title.entry-title {
 		    font-size: $font-size +  10;
 		}
@@ -41,7 +85,7 @@ section.related.products {
 
 			i {
 			    font-size: 45px;
-			    color: $infoColor;
+			    color: $color10;
 			}
 
 			a:link, a:hover, a:visited {
@@ -73,7 +117,7 @@ section.related.products {
 
 			i {
 			    font-size: 45px;
-			    color: $infoColor;
+			    color: $color10;
 			}
 
 			a:link, a:hover, a:visited {
@@ -104,53 +148,35 @@ section.related.products {
 		    right: 150px;
 		    top: 37px;
 
-			button {
-			    display: flex;
-			    align-items: center;
-			    justify-content: center;
-			    text-align: center;
-			    cursor: default;
-			    background-color: $color5;
-                padding-bottom: 2px;
-
-				span.badge.likes-count {
-				    color: #6a67ce;
-				    font-size: 14px;
-				    font-weight: normal;
-				}
-			}
-
 		    #like {
 			    font-size: $font-size;
-			    color: $color2;
+			    color: $color10;
 			    margin-right: $main-margin / 2;
 			    position: relative;
-			    top: -2px;
 			    width: 36px;
 			    height: 32px;
 
 				i {
-				    font-size: 28px;
+				    font-size: 45px;
 				    position: absolute;
-				    top: 3px;
-				    left: 5px;
+				    top: -4px;
+				    left: -50px;
 				}
 		    }
 
 		    #unlike {
 			    font-size: $font-size;
-			    color: $color2;
+			    color: $color10;
 			    margin-right: $main-margin / 2;
 			    position: relative;
-			    top: -2px;
 			    width: 36px;
 			    height: 32px;
 
 			    i {
-					font-size: 28px;
+					font-size: 45px;
 					position: absolute;
-					top: 3px;
-					left: -1px;
+					top: -6px;
+					left: -50px;
 			    }
 		    }
 		}
@@ -171,10 +197,39 @@ section.related.products {
 		}
         
         span.tagged_as a {
-            padding: 3px;
-            background-color: $color6;
-            color: $color2;
-            margin: 2px;
+            background-color: $blue;
+	        color: $color2;
+	        padding: 2px;
+	        border-radius: 2px;
+	        margin: 0 2px;
+
+	        &:before {
+	        	content: "\f02b";
+		        font-family: 'icomoon' !important;
+		        margin-right: 5px;
+		        margin-left: 3px;
+		        color: $color2;
+	        }
+        }
+
+		.product_meta {
+		    font-size: 12px !important;
+		}
+
+        span.posted_in a {
+        	background-color: $blue;
+	        color: $color2;
+	        padding: 2px;
+	        border-radius: 2px;
+	        margin: 0 2px;
+
+	        &:before {
+	        	content: "\f07b";
+		        font-family: 'icomoon' !important;
+		        margin-right: 5px;
+		        margin-left: 3px;
+		        color: $color2;
+	        }
         }
 
 	}
@@ -219,31 +274,52 @@ section.related.products {
 		}
 	}
 
-	.images_gallery {
+	.gallery-box {
 	    background-color: $color2;
+	    padding: $main-padding / 2;
 	    margin: $main-margin;
 	    margin-right: 0;
-	    display: flex;
-	    flex-direction: row;
-	    flex-wrap: wrap;
-	    justify-content: center;
-	    align-items: center;
-        padding: $main-padding;
 
-		.img_gallary_box {
-		    width: 90px;
-		    height: 90px;
+		.owl-nav {
 		    display: flex;
-		    justify-content: center;
 		    align-items: center;
-		    margin: $main-margin / 2;
-		    overflow: hidden;
-		    cursor: pointer;
+		    justify-content: center;
+		    margin: 4px;
+
+			.owl-prev {
+			    background-color: $blue;
+			    color: $color2;
+			    padding: 0 4px;
+			    margin: 0 4px;
+			    border-radius: 3px;
+			}
+
+			.owl-next {
+			    background-color: $blue;
+			    color: $color2;
+			    padding: 0 4px;
+			    margin: 0 4px;
+			    border-radius: 3px;
+			}
 		}
+
+		.owl-dots {
+		    text-align: center;
+
+			> div {
+			    width: 5px;
+			    height: 5px;
+			    display: inline-block;
+			    background-color: $blue;
+			    margin: 0 2px;
+			    border-radius: 50%;
+			}
+		}
+
 	}
 
 	@media (max-width: 767px){
-		.images_gallery {
+		.gallery-box {
 			margin-left: 0;
 			margin-top: $main-margin *2;
 		}
@@ -261,42 +337,46 @@ section.related.products {
 		}
 	}
 
-	.comment.byuser {
-	    background-color: $color2;
-	    list-style: none;
-	    padding: $main-padding;
-	    margin: $main-margin;
-	    margin-left: 0;
-	    margin-right: 0;
-	    margin-bottom: $main-margin *2;
-	    position: relative;
+	.container-comments {
+	    margin-right: 0px;
+	    margin-top: $main-margin;
+	    margin-bottom: $main-margin * 2;
 
-	    .comment_container {
-
-	    	.comment-text {
-
-				.star-rating {
-				    position: absolute !important;
-				    top: 10px;
-				    right: 10px;
-				}
-
-				p.meta {
-				    margin-top: $main-margin;
-				    color: $infoColor;
-				}	
-	    	}
-	    }
+		span.rating {
+		    position: absolute !important;
+		    right: 10px;
+		}
 	}
 
-	.commentform {
+	.comments-form-container {
+
+		h2.woocommerce-Reviews-title {
+			color: $infoColor;
+		}
+
+		span#reply-title {
+		    color: $infoColor;
+		}
+
+		label {
+		    display: none;
+		}
+
+		p.comment-notes {
+		    color: $infoColor;
+		}
 		
+		input#submit {
+		    background-color: $green !important;
+		}
 	}
     
     h3.r_products {
         background-color: $color2;
         padding: $main-padding;
         font-size: $font-size - 1;
+        margin-top: 10px;
+	    margin-bottom: 20px;
     }
 }
 

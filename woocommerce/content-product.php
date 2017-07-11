@@ -1,7 +1,7 @@
 			<?php global $query; global $product; ?>
 
-			<!-- Start Masonry Grid -->
-			<div class="col-md-4 nopadding post">
+			<!-- Start Masonry Grid --><?php $tests = 1; ?>
+			<div class="col-md-4 nopadding post wow fadeIn" data-wow-delay="<?php echo $tests++; ?>">
 
 				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>">
 					<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
@@ -21,20 +21,23 @@
 					<?php } else { echo ''; } ?>
 
 				<div class="info-item">
-					<span class="likes">
-						
-						<?php wc_get_template_part( 'content', 'rating' ); ?>
 
-					</span>
+					<div class="panel-primary">
+						<div class="panel-heading">
+							<?php wc_get_template_part( 'content', 'rating' ); ?>
+						</div>
+						<div class="panel-body">
+							<span class="price">
+								<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
 
-					<span class="price">
-						<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
+								if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
+								echo '</span>'; ?>
+								<!-- Check If On Sale -->
+								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
+							</span>
+						</div>
+					</div>
 
-						if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
-						echo '</span>'; ?>
-						<!-- Check If On Sale -->
-						<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo ''; } ?>
-					</span>
 				</div>
 
 				<!-- Product Info -->
@@ -87,23 +90,19 @@
 				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
-					<button class="btn btn-info btn-xs" type="button">
 						<a href="#" id="unlike" data-id="<?php echo $product->get_id() ?>">
 							<i id="like_icon" class="icon-check"></i>
 						</a>
-						<span class="badge likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
-					</button>
+						<span class="round-info-span likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-					<button class="btn btn-info btn-xs" type="button">
 						<a href="#" id="like" data-id="<?php echo $product->get_id() ?>">
 							<i id="like_icon" class="icon-thumbs-o-up"></i>
 						</a>
-						<span class="badge likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
-					</button>
+						<span class="round-info-span likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
 				</div>
 
 				<?php } ?>
@@ -124,7 +123,7 @@
 
 						<i class="icon-thumbs-o-up"> </i> <span class="round-info-span"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?> </span>
 						&nbsp;<i class="icon-bubble"> </i> <span class="round-info-span"><?php echo comments_number( '0', '1', '%' ); ?></span>
-						&nbsp;<i class="icon-eye"> </i><span class="round-info-span"> <?php get_meta_value_if_exists( get_the_id(), 'views' ); ?></span>
+						&nbsp;<i class="icon-fire"> </i><span class="round-info-span"> <?php get_meta_value_if_exists( get_the_id(), 'views' ); ?></span>
 
 						&nbsp;<i class="icon-clock-o"></i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
 					</p>

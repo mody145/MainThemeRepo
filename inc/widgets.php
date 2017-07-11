@@ -77,7 +77,7 @@ function ourWidgetsInit() {
 		'id' 			=> 'right-sidebar',
 		'description' 	=> 'The Widgets Sidebar Will Be Here At The Right',
 		'class' 		=> 'right-sidebar-class',
-		'before_widget' => '<div class="custom-sidebar-widget">',
+		'before_widget' => '<div class="custom-sidebar-widget wow fadeIn">',
 		'after_widget' 	=> "</div>\n",
 		'before_title' 	=> '<h4>',
 		'after_title' 	=> "</h4>\n",
@@ -297,7 +297,7 @@ class latest_posts_blog extends WP_Widget {
 						<p class="info-for-the-post">
 							<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
 							<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
-							<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+							<i class="icon-fire"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
 							<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
 						</p>
 					</div>
@@ -665,51 +665,23 @@ class top_items_in_shop extends WP_Widget {
 						<?php } else { echo ''; } ?>
 
 					<div class="info-item">
-						<span class="likes">
-							<?php $rating = $product->get_average_rating(); ?>
-							<fieldset id='demo3' class="rating" data-toggle="tooltip" title="Can't Rating From Here ... You Can This From Item Page">
 
-			                	<!-- Start -->
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating == 5) { echo "checked='checked'"; } ?> id="1star53" name="rating1" value="5" />
-			                    <label class = "full" for="1star53"></label>
+						<div class="panel-primary">
+							<div class="panel-heading">
+								<?php wc_get_template_part( 'content', 'rating' ); ?>
+							</div>
+							<div class="panel-body">
+								<span class="price">
+									<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4.5 && $rating < 5) { echo "checked='checked'"; } ?> id="1star4half3" name="rating2" value="4.5" />
-			                    <label class="half" for="1star4half3"></label>
+									if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
+									echo '</span>'; ?>
+									<!-- Check If On Sale -->
+									<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
+								</span>
+							</div>
+						</div>
 
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 4 && $rating < 4.5) { echo "checked='checked'"; } ?> id="1star43" name="rating3" value="4" />
-			                    <label class = "full" for="1star43"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3.5 && $rating < 4) { echo "checked='checked'"; } ?> id="1star3half3" name="rating4" value="3.5" />
-			                    <label class="half" for="1star3half3"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 3 && $rating < 3.5) { echo "checked='checked'"; } ?> id="1star33" name="rating5" value="3" />
-			                    <label class = "full" for="1star33"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2.5 && $rating < 3) { echo "checked='checked'"; } ?> id="1star2half3" name="rating6" value="2.5" />
-			                    <label class="half" for="1star2half3"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 2 && $rating < 2.5) { echo "checked='checked'"; } ?> id="1star23" name="rating7" value="2" />
-			                    <label class = "full" for="1star23"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1.5 && $rating < 2) { echo "checked='checked'"; } ?> id="1star1half3" name="rating8" value="1.5" />
-			                    <label class="half" for="1star1half3"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 1 && $rating < 1.5) { echo "checked='checked'"; } ?> id="1star13" name="rating9" value="1" />
-			                    <label class = "full" for="1star13"></label>
-
-			                    <input class="stars" disabled='disabled' type="checkbox" <?php if ($rating >= 0.5 && $rating < 1) { echo "checked='checked'"; } ?> id="1starhalf3" name="rating10" value="0.5" />
-			                    <label class="half" for="1starhalf3"></label>
-
-			                </fieldset>
-						</span>
-							<span class="price">
-							<?php echo  '<span class="main-price"><i class="icon-usd"> </i> ';
-
-							if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
-							echo '</span>'; ?>
-							<!-- Check If On Sale -->
-							<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo ''; } ?>
-						</span>
 					</div>
 					<!-- Product Info -->
 					<div class="carousel-caption">
@@ -723,7 +695,7 @@ class top_items_in_shop extends WP_Widget {
 
 								<i class="icon-thumbs-o-up"> </i> <span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
 								&nbsp;<i class="icon-bubble"> </i> <span class="round-info-span"><?php echo comments_number( '0', '1', '%' ); ?></span>
-								&nbsp;<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?></span>
+								&nbsp;<i class="icon-fire"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?></span>
 								<!-- <i class="icon-stack"> </i> -->  
 								<!-- Get Categories Names -->
 								<?php

@@ -13,8 +13,12 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/layout/css/bootstrap.css' );
 	// skitter slider
 	wp_enqueue_style( 'skitter-css', get_template_directory_uri() . '/layout/css/skitter.css' );
+	// Animate Lip
+	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/layout/css/animate.css' );
+	// OWL Carousel
+	wp_enqueue_style( 'owl-carousel-css', get_template_directory_uri() . '/layout/css/owl.carousel.min.css' );
 	// Fonts
-	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css' );
+	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css?' . time() . '' );
 	// Main File Css
 	wp_enqueue_style( 'main-css', get_template_directory_uri() . '/layout/css/main.css?' . time() . '' );
 	
@@ -27,6 +31,8 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/layout/js/bootstrap.min.js', array('jquery'), '', true );
 	// skitter slider
 	wp_enqueue_script( 'skitter-js', get_template_directory_uri() . '/layout/js/jquery.skitter.js', array('jquery'), '', true );
+	// WOW Lip
+	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/layout/js/wow.min.js', array('jquery'), '', true );
 	// Trigger Nice Scroll
 	wp_enqueue_script( 'NiceScroll-js', get_template_directory_uri() . '/layout/js/jquery.nicescroll.min.js', array('jquery'), '', true );
 	// jquery jscroll
@@ -35,6 +41,8 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'easying-js', get_template_directory_uri() . '/layout/js/jquery.easing.1.3.js', array('jquery'), '', true );
 	// Masonry
 	wp_enqueue_script( 'Masonry', get_template_directory_uri() . '/layout/js/masonry.pkgd.min.js', array('jquery'), '', true );
+	// OWL Carousel
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/layout/js/owl.carousel.min.js', array('jquery'), '', true );
 	// For Sticky Sidebar
 	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/layout/js/jquery.sticky-kit.js', array('jquery'), '', true );
 	// Enqueue JQuery

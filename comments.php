@@ -17,92 +17,109 @@
  */
 if ( post_password_required() ) {
 	return;
-}
-?>
+} ?>
 
-<div id="comments" class="comments-area">
+<div class="comments-container">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One Comment on &ldquo;%2$s&rdquo;', '%1$s Comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'NewTheme' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2><!-- .comments-title -->
+	<ul id="comments-list" class="comments-list">
+<?php 
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'NewTheme' ); ?></h2>
-			<div class="nav-links">
+foreach ($comments as $comment) { ?>
+	<li>
+		<div class="comment-main-level">
+			<!-- Avatar -->
+			<div class="comment-avatar"><?php echo get_avatar( $comment->comment_author_email, 80, 'http://placehold.it/80x80/ddd' ); ?></div>
+			<!-- Comment Box -->
+			<div class="comment-box">
+				<div class="comment-head">
+					<h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $comment->comment_author ?></a></h6>
+					<span><?php $date = $comment->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
+					<i class="fa fa-reply"></i>
+				</div>
+				<div class="comment-content">
+					<?php echo $comment->comment_content ?>
+				</div>
+			</div>
+		</div>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'NewTheme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'NewTheme' ) ); ?></div>
+		<?php 
+		$idParent = $comment->comment_ID;
+		$childrens = get_comments( array(
+			'parent' => $idParent
+		) ); 
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		if ( ! empty( $childrens ) ) { ?>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+		<ul class="comments-list reply-list">
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'NewTheme' ); ?></h2>
-			<div class="nav-links">
+		<?php foreach ($childrens as $children) { ?>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'NewTheme' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'NewTheme' ) ); ?></div>
+			<li>
+				<!-- Avatar -->
+				<div class="comment-avatar"><?php echo get_avatar( $children->comment_author_email, 80, 'http://placehold.it/80x80/ddd' ); ?></div>
+				<!-- Comment Box -->
+				<div class="comment-box">
+					<div class="comment-head">
+						<h6 class="comment-name"><a href="http://creaticode.com/blog"><?php echo $children->comment_author ?></a></h6>
+						<span><?php $date = $children->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
+						<i class="fa fa-reply"></i>
+					</div>
+					<div class="comment-content">
+						<?php echo $children->comment_content ?>
+					</div>
+				</div>
+			</li>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
+			<?php } /* End Forech */ ?>
+
+		</ul>
+
+		<?php } /* Endif */ ?>
+
+	</li>
+
+	<?php } /* End Foreach */ ?>
+
+	</ul>
+</div>
+
+<div class="comments-form-container">
+	<div class="fields-container">
+
+		
+
 		<?php
-		endif; // Check for comment navigation.
 
-	endif; // Check for have_comments().
+		$args = array(
+			'comment_field' 		=> '<textarea name="comment" class="form-control" rows="5"></textarea>',
+			'submit_button' 		=> '<div class="submit-button"><input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary" value="Send Comment" /></div>',
+			'title_reply'   		=> '<h4><i class="icon-comment-circle"></i>&nbsp; Leave Comment</h4>',
+			'comment_notes_before' 	=> '',
+			'logged_in_as' 			=> '',
+			'fields' 		=> array(
+				'author' 	=> '<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1"><i class="icon-chevron-right2"></i></span>
+									<input  id="author" type="text" name="author" value="' . esc_attr( $commenter['comment_author'] ) . '" size="40" class="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Type Your First Name" autocomplete="off" />
+								</div>',
+				'email' 	=> '<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1"><i class="icon-chevron-right2"></i></span>
+									<input id="email" type="text" name="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="40" class="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Type Your First Name" autocomplete="off" />
+								</div>',
+ 				)
+			);
+
+		 comment_form( $args ); 
 
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		?>
+		
+	</div>
+</div>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'NewTheme' ); ?></p>
-	<?php
-	endif;
 
-	$commenter = wp_get_current_commenter();
-	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
 
-	$commentField = '<textarea placeholder="* Your Comment" id="comment" name="comment" cols="45" rows="6" aria-required="true">' .
-				    '</textarea>';	
 
-	$fields =  array(
 
-	  'author' =>
-	    '<input placeholder="* Your Name" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-	    '" size="30"' . $aria_req . ' />',
 
-	  'email' =>
-	    '<input placeholder="* Your E-Mail" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-	    '" size="30"' . $aria_req . ' />',
-	);
 
-	$args = array(
-		'fields' 		=> $fields,
-		'comment_field' => $commentField,
-		);	
 
-	comment_form( $args );
-	?>
-
-</div><!-- #comments -->

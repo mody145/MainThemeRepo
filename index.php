@@ -25,7 +25,7 @@
 	</div><!-- End Section Welcome -->
 
 	<!-- Section Slider -->
-	<div class="mini-slider hidden-xs">
+	<div class="mini-slider hidden-xs wow fadeIn">
 		<div class="skitter skitter-large with-dots">
 			<ul>
 			<?php 
@@ -65,7 +65,7 @@
 	</div><!-- End Section Slider -->
 
 	<!-- Section Features -->
-	<div class="feat">
+	<div class="feat wow fadeIn">
 		<div class="col-md-6 col-sm-6 nopadding">
 			<div class="box-feat">
 				<i class="icon-monocle"></i>
@@ -86,16 +86,16 @@
 
 	<!-- Start Grid Images -->
 	<div class="col-md-12 nopadding">
-		<div class="container-grid-images">
+		<div class="container-grid-images wow fadeIn">
 			
 			<div class="buttons-section">
 				Top Four
 				<span class="pull-right">
-					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_rating"><i class="icon-star-o"></i>&nbsp;Rating</span>
-					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
-					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_views"><i class="icon-eye3"></i>&nbsp;views</span>
-					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
-					<span class="Sorting_grid" data-link="<?php echo get_template_directory_uri() . '/Ajax/sorting_grid_images.php' ?>" id="rand"><i class="icon-random"></i>&nbsp;Random</span>
+					<span class="Sorting_grid" id="by_rating"><i class="icon-star-o"></i>&nbsp;Rating</span>
+					<span class="Sorting_grid" id="by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
+					<span class="Sorting_grid" id="by_views"><i class="icon-fire"></i>&nbsp;views</span>
+					<span class="Sorting_grid" id="by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
+					<span class="Sorting_grid" id="rand"><i class="icon-random"></i>&nbsp;Random</span>
 				</span>
 			</div>
 
@@ -135,7 +135,7 @@
 							<?php } else { echo ''; } ?>
 
 							<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
-							<i class="icon-eye3"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
+							<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
 							<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 						</span>
 					</div>
@@ -152,7 +152,7 @@
 
 	<!-- Section Testimonials -->
 	<div class="testimonials hidden-xs">
-		<div class="container-testimonials">
+		<div class="container-testimonials wow fadeIn">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
@@ -211,13 +211,145 @@
 
 	<!-- Section Services -->
 	<div class="services">
-		<div class="services-container">
-			Test
+
+		<div class="buttons-section">
+			Top Four
+			<span class="pull-right">
+				<span class="Sorting_grid" id="sorting_posts_by_latest"><i class="icon-clock-o"></i>&nbsp;Latest</span>
+				<span class="Sorting_grid" id="sorting_posts_by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
+				<span class="Sorting_grid" id="sorting_posts_by_views"><i class="icon-fire"></i>&nbsp;views</span>
+				<span class="Sorting_grid" id="sorting_posts_by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
+				<span class="Sorting_grid" id="sorting_posts_rand"><i class="icon-random"></i>&nbsp;Random</span>
+			</span>
+		</div>
+
+		<div class="services-container-box wow fadeIn">
+
+		<?php  
+
+		$top_posts = new WP_Query( array(
+			'post_type' 		=> 'post',
+			'posts_per_page' 	=> 4,
+			'orderby' 			=> 'rand'
+			) );
+
+		if ($top_posts->have_posts()) {
+			while ($top_posts->have_posts()) {
+				$top_posts->the_post(); ?>
+
+				<?php if ($top_posts->current_post == 0) { ?>
+
+				<div class="col-md-6 nopadding">
+			    	<div class="item one">
+			    		<div class="img-box align-v">
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						</div>
+						<h3><?php echo get_the_title(); ?></h3>
+						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
+						<p class="info_post">
+							<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+							<i class="icon-bubble"> </i><span class="round-info-span"><?php echo  get_comments_number(); ?>  </span>
+							<i class="icon-fire"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+							<i class="icon-clock-o"> </i><span class="round-info-span"><?php echo get_the_date(); ?></span>
+						</p>
+					</div>
+			    </div>
+
+				<?php } ?>
+
+				<?php if ($top_posts->current_post == 1) { ?>
+
+			    <div class="col-md-6 nopadding">
+			        <div class="col-md-12 nopadding">
+			        	<div class="item two">
+
+							<div class="media">
+								<div class="media-left media-middle">
+									<a href="#">
+										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+									<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
+									<p class="info_post">
+										<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+										<i class="icon-bubble"> </i><span class="round-info-span"><?php echo  get_comments_number(); ?>  </span>
+										<i class="icon-fire"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+										<i class="icon-clock-o"> </i><span class="round-info-span"><?php echo get_the_date(); ?></span>
+									</p>
+								</div>
+							</div>
+
+			        	</div>
+			        </div>
+
+				<?php } ?>
+
+				<?php if ($top_posts->current_post == 2) { ?>
+
+		        <div class="col-md-12 nopadding">
+		        	<div class="item three">
+
+		        		<div class="media">
+							<div class="media-left media-middle">
+								<a href="#">
+									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+								<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
+								<p class="info_post">
+									<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+									<i class="icon-bubble"> </i><span class="round-info-span"<?php echo  get_comments_number(); ?>  </span>
+									<i class="icon-fire"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+									<i class="icon-clock-o"> </i><span class="round-info-span"><?php echo get_the_date(); ?></span>
+								</p>
+							</div>
+						</div>
+
+		        	</div>
+		        </div>
+
+				<?php } ?>
+
+				<?php if ($top_posts->current_post == 3) { ?>
+
+				<div class="col-md-12 nopadding">
+		        	<div class="item four">
+
+		        		<div class="media">
+							<div class="media-left media-middle">
+								<a href="#">
+									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+								</a>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+								<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?> </p>
+								<p class="info_post">
+									<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+									<i class="icon-bubble"> </i><span class="round-info-span"><?php echo  get_comments_number(); ?>  </span>
+									<i class="icon-fire"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+									<i class="icon-clock-o"> </i><span class="round-info-span"><?php echo get_the_date(); ?></span>
+								</p>
+							</div>
+						</div>
+
+		        	</div>
+		        </div>
+
+				<?php } ?>
+			
+		<?php }} ?>
+
+		    </div>
 		</div>
 	</div><!-- Section Services -->
 
 	<!-- Start Section Latest Posts -->
-	<div class="latest-posts-blog">
+	<div class="latest-posts-blog wow fadeIn">
 
     	<?php global $query_string;
         query_posts ('posts_per_page=6');
@@ -225,14 +357,19 @@
         
 		<div class="col-md-6 col-sm-6">
 			<div class="post-image-home">
-				<img src="http://placehold.it/350/333<?php //echo get_the_post_thumbnail_url(); ?>">
+				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+				<span class="date-bost">
+				    <span class="munth"><?php echo get_the_date('M'); ?></span>
+				    <span class="day"><?php echo get_the_date('d'); ?></span>
+				    <span class="year"><?php echo get_the_date('Y'); ?></span>
+				</span>
 			</div>
 			<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
-			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="btn btn-info btn-sm" href="' . get_permalink() . '">Read More</a>'; ?></p>
+			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
 			<p class="info_post">
 				<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
 				<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
-				<i class="icon-eye"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
+				<i class="icon-fire"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
 				<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
 			</p>
 		</div>

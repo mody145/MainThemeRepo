@@ -63,6 +63,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
+    span.date-bost {
+        position: absolute;
+        right: 15px;
+        bottom: -5px;
+        background-color: #fff;
+        padding: 3px 16px;
+        color: #676767;
+        font-family: 'Russo One', cursive;
+    }
+
+    span.date-bost span {
+        display: block;
+        text-align: center;
+        line-height: 21px;
+    }
+
+    span.year {
+        color: #34bbce;
+        border-top: 2px solid #34bbce;
+        margin-top: 2px;
+    }
+
+    span.date-bost .day {
+        font-size: 35px;
+        margin-top: 4px;
+        padding-bottom: 2px;
+        text-transform: uppercase;
+    }
 }
 
 .latest-posts-blog > div .post-image-home img {

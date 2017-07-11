@@ -30,7 +30,7 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        color: $color10;
+        color: #78cfbf;
         font-size: 50px;
     }
 
@@ -174,21 +174,19 @@
             }
 
             .main-price {
-                background-color: rgba(255, 255, 255, 0.56);
-                color: $color8;
+                color: $color2;
                 padding: $main-padding /  2 $main-padding;
                 font-size: 22px;
             }
 
             .price-without-disc {
                 text-decoration: line-through;
-                color: $infoColor;
+                color: $color2;
                 text-align: center;
                 padding: 2px 5px;
                 font-size: 15px;
                 display: inline-block;
-                background-color: rgba(255, 255, 255, 0.56);
-                text-decoration-color: rgba(146, 146, 146, 0.58);
+                text-decoration-color: #fff;
                 margin-top: $main-margin;
                 width: auto;
                 max-width: 70px;

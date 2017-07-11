@@ -50,7 +50,7 @@
 	    position: absolute;
 	    top: 20px;
 	    right: 20px;
-	    color: $color10;
+	    color: #78cfbf;
 	    font-size: 50px;
 	}
 
@@ -122,7 +122,7 @@
 
 			#like {
 			    font-size: 14px;
-			    color: $color2;
+			    color: $color10;
 			    position: relative;
 			    top: -1px;
 			    margin-right: $main-margin / 2;
@@ -132,7 +132,7 @@
 				i {
 				    position: absolute;
 				    top: 1px;
-				    left: -5px;
+				    left: -21px;
 				    font-size: 21px;
 				}
 			}
@@ -143,7 +143,7 @@
 
 		    #unlike {
 				font-size: $font-size - 6;
-				color: $color2;
+				color: $color10;
 				position: relative;
 				top: 1px;
 				margin-right: $main-margin /  2;
@@ -153,7 +153,7 @@
 				i {
 				    position: absolute;
 				    top: -1px;
-				    left: -3px;
+				    left: -21px;
 				    font-size: 21px;
 				}
 		    }
@@ -292,20 +292,18 @@
 	        }
 
 	        .main-price {
-			    background-color: rgba(255, 255, 255, 0.56);
-			    color: $color8;
+			    color: $color2;
 			    padding: $main-padding /  2 $main-padding;
 			    font-size: $font-size + 2;
 	        }
 
 	        .price-without-disc {
 			    text-decoration: line-through;
-			    color: $color8;
+			    color: $color2;
 			    text-align: center;
 			    padding: 2px $main-padding /  2;
 			    font-size: $font-size - 5;
-			    background-color: rgba(255, 255, 255, 0.56);
-			    text-decoration-color: rgba(146, 146, 146, 0.58);
+			    text-decoration-color: #fff;
 			    width: auto;
 			    max-width: 70px;
 			    opacity: 0.7;

@@ -6,7 +6,7 @@
 	<div class="page-about-us-container">
 
 		<!-- Start Image -->
-		<div class="col-md-6 nopadding">
+		<div class="col-md-6 nopadding wow fadeIn">
 			<div class="image-about-us">
 				<img src="<?php echo get_option( 'about_image' ); ?>" />
 			</div>
@@ -14,7 +14,7 @@
 		</div><!-- End Image -->
 
 		<!-- Start Title And Description -->
-		<div class="col-md-6 nopadding">
+		<div class="col-md-6 nopadding wow fadeIn">
 			<div class="text-about-us">
 				<h3 class="bold text-uppercase"><i class="icon-microphone2"> </i> <?php echo get_option( 'about_title' ); ?></h3>
 				<p><?php echo get_option( 'about_description' ); ?></p>
@@ -24,7 +24,7 @@
 	</div><!-- End Container -->
 
 	<!-- Start Container Our Team -->
-	<div class="container nopadding">
+	<div class="container nopadding wow fadeIn">
 		<div class="our-team-container">
 			<h3 class="text-center bold"OUR TEAM</h3>
 			<div class="team-box">
@@ -60,7 +60,7 @@
 		</div><!-- End Container Our Team -->
 
 		<!-- Start Our Experiance -->
-		<div class="our-experiance-container">
+		<div class="our-experiance-container wow fadeIn">
 			<h3 class="bold text-uppercase"><?php echo get_option( 'our_expeiance_title' ); ?></h3>
 			<p><?php echo get_option( 'our_expeiance_description' ); ?></p>
 		</div><!-- Start Our Experiance -->
