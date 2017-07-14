@@ -50,7 +50,7 @@ function get_posts_by_category_in_header_menu() {
 		        	<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 		        </div>
 		        <div class="info-box">
-		            <h4 class=""><?php echo get_the_title(); ?></h4>
+		            <h4 class=""><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 		            <p class="info_post "><?php echo $str = substr(get_the_content(), 0, 50) . ' ... '; ?></p>
 		        </div>
 		    </div>		
@@ -78,7 +78,7 @@ function get_posts_by_category_in_header_menu() {
 		        	<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 		        </div>
 		        <div class="info-box">
-		            <h4 class=""><?php echo get_the_title(); ?></h4>
+		            <h4 class=""><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 		            <p class="info_post "><?php echo $str = substr(get_the_content(), 0, 50) . ' ... '; ?></p>
 		        </div>
 		    </div>		

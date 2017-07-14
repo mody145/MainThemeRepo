@@ -7,6 +7,8 @@ require get_template_directory() . '/inc/ajax_get_posts_by_category_in_header_me
 require get_template_directory() . '/inc/ajax_view_products_cart_in_header.php';
 require get_template_directory() . '/inc/ajax_system_follow_like_addtocart.php';
 require get_template_directory() . '/inc/ajax_calculate_value_by_country.php';
+require get_template_directory() . '/inc/ajax_get_price_by_my_currency.php';
+require get_template_directory() . '/inc/ajax_remove_cookie_country.php';
 require get_template_directory() . '/inc/ajax_grid_posts_in_index.php';
 require get_template_directory() . '/inc/ajax_full_screan_search.php';
 require get_template_directory() . '/inc/sorting_grid_images_box.php';

@@ -657,7 +657,9 @@ class top_items_in_shop extends WP_Widget {
 				<div class="item <?php echo ''; ?>">
 				<?php } ?>
 					<a href="<?php echo get_the_permalink(); ?>">
-						<?php if(has_post_thumbnail( $shop->post->ID )) { echo '<img src="' . get_the_post_thumbnail_url( $shop->post->ID ) . '" />'; } ?>
+						<div class="parent-image-in-loop-products">
+							<?php if(has_post_thumbnail( $shop->post->ID )) { echo '<img src="' . get_the_post_thumbnail_url( $shop->post->ID ) . '" />'; } ?>
+						</div>
 					</a>
 
 						<?php if ( $product->is_on_sale() ) { ?>
@@ -677,7 +679,7 @@ class top_items_in_shop extends WP_Widget {
 									if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
 									echo '</span>'; ?>
 									<!-- Check If On Sale -->
-									<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
+									<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'>/ <i class='icon-usd'></i>" . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
 								</span>
 							</div>
 						</div>

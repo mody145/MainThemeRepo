@@ -820,6 +820,28 @@ jQuery(document).ready(function($) {
 		})
 		.done(function(data) {
 			$('.convert_result').html(data);
+			var note = $('.note-currency');
+			var price = $('.note-currency').attr('data-price');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {Country_Currency : Country_Currency, price : price, action: 'get_price_by_currency'},
+				beforeSend: function() {
+				note.html('<i class="fa fa-spinner fa-pulse"></i>'); }
+			})
+			.done(function(data) {
+				note.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+
 		})
 		.fail(function(response) {
 			alert(response);
@@ -1211,5 +1233,42 @@ jQuery(document).ready(function($) {
 	});
 	
 	/*=====  End of Section Box Posts In Header Menu  ======*/
+
+	/*=====================================================
+	=            Section Remove COOKIE Country            =
+	=====================================================*/
+	
+	$('body').on('click', '#remove_cookie', function(event) {
+
+		var thisElement = $(this);
+		var calcButton = $('#save_country');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {param1: 'value1', action: 'remove_cookie_country'},
+			beforeSend: function() {
+				thisElement.prepend('<i class="fa fa-spinner fa-pulse"></i>'); }
+		})
+		.done(function(data) {
+			console.log(data);
+
+			thisElement.hide(100);
+			calcButton.hide(100);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Remove COOKIE Country  ======*/
+	
 
 });

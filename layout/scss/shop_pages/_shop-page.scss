@@ -9,6 +9,29 @@
         margin-right: 10px;
         margin-left: -10px;
         margin-top: -10px;
+
+		.parent-image-in-loop-products {
+		    background-color: #e3dfdc;
+		    max-height: 335px;
+		}
+
+		.parent-image-in-loop-products:before {
+		    content: "";
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    width: 100%;
+		    height: 100%;
+		    opacity: .0;
+		    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ffb900), color-stop(1, #1aafd0));
+		    transition: all .3s ease-in-out;
+
+		}
+
+		.parent-image-in-loop-products:hover:before {
+		    opacity: 0;
+
+		}
         
         > div {
             border: 10px solid transparent;
@@ -26,7 +49,7 @@
 		    position: absolute;
 		    top: 0;
 		    left: 0;
-		    background-color: #ffffff;
+	        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ffb900), color-stop(1, #1aafd0));
 		    width: 100%;
 		    height: 100%;
 		    opacity: .8;
@@ -37,7 +60,7 @@
 
 			i {
 			    font-size: 45px;
-			    color: $color5;
+			    color: #78cfbf;
 			    display: block;
 			    background-color: #ddd;
 			    width: 75px;
@@ -56,7 +79,7 @@
 		    position: absolute;
 		    top: 20px;
 		    right: 20px;
-		    color: #82daca;
+		    color: #EB6379;
 		    font-size: 50px;
 		}
 
@@ -313,7 +336,6 @@
 		        }
 
 		        .price-without-disc {
-				    text-decoration: line-through;
 				    color: $color2;
 				    text-align: center;
 				    padding: 2px $main-padding /  2;

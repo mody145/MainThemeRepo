@@ -32,6 +32,7 @@ section.related.products {
 		    font-size: 15px;
 		    margin: 16px 0px;
 		    border-radius: 5px;
+		    cursor: pointer;
 		}
 
 		.panel-primary {
@@ -50,7 +51,6 @@ section.related.products {
 
 			span.price-without-disc {
 			    font-size: 13px;
-			    text-decoration: line-through;
 			}
 
 			span.no-disc {
@@ -214,6 +214,11 @@ section.related.products {
 
 		.product_meta {
 		    font-size: 12px !important;
+
+			> span {
+			    margin: -5px 0;
+			    display: block;
+			}
 		}
 
         span.posted_in a {

@@ -3,6 +3,17 @@
     margin-right: 10px;
     margin-left: -10px;
     margin-top: -10px;
+
+	.parent-image-in-loop-products:before {
+	    content: "";
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    width: 100%;
+	    height: 100%;
+	    opacity: .0;
+	    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ffb900), color-stop(1, #1aafd0));
+	}
     
     > div {
         border: 10px solid transparent;
@@ -20,7 +31,7 @@
 	    position: absolute;
 	    top: 0;
 	    left: 0;
-	    background-color: $color2;
+        background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ffb900), color-stop(1, #1aafd0));
 	    width: 100%;
 	    height: 100%;
 	    opacity: .8;
@@ -31,7 +42,7 @@
 
 		i {
 		    font-size: 45px;
-		    color: #6a67ce;
+		    color: #78cfbf;
 		    display: block;
 		    background-color: #ddd;
 		    width: 75px;
@@ -50,7 +61,7 @@
 	    position: absolute;
 	    top: 20px;
 	    right: 20px;
-	    color: #78cfbf;
+	    color: #EB6379;
 	    font-size: 50px;
 	}
 
@@ -295,10 +306,16 @@
 			    color: $color2;
 			    padding: $main-padding /  2 $main-padding;
 			    font-size: $font-size + 2;
+
+				i {
+				    font-size: 10px;
+				    position: relative;
+				    top: -8px;
+				    left: 0px;
+				}
 	        }
 
 	        .price-without-disc {
-			    text-decoration: line-through;
 			    color: $color2;
 			    text-align: center;
 			    padding: 2px $main-padding /  2;

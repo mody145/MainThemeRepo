@@ -11,6 +11,7 @@
     color: $infoColor;
     position: relative;
     perspective: 800px;
+    perspective-origin: bottom;
     z-index: 2;
 
     span.update-total {
@@ -19,7 +20,6 @@
 
         &:hover span.show-value-box-dropdown {
             transform: rotateX(0deg);
-            opacity: 1;
         }
 
         span.show-value-box-dropdown {
@@ -37,7 +37,6 @@
             transform-origin: top;
             transform-style: preserve-3d;
             transition: all .5s ease;
-            opacity: 0;
 
             .items {
                 overflow: hidden;
@@ -60,9 +59,34 @@
         margin: $main-margin + 5;
         cursor: pointer;
 
+        span.click-here {
+            position: absolute;
+            right: 25px;
+            font-size: 30px;
+            top: -3px;
+            color: #6a67ce;
+            animation: 1s linear 0s infinite alternate clickHere;
+        }
+
+        @keyframes clickHere {
+            0% {
+                right: 25px;
+                opacity: .5;
+            }
+
+            50% {
+                right: 10px;
+                opacity: 1;
+            }
+
+            100% {
+                right: 25px;
+                opacity: .5;
+            }
+        }
+
         &:hover span.calc-total-box-dropdown {
             transform: rotateX(0deg);
-            opacity: 1;
         }
 
         span.calc-total-box-dropdown {
@@ -79,7 +103,7 @@
             transform-origin: top;
             transform-style: preserve-3d;
             transition: all .5s ease;
-            opacity: 0;
+            padding-bottom: 10px;
 
             span.select-country {
                 color: $infoColor;
@@ -123,19 +147,27 @@
 }
 
 .search-in-header {
-    margin: $main-margin;
-    padding: $main-padding;
+    margin: $main-padding;
+    padding: 6px;
     background-color: $color2;
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    border: 4px solid $color6;
 
     i {
         position: absolute;
-        top: 8px;
-        right: 14px;
-        font-size: $font-size + 5;
-        color: #a5a5a5;
+        top: -1px;
+        right: -2px;
+        width: 40px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+        color: $color2;
+        border: 6px solid $color6;
+        background-color: $color6;
     }
 }
 

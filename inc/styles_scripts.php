@@ -43,6 +43,8 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'Masonry', get_template_directory_uri() . '/layout/js/masonry.pkgd.min.js', array('jquery'), '', true );
 	// OWL Carousel
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/layout/js/owl.carousel.min.js', array('jquery'), '', true );
+	// elevateZoom
+	wp_enqueue_script( 'elevateZoom', get_template_directory_uri() . '/layout/js/jquery.elevateZoom-3.0.8.min.js', array('jquery'), '', true );
 	// For Sticky Sidebar
 	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/layout/js/jquery.sticky-kit.js', array('jquery'), '', true );
 	// Enqueue JQuery

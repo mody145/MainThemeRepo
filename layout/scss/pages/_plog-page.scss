@@ -54,7 +54,7 @@ h1.post-title {
     background-color: rgba(255, 255, 255, 0.6);
     padding: $main-padding /  2 $main-padding;
     font-size: 28px;
-    z-index: 99;
+    z-index: 1;
 }
 
 h1.post-title a {
@@ -68,7 +68,7 @@ h1.post-title a {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 2px $main-padding /  2;
     color: rgba(0, 0, 0, 0.6);
-    z-index: 99;
+    z-index: 1;
 }
 
 .post-thumbnail-img p.info_post-2 {

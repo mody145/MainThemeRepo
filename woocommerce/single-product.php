@@ -79,7 +79,7 @@ get_header(); ?>
 				<!-- Featuer Image For Product -->
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 				<div class="main_image_product">
-					<img id="main_image_product_single" src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
+					<img id="zoom_01" data-zoom-image="<?php  echo $image[0]; ?>" class="main_image_product_single" src="<?php  echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>">
 				</div>
 			</div>
 			<!--====  End of Section Get Main Image   ====-->
@@ -128,7 +128,7 @@ get_header(); ?>
 						echo '<p class="price-currency"><i class="icon-quote2"></i>&nbsp;In Your Country :&nbsp;' . $currency . '&nbsp;<span class="bold">' . $byCurrency . '</span></p>';
 
 					} else {
-						echo '<p class="note-currency"><i class="icon-times"></i>&nbsp;You Do not Choose Your Currency</p>';
+						echo '<p class="note-currency" data-price="' . $product->get_price() . '"><i class="icon-hand-o-up"></i>&nbsp;You Do not Choose Your Currency</p>';
 					}
 
 					?>
@@ -226,11 +226,11 @@ get_header(); ?>
 
 						<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
 
-							<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
+							<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span><br />
 
 						<?php endif; ?>
 
-						<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+						<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span><br />' ); ?>
 
 						<?php echo wc_get_product_tag_list( $product->get_id(), '  ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 

@@ -41,6 +41,13 @@
                 border: none;
                 color: $color2;
                 font-size: $font-size +  15;
+
+                &:visited,
+                &:active,
+                &:focus {
+                    border: 0;
+                    outline: none;
+                }
             }
 
             .radio {
@@ -112,6 +119,10 @@
             padding: $main-padding;
             font-size: $font-size - 5;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             p {
                 margin: 0;

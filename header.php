@@ -41,7 +41,7 @@
 				<div class="sk-cube3 sk-cube"></div>
 			</div>
 		</span>
-	</div><!-- Section Overlay Loading -->
+	</div><!-- Section Overlay Loading
 
 	<!-- Section Search FullScrean -->
 	<div class="search_fullscrean">
@@ -143,7 +143,7 @@
 			<div class="col-md-3 col-sm-6 nopadding">
 				<div class="icon-header1 wow fadeIn">
 
-					<a href="<?php echo home_url( 'dashpoard' ); ?>"><i class="icon-check2" data-toggle="tooltip" data-placement="bottom" title="Your Orders"><span id="items-follow">0</span></i></a>
+					<a href="<?php echo home_url( 'dashpoard' ); ?>"><i class="icon-check2" data-toggle="tooltip" data-placement="bottom" title="Your Orders"><span id="items-follow"><?php echo wc_get_customer_order_count( get_current_user_id() ); ?></span></i></a>
 
 					<!-- Get Count Of Items In List Follow -->
 					<a href="<?php echo home_url( 'wishlist' ); ?>"><i class="icon-heart7" data-toggle="tooltip" data-placement="bottom" title="Following List"><span id="items-whitelist"><?php echo get_count_session_items_if_exists( $_SESSION['follow'] ); ?></span></i></a>
@@ -211,6 +211,7 @@
 								<?php if (isset($_COOKIE['Country_Currency'])) { ?>
 
 								<a id="save_country" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-default btn-sm" data-country="<?php echo $_COOKIE['Country_Currency']; ?>">Calc By&nbsp;-&nbsp;<?php echo $_COOKIE['Country_Currency']; ?></a>
+								<a id="remove_cookie" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-default btn-sm">Remove</a>
 
 								<?php } ?>
 
@@ -222,7 +223,7 @@
 			<!-- End Form Search -->
 			<!-- navbar Header -->
 
-			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding" style="z-index: 2;">
+			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding" style="z-index: 20;">
 				<nav class="header-menu wow fadeIn">
 					<?php 
 
@@ -236,7 +237,7 @@
 				</nav>
 			</div>
 
-			<div class="col-md-9 col-sm-12 visible-sm nopadding" style="z-index: 2;">
+			<div class="col-md-9 col-sm-12 visible-sm nopadding" style="z-index: 20;">
 				<nav class="header-menu wow fadeIn">
 					<?php 
 

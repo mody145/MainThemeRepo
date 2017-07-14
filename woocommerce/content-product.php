@@ -4,7 +4,10 @@
 			<div class="col-md-4 nopadding post wow fadeIn" data-wow-delay="<?php echo $tests++; ?>">
 
 				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>">
-					<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
+					
+					<div class="parent-image-in-loop-products">
+						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
+					</div>
 
 					<!-- This OverLay Will Be Show If The Product Allready In Cart -->
 					<?php if( woo_in_cart( $product->id ) ) { ?>
@@ -33,7 +36,7 @@
 								if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
 								echo '</span>'; ?>
 								<!-- Check If On Sale -->
-								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
+								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'>/ <i class='icon-usd'></i>" . $product->get_regular_price() . " </span>"; } else { echo 'No Disc'; } ?>
 							</span>
 						</div>
 					</div>

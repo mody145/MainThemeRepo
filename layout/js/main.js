@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 		// options
 		itemSelector: '.grid-item',
 		columnWidth: ($('.parent').width() / 2)
-	});
+	});	
 
 	// Run Skitter Slider
 	$(function() {
@@ -92,15 +92,30 @@ jQuery(document).ready(function($) {
 =            Add Class To Comment Button            =
 ===================================================*/
 
-	//$('input.submit').addClass('btn btn-info');
+	$('.login-register.text-center p').on('click', 'a.header_login', function(event) {
 
-	//$('td.product-remove a').html('<i class="icon-remove"></i>');
+		$('#js_login').ready(function() {
+			$('#js_login #username').attr('placeholder', 'Type Your Username')
+			$('#js_login #password').attr('placeholder', 'Type Your Password')
+		});
 
-	//$("input[name='apply_coupon']").addClass('btn btn-info');
+		event.preventDefault();
+		/* Act on the event */
+	});
 
-	//$("input[name='update_cart']").addClass('btn btn-primary');
+	$('.login-register.text-center p').on('click', 'a.header_signup', function(event) {
 
-	///$(".wc-proceed-to-checkout a").addClass('btn btn-primary');
+		$('#js_signup').ready(function() {
+			$('#js_signup #reg_email_header').attr('placeholder', 'Type Your Register E-mail')
+			$('#js_signup #reg_password_header').attr('placeholder', 'Type Your Register Password')
+		});
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+
+	$('p.woocommerce-form-row.woocommerce-form-row--wide.form-row.form-row-wide input#username').attr('placeholder', 'Type Your Username');
+	$('p.woocommerce-form-row.woocommerce-form-row--wide.form-row.form-row-wide input#password').attr('placeholder', 'Type Your Password');
 
 	$(".woocomerce-form woocommerce-form-login .form-row input[type='submit']").addClass('btn btn-primary');
 
@@ -116,7 +131,7 @@ jQuery(document).ready(function($) {
 
 		var thisLink = $(this).attr('src');
 
-		var mainImage = $('#main_image_product_single');
+		var mainImage = $('.main_image_product_single');
 
 		mainImage.attr('src', thisLink);
 
@@ -124,6 +139,34 @@ jQuery(document).ready(function($) {
 	});
 
 /*=====  End of Section Gallery Single Product  ======*/
+
+/*============================================================
+=            Section Zoom Image In Single Product            =
+============================================================*/
+
+$("#zoom_01").elevateZoom({
+	gallery : "gallery_09",
+	galleryActiveClass: "active"
+	}); 
+
+
+	$(".img_gallary_box img").click(function(e){
+	var currentValue = $(this).attr('src');
+
+	var smallImage = currentValue;
+	var largeImage = currentValue;
+
+	// Example of using Active Gallery
+	$('#gallery_09 a').removeClass('active').eq(currentValue-1).addClass('active');		
+
+
+	var ez =   $('#zoom_01').data('elevateZoom');	  
+
+	ez.swaptheimage(smallImage, largeImage); 
+
+});
+
+/*=====  End of Section Zoom Image In Single Product  ======*/
 
 /*===============================================
 =            Section Overlay Loading            =
@@ -158,12 +201,40 @@ jQuery(document).ready(function($) {
 	
 /*=====  End of Empty Content Box Posts  ======*/
 
-/*==============================================
-=            Section Preload Imaegs            =
-==============================================*/
+/*================================================
+=            On Click Currency Scroll            =
+================================================*/
+
+$('body').on('click', '.note-currency', function(event) {
+
+		$('.click-here').remove();
+
+		var body = $("body");
+		body.animate({scrollTop:0}, 500, 'swing', function() { 
+			$('.calc-total').append('<span class="click-here"><i class="icon-hand-o-left"></i></span>');
+		});
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+
+	$('.calc-total').hover(function() {
+		$('.click-here').remove();
+	}, function() {
+		/* Stuff to do when the mouse leaves the element */
+	});
 
 
+/*=====  End of On Click Currency Scroll  ======*/
 
-/*=====  End of Section Preload Imaegs  ======*/
+/*===============================================
+=            Change Icon Pageination            =
+===============================================*/
+
+	$('.malinky-ajax-pagination-loading').html('<i class="fa fa-spinner fa-spin"></i>');
+
+/*=====  End of Change Icon Pageination  ======*/
+
+
 
 });

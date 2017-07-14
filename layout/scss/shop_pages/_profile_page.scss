@@ -26,11 +26,45 @@
 	    width: 500px;
 	    margin: auto;
 	    text-align: center;
+        display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    padding-top: 50px;
+	    background-color: $color2;
+
+		.form-row-wide {
+		    position: relative;
+
+			&:before {
+			    content: "\ea20";
+			    font-family: 'icomoon' !important;
+			    position: absolute;
+			    top: 8px;
+			    left: -20px;
+			}
+		}
+
+		label {
+		    display: none;
+		}
 
 	    input {
-		    padding: $main-padding / 2;
+		    padding: $main-padding;
 		    border: 1px solid #DDD;
+		    background-color: $color1;
 	    }
+
+		input[type="submit"] {
+		    display: block !important;
+		    width: 100%;
+		    margin-top: 10px;
+		    background-color: #fc636b !important;
+		    color: #fff !important;
+		}
+
+		p.woocommerce-LostPassword.lost_password a {
+		    color: #969595 !important;
+		}
 	}
 
 	.woocommerce-MyAccount-content {

@@ -1,0 +1,137 @@
+
+
+#cboxContent {
+	height: auto !important;
+    margin: auto !important;
+
+	div#cboxLoadedContent {
+	    border: 0;
+        margin: 0 !important;
+	    width: 100% !important;
+        padding: 0;
+
+	    div#login_data {
+
+			h2 {
+			    margin: 0;
+			    text-align: center;
+			    color: $color2;
+			    font-weight: lighter;
+			    background-color: $color5;
+			    padding: 15px;
+
+				&:before {
+				    content: "\f007";
+				    font-family: 'icomoon' !important;
+				    margin-right: 10px;
+				}
+			}
+
+			form#js_login {
+			    width: 60%;
+			    text-align: center;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-content: center;
+			    margin: auto !important;
+
+				.form-row-wide {
+				    padding: 3px;
+				    margin: 0 0 6px;
+				    position: relative;
+
+					&:before {
+					    content: "\ea20";
+					    font-family: 'icomoon' !important;
+					    position: absolute;
+					    top: 8px;
+					    left: -20px;
+					}
+				}
+
+				label {
+				    display: none !important;
+				}
+
+				input#password[type="password"], 
+				input#username[type="text"] {
+				    background-color: $color1 !important;
+				    border: 0 !important;
+				    border-radius: 2px;
+				}
+
+				input[type="submit"] {
+				    background-color: $color5 !important;
+				    color: $color1 !important;
+			        padding: 10px !important;
+				}
+			}
+	    }
+
+	    div#signup_data {
+
+			h2 {
+			    margin: 0;
+			    text-align: center;
+			    color: $color2;
+			    font-weight: lighter;
+			    background-color: $color5;
+			    padding: 15px;
+
+			    &:before {
+				    content: "\f234";
+				    font-family: 'icomoon' !important;
+				    margin-right: 10px;
+				}
+			}
+
+			form#js_signup {
+			    width: 60%;
+			    text-align: center;
+			    display: flex;
+			    flex-direction: column;
+			    justify-content: center;
+			    align-content: center;
+			    margin: auto !important;
+		        margin: 20px auto !important;
+
+				.form-row-wide {
+				    padding: 3px;
+				    margin: 0 0 6px;
+				    position: relative;
+
+					&:before {
+					    content: "\ea20";
+					    font-family: 'icomoon' !important;
+					    position: absolute;
+					    top: 8px;
+					    left: -20px;
+					}
+				}
+				
+				label {
+				    display: none !important;
+				}
+
+				input#reg_email_header[type="email"], 
+				input#reg_password_header[type="password"] {
+				    background-color: $color1 !important;
+				    border: 0 !important;
+				    border-radius: 2px;
+				}
+
+				input[type="submit"] {
+				    background-color: $color5 !important;
+				    color: $color1 !important;
+			        padding: 10px !important;
+				}
+			}
+	    }
+	}
+
+	button#cboxClose {
+	    top: 20px !important;
+	    right: 15px;
+	}
+}

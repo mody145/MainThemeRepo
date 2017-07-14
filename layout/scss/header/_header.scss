@@ -39,13 +39,26 @@ header.site-header img {
 ===========================================*/
 
 .add-register-login {
-    padding: $main-padding;
+    padding: $main-padding 0;
     margin: $main-margin;
     background-color: $color2;
     margin-right: $main-margin;
 
     .login-register {
         color: #8a8a8a;
+
+        a {
+            color: $color6 !important;
+        }
+
+        a:hover,
+        a:focus, 
+        a:active, 
+        a:visited {
+            border: 0;
+            outline: none;
+            color: $infoColor;
+        }
 
         a.header_login:before {
             content: "\f2c0";
@@ -68,6 +81,8 @@ header.site-header img {
     p {
         margin: 0;
         padding: 0;
+        display: flex;
+        justify-content: space-around;
     }
 }
 

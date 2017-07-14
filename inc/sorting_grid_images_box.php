@@ -31,11 +31,13 @@ function sorting_grid_images_box() {
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
 				<div class="info">
-					<h3><?php echo get_the_title(); ?></h3>
 
-					<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+					<h3><?php echo get_the_title(); ?></h3><br>
+
+					<?php if ($query->current_post == 0) { ?>
 					<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 					<?php } else { echo ''; } ?>
 					<span>
@@ -45,7 +47,7 @@ function sorting_grid_images_box() {
 						<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
 						<?php } else { echo ''; } ?>
 
-						<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+						<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
 						<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
 						<i class="icon-star-o"> </i> <?php //$rating = $product->average_rating(); echo $rating; ?>
 					</span>
@@ -81,11 +83,12 @@ function sorting_grid_images_box() {
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
 				<div class="info">
-					<h3><?php echo get_the_title(); ?></h3>
+					<h3><?php echo get_the_title(); ?></h3><br>
 
-					<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+					<?php if ($query->current_post == 0) { ?>
 					<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 					<?php } else { echo ''; } ?>
 					<span>
@@ -95,9 +98,9 @@ function sorting_grid_images_box() {
 						<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
 						<?php } else { echo ''; } ?>
 
-						<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+						<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
 						<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
-						<i class="icon-star-o"> </i> <?php //echo $rating = $product->get_average_rating(); ?>
+						<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 					</span>
 				</div>
 			</div>
@@ -131,11 +134,12 @@ function sorting_grid_images_box() {
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
 				<div class="info">
-					<h3><?php echo get_the_title(); ?></h3>
+					<h3><?php echo get_the_title(); ?></h3><br>
 
-					<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+					<?php if ($query->current_post == 0) { ?>
 					<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 					<?php } else { echo ''; } ?>
 					<span>
@@ -145,9 +149,9 @@ function sorting_grid_images_box() {
 						<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
 						<?php } else { echo ''; } ?>
 
-						<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+						<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
 						<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
-						<i class="icon-star-o"> </i> <?php //echo $rating = $product->get_average_rating(); ?>
+						<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 					</span>
 				</div>
 			</div>
@@ -179,11 +183,12 @@ function sorting_grid_images_box() {
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
 				<div class="info">
-					<h3><?php echo get_the_title(); ?></h3>
+					<h3><?php echo get_the_title(); ?></h3><br>
 
-					<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+					<?php if ($query->current_post == 0) { ?>
 					<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 					<?php } else { echo ''; } ?>
 					<span>
@@ -193,9 +198,9 @@ function sorting_grid_images_box() {
 						<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
 						<?php } else { echo ''; } ?>
 
-						<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+						<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
 						<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
-						<i class="icon-star-o"> </i> <?php //echo $rating = $product->get_average_rating(); ?>
+						<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 					</span>
 				</div>
 			</div>
@@ -223,11 +228,12 @@ function sorting_grid_images_box() {
 		<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			<div class="image-box align-v">
 				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+				<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 			</div>
 			<div class="info">
-				<h3><?php echo get_the_title(); ?></h3>
+				<h3><?php echo get_the_title(); ?></h3><br>
 
-				<?php if ($query->current_post == 0 || $query->current_post == 1) { ?>
+				<?php if ($query->current_post == 0) { ?>
 				<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 				<?php } else { echo ''; } ?>
 				<span>
@@ -237,9 +243,9 @@ function sorting_grid_images_box() {
 					<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
 					<?php } else { echo ''; } ?>
 
-					<i class="icon-like"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
+					<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
 					<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
-					<i class="icon-star-o"> </i> <?php //echo $rating = $product->get_average_rating(); ?>
+					<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
 				</span>
 			</div>
 		</div>
