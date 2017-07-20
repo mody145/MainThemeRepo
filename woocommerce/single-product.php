@@ -196,19 +196,17 @@ get_header(); ?>
 				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
-						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
-							<i id="like_icon" class="icon-check"></i>
-						</a>
-						<span class="round-info-span likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
+						<i id="like_icon" class="icon-check"></i>
+					</a>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-						<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
-							<i id="like_icon" class="icon-thumbs-o-up"></i>
-						</a>
-						<span class="round-info-span likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
+					<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
+						<i id="like_icon" class="icon-thumbs-o-up"></i>
+					</a>
 				</div>
 
 				<?php } ?>
@@ -226,13 +224,13 @@ get_header(); ?>
 
 						<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
 
-							<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span><br />
+							<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
 
 						<?php endif; ?>
 
-						<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span><br />' ); ?>
+						<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( '', '', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
-						<?php echo wc_get_product_tag_list( $product->get_id(), '  ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+						<?php echo wc_get_product_tag_list( $product->get_id(), '  ', '<span class="tagged_as">' . _n( '', '', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
 						<?php do_action( 'woocommerce_product_meta_end' ); ?>
 					</div>
@@ -252,7 +250,7 @@ get_header(); ?>
 			
 			<div class="col-md-6 nopadding wow fadeIn">
 				<div class="gallery-box">
-					<div class="owl-carousel owl-theme">
+					<div class="owl-carousel owl-theme carousel-one">
 
 						<?php foreach( $attachment_ids as $attachment_id ) { ?>
 					    	<div class="img_gallary_box item"><img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id ) ?>" data-number="<?php $i++; echo $i; ?>" /></div>
@@ -265,6 +263,8 @@ get_header(); ?>
 			
 
 			<?php endwhile; // end of the loop. ?>
+			<div class="clearfix"></div>
+			<h3 class="feedback-heading"><i class="icon-star"></i>&nbsp;Feedback</h3>
 
 			<!--==================================================
 			=            Section Comments And Reviews            =
@@ -299,10 +299,10 @@ get_header(); ?>
 			===============================================-->
 			
 			<div class="clearfix"></div>
-			<h3 class="r_products wow fadeIn">Reilated Products</h3>
+			<h3 class="r_products wow fadeIn"><i class="icon-usb"></i>&nbsp; Reilated Products</h3>
 			
 			<!-- Start Related Products -->
-			<div class="container-reilated-products wow fadeIn">
+			<div class="container-reilated-products products grid-shop-products wow fadeIn">
 				<?php
 
 				global $post;

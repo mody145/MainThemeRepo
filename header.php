@@ -1,12 +1,11 @@
 <?php session_start() ?>
-<?php require_once get_template_directory() . '/inc/functionUSD_EURO.php';  ?>
+<?php require_once get_template_directory() . '/inc/custom_functions/functionUSD_EURO.php';  ?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
@@ -15,6 +14,24 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+	<!-- Fullscreen Overlay For Quieck view -->
+	<div class="fullscreen_overlay"></div>
+	<!-- Fullscreen Overlay For Quieck view -->
+
+	<!-- Quieck View Window -->
+	<div class="queck-view-window">
+
+		<i id="close_wendow" class="icon-close"></i>
+		
+		<div class="the_content_queck_view">
+			
+		</div>
+	</div><!-- Quieck View Window -->
+
+	<!--===========================================================================
+	=            This Divs To Get variables For Main Colors For JQuery            =
+	============================================================================-->
+	
 	<div class="color1"></div>
 	<div class="color2"></div>
 	<div class="color3"></div>
@@ -30,7 +47,9 @@
 
 	<div class="green"></div>
 	<div class="blue"></div>
-
+	
+	<!--====  End of This Divs To Get variables For Main Colors For JQuery  ====-->
+	
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
 		<span>
@@ -41,7 +60,7 @@
 				<div class="sk-cube3 sk-cube"></div>
 			</div>
 		</span>
-	</div><!-- Section Overlay Loading
+	</div><!-- Section Overlay Loading -->
 
 	<!-- Section Search FullScrean -->
 	<div class="search_fullscrean">

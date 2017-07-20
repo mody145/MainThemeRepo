@@ -68,7 +68,7 @@
 					<?php echo get_the_content(); ?>
 				</p>
 
-				<p class="tags_container"><?php the_tags(); ?></p>
+				<p class=""><span class="tagged_as"><?php the_tags(); ?></span></p>
 			</div>
 			
 		<?php }} ?>

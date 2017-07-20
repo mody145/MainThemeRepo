@@ -196,5 +196,21 @@ function pre($var) {
 
 /*=====  End of Just Pre ( HTML ) Code For Show  ======*/
 
+/*============================================================
+=            Section Start Masonry.js In Page ...            =
+============================================================*/
+
+function enqueue_files_masonry() {
+	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) { 
+
+	// Trigger Nice Masonry
+	wp_enqueue_script( 'trigger-masonry', get_template_directory_uri() . '/layout/js/trigger_masonry.js', array('jquery'), '', true );
+	
+	} 
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_files_masonry' );
+
+/*=====  End of Section Start Masonry.js In Page ...  ======*/
+
 
 ?>

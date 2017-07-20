@@ -1,9 +1,9 @@
-			<?php global $query; global $product; ?>
+			<?php global $product; ?>
 
 			<!-- Start Masonry Grid --><?php $tests = 1; ?>
-			<div class="col-md-4 nopadding post wow fadeIn" data-wow-delay="<?php echo $tests++; ?>">
+			<div class="grid-item-shop nopadding post <?php if ($query->current_post !== 0 && $query->current_post !== 1 && $query->current_post !== 2) { echo 'wow fadeIn'; } else { echo ''; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
-				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>">
+				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>"  data-getTheID="<?php echo $product->get_id(); ?>">
 					
 					<div class="parent-image-in-loop-products">
 						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
@@ -13,6 +13,7 @@
 					<?php if( woo_in_cart( $product->id ) ) { ?>
 					<!-- Overlay Show If Item In Cart -->
 					<div class="overlay">
+						<i class="icon-close" id="remove_from_cart_sd" data-id="<?php echo $product->id ?>"></i>
 						<i class="icon-shopping-bag"></i>
 					</div><!-- Overlay Show If Item In Cart -->
 					<?php } ?>
@@ -51,7 +52,7 @@
 				=====================================================-->
 				
 					<!--  || !! DON'T INSERT THIS ELEMENT IN OTHER DIV ( FOR JQUERY ) || -->
-					<?php if( woo_in_cart( $product->id ) ) { ''; } else { ?>
+
 					<!-- Add To Cart Button -->
 					<div class="add-to-cart-container-false">
 						<h3>
@@ -93,29 +94,37 @@
 				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
-						<a href="#" id="unlike" data-id="<?php echo $product->get_id() ?>">
-							<i id="like_icon" class="icon-check"></i>
-						</a>
-						<span class="round-info-span likes-count"><?php echo get_post_meta( $product->get_id(), 'likes', true ); ?></span>
+					<a href="#" id="unlike" data-id="<?php echo $product->get_id() ?>">
+						<i id="like_icon" class="icon-check"></i>
+					</a>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-						<a href="#" id="like" data-id="<?php echo $product->get_id() ?>">
-							<i id="like_icon" class="icon-thumbs-o-up"></i>
-						</a>
-						<span class="round-info-span likes-count"><?php get_meta_value_if_exists( $product->get_id(), 'likes' ); ?></span>
+					<a href="#" id="like" data-id="<?php echo $product->get_id() ?>">
+						<i id="like_icon" class="icon-thumbs-o-up"></i>
+					</a>
 				</div>
 
 				<?php } ?>
 
 				<!--====  End of  Button Like And Unlike  ====-->
+
+				<!--================================================
+				=            Section Queck View Product            =
+				=================================================-->
+				
+				<div class="queck-view-container">
+					<a href="#" id="queck_view_button" data-id="<?php echo $product->get_id() ?>">
+						<i class="icon-magnifier"></i>
+					</a>
+				</div>
+				
+				<!--====  End of Section Queck View Product  ====-->
 				
 				<!--====  End of Section Add To Cart And Follow  ====-->
 				
-					<?php } ?>
-
 					<a href="<?php echo get_the_permalink(); ?>"><h5><?php echo get_the_title(); ?></h5></a>
 					<?php if ( $product->is_on_sale() ) { ?>
 					<span class='discount-number'><div class='numberCircle'><?php $discount = (($product->get_regular_price() - $product->get_sale_price()) * 100) / $product->get_regular_price(); echo floor($discount) . "%"; ?></div></span>
@@ -133,3 +142,4 @@
 				</div>
 				
 			</div><!-- End Masonry Grid -->
+

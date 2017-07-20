@@ -3,6 +3,11 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
+	 $('.select_filter').select2({
+		  tags: "true",
+		  maximumSelectionLength: 5
+	 });
+
 	// This Is Main Colors
 	var color1 		= $('.color1').css('background-color');
 	var color2 		= $('.color2').css('background-color');
@@ -20,15 +25,6 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
-	// Masonry Item Width
-	$('.grid-item').width(($('.parent').width() / 2) - 20);
-	
-	// Run Masonry For Blog
-	$('.parent').masonry({
-		// options
-		itemSelector: '.grid-item',
-		columnWidth: ($('.parent').width() / 2)
-	});	
 
 	// Run Skitter Slider
 	$(function() {
@@ -64,10 +60,11 @@ jQuery(document).ready(function($) {
 
 	$('input').attr('autocomplete', 'off');
 
-
-	$('.owl-carousel').owlCarousel({
+	$('.carousel-one').owlCarousel({
 	    loop:true,
 	    margin:10,
+	    dots:false,
+	    nav:false,
 	    responsiveClass:true,
 	    responsive:{
 	        0:{
@@ -205,7 +202,7 @@ $("#zoom_01").elevateZoom({
 =            On Click Currency Scroll            =
 ================================================*/
 
-$('body').on('click', '.note-currency', function(event) {
+	$('body').on('click', '.note-currency', function(event) {
 
 		$('.click-here').remove();
 
@@ -231,10 +228,120 @@ $('body').on('click', '.note-currency', function(event) {
 =            Change Icon Pageination            =
 ===============================================*/
 
-	$('.malinky-ajax-pagination-loading').html('<i class="fa fa-spinner fa-spin"></i>');
+	$('.malinky-ajax-pagination-loading').css({
+		opacity: '.9',
+	    position: 'absolute',
+		top: '-8',
+		right: '-30',
+	}).html('<i class="fa fa-spinner fa-spin"></i>');
 
 /*=====  End of Change Icon Pageination  ======*/
 
+/*=================================================
+=            Section Queck View Button            =
+=================================================*/
+
+	$('body').on('click', '#queck_view_button', function(event) {
+
+		var that = $(this);
+		var id = that.attr('data-id');
+		var theWindow = $('.queck-view-window');
+		var closeWindow = $('#close_wendow');
+		var overlay = $('.fullscreen_overlay');
+		var theContent = $('.the_content_queck_view');
+
+		theWindow.fadeIn('200', function() {
+			overlay.fadeIn(100);
+			$(this).animate({
+				width: '80%',
+				opacity: '1'},
+
+				600, function() {
+					theWindow.animate({
+						height: '80%'},
+
+						600, function() {
+
+						overlay.fadeIn(100);
+						theContent.fadeIn(150);
+
+						$.ajax({
+							url: MyAjax.ajaxurl,
+							type: 'POST',
+							data: {id: id, action: 'queick_view_windows'},
+							beforeSend: function() {
+								$('.the_content_queck_view').prepend('<div class="loading_queck_view"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></div>'); }
+						})
+						.done(function(data) {
+							$('.the_content_queck_view').html(data);
+
+						    $('#slider3').Thumbelina({
+						        orientation:'vertical',         // Use vertical mode (default horizontal).
+						        $bwdBut:$('#slider3 .top'),     // Selector to top button.
+						        $fwdBut:$('#slider3 .bottom')   // Selector to bottom button.
+						    });
+						})
+						.fail(function(response) {
+							console.log(response);
+						})
+						.always(function() {
+							console.log("complete");
+						});
+
+						closeWindow.click(function() {
+
+							theContent.fadeOut(150);
+							theWindow.animate({
+								height: '0'},
+
+								600, function() {
+								theWindow.animate({
+									width: '0',
+									opacity: '0'},
+
+									600, function() {
+									overlay.fadeOut(200);
+									theWindow.fadeOut(100);
+									theContent.html('');
+								});
+							});;
+						});
+					});
+			});
+		});
+		
+		event.preventDefault();
+		/* Act on the event */
+	});
+
+/*=====  End of Section Queck View Button  ======*/
+
+/*================================================
+=            Change Icons Filter Shop            =
+================================================*/
+
+	var orderingProduct_filter = $('#select2-order-container').parent().find('.select2-selection__arrow').find('b');
+	var selectCategory_filter = $('#select2-category-container').parent().find('.select2-selection__arrow').find('b');
+	var selectTags_filter = $('#select2-search-tag-container').parent().find('.select2-selection__arrow').find('b');
+
+	orderingProduct_filter.replaceWith('<span class="ordering_product_icon"></span>');
+	selectCategory_filter.replaceWith('<span class="filter_category_product_icon"></span>');
+	selectTags_filter.replaceWith('<span class="filter_tags_product_icon"></span>');
+
+/*=====  End of Change Icons Filter Shop  ======*/
+
+/*========================================================
+=            Modify Height Main Product Image            =
+========================================================*/
+
+var heightInfoProduct = $('.meta_product').outerHeight();
+var heightGalleryProduct = $('.gallery-box').outerHeight();
+
+var mainImageHeight = (heightInfoProduct + heightGalleryProduct);
+
+$('.main_image_product').css('min-height', mainImageHeight);
+
+/*=====  End of Modify Height Main Product Image  ======*/
 
 
 });

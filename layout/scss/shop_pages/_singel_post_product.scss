@@ -84,7 +84,7 @@ section.related.products {
 		    right: 25px;
 
 			i {
-			    font-size: 45px;
+			    font-size: 30px;
 			    color: $color10;
 			}
 
@@ -100,7 +100,7 @@ section.related.products {
 		    right: 25px;
 
 			i {
-			    font-size: 45px;
+			    font-size: 30px;
 			    color: $color10;
 			}
 
@@ -116,7 +116,7 @@ section.related.products {
 		    right: 85px;
 
 			i {
-			    font-size: 45px;
+			    font-size: 30px;
 			    color: $color10;
 			}
 
@@ -132,7 +132,7 @@ section.related.products {
 		    right: 85px;
 
 			i {
-			    font-size: 45px;
+			    font-size: 30px;
 			    color: $color10;
 			}
 
@@ -145,7 +145,7 @@ section.related.products {
 		.like-container {
 		    display: inline-block;
 		    position: absolute;
-		    right: 150px;
+		    right: 123px;
 		    top: 37px;
 
 		    #like {
@@ -157,7 +157,7 @@ section.related.products {
 			    height: 32px;
 
 				i {
-				    font-size: 45px;
+				    font-size: 30px;
 				    position: absolute;
 				    top: -4px;
 				    left: -50px;
@@ -173,7 +173,7 @@ section.related.products {
 			    height: 32px;
 
 			    i {
-					font-size: 45px;
+					font-size: 30px;
 					position: absolute;
 					top: -6px;
 					left: -50px;
@@ -195,48 +195,14 @@ section.related.products {
 			    color: $color3;
 			}
 		}
-        
-        span.tagged_as a {
-            background-color: $blue;
-	        color: $color2;
-	        padding: 2px;
-	        border-radius: 2px;
-	        margin: 0 2px;
-
-	        &:before {
-	        	content: "\f02b";
-		        font-family: 'icomoon' !important;
-		        margin-right: 5px;
-		        margin-left: 3px;
-		        color: $color2;
-	        }
-        }
 
 		.product_meta {
 		    font-size: 12px !important;
 
 			> span {
 			    margin: -5px 0;
-			    display: block;
 			}
 		}
-
-        span.posted_in a {
-        	background-color: $blue;
-	        color: $color2;
-	        padding: 2px;
-	        border-radius: 2px;
-	        margin: 0 2px;
-
-	        &:before {
-	        	content: "\f07b";
-		        font-family: 'icomoon' !important;
-		        margin-right: 5px;
-		        margin-left: 3px;
-		        color: $color2;
-	        }
-        }
-
 	}
 
 	@media (max-width: 767px){
@@ -271,6 +237,10 @@ section.related.products {
 	    margin-top: $main-margin *2;
 	    margin-left: 0;
 	    max-width: 100%;
+	    overflow: hidden;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
 	}
 
 	@media (max-width: 767px){
@@ -375,14 +345,6 @@ section.related.products {
 		    background-color: $green !important;
 		}
 	}
-    
-    h3.r_products {
-        background-color: $color2;
-        padding: $main-padding;
-        font-size: $font-size - 1;
-        margin-top: 10px;
-	    margin-bottom: 20px;
-    }
 }
 
 @media (max-width: 767px){

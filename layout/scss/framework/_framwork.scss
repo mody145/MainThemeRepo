@@ -1,0 +1,62 @@
+
+
+body {
+  background-color: $color1;
+  font-family: 'Dosis', sans-serif;
+  overflow: hidden;
+}
+
+.grid-item-shop { width: 33.3333%; border: 10px solid transparent; }
+.grid-item--width2 { width: 400px; }
+
+.nopadding {
+	padding: 0;
+	margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.align-v {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+a:link,
+a:hover,
+a:visited {
+	text-decoration: none;
+	color: $color5;
+}
+
+.grid-item {
+    width: 45%;
+    margin: $main-margin /  2;
+}
+
+.parent {
+    margin-right: -15px;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+.round-info-span {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 7px;
+    font-size: $font-size - 8;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    color: #909090;
+}
+
+
+
+

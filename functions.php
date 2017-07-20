@@ -1,36 +1,45 @@
 <?php 
 
+require get_template_directory() . '/inc/ajax_functions/ajax_get_posts_by_category_in_header_menu.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_view_products_cart_in_header.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_system_follow_like_addtocart.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_calculate_value_by_country.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_get_price_by_my_currency.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_remove_cookie_country.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_grid_posts_in_index.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_remove_from_cart_sd.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_full_screan_search.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_sorting_grid_images_box.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_quick_view_windows.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_update_cart.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_filter_shop.php';
+
+require get_template_directory() . '/inc/new_post_type/newPostType_getInTouch.php';
+require get_template_directory() . '/inc/new_post_type/newPostType_slider.php';
+require get_template_directory() . '/inc/new_post_type/newPostType_services.php';
+require get_template_directory() . '/inc/new_post_type/newPostType_about_us.php';
+
+require get_template_directory() . '/inc/widgets_classes/widget_latest_in_shop.php';
+require get_template_directory() . '/inc/widgets_classes/widget_shop_categories.php';
+require get_template_directory() . '/inc/widgets_classes/widget_blog_categories.php';
+require get_template_directory() . '/inc/widgets_classes/widget_go_to.php';
+require get_template_directory() . '/inc/widgets_classes/widget_social_media.php';
+require get_template_directory() . '/inc/widgets_classes/widget_latest_posts.php';
+require get_template_directory() . '/inc/widgets_classes/widget_about_us.php';
+require get_template_directory() . '/inc/widgets_classes/widget_welcom.php';
+
+require get_template_directory() . '/inc/reg_widget_and_sidebar/register_widgets.php';
+require get_template_directory() . '/inc/reg_widget_and_sidebar/register_sidebar.php';
+
+require get_template_directory() . '/inc/custom_functions/functionUSD_EURO.php';
+require get_template_directory() . '/inc/custom_functions/woo_function.php';
 
 require get_template_directory() . '/inc/Facebook/autoload.php';
+require get_template_directory() . '/inc/facebook_init.php';
 
-require get_template_directory() . '/inc/ajax_get_posts_by_category_in_header_menu.php';
-require get_template_directory() . '/inc/ajax_view_products_cart_in_header.php';
-require get_template_directory() . '/inc/ajax_system_follow_like_addtocart.php';
-require get_template_directory() . '/inc/ajax_calculate_value_by_country.php';
-require get_template_directory() . '/inc/ajax_get_price_by_my_currency.php';
-require get_template_directory() . '/inc/ajax_remove_cookie_country.php';
-require get_template_directory() . '/inc/ajax_grid_posts_in_index.php';
-require get_template_directory() . '/inc/ajax_full_screan_search.php';
-require get_template_directory() . '/inc/sorting_grid_images_box.php';
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
-require get_template_directory() . '/inc/ajax_update_cart.php';
-require get_template_directory() . '/inc/functionUSD_EURO.php';
-require get_template_directory() . '/inc/ajax_filter_shop.php';
+
 require get_template_directory() . '/inc/styles_scripts.php';
-require get_template_directory() . '/inc/new_post_type.php';
-require get_template_directory() . '/inc/woo_function.php';
-require get_template_directory() . '/inc/widgets.php';
-
-$config = array (
-	'app_id' 				=> '339106883174292',
-	'app_secret' 			=> '3b35af398a7e3e3437442f6c0ae6a8e6',
-	'default_graph_version' => 'v2.9',
-	'default_access_token' 	=> 'EAACEdEose0cBAMjgzIEE90hjGJXCZAggqxAw0IObABp3HQqjgBZCqrBiB7HOD7MQlEDqUHC5bCHdTI2IWAaJg8YdDYFth6qPnvkDca6xuFtXGaFEYzbderuKsLqxeFCiZChX1wc2g9cX1dNPhjmhyTFQKGoC5nJx2J9wzIPjjMXyYiwqPhn6kRtBYFdFtoZD', // optional
-	);
-$facebook = new \Facebook\Facebook($config);
-
-$appsecret_proof= hash_hmac('sha256', 'EAACEdEose0cBAMjgzIEE90hjGJXCZAggqxAw0IObABp3HQqjgBZCqrBiB7HOD7MQlEDqUHC5bCHdTI2IWAaJg8YdDYFth6qPnvkDca6xuFtXGaFEYzbderuKsLqxeFCiZChX1wc2g9cX1dNPhjmhyTFQKGoC5nJx2J9wzIPjjMXyYiwqPhn6kRtBYFdFtoZD', '3b35af398a7e3e3437442f6c0ae6a8e6'); 
-
 
 /*=================================================
 =            	Register Menus                    =

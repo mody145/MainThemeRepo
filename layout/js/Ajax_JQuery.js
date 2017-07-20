@@ -35,22 +35,21 @@ jQuery(document).ready(function($) {
 
 		var orderBy = $(this).val();
 		var order = $(this).find(':selected').attr('data-order');
-		
-		$('.parent-shop-container').remove();
 
 		// Start Send Data By Ajax
 		$.ajax(MyAjax.ajaxurl, { data: {orderBy : orderBy, order : order, action: 'sorting_by_date' },
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
 
 			},
-			error: function() {
-				alert("Some Thing Error"); 
+			error: function(response) {
+				console.log(response); 
 			},
 			success: function(data) {
-				$('.result_search_shop').html(data);
+				$('.parent-shop-container').html(data);
+				$('.small-overlay-loading').remove();
 			}
 		});
 
@@ -60,95 +59,91 @@ jQuery(document).ready(function($) {
 	$('select#category').on("change", function () {
 
 		var category = $(this).val();
-		
-		$('.parent-shop-container').remove();
 
 		// Start Send Data By Ajax
 		$.ajax(MyAjax.ajaxurl, { data: {category : category, action: 'sorting_by_category' },
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
 			},
 			success: function(data) {
-				$('.result_search_shop').html(data);    
+				$('.parent-shop-container').html(data);
+				$('.small-overlay-loading').remove();  
 			}
 		});
 
 	});
 	// Search By Tag Name
-	$('input#search-tag').on("keyup", function () {
+	$('body').on("change", "select#search-tag", function () {
 
 		var tag = $(this).val();
-		
-		$('.parent-shop-container').remove();
 
 		// Start Send Data By Ajax
 		$.ajax(MyAjax.ajaxurl, { data: {tag : tag, action: 'sorting_by_tag_name' },
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
 			},
 			success: function(data) {
-				$('.result_search_shop').html(data);    
+				$('.parent-shop-container').html(data); 
+				$('.small-overlay-loading').remove();   
 			}
 		});
 
 	});	
 	// Search By Product Name
-	$('input#search-name').on("keyup", function () {
+	$('input#search-name').on("blur", function () {
 
 		var name = $(this).val();
-		
-		$('.parent-shop-container').remove();
 
 		// Start Send Data By Ajax
 		$.ajax(MyAjax.ajaxurl, { data: {name : name, action: 'sorting_by_product_name' },
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
 			},
 			success: function(data) {
-				$('.result_search_shop').html(data);    
+				$('.parent-shop-container').html(data); 
+				$('.small-overlay-loading').remove();   
 			}
 		});
 
 	});	
 
 	// Search By Product Price
-	$('input#price-from, input#price-to').on("keyup", function () {
+	$('input#price-from, input#price-to').on("blur", function () {
 
-		var price_from = 0;
-		var price_to = 0;
+		var price_from = $('input#price-from').val();
+		var price_to = $('input#price-to').val();
 
-		if (price_from !== '') { price_from = $('input#price-from').val(); }
-		if (price_to !== '') { price_to = $('input#price-to').val(); }
-		
-		$('.parent-shop-container').remove();
+		if (price_from !== '') { price_from = $('input#price-from').val(); } else { price_from = 0; }
+		if (price_to !== '') { price_to = $('input#price-to').val(); } else { price_to = 100000000; }
 
 		// Start Send Data By Ajax
 		$.ajax(MyAjax.ajaxurl, { data: {price_from : price_from, price_to : price_to, action: 'sorting_by_product_price_range' },
 
 			type: "POST",
 			beforeSend: function() {
-				$('.result_search_shop').html('<div class="parent-spinners"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>');
+				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
 			},
 			success: function(data) {
-				$('.result_search_shop').html(data);    
+				$('.parent-shop-container').html(data);    
+				$('.small-overlay-loading').remove();
 			}
 		});
 
@@ -223,7 +218,7 @@ jQuery(document).ready(function($) {
 			console.log("error");
 		})
 		.always(function() {
-			console.log(Url);
+			console.log();
 		});
 
 		e.preventDefault();
@@ -255,7 +250,6 @@ jQuery(document).ready(function($) {
 			$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-shopping-bag"></i>');
 			$('#cart_icon').css({color: color10});
 
-			var updateLink = $('#update_total_cart').attr('data-link');
 			var oldResult = $('.total-number');
 
 			$.ajax({
@@ -349,10 +343,9 @@ jQuery(document).ready(function($) {
 		.done(function(data) {
 			$('#items-cart').html(data);
 
-			itemParent.hide(100);
-			parentOverLay.append('<div class="overlay"> <i class="icon-shopping-bag"></i> </div>');
+			parentOverLay.append('<div class="overlay"><i class="icon-close" id="remove_from_cart_sd" data-id="' + id + '"></i> <i class="icon-shopping-bag"></i> </div>');
+			that.html('<i id="cart_icon" class="icon-add_shopping_cart"></i>');
 
-			var updateLink = $('#update_total_cart').attr('data-link');
 			var oldResult = $('.total-number');
 
 			$.ajax({
@@ -471,7 +464,7 @@ jQuery(document).ready(function($) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
-		var result = thisItem.parent().parent().find('.likes-count');
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
@@ -508,7 +501,7 @@ jQuery(document).ready(function($) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
-		var result = thisItem.parent().parent().find('.likes-count');
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
@@ -645,7 +638,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rating: rating, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -678,7 +671,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {like: like, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -711,7 +704,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {views: views, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -744,7 +737,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {comments: comments, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -777,7 +770,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rand: rand, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -1000,7 +993,7 @@ jQuery(document).ready(function($) {
 				dataType: 'html',
 				data: {action : 'view_products_in_cart'},
 				beforeSend: function() {
-					box.html('<i class="fa fa-spinner fa-pulse fa-2x"></i>');
+					box.html('<div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div>');
 				}
 			})
 			.done(function(data) {
@@ -1033,7 +1026,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {latest: latest, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1066,7 +1059,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {like: like, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1099,7 +1092,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {views: views, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1132,7 +1125,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {comments: comments, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1165,7 +1158,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rand: rand, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1214,7 +1207,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {linkCategory: linkCategory, action: 'get_posts_by_category_in_header_menu'},
 			beforeSend: function() {
-				boxResult.prepend('<span class="ovlay-loading"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></span>'); }
+				boxResult.prepend('<span class="ovlay-loading"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			boxResult.html(data);
@@ -1269,6 +1262,194 @@ jQuery(document).ready(function($) {
 	});
 	
 	/*=====  End of Section Remove COOKIE Country  ======*/
+
+	/*============================================================
+	=            Section Remove From Cart ( Archive )            =
+	============================================================*/
+	
+	$('body').on('click', '#remove_from_cart_sd', function(event) {
+
+		var that = $(this);
+		var idRemove = that.attr('data-id'); console.log('ID From Javascript : ' + idRemove);
+		var overlay = that.parent('.overlay');
+
+		overlay.hide(200);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {idRemove: idRemove, action: 'remove_from_cart_sd'}
+		})
+		.done(function(data) {
+			$('#items-cart').html(data);
+			overlay.hide(400);
+
+			var oldResult = $('.total-number');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action: 'updata_cart_in_header'},
+				beforeSend: function() {
+					oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+				}
+			})
+			.done(function(data) {
+				oldResult.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		})
+		.fail(function(response) {
+			console.log(response);
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Remove From Cart ( Archive )  ======*/
+	
+	/*===============================================================
+	=            Setion Add To Cart From ( Quieck View )            =
+	===============================================================*/
+	
+	$('body').on('click', '#add_to_cart_quick_view', function(event) {
+
+		var that = $(this),
+			id = that.attr('data-id'),
+			parentOverLay = $('.shop-container').find('[data-getTheID=' + id +']');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {id: id, action: 'add_to_cart_single_post'},
+				beforeSend: function() {
+					that.attr('class', 'fa fa-spinner fa-spin');
+					that.css({
+						backgroundColor: color2,
+						color: blue
+					});
+				}
+			})
+			.done(function(data) {
+				$('#items-cart').html(data);
+				that.attr('class', 'icon-shopping-bag');
+				that.attr('id', 'remove_from_cart_quick_view');
+
+				that.attr('style', '');
+
+				var oldResult = $('.total-number');
+
+				$.ajax({
+					url: MyAjax.ajaxurl,
+					type: 'GET',
+					dataType: 'html',
+					data: {action: 'updata_cart_in_header'},
+					beforeSend: function() {
+						oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+					}
+				})
+				.done(function(data) {
+					oldResult.html(data);
+					parentOverLay.append('<div class="overlay"><i class="icon-close" id="remove_from_cart_sd" data-id="' + id + '"></i> <i class="icon-shopping-bag"></i> </div>');
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Setion Add To Cart From ( Quieck View )  ======*/
+	
+	/*===========================================================
+	=            Remove From Cart In ( Quieck View )            =
+	===========================================================*/
+	
+	$('body').on('click', '#remove_from_cart_quick_view', function(event) {
+
+		var that = $(this),
+			idRemove = that.attr('data-id'),
+			overlay = $('.shop-container').find('[data-getTheID=' + idRemove +']').find('.overlay');
+
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {idRemove: idRemove, action: 'remove_from_cart_sd'},
+				beforeSend: function() {
+					that.attr('class', 'fa fa-spinner fa-spin');
+					that.css({
+						backgroundColor: color2,
+						color: blue
+					});
+				}
+			})
+			.done(function(data) {
+				$('#items-cart').html(data);
+
+				that.attr('class', 'icon-add_shopping_cart');
+				that.attr('id', 'add_to_cart_quick_view');
+
+				that.attr('style', '');
+
+				overlay.hide(400);
+
+				var oldResult = $('.total-number');
+
+				$.ajax({
+					url: MyAjax.ajaxurl,
+					type: 'GET',
+					dataType: 'html',
+					data: {action: 'updata_cart_in_header'},
+					beforeSend: function() {
+						oldResult.html('<i class="fa fa-spinner fa-spin"></i>');
+					}
+				})
+				.done(function(data) {
+					oldResult.html(data);
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Remove From Cart In ( Quieck View )  ======*/
 	
 
 });

@@ -1,165 +1,3 @@
-
-	$color1: #eaeaea;
-	$color2: #ffffff;
-	$color3: #3be8b0;
-	$color4: #1aafd0;
-	$color5: #6a67ce;
-	$color6: #ffb900;
-	$color7: #fc636b;
-	$color8: #333;
-	$color9: #42b72a;
-	$color10: #82DACA;
-
-	$infoColor: #777;
-	$font-size: 20px;
-
-	$green: #42b72a;
-	$blue: #08f;
-
-	$main-margin: 10px;
-	$main-padding: 10px;
-
-body {
-	background-color: $color1;
-	font-family: 'Dosis', sans-serif;
-	overflow: hidden;
-}
-
-.nopadding {
-	padding: 0;
-	margin: 0;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.align-v {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-
-a:link,
-a:hover,
-a:visited {
-	text-decoration: none;
-	color: $color5;
-}
-
-.grid-item {
-    width: 45%;
-    margin: $main-margin /  2;
-}
-
-.parent {
-    margin-right: -15px;
-    margin-left: -5px;
-    margin-top: -5px;
-}
-
-.round-info-span {
-    display: inline-block;
-    min-width: 10px;
-    padding: 2px 7px;
-    font-size: $font-size - 8;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    background-color: #e8e8e8;
-    border-radius: 10px;
-    color: #909090;
-}
-
-/*====================================
-=            Color JQuery            =
-====================================*/
-
-.color1 {
-	background-color: $color1;
-}
-.color2 {
-	background-color: $color2;
-}
-.color3 {
-	background-color: $color3;
-}
-.color4 {
-	background-color: $color4;
-}
-.color5 {
-	background-color: $color5;
-}
-.color6 {
-	background-color: $color6;
-}
-.color7 {
-	background-color: $color7;
-}
-.color8 {
-	background-color: $color8;
-}
-.color9 {
-	background-color: $color9;
-}
-.color10 {
-	background-color: $color10;
-}
-
-.infoColor {
-	background-color: $infoColor;
-}
-
-.green {
-	background-color: $green;
-}
-.blue {
-	background-color: $blue;
-}
-
-/*=====  End of Color JQuery  ======*/
-
-/*=====================================
-=            Rating System            =
-=====================================*/
-  
-.rating { 
-    border: none;
-    float: left;
-}
-
-.rating > input { display: none; } 
-.rating > label:before { 
-    margin: 0px;
-    font-size: 1.25em;
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f005";
-}
-
-.rating > .half:before { 
-    content: "\f089";
-    position: absolute;
-}
-
-.rating > label { 
-    color: #ddd; 
-    float: right; 
-}
-
-.rating > input:checked ~ label, 
-.rating:not(:checked) > label:hover,  
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
-
-.rating > input:checked + label:hover, 
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, 
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }  
-  
-/*=====  End of Rating System  ======*/
-
 /*=====================================
 =            Small Spinner            =
 =====================================*/
@@ -267,12 +105,114 @@ a:visited {
 
 /*=====  End of Spinner Loading  ======*/
 
-/*===================================
-=            OWL Modify             =
-===================================*/
+/*=====================================
+=            Small Loading            =
+=====================================*/
 
-.owl-carousel .owl-item img {
-    border: 1px solid #e2e2e2;
+.small-overlay-loading {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+
+  span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
 }
 
-/*=====  End of OWL Modify   ======*/
+/*=====  End of Small Loading  ======*/
+
+/*===============================================
+=            Modify Icon Paginaition            =
+===============================================*/
+
+.malinky-ajax-pagination-loading {
+    opacity: .9 !important;
+    position: absolute !important;
+    top: -5px !important;
+    left: 0px !important;
+    width: calc(100% - 10px);
+    height: calc(100% - 70px);
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/*=====  End of Modify Icon Paginaition  ======*/
+
+/*===========================================
+=            Section Loading One            =
+===========================================*/
+/* <div class="loading__spinner loading__spinner__one"></div> */
+.parent_spinner {
+    margin: 5px auto;
+    text-align: center;
+}
+
+.loading__spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.loading__spinner__one {
+  border-right: 4px solid $color5;
+  -webkit-animation: rotate .7s linear infinite;
+          animation: rotate .7s linear infinite;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*=====  End of Section Loading One  ======*/
+
+/*===========================================
+=            Section Loading Two            =
+===========================================*/
+/* <div class="spinner"></div> */
+.spinner {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 2px solid $color5;
+  border-top-color: transparent;
+  animation: lai-spinnair 1s linear infinite;
+  box-sizing: border-box;
+}
+
+@keyframes lai-spinnair {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/*=====  End of Section Loading Two  ======*/

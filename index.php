@@ -214,7 +214,7 @@
 		</div>
 	</div><!-- End Section Testimonials -->
 
-	<!-- Section Services -->
+	<!-- Section GridPosts -->
 	<div class="services">
 
 		<div class="buttons-section">
@@ -249,7 +249,7 @@
 			    		<div class="img-box align-v">
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
-						<h3><?php echo get_the_title(); ?></h3>
+						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
 						<p class="info_post">
 							<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
@@ -275,7 +275,7 @@
 									</a>
 								</div>
 								<div class="media-body">
-									<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+									<h4 class="media-heading"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 									<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
 									<p class="info_post">
 										<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
@@ -303,7 +303,7 @@
 								</a>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+								<h4 class="media-heading"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 								<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
 								<p class="info_post">
 									<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
@@ -331,7 +331,7 @@
 								</a>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading"><?php echo get_the_title(); ?></h4>
+								<h4 class="media-heading"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 								<p><?php echo $str = substr(get_the_content(), 0, 50) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?> </p>
 								<p class="info_post">
 									<i class="icon-thumbs-o-up"> </i><span class="round-info-span"><?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>

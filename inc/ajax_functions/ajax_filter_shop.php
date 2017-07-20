@@ -33,7 +33,7 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -73,7 +73,7 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -115,7 +115,7 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -157,7 +157,7 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -206,7 +206,7 @@ function sorting_by_category() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -247,7 +247,7 @@ function sorting_by_tag_name() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -274,25 +274,44 @@ function sorting_by_product_name() { ?>
 	<?php // Search By Product Name
 	if (isset($_POST['name'])) {
 
+		global $wpdb;
+
 		$name = $_POST['name'];
 
-		$args = array(
-			'post_type' 		=> 'product',
-			'posts_per_page' 	=> 9,
-			'name' 				=> $name ,
-			);
+		$posttitle = '%' . $name . '%';
+		$postid = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_title LIKE '" . $posttitle . "'" );
 
-		$query = new WP_Query( $args );
+		$result_count = count($postid);
+		$ids = array();
 
-		if($query->have_posts()) {
-			while($query->have_posts()) {
-				$query->the_post(); ?>
+		for ($i=0; $i < $result_count; $i++) { 
+			
+			$ids[] = $postid[$i]->ID;
+		}
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+		if ( empty($ids) ) {
 
-		<?php }} ?>
+			echo "<div class='filter_no_results'><h3>There's No Products Have This Name</h3></div>";
+		} else {
 
-		<?php wp_reset_query(); ?>
+			$query_d = new WP_Query( array(
+				'post_type' 		=> 'product',
+				'posts_per_page' 	=> -1,
+				'post__in' 			=> $ids
+
+			) );
+
+			if($query_d->have_posts()) {
+				while($query_d->have_posts()) {
+					$query_d->the_post(); ?>
+
+					<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+
+			<?php }} ?>
+
+			<?php wp_reset_query(); ?>
+
+			<?php } ?>
 
 	<?php
 
@@ -337,7 +356,7 @@ function sorting_by_product_price_range() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 

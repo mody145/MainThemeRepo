@@ -123,10 +123,9 @@ div.get-posts-in-menu {
         justify-content: center;
         align-items: center;
 
-        i {
-            position: relative;
-            z-index: 200;
-            color: $color2;
+        > div {
+             border: 2px solid $color2 !important;
+             border-top-color: transparent !important;
         }
     }
 
@@ -155,6 +154,7 @@ div.get-posts-in-menu {
             justify-content: center;
             align-items: center;
             border-radius: 3px;
+            background-color: #e4e0dd;
 
             img {
                 max-width: 140%;

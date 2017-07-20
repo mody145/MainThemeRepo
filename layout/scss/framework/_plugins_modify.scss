@@ -1,0 +1,67 @@
+/*=========================================================
+=            Section Add Icon To Filter Select            =
+=========================================================*/
+
+span.ordering_product_icon:before {
+    content: "\f0ec";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+span.filter_category_product_icon:before {
+    content: "\f07b";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+span.filter_tags_product_icon:before {
+    content: "\f02b";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+/*=====  End of Section Add Icon To Filter Select  ======*/
+
+/*=========================================
+=            modify NiceSelect            =
+=========================================*/
+
+.select2-container--default .select2-selection--single {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    width: 20px;
+}
+
+/*=====  End of modify NiceSelect  ======*/
+
+/*===================================
+=            OWL Modify             =
+===================================*/
+
+.owl-carousel .owl-item img {
+
+}
+
+.owl-nav {
+    display: none !important;
+}
+
+/*=====  End of OWL Modify   ======*/

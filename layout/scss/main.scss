@@ -2,8 +2,11 @@
 =            FrameWork And vars            =
 ==========================================*/
 
-@import "framework/vars_framwork";
+@import "framework/vars";
+@import "framework/framwork";
 @import "framework/bootstrap_modify";
+@import "framework/loading_and_spinners";
+@import "framework/plugins_modify";
 
 /*=====  End of FrameWork And vars  ======*/
 
@@ -41,10 +44,10 @@
 
 @import "index_page/feat";
 @import "index_page/grid_images";
-@import "index_page/index";
+@import "index_page/welcome";
 @import "index_page/latest_post_blog";
 @import "index_page/mini_slider";
-@import "index_page/services";
+@import "index_page/grid_posts";
 @import "index_page/testimonials";
 
 /*=====  End of Index Content  ======*/
@@ -59,7 +62,6 @@
 @import "pages/help_page";
 @import "pages/plog-page";
 @import "pages/plog_page_three";
-@import "pages/plog_page_two";
 @import "pages/portfolio_page";
 @import "pages/services_page";
 @import "pages/single-post";
@@ -96,6 +98,8 @@
 @import "shop_boxes/filter_products";
 @import "shop_boxes/related_products";
 @import "shop_boxes/upper-bar-woo-shop";
+@import "shop_boxes/global_items_style";
+@import "shop_boxes/quick_view";
 
 /*=====  End of Shop Boxes  ======*/
 

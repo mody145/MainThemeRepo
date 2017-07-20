@@ -1,12 +1,6 @@
 <?php session_start(); ?>
 <?php get_header(); ?>
 
-<!-- Start Sidebar Shop -->
-<!-- <div class='col-md-3 nopadding pull-right wow fadeIn'> -->
-	<!-- Sidebar Shop -->
-	<?php //dynamic_sidebar( 'shop-sidebar' ); ?>
-<!-- </div> --><!-- End Sidebar Shop -->
-
 <!-- Upperbar -->
 <div class="col-md-12 nopadding wow fadeIn">
 	<!-- Start Upper bar In Shop -->
@@ -54,8 +48,8 @@
 	), 'http://example.com' ); ?>
 
 		<form id="filter_shop" method="POST" action="<?php echo admin_url('admin-ajax.php')?>">
-			<select id="order" class="select-option" name="order">
-				<option value="">-- ORDERING --</option>
+
+			<select id="order" class="select-option col-md-2 select_filter" name="order">
 				<option value="date" data-order="DESC">Newest First</option>
 				<option value="date" data-order="ASC">Oldest First</option>
 				<option value="_regular_price" data-order="DESC">DESC Price</option>
@@ -72,18 +66,63 @@
 
 			$categories = get_categories( $args ); ?>
 
-			<select id="category" class="category select-option" name="category">
-				<option value="">-- CATEGORIES --</option>
+			<select id="category" class="category select-option col-md-2 select_filter" name="category">
 			<?php foreach ($categories as $cat) { ?>
 				<option value="<?php echo $cat->slug ?>"><?php echo $cat->name; ?></option>
 			<?php } ?>
 			</select>
 
-			<input id="price-from" type="text" name="price-from" placeholder="From Price" />
-			<input id="price-to" type="text" name="price-to" placeholder="To Price" />
-			<input id="search-tag" type="search" name="tags" placeholder="Search By Tags" />
-			<input id="search-name" type="search" name="names" placeholder="Search By Names" />
+			<select multiple="true" data-tags="true" data-placeholder="Multiple Tags" class="select-option col-md-2 select_filter" id="search-tag" name="tags">	
 
+				<?php // Get List Of All Tags
+				$terms = get_terms( 'product_tag' );
+				// Create Empty Array
+				$term_array = array();
+				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+				    foreach ( $terms as $term ) {
+				    	// Insert All Tags Slug In Empty Array
+				        $term_array[] = $term->name;
+				    }
+				}
+				// Fetch Array
+				foreach ($term_array as $tagName) {
+
+					$args = array(
+					    'posts_per_page' 	=> -1,
+					    'post_type' 		=> 'product',
+					    'product_tag' 		=> $tagName
+					);
+					$query = new WP_Query( $args );
+					// Get Count Results
+					$count = $query->post_count;
+					wp_reset_postdata();
+					// Insert Into Option Tag
+					echo '<option value="' . $tagName . '">[ ' . $count . ' ]&nbsp;' . $tagName . '</option>';
+				}
+
+				?>
+
+			</select>
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="price-from"><i class="icon-usd"></i></span>
+				<input class="form-control" id="price-from" type="text" name="price-from" placeholder="From Price" />
+
+			</div>
+
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="price-to"><i class="icon-usd"></i></span>
+				<input class="form-control" id="price-to" type="text" name="price-to" placeholder="Price Limit" />
+
+			</div>
+
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="search-name"><i class="icon-chevron-right"></i></span>
+				<input class="form-control" id="search-name" type="search" name="names" placeholder="Names Like ..." />
+
+			</div>
 		</form>
 	</div><!-- End Conatiner Filter -->
 </div><!-- End Filter Products -->
@@ -92,7 +131,7 @@
 <div class="col-md-12 nopadding">
 	<!-- Start Container Shop -->
 	<div class="shop-container wow fadeIn">
-		<div class="parent-shop-container for-pagination">
+		<div class="parent-shop-container grid-shop-products products for-pagination">
 
 	<?php
 	// Get Current Page 
@@ -115,22 +154,18 @@
 
 			<?php } ?>
 			<?php wp_reset_query(); ?>
-				<div class="clearfix"></div>
-				<div class="shop-pagination">
-
-					<?php echo '<div class="custom-pagination">';
-							echo paginate_links(array(
-							'total' => $query->max_num_pages
-				 			));
-						echo '</div>'; ?>
-				</div>
-
+			
+				<?php echo '<div class="custom-pagination">';
+						echo paginate_links(array(
+						'total' => $query->max_num_pages
+			 			));
+					echo '</div>'; ?>
 			</div>
 			<!-- Here Is Result Filter -->
-			<div class="result_search_shop for-pagination for-load-more">
+			<!-- <div class="result_search_shop grid for-pagination for-load-more"> -->
 				
 			</div><!-- Here Is Result Filter -->
-		</div>
+
 	</div><!-- End Container Shop -->
 
 <?php get_footer(); ?>

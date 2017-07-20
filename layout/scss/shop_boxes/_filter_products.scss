@@ -1,6 +1,6 @@
 .container-filter {
-    background-color: $color2;
-    padding: $main-padding;
+    background-color: rgb(227, 223, 220);
+    padding: $main-padding / 2;
     margin: $main-margin;
     margin-left: 0;
     display: flex;
@@ -8,18 +8,19 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-right: 0;
 
-	input {
-	    border: 1px solid #DDD;
-	    padding: $main-padding /  2;
-	    margin: $main-margin /  2;
-	    width: 130px;
-	}
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-	select.select-option {
-	    padding: $main-padding /  2;
-	    margin: $main-margin /  2;
-	    width: 120px;
-	}
+        > * {
+            border: 4px solid transparent !important;
+        }
 
+        .input-group {
+            margin: 0;
+        }
+    }
 }
