@@ -1,5 +1,6 @@
 <?php 
 
+
 require get_template_directory() . '/inc/ajax_functions/ajax_get_posts_by_category_in_header_menu.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_view_products_cart_in_header.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_system_follow_like_addtocart.php';
@@ -27,6 +28,8 @@ require get_template_directory() . '/inc/widgets_classes/widget_social_media.php
 require get_template_directory() . '/inc/widgets_classes/widget_latest_posts.php';
 require get_template_directory() . '/inc/widgets_classes/widget_about_us.php';
 require get_template_directory() . '/inc/widgets_classes/widget_welcom.php';
+require get_template_directory() . '/inc/widgets_classes/widget_tags_posts.php';
+require get_template_directory() . '/inc/widgets_classes/widget_tags_product.php';
 
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_widgets.php';
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_sidebar.php';

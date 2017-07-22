@@ -19,12 +19,15 @@ if ( post_password_required() ) {
 	return;
 } ?>
 
+
 <div class="comments-container">
 
 	<ul id="comments-list" class="comments-list">
 <?php 
 
 foreach ($comments as $comment) { ?>
+
+<?php if ($comment->comment_parent == 0) {  ?>
 	<li>
 		<div class="comment-main-level">
 			<!-- Avatar -->
@@ -34,10 +37,10 @@ foreach ($comments as $comment) { ?>
 				<div class="comment-head">
 					<h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $comment->comment_author ?></a></h6>
 					<span><?php $date = $comment->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
-					<i class="fa fa-reply"></i>
+					<a rel="nofollow" href="?replytocom=<?php echo $comment->comment_ID ?>#respond""><i class="fa fa-reply"></i></a>
 				</div>
 				<div class="comment-content">
-					<?php echo $comment->comment_content ?>
+					<?php echo $comment->comment_content; comment_reply_link('', $comment->comment_ID, $post->ID); ?>
 				</div>
 			</div>
 		</div>
@@ -62,7 +65,6 @@ foreach ($comments as $comment) { ?>
 					<div class="comment-head">
 						<h6 class="comment-name"><a href="http://creaticode.com/blog"><?php echo $children->comment_author ?></a></h6>
 						<span><?php $date = $children->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
-						<i class="fa fa-reply"></i>
 					</div>
 					<div class="comment-content">
 						<?php echo $children->comment_content ?>
@@ -77,6 +79,8 @@ foreach ($comments as $comment) { ?>
 		<?php } /* Endif */ ?>
 
 	</li>
+
+	<?php } /* End If Parent */ ?>
 
 	<?php } /* End Foreach */ ?>
 

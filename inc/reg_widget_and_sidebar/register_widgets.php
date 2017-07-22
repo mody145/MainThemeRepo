@@ -8,5 +8,7 @@ register_widget( 'custom_categories_wigdet' );
 register_widget( 'custom_shop_categories_wigdet' );
 register_widget( 'custom_widget_welcome' );
 register_widget( 'top_items_in_shop' );
+register_widget( 'tags_cloud_widget' );
+register_widget( 'tags_product_cloud_widget' );
 
 ?>

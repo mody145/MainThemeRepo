@@ -22,20 +22,29 @@
         }
 
         .malinky-ajax-pagination-loading {
-            opacity: .7 !important;
+            opacity: .9 !important;
             position: absolute !important;
             top: -5px !important;
             left: 10px !important;
             width: calc(100% - 20px);
             height: calc(100% - 20px);
-            background: #fff;
+            background: $color5;
             z-index: 1000;
+            animation: loadingPagination 6s linear infinite;
+        }
 
-            i {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+        @keyframes loadingPagination {
+
+            0% {
+                background: $color5;
+            }
+
+            50% {
+                background: $color6;
+            }
+
+            100% {
+                background: $color5;
             }
         }
 	}

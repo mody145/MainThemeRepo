@@ -100,30 +100,7 @@ header.site-header img {
 
 /*=====  End of Login And Add Item   ======*/
 
-/*===============================================
-=            Section Loading Overlay            =
-===============================================*/
 
-.loading_overlay {
-    background-color: #e8e8e8;
-    color: $color8;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99998;
-}
-
-.loading_overlay span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    height: 100%;
-}
-
-/*=====  End of Section Loading Overlay  ======*/
 
 
 

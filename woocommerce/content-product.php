@@ -57,7 +57,7 @@
 					<div class="add-to-cart-container-false">
 						<h3>
 							<a href="#" class="add_to_cart_shop_archive" id="add_to_cart_shop_archive" data-id="<?php echo $product->get_id(); ?>">
-								<i id="cart_icon" class="icon-add_shopping_cart"></i>
+								<i id="cart_icon" class="icons-option icon-add_shopping_cart"></i>
 							</a>
 						</h3>
 					</div><!-- Add To Cart Button -->
@@ -70,7 +70,7 @@
 						<div class="add-to-follow-container-false">
 							<h3>
 								<a id="unfollow" href="#" data-id="<?php echo $product->get_id() ?>" class="unfollow_archive">
-									<i id="follow_icon" class="icon-heart8"></i>
+									<i id="follow_icon" class="icons-option exists icon-heart8"></i>
 								</a>
 							</h3>
 						</div>
@@ -80,7 +80,7 @@
 						<div class="add-to-follow-container-true">
 							<h3>
 								<a id="follow" href="#" data-id="<?php echo $product->get_id() ?>" class="follow_archive">
-									<i id="follow_icon" class="icon-heart-o"></i>
+									<i id="follow_icon" class="icons-option icon-heart-o"></i>
 								</a>
 							</h3>
 						</div>
@@ -94,16 +94,16 @@
 				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
 
 				<div class="like-container">
-					<a href="#" id="unlike" data-id="<?php echo $product->get_id() ?>">
-						<i id="like_icon" class="icon-check"></i>
+					<a href="#" id="unlike_archive" data-id="<?php echo $product->get_id() ?>">
+						<i id="like_icon" class="icons-option exists icon-check"></i>
 					</a>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-					<a href="#" id="like" data-id="<?php echo $product->get_id() ?>">
-						<i id="like_icon" class="icon-thumbs-o-up"></i>
+					<a href="#" id="like_archive" data-id="<?php echo $product->get_id() ?>">
+						<i id="like_icon" class="icons-option icon-thumbs-o-up"></i>
 					</a>
 				</div>
 
@@ -117,7 +117,7 @@
 				
 				<div class="queck-view-container">
 					<a href="#" id="queck_view_button" data-id="<?php echo $product->get_id() ?>">
-						<i class="icon-magnifier"></i>
+						<i class="icons-option icon-magnifier"></i>
 					</a>
 				</div>
 				

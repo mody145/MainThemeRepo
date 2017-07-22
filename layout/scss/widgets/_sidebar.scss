@@ -3,6 +3,10 @@
     margin-right: 0;
 }
 
+.custom-sidebar-widget:last-of-type {
+    margin-bottom: 20px;
+}
+
 @media (max-width: 767px){
     .custom-sidebar-widget {
         margin-left: 0;

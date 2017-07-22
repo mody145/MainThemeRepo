@@ -86,6 +86,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
+			    background-color: #3be6ae;
+			    color: #fff;
+			    padding: 5px 10px;
+			    border-radius: 5px;
+			    border-bottom: 5px solid #47d2a4;
 			}
 
 			a:link, a:hover, a:visited {
@@ -102,6 +107,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
+			    background-color: #3be6ae;
+			    color: #fff;
+			    padding: 5px 10px;
+			    border-radius: 5px;
+			    border-bottom: 5px solid #47d2a4;
 			}
 
 			a:link, a:hover, a:visited {
@@ -118,6 +128,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
+			    background-color: #ffb900;
+			    color: #fff;
+			    padding: 5px 10px;
+			    border-radius: 5px;
+			    border-bottom: 5px solid #d2a222;
 			}
 
 			a:link, a:hover, a:visited {
@@ -134,6 +149,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
+			    background-color: #ffb900;
+			    color: #fff;
+			    padding: 5px 10px;
+			    border-radius: 5px;
+			    border-bottom: 5px solid #d2a222;
 			}
 
 			a:link, a:hover, a:visited {
@@ -145,8 +165,8 @@ section.related.products {
 		.like-container {
 		    display: inline-block;
 		    position: absolute;
-		    right: 123px;
-		    top: 37px;
+			right: 186px;
+		    top: 25px;
 
 		    #like {
 			    font-size: $font-size;
@@ -159,8 +179,11 @@ section.related.products {
 				i {
 				    font-size: 30px;
 				    position: absolute;
-				    top: -4px;
-				    left: -50px;
+				    background-color: #6966cc;
+				    color: #fff;
+				    padding: 5px 10px;
+				    border-radius: 5px;
+				    border-bottom: 5px solid #5856b3;
 				}
 		    }
 
@@ -175,8 +198,11 @@ section.related.products {
 			    i {
 					font-size: 30px;
 					position: absolute;
-					top: -6px;
-					left: -50px;
+				    background-color: #6966cc;
+				    color: #fff;
+				    padding: 5px 10px;
+				    border-radius: 5px;
+				    border-bottom: 5px solid #5856b3;
 			    }
 		    }
 		}
@@ -241,6 +267,31 @@ section.related.products {
 	    display: flex;
 	    justify-content: center;
 	    align-items: center;
+	    position: relative;
+
+		&:before {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 21px;
+		    height: 21px;
+		    background-color: transparent;
+		    border-top: 4px solid #333;
+		    border-left: 4px solid #333;
+		}
+
+		&:after {
+		    content: "";
+		    position: absolute;
+		    bottom: 0;
+		    right: 0;
+		    width: 21px;
+		    height: 21px;
+		    background-color: transparent;
+		    border-bottom: 4px solid #333;
+		    border-right: 4px solid #333;
+		}
 	}
 
 	@media (max-width: 767px){

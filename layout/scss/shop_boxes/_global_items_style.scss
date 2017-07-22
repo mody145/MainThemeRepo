@@ -106,10 +106,8 @@
 
       i {
           position: absolute;
-          top: -3px;
-          left: -5px;
-          font-size: 23px;
-          color: $color10;
+          top: -4px;
+          left: -6px;
       }
     }
 
@@ -122,9 +120,8 @@
         h3 {
           margin: 0 !important;
 
-        i {
-            color: $color10;
-        }
+          i {
+          }
         }
     }
 
@@ -142,11 +139,9 @@
     }
 
     .add-to-follow-container-false h3 i {
-      color: $color10;
     }
 
     .add-to-follow-container-true h3 i {
-      color: $color10;
     }
 
     a.add_to_cart_shop_archive {
@@ -167,13 +162,10 @@
         background-color: $color5;
         }
 
-      #like {
-          font-size: 14px;
-          color: $color10;
+      #like_archive {
           position: relative;
-          top: -1px;
-          right: 15px;
-          margin-right: 5px;
+          top: -3px;
+          right: 20px;
           width: 15px;
           height: 21px;
 
@@ -181,7 +173,6 @@
             position: absolute;
             top: -1;
             left: -4px;
-            font-size: 24px;
         }
       }
 
@@ -189,21 +180,18 @@
           color: $color10;
       }
 
-        #unlike {
-        font-size: 14px;
-        color: $color10;
-        position: relative;
+        #unlike_archive {
+          position: relative;
           top: 0px;
           right: 15px;
-        margin-right: 5px;
-        width: 15px;
+          margin-right: 5px;
+          width: 15px;
           height: 21px;
 
         i {
             position: absolute;
             top: -3px;
             left: -5px;
-            font-size: 25px;
         }
         }
 
@@ -248,6 +236,24 @@
           border-bottom: 1px solid $color1;
           border-top: 1px solid $color1;
           padding: $main-padding /  2 0;
+      }
+
+      i.icons-option {
+          background-color: #eaeaea;
+          color: #8c8c8c;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          font-size: 19px !important;
+          border-radius: 2px;
+      }
+
+      i.icons-option.exists {
+          background-color: #82daca !important;
+          color: #fff !important;
+          border-bottom: 3px solid #78cfbf;
       }
   }
 
@@ -500,3 +506,52 @@ h3.feedback-heading {
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }  
   
 /*=====  End of Rating System  ======*/
+
+/*=================================================
+=            Section Custom Pagination            =
+=================================================*/
+
+.custom-pagination {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .next, .prev {
+      background-color: #3897f0;
+      color: #fff !important;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      border-radius: 50%;
+  }
+
+  span.page-numbers.current {
+      background-color: #ffb900;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      border-radius: 50%;
+  }
+
+  a.page-numbers:not(.next):not(.prev) {
+      background-color: #3897f0;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 5px;
+      border-radius: 50%;
+  }
+}
+
+/*=====  End of Section Custom Pagination  ======*/

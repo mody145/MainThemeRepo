@@ -3,11 +3,6 @@
 jQuery(document).ready(function($) {
 	'use strict';
 
-	 $('.select_filter').select2({
-		  tags: "true",
-		  maximumSelectionLength: 5
-	 });
-
 	// This Is Main Colors
 	var color1 		= $('.color1').css('background-color');
 	var color2 		= $('.color2').css('background-color');
@@ -26,6 +21,11 @@ jQuery(document).ready(function($) {
 	var blue 		= $('.blue').css('background-color');
 
 
+	$('.select_filter').select2({
+		tags: "true",
+		maximumSelectionLength: 5
+	});
+
 	// Run Skitter Slider
 	$(function() {
 		$('.skitter-large').skitter({
@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 	// Trigger Nice Scroll
 	$("html").niceScroll({
 
-		cursorcolor: 		color6,
+		cursorcolor: 		color5,
 		cursorwidth: 		"10px",
 		cursorborder: 		"0",
 		cursorborderradius: "1px",
@@ -83,7 +83,28 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-/*=====  End of Modify Resent Posts Widget  ======*/
+/*====================================================
+=            Spinner Loading With Counter            =
+====================================================*/
+	
+	function startCounter() {
+
+	  	$('.line_spinner10').css('width');
+		var interval = setInterval(increment,80);
+		var current = 0;
+	  
+		function increment(){
+			current++;
+			$('.line_spinner10').css('width',current+'%');
+	    	$('.counter_spinner10').html(current+'%');
+	    	
+			if(current == 100) { current = 0; }
+		}
+	}
+
+	//startCounter()
+
+/*=====  End of Spinner Loading With Counter  ======*/
 
 /*===================================================
 =            Add Class To Comment Button            =
@@ -168,6 +189,7 @@ $("#zoom_01").elevateZoom({
 /*===============================================
 =            Section Overlay Loading            =
 ===============================================*/
+	
 
 	$(window).ready(function () {
 
@@ -233,7 +255,7 @@ $("#zoom_01").elevateZoom({
 	    position: 'absolute',
 		top: '-8',
 		right: '-30',
-	}).html('<i class="fa fa-spinner fa-spin"></i>');
+	}).html('');
 
 /*=====  End of Change Icon Pageination  ======*/
 
@@ -270,7 +292,7 @@ $("#zoom_01").elevateZoom({
 							type: 'POST',
 							data: {id: id, action: 'queick_view_windows'},
 							beforeSend: function() {
-								$('.the_content_queck_view').prepend('<div class="loading_queck_view"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></div>'); }
+								$('.the_content_queck_view').prepend('<div class="loading_queck_view"><div class="spinner"></div></div>'); }
 						})
 						.done(function(data) {
 							$('.the_content_queck_view').html(data);
@@ -334,12 +356,12 @@ $("#zoom_01").elevateZoom({
 =            Modify Height Main Product Image            =
 ========================================================*/
 
-var heightInfoProduct = $('.meta_product').outerHeight();
-var heightGalleryProduct = $('.gallery-box').outerHeight();
+	var heightInfoProduct = $('.meta_product').outerHeight();
+	var heightGalleryProduct = $('.gallery-box').outerHeight();
 
-var mainImageHeight = (heightInfoProduct + heightGalleryProduct);
+	var mainImageHeight = (heightInfoProduct + heightGalleryProduct);
 
-$('.main_image_product').css('min-height', mainImageHeight);
+	$('.main_image_product').css('min-height', mainImageHeight);
 
 /*=====  End of Modify Height Main Product Image  ======*/
 

@@ -88,19 +88,3 @@ p.some-content-post {
     border-bottom: 5px solid $color6;
 }
 
-.custom-pagination {
-    padding: $main-padding /  2;
-    text-align: center;
-}
-
-.custom-pagination a {
-    background-color: $color2;
-    padding: 6px;
-    margin: 2px;
-}
-
-.custom-pagination .page-numbers.current {
-    margin: 2px;
-    background-color: $color2;
-    padding: 6px;
-}

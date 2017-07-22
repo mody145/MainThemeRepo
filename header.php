@@ -9,6 +9,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 		<title><?php if(is_home()) { echo bloginfo( 'name' ); } else { echo wp_title( $sep = '-' ); } ?></title>
 		<?php wp_head(); ?>
 	</head>
@@ -53,11 +55,11 @@
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
 		<span>
-			<div class="sk-folding-cube">
-				<div class="sk-cube1 sk-cube"></div>
-				<div class="sk-cube2 sk-cube"></div>
-				<div class="sk-cube4 sk-cube"></div>
-				<div class="sk-cube3 sk-cube"></div>
+			<div class="loader3">
+				<span id="counter3">
+
+				</span>
+				<div class="spinner3"></div>
 			</div>
 		</span>
 	</div><!-- Section Overlay Loading -->

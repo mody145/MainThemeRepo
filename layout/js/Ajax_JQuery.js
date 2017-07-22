@@ -21,6 +21,34 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
+	/*====================================================
+	=            Spinner Loading With Counter            =
+	====================================================*/
+	
+	function startCounter($status) {
+
+		if ($status == 'start') {
+
+		  	$('.line_spinner10').css('width');
+			var interval = setInterval(increment,80);
+			var current = 0;
+		  
+			function increment(){
+				current++;
+				$('.line_spinner10').css('width',current+'%');
+		    	$('.counter_spinner10').html(current+'%');
+		    	
+				if(current == 100) { current = 0; }
+			}
+		} else {
+			return;
+		}
+	}
+
+	//startCounter()
+
+	/*=====  End of Spinner Loading With Counter  ======*/
+
 	/*===========================================
 	=            Section Filter Shop            =
 	===========================================*/
@@ -41,7 +69,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
 
 			},
 			error: function(response) {
@@ -65,7 +93,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -87,7 +115,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -109,7 +137,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -136,7 +164,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"> <span>Test</span> </div>');
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -165,7 +193,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'add_follow'},
 			beforeSend: function() {
-				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
@@ -175,7 +203,6 @@ jQuery(document).ready(function($) {
 			$('#follow').html("<i id='follow_icon' class='icon-heart8'></i>");
 			$('#follow').removeClass('follow').addClass('unfollow');
 			$('#follow').attr('id', 'unfollow');
-			$('#follow_icon').css('color', color10);
 		})
 		.fail(function() {
 			console.log("error");
@@ -203,7 +230,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'remove_follow'},
 			beforeSend: function() {
-				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
@@ -212,7 +239,6 @@ jQuery(document).ready(function($) {
 			$('#unfollow').html("<i id='follow_icon' class='icon-heart-o'></i>");
 			$('#unfollow').removeClass('unfollow').addClass('follow');
 			$('#unfollow').attr('id', 'follow');
-			$('i#follow_icon').css({color: color10});
 		})
 		.fail(function() {
 			console.log("error");
@@ -241,14 +267,13 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'add_to_cart_single_post'},
 			beforeSend: function() {
-				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
 			$('#items-cart').html(data);
 
 			$('.add-to-cart-container-false h3').html('<i id="cart_icon" class="icon-shopping-bag"></i>');
-			$('#cart_icon').css({color: color10});
 
 			var oldResult = $('.total-number');
 
@@ -282,6 +307,80 @@ jQuery(document).ready(function($) {
 	});
 	
 	/*=====  End of Section Add To Cart   ======*/
+
+	/*===================================================
+	=            Section Add Like Button To             =
+	====================================================*/
+	
+	$('body').on('click', '#like', function(e) {
+
+		var id = $(this).attr('data-id');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'like_product'},
+			beforeSend: function() {
+				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:10px 5px !important;" class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
+			result.html(data);
+
+			thisItem.html("<i id='unlike_icon' class='icon-check'></i>");
+			thisItem.attr('id', 'unlike');
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		
+		e.preventDefault();
+	});
+
+	/*=====  End of Section Add Like Button To  ======*/
+
+	/*====================================================
+	=            Section Add UnLike Button To            =
+	====================================================*/
+	
+	$('body').on('click', '#unlike', function(e) {
+
+		var id = $(this).attr('data-id');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'unlike_product'},
+			beforeSend: function() {
+				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:10px 5px !important;" class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
+			result.html(data);
+
+			thisItem.html("<i id='like_icon' class='icon-thumbs-o-up'></i>");
+			thisItem.attr('id', 'like');
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		
+		e.preventDefault();
+	});
+
+	/*=====  End of Section Add UnLike Button To  ======*/	
 
 	/*===============================================
 	=            Section Empty WhiteList            =
@@ -344,7 +443,7 @@ jQuery(document).ready(function($) {
 			$('#items-cart').html(data);
 
 			parentOverLay.append('<div class="overlay"><i class="icon-close" id="remove_from_cart_sd" data-id="' + id + '"></i> <i class="icon-shopping-bag"></i> </div>');
-			that.html('<i id="cart_icon" class="icon-add_shopping_cart"></i>');
+			that.html('<i id="cart_icon" class="icons-option icon-add_shopping_cart"></i>');
 
 			var oldResult = $('.total-number');
 
@@ -401,10 +500,9 @@ jQuery(document).ready(function($) {
 
 			$('#items-whitelist').html(data);
 
-			thisItem.html("<i id='follow_icon' class='icon-heart8'></i>");
+			thisItem.html("<i id='follow_icon' class='icons-option exists icon-heart8'></i>");
 			thisItem.removeClass('follow_archive').addClass('unfollow_archive');
 			thisItem.attr('id', 'unfollow');
-			thisItem.find('#follow_icon').css('color', color10);
 		})
 		.fail(function() {
 			console.log("error");
@@ -438,10 +536,9 @@ jQuery(document).ready(function($) {
 		.done(function(data) {
 			$('#items-whitelist').html(data);
 
-			thisItem.html("<i id='follow_icon' class='icon-heart-o'></i>");
+			thisItem.html("<i id='follow_icon' class='icons-option icon-heart-o'></i>");
 			thisItem.removeClass('unfollow_archive').addClass('follow_archive');
 			thisItem.attr('id', 'follow');
-			thisItem.find('#follow_icon').css({color: color10});
 		})
 		.fail(function() {
 			console.log("error");
@@ -460,7 +557,7 @@ jQuery(document).ready(function($) {
 	=            Section Add Like Button To ( Arshive )            =
 	==============================================================*/
 	
-	$('body').on('click', '#like', function(e) {
+	$('body').on('click', '#like_archive', function(e) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
@@ -471,14 +568,14 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'like_product'},
 			beforeSend: function() {
-				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;font-size:25px;" class="fa fa-spinner fa-spin"></i>');
 			}
 		})
 		.done(function(data) {
 			result.html(data);
 
-			thisItem.html("<i id='unlike_icon' class='icon-check'></i>");
-			thisItem.attr('id', 'unlike');
+			thisItem.html("<i id='unlike_icon' class='icons-option exists icon-check'></i>");
+			thisItem.attr('id', 'unlike_archive');
 		})
 		.fail(function() {
 			console.log("error");
@@ -497,7 +594,7 @@ jQuery(document).ready(function($) {
 	=            Section Add UnLike Button To ( Arshive )            =
 	================================================================*/
 	
-	$('body').on('click', '#unlike', function(e) {
+	$('body').on('click', '#unlike_archive', function(e) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
@@ -508,14 +605,14 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'unlike_product'},
 			beforeSend: function() {
-				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;font-size:25px;" class="fa fa-spinner fa-spin"></i>');
 			}
 		})
 		.done(function(data) {
 			result.html(data);
 
-			thisItem.html("<i id='like_icon' class='icon-thumbs-o-up'></i>");
-			thisItem.attr('id', 'like');
+			thisItem.html("<i id='like_icon' class='icons-option icon-thumbs-o-up'></i>");
+			thisItem.attr('id', 'like_archive');
 		})
 		.fail(function() {
 			console.log("error");
@@ -638,7 +735,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rating: rating, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -671,7 +768,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {like: like, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -704,7 +801,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {views: views, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -737,7 +834,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {comments: comments, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -770,7 +867,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rand: rand, action: 'sorting_grid_images_box'},
 			beforeSend: function() {
-				$('.grid-images').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.grid-images').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.grid-images').html(data);
@@ -1026,7 +1123,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {latest: latest, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1059,7 +1156,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {like: like, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1092,7 +1189,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {views: views, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1125,7 +1222,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {comments: comments, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1158,7 +1255,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {rand: rand, action: 'sorting_grid_bosts_in_blog_box'},
 			beforeSend: function() {
-				$('.services-container-box').prepend('<span class="overlay"><div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div></span>'); }
+				$('.services-container-box').prepend('<span class="overlay"><div class="spinner"></div></span>'); }
 		})
 		.done(function(data) {
 			$('.services-container-box').html(data);
@@ -1206,12 +1303,14 @@ jQuery(document).ready(function($) {
 			url: MyAjax.ajaxurl,
 			type: 'POST',
 			data: {linkCategory: linkCategory, action: 'get_posts_by_category_in_header_menu'},
-			beforeSend: function() {
-				boxResult.prepend('<span class="ovlay-loading"><div class="spinner"></div></span>'); }
+			beforeSend: function(xhr) {
+				boxResult.prepend('<span class="ovlay-loading"><div class="spinner"></div></span>');
+			}
 		})
 		.done(function(data) {
 			boxResult.html(data);
 			$('.post-image-box').removeClass('preload');
+			$('.ovlay-loading').remove();
 		})
 		.fail(function() {
 			console.log("error");

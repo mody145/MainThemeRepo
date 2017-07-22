@@ -39,7 +39,9 @@ if($posts->have_posts()) {
 
 		<?php echo '<div class="custom-pagination">';
 				echo paginate_links(array(
-				'total' => $posts->max_num_pages
+				'total' => $posts->max_num_pages,
+				'prev_text' => '<i class="icon-chevron-left2"></i>',
+				'next_text' => '<i class="icon-chevron-right2"></i>'
 	 			));
 			echo '</div>'; ?>
 	</div>

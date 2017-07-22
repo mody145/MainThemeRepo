@@ -49,7 +49,7 @@
 
 		<form id="filter_shop" method="POST" action="<?php echo admin_url('admin-ajax.php')?>">
 
-			<select id="order" class="select-option col-md-2 select_filter" name="order">
+			<select id="order" class="select-option col-md-3 select_filter" name="order">
 				<option value="date" data-order="DESC">Newest First</option>
 				<option value="date" data-order="ASC">Oldest First</option>
 				<option value="_regular_price" data-order="DESC">DESC Price</option>
@@ -66,13 +66,34 @@
 
 			$categories = get_categories( $args ); ?>
 
-			<select id="category" class="category select-option col-md-2 select_filter" name="category">
+			<select id="category" class="category select-option col-md-3 select_filter" name="category">
 			<?php foreach ($categories as $cat) { ?>
 				<option value="<?php echo $cat->slug ?>"><?php echo $cat->name; ?></option>
 			<?php } ?>
 			</select>
 
-			<select multiple="true" data-tags="true" data-placeholder="Multiple Tags" class="select-option col-md-2 select_filter" id="search-tag" name="tags">	
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="price-from"><i class="icon-usd"></i></span>
+				<input class="form-control" id="price-from" type="text" name="price-from" placeholder="From Price" />
+
+			</div>
+
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="price-to"><i class="icon-usd"></i></span>
+				<input class="form-control" id="price-to" type="text" name="price-to" placeholder="Price Limit" />
+
+			</div>
+
+			<div class="input-group col-md-2">
+
+				<span class="input-group-addon" id="search-name"><i class="icon-chevron-right"></i></span>
+				<input class="form-control" id="search-name" type="search" name="names" placeholder="Names Like ..." />
+
+			</div>
+
+			<select multiple="true" data-tags="true" data-placeholder="Multiple Tags" class="select-option col-md-4 select_filter" id="search-tag" name="tags">	
 
 				<?php // Get List Of All Tags
 				$terms = get_terms( 'product_tag' );
@@ -103,26 +124,26 @@
 				?>
 
 			</select>
-			<div class="input-group col-md-2">
+			<select multiple="true" data-tags="true" data-placeholder="Choose Colors" class="select-option col-md-4 select_filter" id="filter-color" name="colors">	
 
-				<span class="input-group-addon" id="price-from"><i class="icon-usd"></i></span>
-				<input class="form-control" id="price-from" type="text" name="price-from" placeholder="From Price" />
+				<option>Green</option>
+				<option>Blue</option>
+				<option>Yellow</option>
+				<option>Red</option>
+				<option>White</option>
+				<option>Gray</option>
 
-			</div>
+			</select>
+			<select multiple="true" data-tags="true" data-placeholder="Test Test" class="select-option col-md-4 select_filter" id="filter-test" name="test">	
 
-			<div class="input-group col-md-2">
+				<option>Test One</option>
+				<option>Test Two</option>
+				<option>Test Three</option>
+				<option>Test Four</option>
+				<option>Test Five</option>
+				<option>Test Sex</option>
 
-				<span class="input-group-addon" id="price-to"><i class="icon-usd"></i></span>
-				<input class="form-control" id="price-to" type="text" name="price-to" placeholder="Price Limit" />
-
-			</div>
-
-			<div class="input-group col-md-2">
-
-				<span class="input-group-addon" id="search-name"><i class="icon-chevron-right"></i></span>
-				<input class="form-control" id="search-name" type="search" name="names" placeholder="Names Like ..." />
-
-			</div>
+			</select>
 		</form>
 	</div><!-- End Conatiner Filter -->
 </div><!-- End Filter Products -->
@@ -157,7 +178,9 @@
 			
 				<?php echo '<div class="custom-pagination">';
 						echo paginate_links(array(
-						'total' => $query->max_num_pages
+						'total' => $query->max_num_pages,
+						'prev_text' => '<i class="icon-chevron-left2"></i>',
+						'next_text' => '<i class="icon-chevron-right2"></i>'
 			 			));
 					echo '</div>'; ?>
 			</div>
