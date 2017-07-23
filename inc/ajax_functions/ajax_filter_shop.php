@@ -371,3 +371,158 @@ function sorting_by_product_price_range() { ?>
 
 /* ====  End of Section filter By product Price Range   ==== */
 
+/*===============================================
+=            Section Filter By Color            =
+===============================================*/
+
+add_action('wp_ajax_nopriv_filter_by_color', 'filter_by_color'); 
+add_action('wp_ajax_filter_by_color', 'filter_by_color');
+
+function filter_by_color() { ?>
+
+	<?php // Search By Tag
+	if (isset($_POST['color'])) {
+
+		$color = $_POST['color']; 
+
+		/* Filter Query Here
+		-----------------------*/
+
+		// Set attribute name and value to search for
+		$attribute_name  = 'color';
+		$attribute_value = $color;
+		 
+		$args = array(
+		    'post_type'      => 'product',
+		    'post_status'    => 'any',
+		    'posts_per_page' => -1,
+		    'orderby'        => 'title',
+		    'order'          => 'ASC',
+		    'tax_query'      => array(
+		        array(
+		            'taxonomy' => 'pa_' . $attribute_name,
+		            'field'    => 'name', // can be 'slug'
+		            'terms'    => $attribute_value,
+		        ),
+		    ),
+		);
+		$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) {
+		    $loop->the_post();
+
+		    include( locate_template( 'woocommerce/content-product.php', false, false ) );
+		}
+		wp_reset_postdata();
+
+		/* End Of Filter Here
+		-----------------------*/
+	} 
+
+	die();
+}
+
+/*=====  End of Section Filter By Color  ======*/
+
+/*==============================================
+=            Section Filter By Date            =
+==============================================*/
+
+add_action('wp_ajax_nopriv_filter_by_date2', 'filter_by_date2'); 
+add_action('wp_ajax_filter_by_date2', 'filter_by_date2');
+
+function filter_by_date2() { ?>
+
+	<?php // Search By Tag
+	if (isset($_POST['date'])) {
+
+		$date = $_POST['date'];
+		$date__ = $_POST['date__'];
+
+		/* Filter Query Here
+		-----------------------*/
+
+		if ( $date == date('Y-m-d') ) {
+			$queryDate = array(
+					        array(
+						        'after' => 'today',
+						        'inclusive' => true,
+					        )
+					    );
+		}
+
+		if ( $date == 'tomorrow' ) {
+			$queryDate = array(
+					        array(
+						        'after' => '2 day ago',
+						        'before' => '1 day ago',
+						        'inclusive' => true,
+					        )
+					    );
+		}
+
+		if ( $date == '- 7' ) {
+			$queryDate = array(
+					        array(
+								'year' => date( 'Y' ),
+								'week' => date( 'W' ),
+					        )
+					    );
+		}
+
+		if ( $date == '1 week ago' ) {
+			$queryDate = array(
+					        array(
+						        'after' => '2 week ago',
+						        'before' => '1 week ago',
+						        'inclusive' => true,
+					        )
+					    );
+		}
+
+		if ( $date == '1 month ago' ) {
+			$queryDate = array(
+					        array(
+						        'after' => '2 month ago',
+						        'before' => '1 month ago',
+						        'inclusive' => true,
+					        )
+					    );
+		}
+
+		if ( $date == '1 year ago' ) {
+			$queryDate = array(
+					        array(
+						        'after' => '2 year ago',
+						        'before' => '1 year ago',
+						        'inclusive' => true,
+					        )
+					    );
+		}
+
+		$args = array(
+		    'post_type'      => 'product',
+		    'post_status'    => 'any',
+		    'posts_per_page' => -1,
+		    'orderby'        => 'date',
+		    'order'          => 'DESC',
+		    'date_query' => $queryDate
+		);
+		$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) {
+		    $loop->the_post();
+
+		    include( locate_template( 'woocommerce/content-product.php', false, false ) );
+		}
+		wp_reset_postdata();
+
+		/* End Of Filter Here
+		-----------------------*/
+	} 
+
+	die();
+}
+
+/*=====  End of Section Filter By Date  ======*/
+
+
+

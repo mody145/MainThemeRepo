@@ -175,6 +175,53 @@ jQuery(document).ready(function($) {
 			}
 		});
 
+	});
+
+	// Filter By Color
+	$('body').on("change", "select#filter-color", function () {
+
+		var color = $(this).val();
+
+		// Start Send Data By Ajax
+		$.ajax(MyAjax.ajaxurl, { data: {color : color, action: 'filter_by_color' },
+
+			type: "POST",
+			beforeSend: function() {
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
+			},
+			error: function() {
+				alert("Some Thing Error"); 
+			},
+			success: function(data) {
+				$('.parent-shop-container').html(data); 
+				$('.small-overlay-loading').remove();   
+			}
+		});
+
+	});	
+
+	// Filter By Date
+	$('body').on("change", "select#filter-date2", function () {
+
+		var date = $(this).val(),
+			date__ = $(this).attr('data-after');
+
+		// Start Send Data By Ajax
+		$.ajax(MyAjax.ajaxurl, { data: {date : date,date__ : date__ , action: 'filter_by_date2' },
+
+			type: "POST",
+			beforeSend: function() {
+				$('body').prepend('<div class="small-overlay-loading"><span> <div class="loader3"> <span id="counter3"></span> <div class="spinner3"></div> </div> </span></div>');
+			},
+			error: function() {
+				alert("Some Thing Error"); 
+			},
+			success: function(data) {
+				$('.parent-shop-container').html(data); 
+				$('.small-overlay-loading').remove();   
+			}
+		});
+
 	});		
 	
 	/*=====  End of Section Filter Shop  ======*/
@@ -1057,6 +1104,11 @@ jQuery(document).ready(function($) {
 			})
 			.done(function(data) {
 				$('.results_search').html(data);
+				$('.for-scroll').niceScroll('.results_search',{
+					cursorborder: 0,
+					autohidemode: false,
+					cursorcolor: '#fff'
+				});
 			})
 			.fail(function() {
 				console.log("error");

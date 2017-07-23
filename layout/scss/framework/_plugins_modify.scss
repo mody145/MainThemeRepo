@@ -26,6 +26,30 @@ span.filter_tags_product_icon:before {
     right: 10px;
 }
 
+span.filter_color_product_icon:before {
+    content: "\f111";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+span.filter_date2_product_icon:before {
+    content: "\f274";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+select#search-tag + span:before {
+    content: "\f02b";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
 /*=====  End of Section Add Icon To Filter Select  ======*/
 
 /*=========================================

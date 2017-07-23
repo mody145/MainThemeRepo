@@ -112,8 +112,13 @@
             color: $color2;
         }
 
-        .results_search {
+        .for-scroll {
+            max-height: 400px;
             width: 50%;
+            margin: auto;
+        }
+
+        .results_search {
             color: rgba(255, 255, 255, 0.75);
             text-align: left;
             padding: $main-padding;
@@ -123,6 +128,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            .media {
+                overflow: visible;
+            }
 
             p {
                 margin: 0;

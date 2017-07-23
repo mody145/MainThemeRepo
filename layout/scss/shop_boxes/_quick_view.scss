@@ -3,31 +3,30 @@
 =========================================*/
 
 .queck-view-window{
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999999;
-    background-color: #fff;
+    background-color: $color1;
     width: 0%;
     height: 0%;
     display: none;
     box-shadow: 1px -1px 2px 0.5px rgba(0, 0, 0, 0.22);
     padding: 10px;
     opacity: 0;
+    outline: 10px solid rgba(249, 249, 249, 0.21) !important;
 
     .the_content_queck_view {
         display: none;
-        height: 100%;
         width: 100%;
 
-      .loading_queck_view {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50% , -50%);
-      }
+        .loading_queck_view {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+        }
     }
 
     i#close_wendow {
@@ -37,140 +36,256 @@
         opacity: .8;
         cursor: pointer;
         z-index: 40;
+        display: flex;
+        background-color: #eaeaea;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
     }
 
-    #slider3 {
-        position: absolute;
-        width: 91px;
-        height: 80%;
-        top: 50%;
-        left: 10px;
-        transform: translate(0,-50%);
+    .container-quick-veiw {
+        height: 100%;
+        overflow: hidden;
+        background-color: #fff;
+        margin: 10px;
 
-      .thumbelina-but.vert.top:before {
-          content: "\ea21";
-          font-family: 'icomoon' !important;
-      }
+        > div {
+          height: 100%;
+          padding: 10px;
+          min-height: 500px;
+        }
+    
+        #slider3 {
+            position: absolute;
+            width: 91px;
+            height: 88%;
+            top: 50%;
+            left: 10px;
+            transform: translate(0,-50%);
 
-      .thumbelina-but.vert.bottom:before {
-          content: "\ea1e";
-          font-family: 'icomoon' !important;
-      }
+            .thumbelina-but.vert.top:before {
+                content: "\ea21";
+                font-family: 'icomoon' !important;
+            }
 
-      .thumbelina li {
-        padding: 5px 0;
-      }
+            .thumbelina-but.vert.bottom:before {
+                content: "\ea1e";
+                font-family: 'icomoon' !important;
+            }
 
-      .thumbelina-but {
-        background-color: $blue;
-        box-shadow: none;
-        color: $color2;
-      }
+            .thumbelina li {
+                padding: 5px 0;
+            }
 
-      .thumbelina-but.vert.top,
-      .thumbelina-but.vert.bottom {
-          border-radius: 0;
-      }
+            .thumbelina-but {
+                background-color: $blue;
+                box-shadow: none;
+                color: $color2;
+            }
 
-    }
+            .thumbelina-but.vert.top,
+            .thumbelina-but.vert.bottom {
+                border-radius: 0;
+            }
+        }
 
-    .main-image {
-        position: absolute;
-        height: 88%;
-        width: 450px;
-        top: 50%;
-        left: 110px;
-        transform: translate(0, -50%);
+      .main-image {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-right: 1px solid #ddd;
-
-        img {
-          max-height: 100%;
-        }
-    }
-
-    .the-content {
         position: absolute;
-        left: 590px;
         top: 50%;
-        width: 485px;
-        height: 88%;
+        right: 10px;
+        width: calc(100% - 120px);
+        max-height: 500px;
         transform: translate(0, -50%);
 
-      .panel-primary {
-          margin: 0;
-          margin-bottom: 20px;
-          margin-top: 20px;
-          width: 150px;
-
-        span.price-without-disc {
-            font-size: 12px;
-        }
-
-        span.main-price i {
-            font-size: 12px;
-            position: relative;
-            top: -8px;
-        }
-
-        span.no-disc {
-            font-size: 12px;
-        }
-      }
-
-      p.note-currency {
-          background-color: #82daca;
-          display: inline-block;
-          padding: 5px;
-          cursor: pointer;
-          color: #fff;
-          border-radius: 2px;
-      }
-
-      p.price-currency {
-          background-color: #82daca;
-          display: inline-block;
-          padding: 5px;
-          color: #fff;
-          border-radius: 2px;
-
-        span {
-            color: #545451;
-        }
-      }
-
-      span.discount-number {
-          font-size: 15px;
-          font-weight: bold;
-          color: #0088ff;
-      }
-
-      p.icons {
-          position: absolute;
-          top: 25px;
-          right: 0;
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 0;
-          margin-left: 0;
-
-          i {
-            background-color: #08f;
-            color: #fff;
-            padding: 5px;
-            margin: 0 5px;
-            font-size: 30px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
+          img {
+            max-height: 100%;
           }
       }
+
+        .the-content {
+            position: relative;
+            height: 100%;
+            background-color: $color2;
+            padding: 10px;
+
+            h3 {
+                margin: 0;
+            }
+
+            .panel-primary {
+                margin: 0;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                width: 150px;
+
+                span.price-without-disc {
+                    font-size: 12px;
+                }
+
+                span.main-price i {
+                    font-size: 12px;
+                    position: relative;
+                    top: -8px;
+                }
+
+                span.no-disc {
+                    font-size: 12px;
+                }
+            }
+
+            p.note-currency {
+                background-color: #82daca;
+                display: inline-block;
+                padding: 5px;
+                cursor: pointer;
+                color: #fff;
+                border-radius: 2px;
+            }
+
+            p.price-currency {
+                background-color: #82daca;
+                display: inline-block;
+                padding: 5px;
+                color: #fff;
+                border-radius: 2px;
+
+                span {
+                    color: #545451;
+                }
+            }
+
+            span.discount-number {
+                font-size: 15px;
+                font-weight: bold;
+                color: #0088ff;
+                font-family: roboto;
+
+                span.sale-circle {
+                    width: 40px;
+                    height: 40px;
+                    background-color: #82daca;
+                    display: flex;
+                    color: white;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 65px;
+                    right: 15px;
+                }
+
+                span.sale-icon {
+                    font-size: 45px;
+                    position: absolute;
+                    top: 50px;
+                    right: 70px;
+                    color: $color7;
+                }
+            }
+
+            p.icons {
+                position: absolute;
+                bottom: 20px;
+                right: 15px;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 0;
+                margin-left: 0;
+
+                i {
+                    background-color: #08f;
+                    color: #fff;
+                    padding: 5px;
+                    margin: 0 5px;
+                    font-size: 30px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.cntainer-reviews {
+    padding: 10px;
+
+    h3 {
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 0;
+    }
+
+    ul.media-list {
+
+        li.media {
+            margin: 10px 0;
+            display: block;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 5px;
+
+            .media-body {
+                position: relative;
+
+                fieldset.rating {
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translate(0, -50%);
+                    font-size: 12px;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        h4.media-heading {
+            font-size: 15px;
+        }
+
+        p.rev-content {
+            margin-bottom: 0;
+            color: #545353;
+            max-width: 70%;
+            font-style: italic;
+
+            &:before {
+                content: "\f10d";
+                font-family: 'icomoon' !important;
+                font-size: 10px;
+                margin-right: 10px;
+                opacity: .5;
+            }
+
+            &:after {
+                content: "\f10e";
+                font-family: 'icomoon' !important;
+                font-size: 10px;
+                margin-left: 10px;
+                opacity: .5;
+            }
+        }
+
+        p.rev-date {
+            color: #868686;
+            font-size: 12px;
+            margin: 0;
+            font-family: roboto;
+            font-weight: bold;
+        }
     }
 }
 
@@ -178,7 +293,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(228, 228, 228, 0.8);
+    background-color: $color5;
+    opacity: .8;
     width: 100%;
     height: 100%;
     z-index: 9999;

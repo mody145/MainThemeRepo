@@ -39,7 +39,7 @@ $commentsProduct = get_comments( array(
 					<!-- Comment Box -->
 					<div class="comment-box">
 						<div class="comment-head">
-							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $comment->comment_author ?></a></h6>
+							<h6 class="comment-name by-author"><a href="#"><?php echo $comment->comment_author ?></a></h6>
 							<span><?php $date = $comment->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
 							<span class="rating">
 							<?php $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) ); ?>

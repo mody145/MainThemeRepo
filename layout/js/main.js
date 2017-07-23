@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
-
+	// Run Select2 Plugin
 	$('.select_filter').select2({
 		tags: "true",
 		maximumSelectionLength: 5
@@ -267,10 +267,16 @@ $("#zoom_01").elevateZoom({
 
 		var that = $(this);
 		var id = that.attr('data-id');
+
+		$('body').prepend('<div class="queck-view-window"></div>');
+		$('.queck-view-window').prepend('<i id="close_wendow" class="icon-close"></i>');
+		$('.queck-view-window').append('<div class="the_content_queck_view"></div>');
+		$('.queck-view-window').before('<div class="fullscreen_overlay"></div>');
+
 		var theWindow = $('.queck-view-window');
 		var closeWindow = $('#close_wendow');
-		var overlay = $('.fullscreen_overlay');
 		var theContent = $('.the_content_queck_view');
+		var overlay = $('.fullscreen_overlay');
 
 		theWindow.fadeIn('200', function() {
 			overlay.fadeIn(100);
@@ -292,10 +298,20 @@ $("#zoom_01").elevateZoom({
 							type: 'POST',
 							data: {id: id, action: 'queick_view_windows'},
 							beforeSend: function() {
-								$('.the_content_queck_view').prepend('<div class="loading_queck_view"><div class="spinner"></div></div>'); }
+								theContent.prepend('<div class="loading_queck_view"><div class="spinner"></div></div>');
+							}
 						})
 						.done(function(data) {
-							$('.the_content_queck_view').html(data);
+							theContent.css('display', 'none');
+							theContent.fadeIn(500);
+							theContent.html(data);
+							// Trigger Nice Scroll
+							theWindow.niceScroll(theContent,{
+								cursorborder: 0,
+								autohidemode: false,
+								cursorcolor: '#555',
+								railpadding: { top: 5, right: 5, left: 5, bottom: 5 }
+							});
 
 						    $('#slider3').Thumbelina({
 						        orientation:'vertical',         // Use vertical mode (default horizontal).
@@ -324,9 +340,36 @@ $("#zoom_01").elevateZoom({
 									600, function() {
 									overlay.fadeOut(200);
 									theWindow.fadeOut(100);
-									theContent.html('');
+									theWindow.remove();
+									closeWindow.remove();
+									theContent.remove();
+									overlay.remove();
+
 								});
-							});;
+							});
+						});
+
+						overlay.click(function() {
+
+							theContent.fadeOut(150);
+							theWindow.animate({
+								height: '0'},
+
+								600, function() {
+								theWindow.animate({
+									width: '0',
+									opacity: '0'},
+
+									600, function() {
+									overlay.fadeOut(200);
+									theWindow.fadeOut(100);
+									theWindow.remove();
+									closeWindow.remove();
+									theContent.remove();
+									overlay.remove();
+
+								});
+							});
 						});
 					});
 			});
@@ -345,10 +388,14 @@ $("#zoom_01").elevateZoom({
 	var orderingProduct_filter = $('#select2-order-container').parent().find('.select2-selection__arrow').find('b');
 	var selectCategory_filter = $('#select2-category-container').parent().find('.select2-selection__arrow').find('b');
 	var selectTags_filter = $('#select2-search-tag-container').parent().find('.select2-selection__arrow').find('b');
+	var selectColor_filter = $('#select2-filter-color-container').parent().find('.select2-selection__arrow').find('b');
+	var selectDate2_filter = $('#select2-filter-date2-container').parent().find('.select2-selection__arrow').find('b');
 
 	orderingProduct_filter.replaceWith('<span class="ordering_product_icon"></span>');
 	selectCategory_filter.replaceWith('<span class="filter_category_product_icon"></span>');
 	selectTags_filter.replaceWith('<span class="filter_tags_product_icon"></span>');
+	selectColor_filter.replaceWith('<span class="filter_color_product_icon"></span>');
+	selectDate2_filter.replaceWith('<span class="filter_date2_product_icon"></span>');
 
 /*=====  End of Change Icons Filter Shop  ======*/
 

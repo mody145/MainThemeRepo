@@ -124,24 +124,25 @@
 				?>
 
 			</select>
-			<select multiple="true" data-tags="true" data-placeholder="Choose Colors" class="select-option col-md-4 select_filter" id="filter-color" name="colors">	
+			<select class="select-option col-md-4 select_filter" id="filter-color" name="colors">	
 
-				<option>Green</option>
-				<option>Blue</option>
-				<option>Yellow</option>
-				<option>Red</option>
-				<option>White</option>
-				<option>Gray</option>
+				<option value="black">Black</option>
+				<option value="blue">Blue</option>
+				<option value="green">Green</option>
+				<option value="red">Red</option>
+				<option value="yellow">Yellow</option>
+				<option value="white">White</option>
+				<option value="gray">Gray</option>
 
 			</select>
-			<select multiple="true" data-tags="true" data-placeholder="Test Test" class="select-option col-md-4 select_filter" id="filter-test" name="test">	
+			<select class="select-option col-md-4 select_filter" id="filter-date2" name="date">	
 
-				<option>Test One</option>
-				<option>Test Two</option>
-				<option>Test Three</option>
-				<option>Test Four</option>
-				<option>Test Five</option>
-				<option>Test Sex</option>
+				<option data-after="" value="<?php echo date('Y-m-d') ?>">ToDay</option>
+				<option data-after="" value="tomorrow">Tomorrow</option>
+				<option data-after="" value="- 7">This Week</option>
+				<option data-after="" value="1 week ago">Last Week</option>
+				<option data-after="" value="1 month ago">Last Month</option>
+				<option data-after="" value="1 year ago">Last Year</option>
 
 			</select>
 		</form>

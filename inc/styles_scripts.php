@@ -39,7 +39,7 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'skitter-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.skitter.js', array('jquery'), '', true );
 	// WOW Lip
 	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/wow.min.js', array('jquery'), '', true );
-	// Trigger Nice Scroll
+	// Nice Scroll
 	wp_enqueue_script( 'NiceScroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.nicescroll.min.js', array('jquery'), '', true );
 	// jquery jscroll
 	wp_enqueue_script( 'jscroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.jscroll.js', array('jquery'), '', true );

@@ -16,19 +16,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-	<!-- Fullscreen Overlay For Quieck view -->
-	<div class="fullscreen_overlay"></div>
-	<!-- Fullscreen Overlay For Quieck view -->
 
-	<!-- Quieck View Window -->
-	<div class="queck-view-window">
-
-		<i id="close_wendow" class="icon-close"></i>
-		
-		<div class="the_content_queck_view">
-			
-		</div>
-	</div><!-- Quieck View Window -->
 
 	<!--===========================================================================
 	=            This Divs To Get variables For Main Colors For JQuery            =
@@ -97,8 +85,10 @@
 
 				</form>
 				<!-- Results -->
-				<div class="results_search">
-					
+				<div class="for-scroll">
+					<div class="results_search">
+						
+					</div>
 				</div>
 			</div>
 		</div>

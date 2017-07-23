@@ -32,7 +32,7 @@ function full_screen_search() {
 
 	$results = new WP_Query( array(
 		'post_type' 		=> $product_post,
-		'posts_per_page' 	=> 3,
+		'posts_per_page' 	=> -1,
 		'orderby'			=>'title',
 		'order'				=>'ASC',
 		'post__in' 			=> $ids
