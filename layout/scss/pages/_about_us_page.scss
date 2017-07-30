@@ -62,6 +62,12 @@
     border: 10px solid rgba(0, 0, 0, 0.08);
 }
 
+@media (max-width: 767px){
+    .person  {
+        margin: 10px auto;
+    }
+}
+
 .person img {
     height: 120%;
     width: 120%;

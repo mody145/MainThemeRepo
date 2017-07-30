@@ -38,6 +38,12 @@
       border: 1px solid #DDD;
   }
 
+    @media (max-width: 767px){
+        a#parent_overlay {
+            position: static !important;
+        }
+    }
+
   .overlay {
       position: absolute;
       top: 0;
@@ -125,6 +131,12 @@
         }
     }
 
+    @media (max-width: 767px){
+        .add-to-cart-container-false {
+            z-index: 3;
+        }
+    }
+
     .add-to-follow-container-false, 
     .add-to-follow-container-true {
         display: inline-block;
@@ -135,6 +147,13 @@
 
         h3 {
           margin: 0 !important;
+        }
+    }
+
+    @media (max-width: 767px){
+        .add-to-follow-container-false,
+        .add-to-follow-container-true {
+            z-index: 3;
         }
     }
 
@@ -451,20 +470,28 @@ span.posted_in a {
 ==============================================================*/
 
 h3.feedback-heading {
-    background-color: $color2;
-    margin: $main-margin 0;
-    padding: $main-padding;
-    font-size: $font-size - 1;
-    margin-bottom: 0;
+  background-color: $color2;
+  margin: $main-margin 0;
+  padding: $main-padding;
+  font-size: $font-size - 1;
+  margin-bottom: 0;
+  border-top: 5px solid $color5;
 }
-  
+
+h3.r_products {
+  background-color: $color2;
+  padding: $main-padding;
+  font-size: $font-size - 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 5px solid $color7;
+}
+
+@media (max-width: 767px){
   h3.r_products {
-    background-color: $color2;
-    padding: $main-padding;
-    font-size: $font-size - 1;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 10px 0 !important;
   }
+}
 
 /*=====  End of Heading Comments And Related Main View  ======*/
 
@@ -511,7 +538,8 @@ h3.feedback-heading {
 =            Section Custom Pagination            =
 =================================================*/
 
-.custom-pagination {
+.custom-pagination,
+.filter-pagination {
     text-align: center;
     display: flex;
     justify-content: center;

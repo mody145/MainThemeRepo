@@ -97,4 +97,9 @@
 
 .latest-posts-blog > div .post-image-home img {
 	width: 130%;
+    transition: all .5s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }

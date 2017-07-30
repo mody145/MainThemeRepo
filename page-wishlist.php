@@ -14,9 +14,9 @@
 			<tr>
 				<td><h5 class="bold">Name</h5></td>
 				<td><h5 class="bold">Price</h5></td>
-				<td><h5 class="bold">Rate</h5></td>
-				<td><h5 class="bold">Sale</h5></td>
-				<td><h5 class="bold">Auther</h5></td>
+				<td class="hidden-xs"><h5 class="bold">Rate</h5></td>
+				<td class="hidden-xs"><h5 class="bold">Sale</h5></td>
+				<td class="hidden-xs"><h5 class="bold">Auther</h5></td>
 				<td class="text-center"><h5 class="bold">Option</h5></td>
 			</tr>
 		</thead>
@@ -42,12 +42,12 @@
 			<tr>
 				<td><?php the_title(); ?></td>
 				<td><?php echo $product->get_price(); ?></td>
-				<td>
+				<td class="hidden-xs">
 					
 					<?php wc_get_template_part( 'content', 'rating' ); ?>
 
 				</td>
-				<td><?php if ( $product->is_on_sale() ) { ?>
+				<td class="hidden-xs"><?php if ( $product->is_on_sale() ) { ?>
 
 					<?php $discount = (($product->get_regular_price() - $product->get_sale_price()) * 100) / $product->get_regular_price(); echo floor($discount) . "%"; ?>
 					
@@ -59,7 +59,7 @@
 				<?php } ?>
 					
 				</td>
-				<td><?php the_author(); ?></td>
+				<td class="hidden-xs"><?php the_author(); ?></td>
 				<td class="text-center">
 
 				<?php

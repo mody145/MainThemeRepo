@@ -35,7 +35,14 @@
 			$args = array(
 				'post_type' 	=> 'slider',
 				'post_per_post' => 10,
-				);
+			    'tax_query' => array(
+			        array(
+			            'taxonomy' => 'wich_slider',
+			            'field'    => 'slug',
+			            'terms'    => 'small-slider',
+			        ),
+			    ),
+			);
 			
 			$slides = new WP_Query($args);
 
@@ -89,7 +96,7 @@
 		<div class="container-grid-images wow fadeIn">
 			
 			<div class="buttons-section">
-				Top Four Items
+				<span class="hidden-xs">Top Four Items</span>
 				<span class="pull-right">
 					<span class="Sorting_grid" id="by_rating"><i class="icon-star-o"></i>&nbsp;Rating</span>
 					<span class="Sorting_grid" id="by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
@@ -97,6 +104,7 @@
 					<span class="Sorting_grid" id="by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
 					<span class="Sorting_grid" id="rand"><i class="icon-random"></i>&nbsp;Random</span>
 				</span>
+				<div class="clearfix"></div>
 			</div>
 
 			<div class="grid-images">
@@ -218,7 +226,7 @@
 	<div class="services">
 
 		<div class="buttons-section">
-			Top Four Posts
+			<span class="hidden-xs">Top Four Posts</span>
 			<span class="pull-right">
 				<span class="Sorting_grid" id="sorting_posts_by_latest"><i class="icon-clock-o"></i>&nbsp;Latest</span>
 				<span class="Sorting_grid" id="sorting_posts_by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>
@@ -226,6 +234,7 @@
 				<span class="Sorting_grid" id="sorting_posts_by_comments"><i class="icon-comment-circle"></i>&nbsp;Comments</span>
 				<span class="Sorting_grid" id="sorting_posts_rand"><i class="icon-random"></i>&nbsp;Random</span>
 			</span>
+			<div class="clearfix"></div>
 		</div>
 
 		<div class="services-container-box wow fadeIn">
@@ -264,8 +273,8 @@
 
 				<?php if ($top_posts->current_post == 1) { ?>
 
-			    <div class="col-md-6 nopadding">
-			        <div class="col-md-12 nopadding">
+			    <div class="col-md-6 col-sm-12 nopadding">
+			        <div class="col-md-12 col-sm-12 nopadding">
 			        	<div class="item two">
 
 							<div class="media">
@@ -293,7 +302,7 @@
 
 				<?php if ($top_posts->current_post == 2) { ?>
 
-		        <div class="col-md-12 nopadding">
+		        <div class="col-md-12 col-sm-12 nopadding">
 		        	<div class="item three">
 
 		        		<div class="media">
@@ -321,7 +330,7 @@
 
 				<?php if ($top_posts->current_post == 3) { ?>
 
-				<div class="col-md-12 nopadding">
+				<div class="col-md-12 col-sm-12 nopadding">
 		        	<div class="item four">
 
 		        		<div class="media">

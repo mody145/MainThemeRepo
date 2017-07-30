@@ -15,7 +15,7 @@
     z-index: 100;
 
     span.update-total {
-        margin: $main-margin + 5;
+        margin: 0 $main-margin + 5;
         cursor: pointer;
 
         &:hover span.show-value-box-dropdown {
@@ -58,7 +58,7 @@
     }
 
     span.calc-total {
-        margin: $main-margin + 5;
+        margin: 0 $main-margin + 5;
         cursor: pointer;
 
         span.click-here {
@@ -114,7 +114,10 @@
             }
 
             form {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
                 select {
                     padding: $main-padding / 2;
@@ -129,6 +132,44 @@
 
             #save_country {
                 margin: $main-margin;
+            }
+        }
+    }
+
+    span.show-followed {
+        margin: 0 15px;
+        cursor: pointer;
+
+        &:hover > span.show-followed-dropdown-box {
+            transform: rotateX(0deg);
+        }
+    }
+
+    span.show-followed-dropdown-box {
+        position: absolute;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.89);
+        top: 40px;
+        right: 0;
+        z-index: 50;
+        color: #333;
+        border: 1px solid #eaeaea;
+        border-top: none;
+        transform: rotateX(-90deg);
+        transform-origin: top;
+        transform-style: preserve-3d;
+        transition: all .5s ease;
+        padding-bottom: 10px;
+        padding: 10px;
+
+        .items {
+            overflow: hidden;
+            padding: 2px;
+
+            &:nth-child(even) {
+                background-color: rgba(255, 255, 255, 0.14);
+                background-color: rgba(234, 234, 234, 0.77) !important;
+                color: #717171;
             }
         }
     }
@@ -170,6 +211,18 @@
         color: $color2;
         border: 6px solid $color6;
         background-color: $color6;
+    }
+}
+
+@media (max-width: 767px){
+    .search-in-header {
+        margin: 20px 0 10px 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .search-in-header {
+        margin-right: 0;
     }
 }
 

@@ -59,6 +59,42 @@ input.form-control {
     border: 0;
     color: $color2 !important;
     background-color: $green;
+
+    &:hover {
+        background-color: #38ab21;
+    }
+
+    &:focus {
+        background-color: #38ab21;
+    }
+
+    &:active {
+        background-color: #38ab21;
+    }
+
+    &:visited {
+        background-color: #38ab21;
+    }
+
+    &::active:focus {
+        background-color: #38ab21;
+    }
+
+    &::active:hover {
+        background-color: #38ab21;
+    }
+}
+
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover, 
+.open>.dropdown-toggle.btn-primary.focus, 
+.open>.dropdown-toggle.btn-primary:focus, 
+.open>.dropdown-toggle.btn-primary:hover {
+    background-color: #38ab21;
 }
 
 .btn-success {

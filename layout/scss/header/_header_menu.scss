@@ -52,7 +52,7 @@ nav.header-menu .menu-headermenu-container > ul {
     align-items: center;
     transform: rotateX(270deg);
     transform-origin: top;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     border-top: 4px solid $color5;
     opacity: 0;
 }
@@ -64,7 +64,7 @@ nav.header-menu .menu-headermenu-container > ul {
 
 .menu-headermenu-container > ul > li:not(.dropdown) :after {
     content: attr(title);
-    background-color: $color6;
+    background-color: $color5;
     color: $color2;
     position: absolute;
     width: 100%;
@@ -82,7 +82,7 @@ nav.header-menu .menu-headermenu-container > ul {
 }
 
 .menu-headermenu-container > ul > li:not(.dropdown):hover a:after {
-    transition-delay: .3s;
+    transition-delay: .1s;
     transform: rotateX(0deg);
     opacity: 1;
 }

@@ -13,22 +13,22 @@
 				=             Button Like And Unlike            =
 				==============================================-->
 
-				<?php if(check_if_is_product_in_session( $_SESSION['likes'], get_the_id() )) { //if (isset($_SESSION['likes'])) { $arrayLikes = $_SESSION['likes']; } else { $arrayLikes = array(); } if (in_array(get_the_id(), $arrayLikes)) { ?>
+				<?php if (check_if_is_product_in_session( $_SESSION['likes'],get_the_id() ) == true) { ?>
 
 				<div class="like-container">
-						<a id="unlike" data-id="<?php echo get_the_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
-							<i id="like_icon" class="icon-check"></i>
-						</a>
-						<span class="likes-count round-info-span"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); //echo get_post_meta( get_the_id(), 'likes', true ); ?></span>
+					<a href="#" id="unlike_post" data-id="<?php echo get_the_id() ?>">
+						<i id="like_icon" class="icons-option exists icon-check"></i>
+					</a>
+					<span class="likes-count round-info-span count_likes_here"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?></span>
 				</div>
 
 				<?php } else { ?>
 
 				<div class="like-container">
-						<a id="like" data-id="<?php echo get_the_id() ?>" href="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-add="<?php echo get_template_directory_uri() . '/Ajax/like.php' ?>" data-remove="<?php echo get_template_directory_uri() . '/Ajax/unlike.php' ?>">
-							<i id="like_icon" class="icon-thumbs-o-up"></i>
-						</a>
-						<span class="likes-count round-info-span"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?></span>
+					<a href="#" id="like_post" data-id="<?php echo get_the_id() ?>">
+						<i id="like_icon" class="icons-option icon-thumbs-o-up"></i>
+					</a>
+					<span class="likes-count round-info-span count_likes_here"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?></span>
 				</div>
 
 				<?php } ?>
@@ -57,7 +57,7 @@
 						<h1><?php echo the_title(); ?></h1>
 						<p class="info_post">
 							<i class="icon-user3"> </i><span class="round-info-span"> <?php echo get_the_author(); ?></span>
-							<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
+							<i class="icon-thumbs-o-up"> </i><span class="round-info-span count_likes_here"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
 							<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
 							<i class="icon-fire"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
 						</p>
@@ -96,7 +96,7 @@
 	============================================-->
 
 	<div class="latest-posts-blog wow fadeIn">	
-	<h3 class="related-posts">Related Posts</h3>
+	<h3 class="related-posts r_products"><i class="icon-usb"></i>&nbsp;Related Posts</h3>
 	<?php
 
 	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 3, 'post__not_in' => array($post->ID) ) );
@@ -125,8 +125,8 @@
 	 
 </div>
 
-<div class="col-md-3 nopadding hidden-xs">
-	<?php dynamic_sidebar( 'right-sidebar' ); ?>
+<div class="col-md-3 hidden-sm nopadding hidden-xs">
+	<?php dynamic_sidebar( 'post-sidebar' ); ?>
 </div>
 
 <?php get_footer(); ?>

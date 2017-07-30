@@ -23,6 +23,12 @@
         font-family: 'Russo One', cursive;
     }
 
+    @media (max-width: 767px) {
+        span.date-bost  {
+            z-index: 2;
+        }
+    }
+
     span.date-bost span {
         display: block;
         text-align: center;
@@ -55,6 +61,12 @@ h1.post-title {
     padding: $main-padding /  2 $main-padding;
     font-size: 28px;
     z-index: 1;
+}
+
+@media (max-width: 767px) {
+    h1.post-title  {
+        z-index: 2;
+    }
 }
 
 h1.post-title a {

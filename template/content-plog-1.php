@@ -13,7 +13,7 @@
 					<a href="<?php the_permalink(); ?>">
 						<?php echo '<img src="' . get_the_post_thumbnail_url() . '" />'; ?>
 					</a>
-					<p class="post-info">
+					<p class="post-info hidden-xs">
 					 <i class="icon-clock-o"></i> 
 					<?php the_time('F j,Y g:i a'); ?>
 					 <i class="icon-pencil2"></i> By :

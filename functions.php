@@ -2,6 +2,7 @@
 
 
 require get_template_directory() . '/inc/ajax_functions/ajax_get_posts_by_category_in_header_menu.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_show_followed_dropdown_box.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_view_products_cart_in_header.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_system_follow_like_addtocart.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_calculate_value_by_country.php';

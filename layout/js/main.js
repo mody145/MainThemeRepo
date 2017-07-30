@@ -20,6 +20,13 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
+    $('.skitter-large-for-header').skitter({
+        navigation: true,
+        dots: false,
+        with_animations: [ 'cube', 'cubeRandom', 'block', 'cubeStop', 'cubeStopRandom', 'cubeHide', 'cubeSize', 'horizontal', 'showBars', 'showBarsRandom', 'tube', 'fade', 'fadeFour', 'paralell', 'blind', 'blindHeight', 'blindWidth', 'directionTop', 'directionBottom', 'directionRight', 'directionLeft', 'cubeSpread', 'glassCube', 'glassBlock', 'circles', 'circlesInside', 'circlesRotate', 'cubeShow', 'upBars', 'downBars', 'hideBars', 'swapBars', 'swapBarsBack', 'swapBlocks', 'cut' ],
+        label_animation: 'fixed',
+    });
+
 	// Run Select2 Plugin
 	$('.select_filter').select2({
 		tags: "true",
@@ -32,9 +39,10 @@ jQuery(document).ready(function($) {
 
 			'dots'				: false,
 			'numbers'			: true,
+			'label' 			: false,
 			'controls'			: true,
 			'hide_tools'		: true,
-			'with_animations' 	: ["paralell", "glassBlock", "swapBars"],
+			'with_animations' 	: ["fade"],
 			'theme' 			: 'clean',
 		});
 	});
@@ -106,9 +114,9 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Spinner Loading With Counter  ======*/
 
-/*===================================================
-=            Add Class To Comment Button            =
-===================================================*/
+/*==============================================================
+=            Change Classes And Modify Placeholders            =
+==============================================================*/
 
 	$('.login-register.text-center p').on('click', 'a.header_login', function(event) {
 
@@ -139,7 +147,7 @@ jQuery(document).ready(function($) {
 
 	$(".profile-container h2").hide();
 
-/*=====  End of Add Class To Comment Button  ======*/
+/*=====  Change Classes And Modify Placeholders  ======*/
 
 /*======================================================
 =            Section Gallery Single Product            =
@@ -411,6 +419,6 @@ $("#zoom_01").elevateZoom({
 	$('.main_image_product').css('min-height', mainImageHeight);
 
 /*=====  End of Modify Height Main Product Image  ======*/
-
+	
 
 });

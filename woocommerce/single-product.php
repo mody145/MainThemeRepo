@@ -27,7 +27,7 @@ get_header(); ?>
 
 
 <!-- Start Sidebar Shop -->
-<div class='col-md-3 hidden-xs nopadding pull-right'>
+<div class='col-md-3 hidden-sm hidden-xs nopadding pull-right'>
 	<!-- Sidebar Shop -->
 	<?php dynamic_sidebar( 'shop-sidebar' ); ?>
 </div><!-- End Sidebar Shop -->
@@ -75,7 +75,7 @@ get_header(); ?>
 			==============================================-->
 
 			<div class="clearfix"></div>
-			<div class="col-md-6 nopadding wow fadeIn">
+			<div class="col-md-6 hidden-xs nopadding wow fadeIn">
 				<!-- Featuer Image For Product -->
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
 				<div class="main_image_product">

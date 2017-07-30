@@ -29,7 +29,7 @@
 		</div>
 		<?php print_r($sub_category) ?>
 		<!-- Show Count Result -->
-		<div class="col-md-6 nopadding">
+		<div class="col-md-6 hidden-sm hidden-xs nopadding">
 			<p class="woocommerce-result-count">&nbsp;
 
 			</p>
@@ -49,15 +49,17 @@
 
 		<form id="filter_shop" method="POST" action="<?php echo admin_url('admin-ajax.php')?>">
 
-			<select id="order" class="select-option col-md-3 select_filter" name="order">
-				<option value="date" data-order="DESC">Newest First</option>
-				<option value="date" data-order="ASC">Oldest First</option>
-				<option value="_regular_price" data-order="DESC">DESC Price</option>
-				<option value="_regular_price" data-order="ASC">ASC Price</option>
-				<option value="_wc_average_rating" data-order="DESC">DESC Rating</option>
-				<option value="_wc_average_rating" data-order="ASC">ASC Rating</option>
-				<option value="rand">Random</option>
-			</select>
+			<div class="col-md-3 col-sm-6 col-xs-12 nopadding">
+				<select id="order" class="select-option select_filter" name="order">
+					<option value="date" data-order="DESC">Newest First</option>
+					<option value="date" data-order="ASC">Oldest First</option>
+					<option value="_regular_price" data-order="DESC">DESC Price</option>
+					<option value="_regular_price" data-order="ASC">ASC Price</option>
+					<option value="_wc_average_rating" data-order="DESC">DESC Rating</option>
+					<option value="_wc_average_rating" data-order="ASC">ASC Rating</option>
+					<option value="rand">Random</option>
+				</select>
+			</div>
 
 			<?php $args = array( 
 				'type' 		=> 'product', 
@@ -66,85 +68,96 @@
 
 			$categories = get_categories( $args ); ?>
 
-			<select id="category" class="category select-option col-md-3 select_filter" name="category">
-			<?php foreach ($categories as $cat) { ?>
-				<option value="<?php echo $cat->slug ?>"><?php echo $cat->name; ?></option>
-			<?php } ?>
-			</select>
+			<div class="col-md-3 col-sm-6 col-xs-12 nopadding">
+				<select id="category" class="category select-option select_filter" name="category">
+				<?php foreach ($categories as $cat) { ?>
+					<option value="<?php echo $cat->slug ?>"><?php echo $cat->name; ?></option>
+				<?php } ?>
+				</select>
+			</div>
 
-			<div class="input-group col-md-2">
+			<div class="input-group col-md-3 col-sm-6 col-xs-12 nopadding">
 
 				<span class="input-group-addon" id="price-from"><i class="icon-usd"></i></span>
 				<input class="form-control" id="price-from" type="text" name="price-from" placeholder="From Price" />
 
 			</div>
 
-			<div class="input-group col-md-2">
+			<div class="input-group col-md-3 col-sm-6 col-xs-12 nopadding">
 
 				<span class="input-group-addon" id="price-to"><i class="icon-usd"></i></span>
 				<input class="form-control" id="price-to" type="text" name="price-to" placeholder="Price Limit" />
 
 			</div>
 
-			<div class="input-group col-md-2">
+			<div class="input-group col-md-3 col-sm-6 col-xs-12 nopadding">
 
 				<span class="input-group-addon" id="search-name"><i class="icon-chevron-right"></i></span>
 				<input class="form-control" id="search-name" type="search" name="names" placeholder="Names Like ..." />
 
 			</div>
 
-			<select multiple="true" data-tags="true" data-placeholder="Multiple Tags" class="select-option col-md-4 select_filter" id="search-tag" name="tags">	
+			<div class="col-md-3 col-sm-6 col-xs-12 nopadding">
+				<select multiple="true" data-tags="true" data-placeholder="Multiple Tags" class="select-option select_filter" id="search-tag" name="tags">	
 
-				<?php // Get List Of All Tags
-				$terms = get_terms( 'product_tag' );
-				// Create Empty Array
-				$term_array = array();
-				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-				    foreach ( $terms as $term ) {
-				    	// Insert All Tags Slug In Empty Array
-				        $term_array[] = $term->name;
-				    }
-				}
-				// Fetch Array
-				foreach ($term_array as $tagName) {
+					<?php // Get List Of All Tags
+					$terms = get_terms( 'product_tag' );
+					// Create Empty Array
+					$term_array = array();
+					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+					    foreach ( $terms as $term ) {
+					    	// Insert All Tags Slug In Empty Array
+					        $term_array[] = $term->name;
+					    }
+					}
+					// Fetch Array
+					foreach ($term_array as $tagName) {
 
-					$args = array(
-					    'posts_per_page' 	=> -1,
-					    'post_type' 		=> 'product',
-					    'product_tag' 		=> $tagName
-					);
-					$query = new WP_Query( $args );
-					// Get Count Results
-					$count = $query->post_count;
-					wp_reset_postdata();
-					// Insert Into Option Tag
-					echo '<option value="' . $tagName . '">[ ' . $count . ' ]&nbsp;' . $tagName . '</option>';
-				}
+						$args = array(
+						    'posts_per_page' 	=> -1,
+						    'post_type' 		=> 'product',
+						    'product_tag' 		=> $tagName
+						);
+						$query = new WP_Query( $args );
+						// Get Count Results
+						$count = $query->post_count;
+						wp_reset_postdata();
+						// Insert Into Option Tag
+						echo '<option value="' . $tagName . '">[ ' . $count . ' ]&nbsp;' . $tagName . '</option>';
+					}
 
-				?>
+					?>
 
-			</select>
-			<select class="select-option col-md-4 select_filter" id="filter-color" name="colors">	
+				</select>
+			</div>
 
-				<option value="black">Black</option>
-				<option value="blue">Blue</option>
-				<option value="green">Green</option>
-				<option value="red">Red</option>
-				<option value="yellow">Yellow</option>
-				<option value="white">White</option>
-				<option value="gray">Gray</option>
+			<div class="col-md-3 col-sm-6 col-xs-12 nopadding">
+				<select class="select-option select_filter" id="filter-color" name="colors">	
 
-			</select>
-			<select class="select-option col-md-4 select_filter" id="filter-date2" name="date">	
+					<option value="black">Black</option>
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+					<option value="red">Red</option>
+					<option value="yellow">Yellow</option>
+					<option value="white">White</option>
+					<option value="gray">Gray</option>
 
-				<option data-after="" value="<?php echo date('Y-m-d') ?>">ToDay</option>
-				<option data-after="" value="tomorrow">Tomorrow</option>
-				<option data-after="" value="- 7">This Week</option>
-				<option data-after="" value="1 week ago">Last Week</option>
-				<option data-after="" value="1 month ago">Last Month</option>
-				<option data-after="" value="1 year ago">Last Year</option>
+				</select>
+			</div>
 
-			</select>
+			<div class="col-md-3 col-sm-6 col-xs-12 nopadding">
+				<select class="select-option select_filter" id="filter-date2" name="date">	
+
+					<option data-after="" value="<?php echo date('Y-m-d') ?>">ToDay</option>
+					<option data-after="" value="tomorrow">Tomorrow</option>
+					<option data-after="" value="- 7">This Week</option>
+					<option data-after="" value="1 week ago">Last Week</option>
+					<option data-after="" value="1 month ago">Last Month</option>
+					<option data-after="" value="1 year ago">Last Year</option>
+
+				</select>
+			</div>
+
 		</form>
 	</div><!-- End Conatiner Filter -->
 </div><!-- End Filter Products -->
@@ -186,7 +199,6 @@
 					echo '</div>'; ?>
 			</div>
 			<!-- Here Is Result Filter -->
-			<!-- <div class="result_search_shop grid for-pagination for-load-more"> -->
 				
 			</div><!-- Here Is Result Filter -->
 

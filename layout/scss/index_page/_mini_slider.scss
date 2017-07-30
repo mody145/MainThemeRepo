@@ -24,6 +24,11 @@
 	}
 }
 
+.skitter .image {
+    overflow: hidden;
+    background-color: #fff;
+}
+
 .skitter.with-dots {
     margin-bottom: 0;
 }

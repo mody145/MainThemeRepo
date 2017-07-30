@@ -250,6 +250,27 @@ jQuery(document).ready(function($) {
 			$('#follow').html("<i id='follow_icon' class='icon-heart8'></i>");
 			$('#follow').removeClass('follow').addClass('unfollow');
 			$('#follow').attr('id', 'unfollow');
+
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -286,6 +307,27 @@ jQuery(document).ready(function($) {
 			$('#unfollow').html("<i id='follow_icon' class='icon-heart-o'></i>");
 			$('#unfollow').removeClass('unfollow').addClass('follow');
 			$('#unfollow').attr('id', 'follow');
+
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -342,6 +384,28 @@ jQuery(document).ready(function($) {
 			.always(function() {
 				console.log("complete");
 			});
+
+			/* Update List Add To Cart In Header
+			-------------------------------------*/
+			var box = $('span.show-value-box-dropdown');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/* ------------------------------- */
 		})
 		.fail(function() {
 			console.log("error");
@@ -452,6 +516,26 @@ jQuery(document).ready(function($) {
 			$('.parent-follow-page').prepend('<h3 class="text-center"><i class="icon-close"></i>&nbsp; You List Is Empty &nbsp;<i class="icon-sad"></i></h3>')
 			$('#items-whitelist').html(0);
 
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -512,6 +596,28 @@ jQuery(document).ready(function($) {
 			.always(function() {
 				console.log("complete");
 			});
+
+			/* Update List Add To Cart In Header
+			-------------------------------------*/
+			var box = $('span.show-value-box-dropdown');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/* ------------------------------- */
 		})
 		.fail(function() {
 			console.log("error");
@@ -550,6 +656,27 @@ jQuery(document).ready(function($) {
 			thisItem.html("<i id='follow_icon' class='icons-option exists icon-heart8'></i>");
 			thisItem.removeClass('follow_archive').addClass('unfollow_archive');
 			thisItem.attr('id', 'unfollow');
+
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -586,6 +713,26 @@ jQuery(document).ready(function($) {
 			thisItem.html("<i id='follow_icon' class='icons-option icon-heart-o'></i>");
 			thisItem.removeClass('unfollow_archive').addClass('follow_archive');
 			thisItem.attr('id', 'follow');
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -608,7 +755,7 @@ jQuery(document).ready(function($) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
-		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.count_likes_here');
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
@@ -645,7 +792,7 @@ jQuery(document).ready(function($) {
 
 		var id = $(this).attr('data-id');
 		var thisItem = $(this);
-		var result = thisItem.parent().parent().find('.info-for-the-post').find('.round-info-span').eq(0);
+		var result = thisItem.parent().parent().find('.info-for-the-post').find('.count_likes_here');
 
 		$.ajax({
 			url: MyAjax.ajaxurl,
@@ -717,6 +864,28 @@ jQuery(document).ready(function($) {
 			.always(function() {
 				console.log("complete");
 			});
+
+			/* Update List Add To Cart In Header
+			-------------------------------------*/
+			var box = $('span.show-value-box-dropdown');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/* ------------------------------- */
 		})
 		.fail(function() {
 			console.log("error");
@@ -753,6 +922,27 @@ jQuery(document).ready(function($) {
 
 			parentTd.css('background-color', color1);
 			parentTd.hide(400);
+
+			/* Update Follow List In Header
+			-------------------------------*/
+			var box = $('.show-followed-dropdown-box');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'POST',
+				data: {action: 'show_followed_dropdown_box'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/*-----------------------------*/
 		})
 		.fail(function() {
 			console.log("error");
@@ -1035,21 +1225,51 @@ jQuery(document).ready(function($) {
 		var orderBy = $('select#order').val();
 		var order = $('select#order').find(':selected').attr('data-order');
 
+		var category = $('select#category').val();
+
+		var tag = $('select#search-tag').val();
+
+		var color = $('select#filter-color').val();
+
+		var date = $('select#filter-date2').val();
+
+		var price_from = $('input#price-from').val();
+		var price_to = $('input#price-to').val();
+
 		var that 	= $(this);
 		var page 	= that.data('page');
 		var newPage = page+1;
 		var Url 	= that.data('link'); 
+		var dataKind = '';
+
+		if ( $(this).attr('data-query') == 'order' ) {
+			var dataKind = {orderBy : orderBy, order : order, page: page, action: 'sorting_by_date'};
+
+		} else if ( $(this).attr('data-query') == 'cat' ) {
+			var dataKind = {category : category, page : page, action : 'sorting_by_category' };
+
+		} else if ( $(this).attr('data-query') == 'tag' ) {
+			var dataKind = {tag : tag, page : page , action: 'sorting_by_tag_name' };
+
+		} else if ( $(this).attr('data-query') == 'color' ) {
+			var dataKind = {color : color, page : page , action: 'filter_by_color' };
+
+		} else if ( $(this).attr('data-query') == 'date2' ) {
+			var dataKind = {date : date, page : page , action: 'filter_by_date2' };
+
+		} else if ( $(this).attr('data-query') == 'price' ) {
+			var dataKind = {price_from : price_from, price_to : price_to, page : page , action: 'sorting_by_product_price_range' };
+
+		} 
 
 		$.ajax({
 			url: Url,
 			type: 'POST',
-			data: {orderBy : orderBy, order : order, page: page, action: 'sorting_by_date'},
+			data: dataKind,
 		})
 		.done(function(data) {
 			$('.load-more-container').before(data);
 			that.data('page', newPage);
-			console.log('orderBy: ' + orderBy);
-			console.log('order: ' + order);
 		})
 		.fail(function(response) {
 			console.log(response);
@@ -1094,28 +1314,42 @@ jQuery(document).ready(function($) {
 
 			var dataForm = $(this).serialize();
 
-			$.ajax({
-				url: MyAjax.ajaxurl,
-				type: 'POST',
-				data: dataForm,
-				beforeSend: function() {
-					$('.results_search').html('<i class="fa fa-spinner fa-pulse fa-2x"></i>');
-				}
-			})
-			.done(function(data) {
-				$('.results_search').html(data);
-				$('.for-scroll').niceScroll('.results_search',{
-					cursorborder: 0,
-					autohidemode: false,
-					cursorcolor: '#fff'
+			if (search !== '') {
+
+				$.ajax({
+					url: MyAjax.ajaxurl,
+					type: 'POST',
+					data: dataForm,
+					beforeSend: function() {
+						$('.results_search').html('<div style="border: 2px solid ' + color2 + ';border-top-color: transparent;" class="spinner"></div>');
+					}
+				})
+				.done(function(data) {
+					$('.results_search').html(data);
+					$('.for-scroll').niceScroll('.results_search',{
+						cursorborder: 0,
+						autohidemode: false,
+						cursorcolor: '#fff'
+					});
+
+					/* Highlight Search Words
+					-------------------------*/
+
+					$('.heading-result').each(function() {
+						var txt = $(this).text();
+						$(this).html( $(this).text().replace(new RegExp( search, 'gi' ), "<span class='mark'>" + search + "</span>") );
+					});
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
 				});
-			})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
+
+			} else {
+				$('.results_search').html("No Result !");
+			}
 
 			event.preventDefault();
 			
@@ -1126,40 +1360,6 @@ jQuery(document).ready(function($) {
 	});
 
 	/*=====  End of Section Search From Fullscreen  ======*/
-
-	/*======================================================
-	=            Toggle Dropdown View Cart Box             =
-	======================================================*/
-		
-		$('body').on('mouseenter', '#update_total_cart', function(event) {
-
-			var box = $('span.show-value-box-dropdown');
-			var Url = box.attr('data-link');
-
-			$.ajax({
-				url: MyAjax.ajaxurl,
-				type: 'GET',
-				dataType: 'html',
-				data: {action : 'view_products_in_cart'},
-				beforeSend: function() {
-					box.html('<div class="parent_spinner"><div class="loading__spinner loading__spinner__one"></div></div>');
-				}
-			})
-			.done(function(data) {
-				box.html(data);
-			})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
-
-			event.preventDefault();
-			/* Act on the event */
-		});
-
-	/*=====  End of Toggle Dropdown View Cart Box   ======*/
 
 	/*========================================================
 	=            Section GrigIPosts In Index Page            =
@@ -1455,6 +1655,28 @@ jQuery(document).ready(function($) {
 			.always(function() {
 				console.log("complete");
 			});
+
+			/* Update List Add To Cart In Header
+			-------------------------------------*/
+			var box = $('span.show-value-box-dropdown');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/* ------------------------------- */
 		})
 		.fail(function(response) {
 			console.log(response);
@@ -1520,6 +1742,27 @@ jQuery(document).ready(function($) {
 				.always(function() {
 					console.log("complete");
 				});
+			/* Update List Add To Cart In Header
+			-------------------------------------*/
+			var box = $('span.show-value-box-dropdown');
+			$.ajax({
+				url: MyAjax.ajaxurl,
+				type: 'GET',
+				dataType: 'html',
+				data: {action : 'view_products_in_cart'},
+				beforeSend: function() {
+					box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+			})
+			.done(function(data) {
+				box.html(data);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			/* ------------------------------- */
 			})
 			.fail(function() {
 				console.log("error");
@@ -1587,6 +1830,28 @@ jQuery(document).ready(function($) {
 				.always(function() {
 					console.log("complete");
 				});
+
+				/* Update List Add To Cart In Header
+				-------------------------------------*/
+				var box = $('span.show-value-box-dropdown');
+				$.ajax({
+					url: MyAjax.ajaxurl,
+					type: 'GET',
+					dataType: 'html',
+					data: {action : 'view_products_in_cart'},
+					beforeSend: function() {
+						box.html('<div class="parent_spinner"><div class="spinner"></div></div>'); }
+				})
+				.done(function(data) {
+					box.html(data);
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+				/* ------------------------------- */
 			})
 			.fail(function() {
 				console.log("error");
@@ -1602,5 +1867,78 @@ jQuery(document).ready(function($) {
 	
 	/*=====  End of Remove From Cart In ( Quieck View )  ======*/
 	
+	/*===================================================
+	=            Section UnLike Posts Button            =
+	===================================================*/
+	
+	$('body').on('click', '#unlike_post', function(e) {
 
+		var id = $(this).attr('data-id');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.count_likes_here');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'unlike_product'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
+			result.html(data);
+
+			thisItem.html("<i id='like_icon' class='icons-option icon-thumbs-o-up'></i>");
+			thisItem.attr('id', 'like_post');
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		
+		e.preventDefault();
+	});
+
+	/*=======  End of Section unLike Posts Button  ========*/
+	
+	/*==============================================================
+	=            Section Add Like Button To ( Arshive )            =
+	==============================================================*/
+	
+	$('body').on('click', '#like_post', function(e) {
+
+		var id = $(this).attr('data-id');
+		var thisItem = $(this);
+		var result = thisItem.parent().parent().find('.count_likes_here');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {id : id, action: 'like_product'},
+			beforeSend: function() {
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
+			}
+		})
+		.done(function(data) {
+			result.html(data);
+
+			thisItem.html("<i id='unlike_icon' class='icons-option exists icon-check'></i>");
+			thisItem.attr('id', 'unlike_post');
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+		
+		e.preventDefault();
+	});
+
+	/*=====  End of Section Add Like Button To ( Arshive )  ======*/	
+	
 });

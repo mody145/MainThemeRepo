@@ -44,13 +44,13 @@ function full_screen_search() {
 			$results->the_post(); ?>
 
 		<div class="media">
-			<div class="media-left">
+			<div class="media-left hidden-xs">
 				<a href="<?php echo get_the_permalink(); ?>">
 					<img class="media-object" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="..." style="width:100px!important;max-width: none;border-radius: 5px;" />
 				</a>
 			</div>
 			<div class="media-body">
-				<h4 class="media-heading"><a style="color: #fff" href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
+				<h4 class="media-heading"><a class="heading-result" style="color: #fff" href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
 				<?php echo $str = substr(get_the_content(), 0, 150) . ' ... '; ?>
 			</div>
 		</div>

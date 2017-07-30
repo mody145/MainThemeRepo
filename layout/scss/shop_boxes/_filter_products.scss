@@ -16,6 +16,10 @@
         align-items: center;
         flex-wrap: wrap;
 
+        select {
+            width: 100% !important;
+        }
+
         > * {
             border: 4px solid transparent !important;
         }
@@ -23,5 +27,17 @@
         .input-group {
             margin: 0;
         }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .container-filter {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 767px){
+    .container-filter {
+        margin-top: 20px;
     }
 }

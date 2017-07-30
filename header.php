@@ -102,11 +102,63 @@
 
 		<!-- Header Here -->
 
-		<!-- <div class="col-md-12 nopadding hidden-xs">
+		<div class="col-md-12 nopadding hidden-xs">
+		<?php if ( is_home() ) {  ?>
 			<header class="site-header">
-				<img src="<?php //echo get_template_directory_uri() . '/layout/images/head.jpg' ?>">
+
+                <div class="skitter-large-box">
+                    <div class="skitter skitter-large-for-header with-thumbs">
+                        <ul>
+							<?php 
+
+							/* --||  Start Loop (WP-Query)  ||-- */
+
+							$args = array(
+								'post_type' 	=> 'slider',
+								'post_per_post' => 10,
+							    'tax_query' => array(
+							        array(
+							            'taxonomy' => 'wich_slider',
+							            'field'    => 'slug',
+							            'terms'    => 'header-slider',
+							        ),
+							    ),
+							);
+							
+							$slides = new WP_Query($args);
+
+							if ($slides->have_posts()) {
+								while ($slides->have_posts()) {
+									$slides->the_post(); ?>
+
+                            <li>
+                                <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
+                                </a>
+                                <div class="label_text">
+                                    <h3 class="test-title"><?php the_title(); ?></h3>
+                                    <?php the_content(); ?>
+                                    <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
+                                </div>
+                            </li>
+
+							<!--||  End Loop (WP-QUery)  ||-->
+							<?php }} ?>
+							<?php wp_reset_postdata(); ?>	
+
+                        </ul>
+                    </div>
+                </div>
+
 			</header>
-		</div> -->
+		<?php } else { ?>
+
+		<div class="small-header">
+			<img src="http://placehold.it/500x100/ddd" class="ads-here">
+		</div>
+
+		<?php } ?>
+		</div>
 
 		<!-- End Header Here -->
 		<!-- Start Menu And Prand In Mobile Screen -->
@@ -142,8 +194,8 @@
 			<!-- End Menu And Prand In Mobile Screen -->
 			<!-- Start Brand Here -->
 
-			<div class="col-md-2 col-sm-6 nopadding hidden-xs">
-				<div class="brand-name wow fadeIn">
+			<div class="col-md-3 col-sm-6 nopadding hidden-xs" style="position: static;">
+				<div class="brand-name <?php if ( is_home() ) { echo 'transparent'; } else { echo 'not-home'; } ?> wow fadeIn">
 					<a href="<?php echo home_url(); ?>">Brand Name</a>
 				</div>
 			</div>
@@ -151,7 +203,7 @@
 			<!-- End Brand Here -->
 			<!-- Start Icon Like | Follow | Cart -->
 
-			<div class="col-md-3 col-sm-6 nopadding">
+			<div class="col-md-2 col-sm-6 nopadding">
 				<div class="icon-header1 wow fadeIn">
 
 					<a href="<?php echo home_url( 'dashpoard' ); ?>"><i class="icon-check2" data-toggle="tooltip" data-placement="bottom" title="Your Orders"><span id="items-follow"><?php echo wc_get_customer_order_count( get_current_user_id() ); ?></span></i></a>
@@ -170,7 +222,7 @@
 			
 				<div class="col-md-4 col-sm-12 nopadding">
 
-					<div class="col-md-6 nopadding">
+					<div class="col-md-6 col-sm-6 nopadding">
 						<div class="add-register-login wow fadeIn">
 							<div class="login-register text-center">
 								<?php echo do_shortcode('[lsphe-header]' ); ?>
@@ -178,7 +230,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 nopadding">
+					<div class="col-md-6 col-sm-6 nopadding">
 						<div class="search-in-header wow fadeIn" data-toggle="tooltip" data-placement="bottom" title="Click To FullScrean Search">&nbsp;
 							<i class="icon-search"></i>
 						</div>
@@ -199,15 +251,41 @@
 						
 						?>
 
-						Total Cart : <i class="icon-usd"></i>&nbsp;<span class="total-number" data-toggle="tooltip" data-placement="bottom" title="Value"><?php echo $amount; ?></span>
-						<span id="update_total_cart" class="update-total" data-link="<?php echo get_template_directory_uri() . '/Ajax/update_cart.php' ?>">
-							<i class="icon-eye3"></i>
-							<span class="show-value-box-dropdown" data-link="<?php echo get_template_directory_uri() . '/Ajax/view_cart_in_header.php' ?>">
+						<i class="icon-shopping-cart"></i> : &nbsp;<i class="icon-usd"></i>&nbsp;<span class="total-number" data-toggle="tooltip" data-placement="bottom" title="Value"><?php echo $amount; ?></span>
 
+						<span id="update_total_cart" class="update-total round2">
+							<i class="icon-eye3"></i>
+							<span class="show-value-box-dropdown">
+								<?php
+								global $woocommerce;
+
+								$infoCart = $woocommerce->cart->get_cart(); 
+
+								if ( empty($infoCart) ) {
+									echo "<span class='text-center'>Your Cart Is Empty</span>";
+								} else {
+
+									foreach ($infoCart as $cart_item) {
+										$info = $cart_item['data']; ?>
+
+									<div class="items">
+										<span class="pull-left"><?php echo $info->name ?></span>
+										<span class="pull-right"><i class="icon-usd"></i>&nbsp;<?php echo $info->price ?></span>
+									</div>
+
+									<?php } ?>
+
+									<div class="buttons">
+										<a class="text-center" href="<?php echo home_url( 'checkout' ); ?>"><button class="btn btn-default btn-sm">Checkout</button></a>
+										<a class="text-center" href="<?php echo home_url( 'cart' ); ?>"><button class="btn btn-default btn-sm">Cart Page</button></a>
+									</div>
+
+								<?php } ?>
 							</span>
 						</span>
-						<span class="calc-total">
-							<i class="icon-calculator"></i>
+
+						<span class="calc-total round2">
+							<i class="icon-cog4"></i>
 							<span class="calc-total-box-dropdown">
 							<span class="select-country text-center"><i class="icon-flag-o"></i>&nbsp; Select Your Country [Auto Save]</span>
 								<form class="Convert_Form" action="<?php echo admin_url('admin-ajax.php')?>">
@@ -228,6 +306,43 @@
 
 							</span>
 						</span>
+
+						<span class="show-followed round2">
+							<i class="icon-heart7"></i>
+							<span class="show-followed-dropdown-box">
+								<?php
+								if (empty($_SESSION['follow'])) {
+									echo "<span class='text-center'>Your Whitelist Is Empty</span>";
+								} else {
+
+									$items_unique = array_unique($_SESSION['follow']); 
+
+										$args = array(
+											'post_type' 		=> 'product',
+											'post__in' 			=> $items_unique,
+											'posts_per_page' 	=> -1
+											);
+										$Query = new WP_Query( $args );
+
+										if ($Query->have_posts()) {
+											while($Query->have_posts()) {
+												$Query->the_post(); ?>
+
+									<div class="items">
+										<span class="pull-left"><?php echo get_the_title(); ?></span>
+										<span class="pull-right"><i class="icon-usd"></i>&nbsp;<?php echo get_post_meta( get_the_id(), '_price', true ); ?></span>
+									</div>
+
+									<?php }} ?>
+
+									<div class="buttons">
+										<a class="text-center" href="<?php echo home_url( 'wishlist' ); ?>"><button class="btn btn-default btn-sm btn-block">Whitelist Page</button></a>
+									</div>
+
+								<?php } ?>
+							</span>
+						</span>
+
 					</div>
 				</div>
 

@@ -6,6 +6,12 @@ nav.primary-menu {
     margin: $main-margin;
 }
 
+@media (max-width: 767px){
+    nav.primary-menu {
+        margin: 10px 0;
+    }
+}
+
 nav.primary-menu ul {
     padding: 0;
     margin: 0;
@@ -26,7 +32,6 @@ nav.primary-menu ul li {
     border-radius: 50%;
     color: $color2;
     position: relative;
-    box-shadow: 0 0 10px rgba(100, 100, 100, 0.2) inset, 1px 1px 1px #CCC;
 }
 
 nav.primary-menu ul li:before {
@@ -55,6 +60,12 @@ nav.primary-menu ul li i {
     top: -2px;
     left: 0px;
     transition: .5s ease-in-out;
+}
+
+@media (max-width: 767px){
+    nav.primary-menu ul li i  {
+        left: -11px;
+    }
 }
 
 nav.primary-menu ul li i:hover {

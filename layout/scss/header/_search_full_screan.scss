@@ -118,6 +118,18 @@
             margin: auto;
         }
 
+        @media (max-width: 767px){
+            .for-scroll {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px){
+            .for-scroll {
+                width: 95%;
+            }
+        }
+
         .results_search {
             color: rgba(255, 255, 255, 0.75);
             text-align: left;
@@ -147,6 +159,14 @@
         cursor: pointer;
         color: $color2;
     }
+
+    @media (max-width: 767px){
+        .close-search {
+            top: 10px !important;
+            right: 10px !important;
+            font-size: 25px !important;
+        }
+    } 
 }
 
 /*=====  End of Section FullScrean Search  ======*/

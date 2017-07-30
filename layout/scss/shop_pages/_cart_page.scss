@@ -34,7 +34,17 @@
 							    text-align: center;
 							    border-radius: 2px;
 						    }
+							@media (max-width: 767px){
+								input {
+									width: 50px;
+								}
+							}
 					    }
+						@media (max-width: 767px){
+							div.quantity {
+								text-align: right;
+							}
+						}
 					    div.coupon {
 					    	padding: $main-padding / 2;
 							input#coupon_code {
@@ -80,5 +90,51 @@
 	    a {
 	    	color: $color8;
 	    }
+	}
+}
+
+@media (max-width: 767px){
+	tr.woocommerce-cart-form__cart-item.cart_item:nth-of-type(even) {
+	    background-color: #ececec;
+	}
+}
+
+@media (max-width: 767px){
+	tr.woocommerce-cart-form__cart-item.cart_item {
+	    border: 1px solid #333;
+	}
+
+	td.actions {
+	    padding: 0 !important;
+	}
+
+	.coupon {
+	    padding: 5px 0 !important;
+	}
+
+	.cart_totals h2 {
+	    text-align: center;
+	}
+
+	.cart_totals table {
+	    padding: 0 10px !important;
+	    width: 100%;
+	}
+
+	tr.woocommerce-cart-form__cart-item.cart_item td:first-of-type {
+	    background-color: #333333 !important;
+	}
+
+	a.remove i {
+	    background-color: rgba(221, 221, 221, 0.22);
+	    display: inline-block;
+	    width: 20px;
+	    height: 20px;
+	    text-align: center;
+	    line-height: 19.5px;
+	    border-radius: 50%;
+	    color: #fff;
+	    position: relative;
+	    top: -1px;
 	}
 }

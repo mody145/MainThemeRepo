@@ -42,10 +42,12 @@ function sorting_by_date() {
 		if (isset($_POST['page'])) { ''; } else { ?>
 		
 		<div class="load-more-container text-center">
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-link="<?php echo admin_url('admin-ajax.php')?>">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
 				<i class="icon-lightbulb-o"></i>&nbsp;
 				Show More
 			</a>
+		<?php } ?>
 		</div>
 		<?php } 
 
@@ -82,10 +84,12 @@ function sorting_by_date() {
 		if (isset($_POST['page'])) { ''; } else { ?>
 		
 		<div class="load-more-container text-center">
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-link="<?php echo admin_url('admin-ajax.php')?>">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
 				<i class="icon-lightbulb-o"></i>&nbsp;
 				Show More
 			</a>
+		<?php } ?>
 		</div>
 		<?php } 
  
@@ -124,10 +128,12 @@ function sorting_by_date() {
 		if (isset($_POST['page'])) { ''; } else { ?>
 		
 		<div class="load-more-container text-center">
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-link="<?php echo admin_url('admin-ajax.php')?>">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
 				<i class="icon-lightbulb-o"></i>&nbsp;
 				Show More
 			</a>
+		<?php } ?>
 		</div>
 		<?php } 
 
@@ -166,10 +172,12 @@ function sorting_by_date() {
 		if (isset($_POST['page'])) { ''; } else { ?>
 		
 		<div class="load-more-container text-center">
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-link="<?php echo admin_url('admin-ajax.php')?>">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
 				<i class="icon-lightbulb-o"></i>&nbsp;
 				Show More
 			</a>
+		<?php } ?>
 		</div>
 		<?php } 
  
@@ -192,12 +200,15 @@ function sorting_by_category() { ?>
 	<?php // Sorting By Category
 	if (isset($_POST['category'])) {
 
+		if (isset($_POST['page'])) { $paged = $_POST['page']+1; } else { $paged = 1; }
+
 		$cat = $_POST['category'];
 
 		$args = array(
 			'post_type' 		=> 'product',
 			'posts_per_page' 	=> 9,
 			'product_cat' 		=> $cat,
+			'paged' 			=> $paged
 			);
 
 		$query = new WP_Query( $args );
@@ -210,9 +221,19 @@ function sorting_by_category() { ?>
 
 		<?php }} ?>
 
-		<?php wp_reset_query(); ?>
+		<?php wp_reset_query(); 
 
-	<?php
+		if (isset($_POST['page'])) { ''; } else { ?>
+		
+		<div class="load-more-container text-center">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="cat" data-link="<?php echo admin_url('admin-ajax.php')?>">
+				<i class="icon-lightbulb-o"></i>&nbsp;
+				Show More
+			</a>
+		<?php } ?>
+		</div>
+		<?php }
 
 	} 
 
@@ -233,12 +254,15 @@ function sorting_by_tag_name() { ?>
 	<?php // Search By Tag
 	if (isset($_POST['tag'])) {
 
+		if (isset($_POST['page'])) { $paged = $_POST['page']+1; } else { $paged = 1; }
+
 		$tag = $_POST['tag'];
 
 		$args = array(
 			'post_type' 		=> 'product',
-			'posts_per_page' 	=> 9,
+			'posts_per_page' 	=> 1,
 			'product_tag' 		=> $tag ,
+			'paged' 			=> $paged
 			);
 
 		$query = new WP_Query( $args );
@@ -251,10 +275,19 @@ function sorting_by_tag_name() { ?>
 
 		<?php }} ?>
 
-		<?php wp_reset_query(); ?>
+		<?php wp_reset_query(); 
 
-	<?php
-
+		if (isset($_POST['page'])) { ''; } else { ?>
+		
+		<div class="load-more-container text-center">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="tag" data-link="<?php echo admin_url('admin-ajax.php')?>">
+				<i class="icon-lightbulb-o"></i>&nbsp;
+				Show More
+			</a>
+		<?php } ?>
+		</div>
+		<?php }
 	} 
 
 	die();
@@ -332,20 +365,23 @@ add_action('wp_ajax_sorting_by_product_price_range', 'sorting_by_product_price_r
 function sorting_by_product_price_range() { ?>
 
 	<?php // Search By Product Price Range
-	if (isset($_POST['price_from']) || isset($_POST['price_to'])) {
+	if (isset($_POST['price_from']) || isset($_POST['price_to'])) { 
 
 		if (isset($_POST['price_from'])) { $price_from = $_POST['price_from']; } else { $price_from = 0; }
 		if (isset($_POST['price_to'])) { $price_to = $_POST['price_to']; } else { $price_to = 1000000; }
 
+		if (isset($_POST['page'])) { $paged = $_POST['page']+1; } else { $paged = 1; }
+
 		$args = array(
 			'post_type' 		=> 'product',
 			'posts_per_page' 	=> 9,
+			'paged' 			=> $paged,
 		    'meta_query' => array(
 		        array(
-		            'key' => '_price',
-		            'value' => array($price_from, $price_to),
-		            'compare' => 'BETWEEN',
-		            'type' => 'NUMERIC'
+		            'key' 		=> '_price',
+		            'value' 	=> array($price_from, $price_to),
+		            'compare' 	=> 'BETWEEN',
+		            'type' 		=> 'NUMERIC'
 		        )
 		    )
 		);
@@ -360,10 +396,19 @@ function sorting_by_product_price_range() { ?>
 
 		<?php }} ?>
 
-		<?php wp_reset_query(); ?>
+		<?php wp_reset_query(); 
 
-	<?php
-
+		if (isset($_POST['page'])) { ''; } else { ?>
+		
+		<div class="load-more-container text-center">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="price" data-link="<?php echo admin_url('admin-ajax.php')?>">
+				<i class="icon-lightbulb-o"></i>&nbsp;
+				Show More
+			</a>
+		<?php } ?>
+		</div>
+		<?php }
 	} 
 
 	die();
@@ -383,6 +428,8 @@ function filter_by_color() { ?>
 	<?php // Search By Tag
 	if (isset($_POST['color'])) {
 
+		if (isset($_POST['page'])) { $paged = $_POST['page']+1; } else { $paged = 1; }
+
 		$color = $_POST['color']; 
 
 		/* Filter Query Here
@@ -395,9 +442,10 @@ function filter_by_color() { ?>
 		$args = array(
 		    'post_type'      => 'product',
 		    'post_status'    => 'any',
-		    'posts_per_page' => -1,
+		    'posts_per_page' => 9,
 		    'orderby'        => 'title',
 		    'order'          => 'ASC',
+		    'paged' 			=> $paged,
 		    'tax_query'      => array(
 		        array(
 		            'taxonomy' => 'pa_' . $attribute_name,
@@ -416,6 +464,19 @@ function filter_by_color() { ?>
 
 		/* End Of Filter Here
 		-----------------------*/
+
+		if (isset($_POST['page'])) { ''; } else { ?>
+		
+		<div class="load-more-container text-center">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="color" data-link="<?php echo admin_url('admin-ajax.php')?>">
+				<i class="icon-lightbulb-o"></i>&nbsp;
+				Show More
+			</a>
+		<?php } ?>
+		</div>
+		<?php }
+
 	} 
 
 	die();
@@ -435,8 +496,9 @@ function filter_by_date2() { ?>
 	<?php // Search By Tag
 	if (isset($_POST['date'])) {
 
+		if (isset($_POST['page'])) { $paged = $_POST['page']+1; } else { $paged = 1; }
+
 		$date = $_POST['date'];
-		$date__ = $_POST['date__'];
 
 		/* Filter Query Here
 		-----------------------*/
@@ -502,9 +564,10 @@ function filter_by_date2() { ?>
 		$args = array(
 		    'post_type'      => 'product',
 		    'post_status'    => 'any',
-		    'posts_per_page' => -1,
+		    'posts_per_page' => 1,
 		    'orderby'        => 'date',
 		    'order'          => 'DESC',
+		    'paged' 		 => $paged,
 		    'date_query' => $queryDate
 		);
 		$loop = new WP_Query( $args );
@@ -517,6 +580,18 @@ function filter_by_date2() { ?>
 
 		/* End Of Filter Here
 		-----------------------*/
+
+		if (isset($_POST['page'])) { ''; } else { ?>
+		
+		<div class="load-more-container text-center">
+		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="date2" data-link="<?php echo admin_url('admin-ajax.php')?>">
+				<i class="icon-lightbulb-o"></i>&nbsp;
+				Show More
+			</a>
+		<?php } ?>
+		</div>
+		<?php }
 	} 
 
 	die();

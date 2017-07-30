@@ -3,9 +3,9 @@
  * @name jquery.skitter.js
  * @description Slideshow
  * @author Thiago Silva Ferreira - http://thiagosf.net
- * @version 5.0.0
+ * @version 5.0.3
  * @created August 04, 2010
- * @updated June 25, 2016
+ * @updated May 26, 2017
  * @copyright (c) 2010 Thiago Silva Ferreira - http://thiagosf.net
  * @license Dual licensed under the MIT or GPL Version 2 licenses
  * @example http://thiagosf.net/projects/jquery/skitter/
@@ -450,7 +450,6 @@
         self.skitter_box.find('.scroll_thumbs').css({'left':10});
         
         if (width_info_slide < self.settings.width_skitter) {
-          self.skitter_box.find('.info_slide').width('auto');
           self.skitter_box.find('.box_scroll_thumbs').hide();
           
           var class_info = '.info_slide';
@@ -635,13 +634,13 @@
         var src = self.getImageName(self_il[0]);
         var img = new Image();
         
-        $(img).load(function () {
+        $(img).on('load', function () {
           ++u;
           if (u == total) {
             self.skitter_box.find('.skitter-spinner').remove();
             self.start();
           }
-        }).error(function () {
+        }).on('error', function () {
           self.skitter_box.find('.skitter-spinner, .image_number, .next_button, .prev_button').remove();
           self.skitter_box.html('<p style="color:white;background:black;">Error loading images. One or more images were not found.</p>');
         }).attr('src', src);
@@ -2635,7 +2634,21 @@
             break;
 
           case 'fixed' : 
-            // null
+            self.skitter_box.find('.label_skitter').animate({
+              opacity: '1',
+              top: 10
+            }, 300, function() {
+              self.skitter_box.find('.test-title').css({
+                    'transform': 'rotateX(0deg)',
+                    'opacity' : '1'
+              });
+              self.skitter_box.find('span.cat-pubble').delay(500).animate({
+                top: '-10px',
+                opacity: 1},
+                400, function() {
+                /* stuff to do after animation is complete */
+              });
+            });
             break;
         }
       }
@@ -2662,6 +2675,21 @@
           break;
 
         case 'fixed' : 
+            self.skitter_box.find('.label_skitter').animate({
+              opacity: '0',
+              top: 0
+            },600, function() {
+              self.skitter_box.find('.test-title').css({
+                'transform': 'rotateX(90deg)',
+                'opacity' : '0'
+              });
+              self.skitter_box.find('span.cat-pubble').delay(500).animate({
+                top: '10px',
+                opacity: 0},
+                0, function() {
+                /* stuff to do after animation is complete */
+              });
+            });
           self.setValueBoxText();
           break;
       }
@@ -2863,8 +2891,8 @@
         if (code == 27) $('#overlay_skitter').trigger('click');
       });
 
-      var _top = $('.skitter_box').offset().top;
-      var _left = $('.skitter_box').offset().left;
+      var _top = self.skitter_box.offset().top;
+      var _left = self.skitter_box.offset().left;
       
       self.skitter_box.find('.focus_button').click(function() {
         if ( self.settings.foucs_active ) return false;
@@ -2877,8 +2905,8 @@
           .hide()
           .fadeTo(self.settings.interval_in_elements, 0.98);
           
-        var _topFinal = (($(window).height() - $('.skitter_box').height()) / 2) + $(document).scrollTop();
-        var _leftFinal = ($(window).width() - $('.skitter_box').width()) / 2;
+        var _topFinal = (($(window).height() - self.skitter_box.height()) / 2) + $(document).scrollTop();
+        var _leftFinal = ($(window).width() - self.skitter_box.width()) / 2;
         
         self.skitter_box.before('<div id="mark_position"></div>');
         $('body').prepend(div);
@@ -2888,8 +2916,8 @@
           .animate({'top':_topFinal, 'left':_leftFinal}, 2000, 'easeOutExpo');
         
         $('#mark_position') 
-          .width($('.skitter_box').width())
-          .height($('.skitter_box').height())
+          .width(self.skitter_box.width())
+          .height(self.skitter_box.height())
           .css({'background':'none'})
           .fadeTo(300,0.3);
         

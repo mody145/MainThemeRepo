@@ -95,9 +95,9 @@ foreach ($comments as $comment) { ?>
 		<?php
 
 		$args = array(
-			'comment_field' 		=> '<textarea name="comment" class="form-control" rows="5"></textarea>',
+			'comment_field' 		=> '<div class="container-textarea"><div class="avatar-comment hidden-xs"><img src="http://placehold.it/80x80/ddd"></div><textarea name="comment" class="form-control" rows="5"></textarea></div>',
 			'submit_button' 		=> '<div class="submit-button"><input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary" value="Send Comment" /></div>',
-			'title_reply'   		=> '<h4><i class="icon-comment-circle"></i>&nbsp; Leave Comment</h4>',
+			'title_reply'   		=> '',
 			'comment_notes_before' 	=> '',
 			'logged_in_as' 			=> '',
 			'fields' 		=> array(

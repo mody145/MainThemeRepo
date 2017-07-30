@@ -16,45 +16,44 @@
 =======================================*/
 
 .spinner1 {
-  margin: 100px auto 0;
-  width: 70px;
-  text-align: center;
+    margin: 100px auto 0;
+    width: 70px;
+    text-align: center;
 }
 
 .spinner1 > div {
-  width: 18px;
-  height: 18px;
-  background-color: $color2;
-
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    width: 18px;
+    height: 18px;
+    background-color: $color2;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 
 .spinner1 .bounce1 {
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
 }
 
 .spinner1 .bounce2 {
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
 }
 
 @-webkit-keyframes sk-bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0) }
-  40% { -webkit-transform: scale(1.0) }
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% { 
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  } 40% { 
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-  }
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
 }
 
 /*=====  End of Spinner Loading  ======*/
@@ -71,12 +70,12 @@
     height: 100%;
     z-index: 1000;
 
-  span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /*=====  End of Small Loading  ======*/
@@ -87,32 +86,48 @@
 
 .all-posts-blog {
 
-  .malinky-ajax-pagination-loading {
-      opacity: .9;
-      position: absolute !important;
-      top: -5px !important;
-      left: 0px !important;
-      width: calc(100% - 10px);
-      height: calc(100% - 70px);
-      background: $color5;
-      display: none;
-      animation: loadingPagination 6s linear infinite;
-  }
+    .malinky-ajax-pagination-loading {
+        opacity: .9;
+        position: absolute !important;
+        top: -5px !important;
+        left: 0px !important;
+        width: calc(100% - 10px);
+        height: calc(100% - 70px);
+        background: $color5;
+        display: none;
+        animation: loadingPagination 6s linear infinite;
+        z-index: 10;
+    }
 
-  @keyframes loadingPagination {
+    @media (max-width: 767px){
+        .malinky-ajax-pagination-loading  {
+            z-index: 10;
+            margin: 0 !important;
+            width: 100% !important;
+            height: calc(100% - 40px) !important;
+        }
+    }
 
-      0% {
-          background: $color5;
-      }
+    @media (min-width: 768px) and (max-width: 991px){
+        .malinky-ajax-pagination-loading {
+            height: calc(100% - 55px);
+        }
+    }
 
-      50% {
-          background: $color6;
-      }
+    @keyframes loadingPagination {
 
-      100% {
-          background: $color5;
-      }
-  }
+        0% {
+            background: $color5;
+        }
+
+        50% {
+            background: $color6;
+        }
+
+        100% {
+            background: $color5;
+        }
+    }
 }
 
 /*=====  End of Modify Icon Paginaition  ======*/
@@ -124,38 +139,42 @@
 .parent_spinner {
     margin: 5px auto;
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loading__spinner {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
 }
 .loading__spinner__one {
-  border-right: 4px solid $color5;
-  -webkit-animation: rotate .7s linear infinite;
-          animation: rotate .7s linear infinite;
+    border-right: 4px solid $color5;
+    -webkit-animation: rotate .7s linear infinite;
+    animation: rotate .7s linear infinite;
 }
 @-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    }
+    @keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 /*=====  End of Section Loading One  ======*/
@@ -165,25 +184,23 @@
 ===========================================*/
 /* <div class="spinner"></div> */
 .spinner {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  border: 2px solid $color5;
-  border-top-color: transparent;
-  animation: lai-spinnair 1s linear infinite;
-  box-sizing: border-box;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid $color5;
+    border-top-color: transparent;
+    animation: lai-spinnair .5s linear infinite;
+    box-sizing: border-box;
 }
 
 @keyframes lai-spinnair {
-  0% {
-    transform: rotateZ(0);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 
 /*=====  End of Section Loading Two  ======*/
@@ -225,55 +242,55 @@ span#counter3 i {
 .loader3,
 .loader3 span,
 .spinner3 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -100px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
 }
 .loader3 span {
-  line-height: 200px;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,0);
-  text-shadow: 0 0 0 rgb(255, 240, 196), 0 0 2px #ffb900, 0 0 4px #ffb900, 0 0 6px #ffb900, 0 0 8px #ffb900, 0 0 10px #ffb900;
+    line-height: 200px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0);
+    text-shadow: 0 0 0 rgb(255, 240, 196), 0 0 2px #ffb900, 0 0 4px #ffb900, 0 0 6px #ffb900, 0 0 8px #ffb900, 0 0 10px #ffb900;
 }
 .spinner3 {
-  border-radius: 50%;
-  box-shadow: 3px 0 1px -1px #ffb900, 5px 0 5px rgba(255, 185, 0, 0.7), inset -10px 0 10px -5px rgba(255, 185, 0, 0.42);
-  -webkit-animation: loading 1s linear infinite;
-          animation: loading 1s linear infinite;
+    border-radius: 50%;
+    box-shadow: 3px 0 1px -1px #ffb900, 5px 0 5px rgba(255, 185, 0, 0.7), inset -10px 0 10px -5px rgba(255, 185, 0, 0.42);
+    -webkit-animation: loading 1s linear infinite;
+    animation: loading 1s linear infinite;
 }
 .spinner3:before {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  margin: 10% 0 0 10%;
-  border-radius: 50%;
-  content: " ";
-  box-shadow: 3px 0 1px -1px rgba(255, 185, 0, 0.68), 5px 0 5px rgba(255, 185, 0, 0.51), inset -10px 0 10px -5px rgba(255, 185, 0, 0.18);
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    margin: 10% 0 0 10%;
+    border-radius: 50%;
+    content: " ";
+    box-shadow: 3px 0 1px -1px rgba(255, 185, 0, 0.68), 5px 0 5px rgba(255, 185, 0, 0.51), inset -10px 0 10px -5px rgba(255, 185, 0, 0.18);
 }
 @-webkit-keyframes loading {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 @keyframes loading {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 /*=====  End of Main Spinner Loading  ======*/
@@ -288,25 +305,25 @@ span#counter3 i {
   </div> */
 
 div.parent_spinner10 {
-  width: 100px;
+    width: 100px;
 }
 
 .line_spinner10 {
-  border: 1px solid #fff;
+    border: 1px solid #fff;
 }
 
 .counter_spinner10 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, .2);
-  width: 30px;
-  height: 30px;
-  margin: 5px auto;
-  border-radius: 50%;
-  font-size: 10px;
-  font-family: 'Roboto', arial;
-  color: $color2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .2);
+    width: 30px;
+    height: 30px;
+    margin: 5px auto;
+    border-radius: 50%;
+    font-size: 10px;
+    font-family: 'Roboto', arial;
+    color: $color2;
 }
 
 /*=====  End of Spinner With Counter  ======*/
@@ -316,21 +333,21 @@ div.parent_spinner10 {
 ===========================================*/
 
 .ovlay-loading {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.00, #ffb900), color-stop(1.0, #1aafd0));
-  transition: all .5s ease;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.00, #ffb900), color-stop(1.0, #1aafd0));
+    transition: all .5s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  > div {
-    border: 2px solid $color2 !important;
-    border-top-color: transparent !important;
-  }
+    > div {
+        border: 2px solid $color2 !important;
+        border-top-color: transparent !important;
+    }
 }
 
 

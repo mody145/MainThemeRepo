@@ -167,7 +167,7 @@ function queick_view_windows() {
 
 			$reviews = get_comments( $argsReviews ); ?>
 
-				<h3><i class="icon-star"></i>&nbsp; Reviews</h3>
+				<h3 class="feedback-heading "><i class="icon-star"></i>&nbsp; Reviews</h3>
 				<ul class="media-list">
 
 			<?php foreach ($reviews as $review) { ?>

@@ -1,0 +1,64 @@
+.site-header {
+
+	.skitter.with-thumbs {
+	    margin-bottom: 60px;
+	    margin: 0px auto 10px;
+	    width: 100% !important;
+	    max-width: initial;
+	}
+
+	.label_skitter {
+	    background: none;
+	    width: 300px;
+	    height: 150px;
+		top: 10px;
+	    left: 10px;
+	    perspective: 800px;
+	    perspective-origin: top;
+	}
+
+	.test-title {
+	    font-weight: bold;
+	    font-size: 40px;
+	    padding: 5px 10px;
+	    background-color: $color1;
+	    color: #666;
+	    display: inline-block;
+	    transition: all .5s ease-in-out;
+	    margin-bottom: 3px;
+	}
+
+	.label_skitter p {
+	    background-color: $color1;
+	    color: #666;
+	    margin: 10px 0;
+	    margin-bottom: 25px;
+	}
+
+	span.cat-pubble {
+	    background-color: #673AB7;
+	    padding: 5px;
+	    color: #fff;
+	    position: relative;
+
+	    a {
+	    	color: $color2 !important;
+	    }
+	}
+
+	.skitter .prev_button {
+	    width: 42px;
+	    height: 42px;
+	    left: 10px;
+	    top: calc(100% - 30px);
+        opacity: .2;
+	}
+
+	.skitter .next_button {
+	    width: 42px;
+	    height: 42px;
+	    right: 10px;
+	    top: calc(100% - 30px);
+        opacity: .2;
+	}
+}

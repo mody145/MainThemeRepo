@@ -67,6 +67,12 @@
 		}
 	}
 
+	@media (max-width: 767px){
+		form.woocomerce-form.woocommerce-form-login.login {
+			width: 100%;
+		}
+	}
+
 	.woocommerce-MyAccount-content {
 	    padding: $main-padding $main-padding + 5;
 	    margin: $main-margin;

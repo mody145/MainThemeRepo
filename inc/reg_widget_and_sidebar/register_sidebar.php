@@ -66,16 +66,16 @@ add_action('widgets_init', 'ourWidgetsInit_footer3');
 
 /*==========  End of ( Footer3 ) Sidebar  ===========*/
 
-/*==================================================
-=                Register Sidebar          		  =
-==================================================*/
+/*=========================================================
+=                Register Blog Sidebar          		  =
+=========================================================*/
 
 function ourWidgetsInit() {
 
 	register_sidebar(array(
-		'name' 			=> 'Right Sidebar',
+		'name' 			=> 'Main Sidebar',
 		'id' 			=> 'right-sidebar',
-		'description' 	=> 'The Widgets Sidebar Will Be Here At The Right',
+		'description' 	=> 'This Sidebar Will Be At The Blog',
 		'class' 		=> 'right-sidebar-class',
 		'before_widget' => '<div class="custom-sidebar-widget wow fadeIn">',
 		'after_widget' 	=> "</div>\n",
@@ -86,11 +86,53 @@ function ourWidgetsInit() {
 }
 add_action('widgets_init', 'ourWidgetsInit');
 
-/*==========  End of Register Sidebar  ===========*/
+/*==========  End of Register Blog Sidebar  ===========*/
 
-/*=================================================
-=            Section Shop Sidebar Regi            =
-=================================================*/
+/*=========================================================
+=                Register Blog Sidebar          		  =
+=========================================================*/
+
+function ourWidgetsInit_blog() {
+
+	register_sidebar(array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'Blog-sidebar',
+		'description' 	=> 'This Sidebar Will Be At The Blog',
+		'class' 		=> 'right-sidebar-class',
+		'before_widget' => '<div class="custom-sidebar-widget wow fadeIn">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+}
+add_action('widgets_init', 'ourWidgetsInit_blog');
+
+/*==========  End of Register Blog Sidebar  ===========*/
+
+/*=========================================================
+=                Register Post Sidebar          		  =
+=========================================================*/
+
+function ourWidgetsInit_post() {
+
+	register_sidebar(array(
+		'name' 			=> 'Post Sidebar',
+		'id' 			=> 'post-sidebar',
+		'description' 	=> 'This Sidebar Will Be At The Post',
+		'class' 		=> 'right-sidebar-class',
+		'before_widget' => '<div class="custom-sidebar-widget wow fadeIn">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+}
+add_action('widgets_init', 'ourWidgetsInit_post');
+
+/*==========  End of Register Post Sidebar  ===========*/
+
+/*======================================================
+=            Section Register Shop Sidebar             =
+======================================================*/
 
 function ourWidgetsInit_shop() {
 
@@ -107,10 +149,10 @@ function ourWidgetsInit_shop() {
 }
 add_action('widgets_init', 'ourWidgetsInit_shop');
 
-/*=====  End of Section Shop Sidebar Regi  ======*/
+/*=====  End of Section Register Shop Sidebar   ======*/
 
 /*==================================================
-=                Welcome Widget  	          	   =
+=                Welcome sidebar  	          	   =
 ==================================================*/
 
 function ourWidgetsInit_welcome() {
@@ -129,6 +171,6 @@ function ourWidgetsInit_welcome() {
 }
 add_action('widgets_init', 'ourWidgetsInit_welcome');
 
-/*============  End of Welcome Widget  =============*/
+/*============  End of Welcome Sidebar  =============*/
 
 ?>

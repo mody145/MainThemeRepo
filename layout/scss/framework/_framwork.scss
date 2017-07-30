@@ -6,7 +6,31 @@ body {
   overflow: hidden;
 }
 
+.mark {
+    background-color: orange;
+    color: #fff;
+    padding: 0;
+}
+
+.round2 {
+    background-color: #eaeaea;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
 .grid-item-shop { width: 33.3333%; border: 10px solid transparent; }
+
+@media (min-width: 768px) and (max-width: 991px){
+    .grid-item-shop { width: 50%; border: 10px solid transparent; }
+}
+
+@media (max-width: 767px){
+    .grid-item-shop { width: 100%; border: 10px solid transparent; }
+}
+
 .grid-item--width2 { width: 400px; }
 
 .nopadding {

@@ -12,6 +12,11 @@
         padding: $main-padding / 2;
         background-color: $color2;
 
+        &:hover {
+            margin: 0;
+            background-color: #eaeaea;
+        }
+
         a:before {
             content: "\f114";
             font-family: 'icomoon' !important;

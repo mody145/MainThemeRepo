@@ -1,10 +1,23 @@
 /* global $, console */
 jQuery(document).ready(function($) {
 	'use strict';
+
+	var windowWidth = $(window).width(); console.log(windowWidth);
+	var columnWidthShop = 3;
+
+	if (windowWidth <= 850) {
+
+		var columnWidthShop = 2;
+	}
+
+	if (windowWidth <= 767) {
+
+		var columnWidthShop = 1;
+	}
 	
 	var msnry = new Masonry('.grid-shop-products',{
 	itemSelector: '.grid-item-shop',
-	columnWidth: ($('.grid').width() / 3)
+	columnWidth: ($('.grid').width() / columnWidthShop)
 	}); 
 
 	setInterval(function(){
@@ -12,4 +25,5 @@ jQuery(document).ready(function($) {
 	msnry.layout();
 	},500);	
 	console.log('Masonry Add');
+
 });

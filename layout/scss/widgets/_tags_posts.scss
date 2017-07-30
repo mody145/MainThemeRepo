@@ -33,6 +33,20 @@
 		    border: 1px solid $color1;
 		    display: inline-block;
 		    margin: 2px;
+		    transition: all .3s ease-in-out;
+
+		    &:hover {
+		    	background-color: $color7;
+		    }
+
+		    &:hover a {
+		    	color: $color2;
+		    }
+
+		    &:hover i {
+		    	color: $color2;
+		    	opacity: .8;
+		    }
 
 		    i {
 		    	opacity: .2;

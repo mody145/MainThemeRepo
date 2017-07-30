@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <!-- Start Sidebar -->
-<div class="col-md-3 hidden-xs pull-right nopadding wow fadeIn">
-	<?php dynamic_sidebar( 'right-sidebar' ); ?>
+<div class="col-md-3 hidden-sm hidden-xs pull-right nopadding wow fadeIn">
+	<?php dynamic_sidebar( 'Blog-sidebar' ); ?>
 </div><!-- End Sidebar -->
 
 <div class="col-md-9 nopadding wow fadeIn">

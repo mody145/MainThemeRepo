@@ -31,6 +31,21 @@
     padding: $main-padding;
     position: relative;
 
+    .like-container i, .unlike-container i {
+        font-size: 20px;
+        margin-right: 5px;
+        position: relative;
+        top: 3px;
+        display: inline-block;
+        background-color: #08f;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
     span.date-bost {
         background-color: $color2;
         padding: 3px 7px;
@@ -112,6 +127,14 @@
         }
     }
 
+    @media (max-width: 767px){
+        .like-container {
+            height: 39px;
+            top: -45px;
+            right: 15px;
+        }
+    }
+
     p.info_post {
         color: $infoColor;
     }
@@ -136,6 +159,12 @@ ol.comment-list .parent {
     margin-top: $main-margin * 2;
     color: $color2;
 
+    @media (max-width: 767px){
+        .subscribe-container {
+            margin-right: 0;
+        }
+    }
+
     form.es_shortcode_form {
         text-align: center;
         max-height: 100px;
@@ -149,6 +178,12 @@ ol.comment-list .parent {
             padding-top: 0;
             padding-bottom: 0;
             display: inline-block;
+        }
+
+        @media (max-width: 767px){
+            .es_button {
+                margin-top: 10px;
+            }
         }
 
         .es_msg {
@@ -174,6 +209,13 @@ ol.comment-list .parent {
             border: 1px solid #fff;
         }
 
+        @media (max-width: 767px){
+            input#es_txt_email_pg {
+                width: 283px;
+                border-radius: 0;
+            }
+        }
+
         input#es_txt_button_pg {
             padding: $main-padding / 2;
             border: 1px solid rgba(252, 99, 107, 0.84);
@@ -182,12 +224,24 @@ ol.comment-list .parent {
             border-bottom-right-radius: 5px;
             border-top-right-radius: 5px;
         }
+
+        @media (max-width: 767px){
+            input#es_txt_button_pg {
+                border-radius: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .subscribe-container {
+        margin: 20px 0;
     }
 }
 
 h3.related-posts {
     background-color: #fff;
     padding: 10px;
-    margin: 10px 10px;
+    margin: 10px !important;
     font-size: 20px;
 }

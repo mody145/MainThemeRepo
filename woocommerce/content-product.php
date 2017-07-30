@@ -115,7 +115,7 @@
 				=            Section Queck View Product            =
 				=================================================-->
 				
-				<div class="queck-view-container">
+				<div class="queck-view-container hidden-xs">
 					<a href="#" id="queck_view_button" data-id="<?php echo $product->get_id() ?>">
 						<i class="icons-option icon-magnifier"></i>
 					</a>
@@ -133,8 +133,8 @@
 					<p class="decsription"><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 70) . ' ... <a href="' . get_the_permalink() . '">Read More</a>'; ?></p>
 					<p class="info-for-the-post text-center">
 
-						<i class="icon-thumbs-o-up"> </i> <span class="round-info-span"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?> </span>
-						&nbsp;<i class="icon-bubble"> </i> <span class="round-info-span"><?php echo comments_number( '0', '1', '%' ); ?></span>
+						<i class="icon-thumbs-o-up"> </i> <span class="round-info-span count_likes_here"><?php get_meta_value_if_exists( get_the_id(), 'likes' ); ?> </span>
+						&nbsp;<i class="icon-bubble"> </i> <span class="round-info-span"><?php echo get_comments_number( $product->get_id() ); ?></span>
 						&nbsp;<i class="icon-fire"> </i><span class="round-info-span"> <?php get_meta_value_if_exists( get_the_id(), 'views' ); ?></span>
 
 						&nbsp;<i class="icon-clock-o"></i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
