@@ -35,7 +35,7 @@ $commentsProduct = get_comments( array(
 			<li>
 				<div class="comment-main-level">
 					<!-- Avatar -->
-					<div class="comment-avatar"><?php echo get_avatar( $comment->comment_author_email, 80, 'http://placehold.it/80x80/ddd' ); ?></div>
+					<div class="comment-avatar"><?php echo get_avatar( $comment->comment_author_email, 80 ); ?></div>
 					<!-- Comment Box -->
 					<div class="comment-box">
 						<div class="comment-head">

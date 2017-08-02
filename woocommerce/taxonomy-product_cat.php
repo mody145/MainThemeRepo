@@ -85,7 +85,9 @@ if (is_product_category()) {
 
 					<?php echo '<div class="custom-pagination">';
 							echo paginate_links(array(
-							'total' => $query->max_num_pages
+							'total' => $query->max_num_pages,
+							'prev_text' => '<i class="icon-chevron-left2"></i>',
+							'next_text' => '<i class="icon-chevron-right2"></i>'
 				 			));
 						echo '</div>'; ?>
 				</div>

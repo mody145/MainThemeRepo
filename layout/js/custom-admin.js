@@ -12,6 +12,8 @@ jQuery(document).ready(function($) {
 
 		e.preventDefault();
 
+		var that = $(this);
+
 		var imageUploader = wp.media({
 			'title' 	: 'Upload Author Image',
 			'button' 	: { 'Text' : 'Set The Image' },
@@ -26,9 +28,9 @@ jQuery(document).ready(function($) {
 
 			var link 	= image.url;
 
-			$('input.image_er_link').val(link);
+			that.parent().find('input.image_er_link').val(link);
 
-			$('.show_image img').attr('src', link);
+			that.parent().parent().find('.show_image img').attr('src', link);
 
 		});
 	});

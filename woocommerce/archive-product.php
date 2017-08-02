@@ -1,43 +1,6 @@
 <?php session_start(); ?>
 <?php get_header(); ?>
 
-<!-- Upperbar -->
-<div class="col-md-12 nopadding wow fadeIn">
-	<!-- Start Upper bar In Shop -->
-	<div class="upper-bar-woo-shop">
-
-		<div class="col-md-6 nopadding">
-				<?php add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' ); ?>
-				<?php 
-				// Modify breadcrumb
-				function jk_woocommerce_breadcrumbs() {
-				    return array(
-				            'delimiter'   => '&nbsp;<i class="icon-angle-double-right"></i>&nbsp;',
-				            'wrap_before' => '<p class="path-shop" itemprop="breadcrumb">',
-				            'wrap_after'  => '</p>',
-				            'before'      => '',
-				            'after'       => '',
-				            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-				        );
-				}
-				//Creat Custom breadcrumb
-				function woocommerce_custom_breadcrumb(){
-				    woocommerce_breadcrumb();
-				}
-				add_action( 'woo_my_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
-				do_action('woo_my_custom_breadcrumb'); ?>
-		</div>
-		<?php print_r($sub_category) ?>
-		<!-- Show Count Result -->
-		<div class="col-md-6 hidden-sm hidden-xs nopadding">
-			<p class="woocommerce-result-count">&nbsp;
-
-			</p>
-		</div><!-- Show Count Result -->
-
-	</div><!-- End Upper bar In Shop -->
-</div><!-- Upperbar -->
-
 <!-- Start Filter Products -->
 <div class="col-md-12 nopadding wow fadeIn">
 	<!-- Start Conatiner Filter -->

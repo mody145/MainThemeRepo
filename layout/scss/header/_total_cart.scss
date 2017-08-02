@@ -63,7 +63,8 @@
 
         span.click-here {
             position: absolute;
-            right: 25px;
+            right: 94px;
+            top: -35px;
             font-size: 30px;
             top: -3px;
             color: #6a67ce;
@@ -72,17 +73,17 @@
 
         @keyframes clickHere {
             0% {
-                right: 25px;
+                top: -35px;
                 opacity: .5;
             }
 
             50% {
-                right: 10px;
+                top: -30px;
                 opacity: 1;
             }
 
             100% {
-                right: 25px;
+                top: -35px;
                 opacity: .5;
             }
         }
@@ -126,7 +127,10 @@
 
                 span.text-center.convert_result {
                     font-size: $font-size - 5;
-                    color: $infoColor;
+                    color: #555;
+                    padding: 10px 0;
+                    font-weight: bold;
+                    font-family: 'roboto';
                 }
             }
 
@@ -171,6 +175,10 @@
                 background-color: rgba(234, 234, 234, 0.77) !important;
                 color: #717171;
             }
+        }
+
+        button {
+            margin-top: 15px;
         }
     }
 }

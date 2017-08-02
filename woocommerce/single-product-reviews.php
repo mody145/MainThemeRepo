@@ -113,7 +113,10 @@ if ( ! comments_open() ) {
 								</select></div>';
 							}
 
-							$comment_form['comment_field'] .= '<div class="container-textarea"><div class="avatar-comment"><img src="http://placehold.it/80x80/ddd"></div><textarea name="comment" class="form-control" rows="5"></textarea></div>';
+							$avatarImg = '';
+							if ( is_user_logged_in() ) { $avatarImg = get_avatar_url( $children->comment_author_email ); } else { $avatarImg = 'http://placehold.it/80x80/ddd'; }
+
+							$comment_form['comment_field'] .= '<div class="container-textarea"><div class="avatar-comment"><img src="' . $avatarImg . '"></div><textarea name="comment" class="form-control" rows="5"></textarea></div>';
 
 							comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 						?>

@@ -102,13 +102,15 @@
 
 		<!-- Header Here -->
 
-		<div class="col-md-12 nopadding hidden-xs">
-		<?php if ( is_home() ) {  ?>
-			<header class="site-header">
+		<div id="headToggile" class="col-md-12 nopadding hidden-xs parent_hide_show">
 
-                <div class="skitter-large-box">
-                    <div class="skitter skitter-large-for-header with-thumbs">
-                        <ul>
+		<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' ) { ?>
+			<header class="site-header">
+				<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
+
+		        <div class="skitter-large-box">
+		            <div class="skitter skitter-large-for-header with-thumbs">
+		                <ul>
 							<?php 
 
 							/* --||  Start Loop (WP-Query)  ||-- */
@@ -131,31 +133,105 @@
 								while ($slides->have_posts()) {
 									$slides->the_post(); ?>
 
-                            <li>
-                                <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
-                                </a>
-                                <div class="label_text">
-                                    <h3 class="test-title"><?php the_title(); ?></h3>
-                                    <?php the_content(); ?>
-                                    <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
-                                </div>
-                            </li>
+		                    <li>
+		                        <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
+		                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
+		                        </a>
+		                        <div class="label_text">
+		                            <h3 class="test-title"><?php the_title(); ?></h3>
+		                            <?php the_content(); ?>
+		                            <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
+		                        </div>
+		                    </li>
 
 							<!--||  End Loop (WP-QUery)  ||-->
 							<?php }} ?>
 							<?php wp_reset_postdata(); ?>	
 
-                        </ul>
-                    </div>
-                </div>
+		                </ul>
+		            </div>
+		        </div>
 
 			</header>
+		<?php } elseif ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'small' ) { ?>
+			<div class="small-header parent_hide_show">
+
+				<div class="container-img-header">
+					<div class="overlay"></div>
+
+					<?php 
+
+					$urlImage = get_template_directory_uri() . '/layout/images/header/';
+					$ImagesArray = array('1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', );
+					$random_image = array_rand($ImagesArray);
+
+					?>
+					<img src="<?php echo $urlImage . $ImagesArray[$random_image]; ?>" class="">
+				</div>
+
+				<?php if ( is_home() ) { ?>
+				<i class="icon-show-two toggel-opacity hide_item reload_again" style="font-size: 21px !important;" data-toggle="tooltip" data-placement="top" title="Reload Slider"></i>
+				<?php } ?>
+				<?php dynamic_sidebar( 'advertise_here' ); ?>
+			</div>
 		<?php } else { ?>
 
-		<div class="small-header">
-			<img src="http://placehold.it/500x100/ddd" class="ads-here">
-		</div>
+			<?php if ( is_home() ) {  ?>
+				<header class="site-header">
+					<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
+
+	                <div class="skitter-large-box">
+	                    <div class="skitter skitter-large-for-header with-thumbs">
+	                        <ul>
+								<?php 
+
+								/* --||  Start Loop (WP-Query)  ||-- */
+
+								$args = array(
+									'post_type' 	=> 'slider',
+									'post_per_post' => 10,
+								    'tax_query' => array(
+								        array(
+								            'taxonomy' => 'wich_slider',
+								            'field'    => 'slug',
+								            'terms'    => 'header-slider',
+								        ),
+								    ),
+								);
+								
+								$slides = new WP_Query($args);
+
+								if ($slides->have_posts()) {
+									while ($slides->have_posts()) {
+										$slides->the_post(); ?>
+
+	                            <li>
+	                                <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
+	                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
+	                                </a>
+	                                <div class="label_text">
+	                                    <h3 class="test-title"><?php the_title(); ?></h3>
+	                                    <?php the_content(); ?>
+	                                    <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
+	                                </div>
+	                            </li>
+
+								<!--||  End Loop (WP-QUery)  ||-->
+								<?php }} ?>
+								<?php wp_reset_postdata(); ?>	
+
+	                        </ul>
+	                    </div>
+	                </div>
+
+				</header>
+			<?php } else { ?>
+
+			<div class="small-header">
+				<?php dynamic_sidebar( 'advertise_here' ); ?>
+			</div>
+
+			<?php } ?>
 
 		<?php } ?>
 		</div>
@@ -195,8 +271,8 @@
 			<!-- Start Brand Here -->
 
 			<div class="col-md-3 col-sm-6 nopadding hidden-xs" style="position: static;">
-				<div class="brand-name <?php if ( is_home() ) { echo 'transparent'; } else { echo 'not-home'; } ?> wow fadeIn">
-					<a href="<?php echo home_url(); ?>">Brand Name</a>
+				<div class="brand-name transparent wow fadeIn">
+					<a href="<?php echo home_url(); ?>"><i class="icon-logo-1"></i></a>
 				</div>
 			</div>
 
@@ -231,7 +307,7 @@
 					</div>
 
 					<div class="col-md-6 col-sm-6 nopadding">
-						<div class="search-in-header wow fadeIn" data-toggle="tooltip" data-placement="bottom" title="Click To FullScrean Search">&nbsp;
+						<div class="search-in-header wow fadeIn">&nbsp;
 							<i class="icon-search"></i>
 						</div>
 					</div>
@@ -276,8 +352,8 @@
 									<?php } ?>
 
 									<div class="buttons">
-										<a class="text-center" href="<?php echo home_url( 'checkout' ); ?>"><button class="btn btn-default btn-sm">Checkout</button></a>
-										<a class="text-center" href="<?php echo home_url( 'cart' ); ?>"><button class="btn btn-default btn-sm">Cart Page</button></a>
+										<a class="text-center" href="<?php echo home_url( 'checkout' ); ?>"><button class="btn btn-primary btn-sm">Checkout</button></a>
+										<a class="text-center" href="<?php echo home_url( 'cart' ); ?>"><button class="btn btn-primary btn-sm">Cart Page</button></a>
 									</div>
 
 								<?php } ?>
@@ -287,7 +363,7 @@
 						<span class="calc-total round2">
 							<i class="icon-cog4"></i>
 							<span class="calc-total-box-dropdown">
-							<span class="select-country text-center"><i class="icon-flag-o"></i>&nbsp; Select Your Country [Auto Save]</span>
+							<span class="select-country text-center"><i class="icon-flag-o"></i>&nbsp; Select Your Country</span>
 								<form class="Convert_Form" action="<?php echo admin_url('admin-ajax.php')?>">
 									<select class="convert">
 										<?php global $Currency;
@@ -299,8 +375,8 @@
 
 								<?php if (isset($_COOKIE['Country_Currency'])) { ?>
 
-								<a id="save_country" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-default btn-sm" data-country="<?php echo $_COOKIE['Country_Currency']; ?>">Calc By&nbsp;-&nbsp;<?php echo $_COOKIE['Country_Currency']; ?></a>
-								<a id="remove_cookie" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-default btn-sm">Remove</a>
+								<a id="save_country" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-primary btn-sm" data-country="<?php echo $_COOKIE['Country_Currency']; ?>">Calc By&nbsp;-&nbsp;<?php echo $_COOKIE['Country_Currency']; ?></a>
+								<a id="remove_cookie" href="<?php echo admin_url('admin-ajax.php')?>" class="btn btn-primary btn-sm">Remove</a>
 
 								<?php } ?>
 
@@ -336,7 +412,7 @@
 									<?php }} ?>
 
 									<div class="buttons">
-										<a class="text-center" href="<?php echo home_url( 'wishlist' ); ?>"><button class="btn btn-default btn-sm btn-block">Whitelist Page</button></a>
+										<a class="text-center" href="<?php echo home_url( 'wishlist' ); ?>"><button class="btn btn-primary btn-sm btn-block">Whitelist Page</button></a>
 									</div>
 
 								<?php } ?>

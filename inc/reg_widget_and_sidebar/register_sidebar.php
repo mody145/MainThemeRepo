@@ -173,4 +173,26 @@ add_action('widgets_init', 'ourWidgetsInit_welcome');
 
 /*============  End of Welcome Sidebar  =============*/
 
+/*==================================================
+=                advertise here  	          	   =
+==================================================*/
+
+function ourWidgetsInit_advertise_here() {
+
+	register_sidebar(array(
+		'name' 			=> 'advertise here',
+		'id' 			=> 'advertise_here',
+		'description' 	=> 'The Widget To Show Ads In Header',
+		'class' 		=> 'advertise_here',
+		'before_widget' => '<div class="custom-widget-advertise-here">',
+		'after_widget' 	=> "</div>\n",
+		'before_title' 	=> '<h4>',
+		'after_title' 	=> "</h4>\n",
+		));
+
+}
+add_action('widgets_init', 'ourWidgetsInit_advertise_here');
+
+/*============  End of Welcome advertise here  =============*/
+
 ?>

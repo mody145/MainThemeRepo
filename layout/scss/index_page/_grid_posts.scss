@@ -8,7 +8,7 @@
         margin-left: 0;
         margin-right: 0;
         padding: $main-padding;
-        margin-bottom: -$main-margin;
+        border-bottom: 2px solid #1aafd0;
 
         .Sorting_grid {
             padding: 3px;
@@ -39,7 +39,6 @@
     
     .services-container-box {
         background-color: $color2;
-        padding: $main-padding;
         overflow: hidden;
         position: relative;
 

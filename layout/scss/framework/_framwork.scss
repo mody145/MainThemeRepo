@@ -12,6 +12,19 @@ body {
     padding: 0;
 }
 
+.toggel-opacity {
+    opacity: .5;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.rotate--90 {
+    transform: rotate(-90deg);
+}
+
 .round2 {
     background-color: #eaeaea;
     display: inline-block;

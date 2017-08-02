@@ -1,3 +1,20 @@
+.parent_hide_show {
+	
+	.hide_item {
+	    position: absolute;
+	    z-index: 5;
+	    top: 50%;
+	    left: -26px;
+	    font-size: 30px;
+	    cursor: pointer;
+	}
+
+	.reload_again {
+	    font-size: 21px !important;
+	    left: -30px !important;
+	}
+}
+
 .site-header {
 
 	.skitter.with-thumbs {
@@ -51,7 +68,7 @@
 	    height: 42px;
 	    left: 10px;
 	    top: calc(100% - 30px);
-        opacity: .2;
+        opacity: .0;
 	}
 
 	.skitter .next_button {
@@ -59,6 +76,14 @@
 	    height: 42px;
 	    right: 10px;
 	    top: calc(100% - 30px);
-        opacity: .2;
+        opacity: .0;
+	}
+
+	&:hover .prev_button {
+		opacity: .2;
+	}
+
+	&:hover .next_button {
+		opacity: .2;
 	}
 }

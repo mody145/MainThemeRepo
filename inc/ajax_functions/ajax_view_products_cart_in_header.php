@@ -23,8 +23,8 @@ function view_products_in_cart() {
 		<?php } ?>
 
 		<div class="buttons">
-			<a class="text-center" href="<?php echo home_url( 'checkout' ); ?>"><button class="btn btn-default btn-sm">Checkout</button></a>
-			<a class="text-center" href="<?php echo home_url( 'cart' ); ?>"><button class="btn btn-default btn-sm">Cart Page</button></a>
+			<a class="text-center" href="<?php echo home_url( 'checkout' ); ?>"><button class="btn btn-primary btn-sm">Checkout</button></a>
+			<a class="text-center" href="<?php echo home_url( 'cart' ); ?>"><button class="btn btn-primary btn-sm">Cart Page</button></a>
 		</div>
 
 	<?php } 

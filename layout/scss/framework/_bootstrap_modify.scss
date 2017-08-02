@@ -55,33 +55,43 @@ input.form-control {
 }
 
 .btn-primary {
-    border-radius: 3px;
+    border-radius: 2px;
     border: 0;
-    color: $color2 !important;
+    color: #ffffff !important;
     background-color: $green;
+    border-bottom: 4px solid darken($green, 10);
+    font-family: roboto,tahoma,arial;
+    font-weight: bold;
+    font-size: 13px;
 
     &:hover {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 
     &:focus {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 
     &:active {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 
     &:visited {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 
     &::active:focus {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 
     &::active:hover {
-        background-color: #38ab21;
+        background-color: $green;
+        border-bottom: 4px solid darken($green, 20);
     }
 }
 
@@ -94,15 +104,62 @@ input.form-control {
 .open>.dropdown-toggle.btn-primary.focus, 
 .open>.dropdown-toggle.btn-primary:focus, 
 .open>.dropdown-toggle.btn-primary:hover {
-    background-color: #38ab21;
+    background-color: $green;
+    border-bottom: 4px solid darken($green, 20);
 }
 
-.btn-success {
-    color: #24292e;
-    border: 1px solid rgba(27,31,35,0.2);
+.btn-info {
+    border-radius: 2px;
+    border: 0;
+    color: #ffffff !important;
+    background-color: $blue;
+    border-bottom: 4px solid darken($blue, 10);
+    font-family: roboto,tahoma,arial;
     font-weight: bold;
-    background-color: #eff3f6;
-    background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+    font-size: 13px;
+
+    &:hover {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+
+    &:focus {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+
+    &:active {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+
+    &:visited {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+
+    &::active:focus {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+
+    &::active:hover {
+        background-color: $blue;
+        border-bottom: 4px solid darken($blue, 20);
+    }
+}
+
+.btn-info.active.focus, 
+.btn-info.active:focus, 
+.btn-info.active:hover, 
+.btn-info:active.focus, 
+.btn-info:active:focus, 
+.btn-info:active:hover, 
+.open>.dropdown-toggle.btn-info.focus, 
+.open>.dropdown-toggle.btn-info:focus, 
+.open>.dropdown-toggle.btn-info:hover {
+    background-color: $blue;
+    border-bottom: 4px solid darken($blue, 20);
 }
 
 .carousel-caption {

@@ -1143,7 +1143,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {Country_Currency : Country_Currency, price_All : price_All, action: 'calc_all_value_cart'},
 			beforeSend: function() {
-				$('.convert_result').html('<i class="fa fa-spinner fa-pulse"></i>'); }
+				$('.convert_result').html('<div class="spinner"></div>'); }
 		})
 		.done(function(data) {
 			$('.convert_result').html(data);
@@ -1156,7 +1156,7 @@ jQuery(document).ready(function($) {
 				dataType: 'html',
 				data: {Country_Currency : Country_Currency, price : price, action: 'get_price_by_currency'},
 				beforeSend: function() {
-				note.html('<i class="fa fa-spinner fa-pulse"></i>'); }
+				note.html('<div class="spinner"></div>'); }
 			})
 			.done(function(data) {
 				note.html(data);
@@ -1194,7 +1194,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {country: country, action: 'calc_all_value_cart'},
 			beforeSend: function() {
-				$('.convert_result').html('<i class="fa fa-spinner fa-pulse"></i>');
+				$('.convert_result').html('<div class="spinner"></div>');
 			}
 		})
 		.done(function(data) {
@@ -1940,5 +1940,173 @@ jQuery(document).ready(function($) {
 	});
 
 	/*=====  End of Section Add Like Button To ( Arshive )  ======*/	
+
+	/*==============================================================
+	=            Section Set COOKIE Do not Reload Again            =
+	==============================================================*/
 	
+	$('body').on('click', '.dont_reload_again', function(event) {
+
+		var that = $(this);
+		var header = $('header.site-header');
+		var parentHead = $('#headToggile');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {dont_reload: 'dont_reload', action: 'dont_reload_again'},
+			beforeSend: function() {
+				that.attr('class', 'fa fa-spinner fa-spin hide_item');
+				that.attr('style', 'font-size: 18px !important;');
+			}
+		})
+		.done(function(data) {
+			that.attr('class', 'icon-show-two hide_item reload_again');
+			that.attr('style', 'font-size: 21px !important;');
+			that.attr('title', "Reload Slider");
+			parentHead.slideUp(200);
+			header.delay(200).remove();
+			parentHead.html(data);
+
+			parentHead.slideDown(200);
+
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Set COOKIE Do not Reload Again  ======*/
+
+	/*=======================================================
+	=            Section Set COOKIE Reload Again            =
+	=======================================================*/
+	
+	$('body').on('click', '.reload_again', function(event) {
+
+		var that = $(this);
+		var header = $('.small-header');
+		var parentHead = $('#headToggile');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {reload: 'reload', action: 'dont_reload_again'},
+			beforeSend: function() {
+				that.attr('class', 'fa fa-spinner fa-spin hide_item');
+				that.attr('style', 'font-size: 18px !important;');
+			}
+		})
+		.done(function(data) {
+			that.attr('class', 'icon-close-one hide_item rotate--90 dont_reload_again');
+			that.attr('style', 'font-size: 30px !important;');
+			that.attr('title', "Don't Reload Again");
+			parentHead.slideUp(200);
+			header.delay(200).remove();
+			parentHead.html(data);
+			parentHead.slideDown(200);
+
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Set COOKIE Reload Again  ======*/	
+	
+	/*================================================
+	=            Sectio Hide Small Slider            =
+	================================================*/
+	
+	$('body').on('click', '.hide_mini_slider', function(event) {
+
+		var that = $(this);
+		var thatParent = that.parent();
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {hide_small_slider: 'hide_small_slider', action: 'dont_reload_again'},
+			beforeSend: function() {
+				that.attr('class', 'fa fa-spinner fa-spin hide_item');
+				that.attr('style', 'font-size: 18px !important;');
+			}
+		})
+		.done(function(data) {
+
+			thatParent.slideUp(200);
+			thatParent.html(data);
+
+			thatParent.slideDown(200);
+
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Sectio Hide Small Slider  ======*/
+	
+	/*=================================================
+	=            Section Show Small Slider            =
+	=================================================*/
+	
+	$('body').on('click', '.show_mini_slider', function(event) {
+
+		var that = $(this);
+		var thatParent = that.parent();
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'POST',
+			data: {show_small_slider: 'show_small_slider', action: 'dont_reload_again'},
+			beforeSend: function() {
+				that.attr('class', 'fa fa-spinner fa-spin hide_item');
+				that.attr('style', 'font-size: 18px !important;top: -20px !important;');
+			}
+		})
+		.done(function(data) {
+
+			thatParent.slideUp(200);
+			thatParent.html(data);
+
+			thatParent.slideDown(200);
+
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Show Small Slider  ======*/
+	
+
 });

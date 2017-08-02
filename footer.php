@@ -46,7 +46,7 @@
 									<br />
 									<?php if (is_page( 'contact' )) { echo ''; } else {  ?>
 									<div>
-										<a href="<?php echo home_url( 'contact' ); ?>" class="btn btn-primary"><i class="icon-user-chat"> </i> Contact Us</a>
+										<a href="<?php echo home_url( 'contact' ); ?>" class="btn btn-primary">Contact Us</a>
 									</div>
 
 									<?php } ?>

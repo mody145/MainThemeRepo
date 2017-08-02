@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/ajax_functions/ajax_sorting_grid_images
 require get_template_directory() . '/inc/ajax_functions/ajax_quick_view_windows.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_update_cart.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_filter_shop.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_dont_reload_again.php';
 
 require get_template_directory() . '/inc/new_post_type/newPostType_getInTouch.php';
 require get_template_directory() . '/inc/new_post_type/newPostType_slider.php';
@@ -31,6 +32,7 @@ require get_template_directory() . '/inc/widgets_classes/widget_about_us.php';
 require get_template_directory() . '/inc/widgets_classes/widget_welcom.php';
 require get_template_directory() . '/inc/widgets_classes/widget_tags_posts.php';
 require get_template_directory() . '/inc/widgets_classes/widget_tags_product.php';
+require get_template_directory() . '/inc/widgets_classes/widget_ads_here_sidebar.php';
 
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_widgets.php';
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_sidebar.php';

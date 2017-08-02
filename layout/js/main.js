@@ -20,6 +20,7 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
+	// Fire Skitter Slider
     $('.skitter-large-for-header').skitter({
         navigation: true,
         dots: false,
@@ -50,7 +51,7 @@ jQuery(document).ready(function($) {
 	// Trigger Nice Scroll
 	$("html").niceScroll({
 
-		cursorcolor: 		color5,
+		cursorcolor: 		'#23282d',
 		cursorwidth: 		"10px",
 		cursorborder: 		"0",
 		cursorborderradius: "1px",
@@ -238,7 +239,7 @@ $("#zoom_01").elevateZoom({
 
 		var body = $("body");
 		body.animate({scrollTop:0}, 500, 'swing', function() { 
-			$('.calc-total').append('<span class="click-here"><i class="icon-hand-o-left"></i></span>');
+			$('.calc-total').append('<span class="click-here"><i class="icon-hand-o-down"></i></span>');
 		});
 
 		event.preventDefault();

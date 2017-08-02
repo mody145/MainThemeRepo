@@ -300,7 +300,7 @@
 
             .avatar-comment {
                 position: absolute;
-                left: -140px;
+                left: -120px;
                 top: 0;
                 max-width: 80px;
                 display: flex;
@@ -313,13 +313,13 @@
                 content: "";
                 position: absolute;
                 top: 25px;
-                left: -50px;
+                left: -40px;
                 width: 20px;
                 height: 20px;
                 border-bottom: 20px solid rgba(51, 51, 51, 0);
-                border-top: 20px solid rgb(236, 236, 236);
-                border-right: 25px solid rgb(236, 236, 236);
-                border-left: 25px solid rgba(51, 51, 51, 0);
+                border-top: 20px solid #ececec;
+                border-right: 20px solid #ececec;
+                border-left: 20px solid rgba(51, 51, 51, 0);
                 z-index: 2;
             }
 
@@ -334,7 +334,7 @@
             width: 100% !important;
             margin-top: 15px;
             background-color: #ececec;
-            border-radius: 0;
+            border-radius: 10px;
             border: 0;
         }
 

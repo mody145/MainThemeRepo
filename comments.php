@@ -31,7 +31,7 @@ foreach ($comments as $comment) { ?>
 	<li>
 		<div class="comment-main-level">
 			<!-- Avatar -->
-			<div class="comment-avatar"><?php echo get_avatar( $comment->comment_author_email, 80, 'http://placehold.it/80x80/ddd' ); ?></div>
+			<div class="comment-avatar"><?php echo get_avatar( $comment->comment_author_email, 80 ); ?></div>
 			<!-- Comment Box -->
 			<div class="comment-box">
 				<div class="comment-head">
@@ -59,11 +59,11 @@ foreach ($comments as $comment) { ?>
 
 			<li>
 				<!-- Avatar -->
-				<div class="comment-avatar"><?php echo get_avatar( $children->comment_author_email, 80, 'http://placehold.it/80x80/ddd' ); ?></div>
+				<div class="comment-avatar"><?php echo get_avatar( $children->comment_author_email, 80 ); ?></div>
 				<!-- Comment Box -->
 				<div class="comment-box">
 					<div class="comment-head">
-						<h6 class="comment-name"><a href="http://creaticode.com/blog"><?php echo $children->comment_author ?></a></h6>
+						<h6 class="comment-name"><a href="#"><?php echo $children->comment_author ?></a></h6>
 						<span><?php $date = $children->comment_date; echo $new_date = date('y-M-D H:i', strtotime($date)); ?></span>
 					</div>
 					<div class="comment-content">
@@ -94,8 +94,11 @@ foreach ($comments as $comment) { ?>
 
 		<?php
 
+		$avatarImg = '';
+		if ( is_user_logged_in() ) { $avatarImg = get_avatar_url( $children->comment_author_email ); } else { $avatarImg = 'http://placehold.it/80x80/ddd'; }
+
 		$args = array(
-			'comment_field' 		=> '<div class="container-textarea"><div class="avatar-comment hidden-xs"><img src="http://placehold.it/80x80/ddd"></div><textarea name="comment" class="form-control" rows="5"></textarea></div>',
+			'comment_field' 		=> '<div class="container-textarea"><div class="avatar-comment hidden-xs"><img src="' . $avatarImg . '"></div><textarea name="comment" class="form-control" rows="5"></textarea></div>',
 			'submit_button' 		=> '<div class="submit-button"><input name="%1$s" type="submit" id="%2$s" class="%3$s btn btn-primary" value="Send Comment" /></div>',
 			'title_reply'   		=> '',
 			'comment_notes_before' 	=> '',

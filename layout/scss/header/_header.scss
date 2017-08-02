@@ -13,26 +13,17 @@
     align-items: center;
 }
 
-.not-home {
-    font-weight: bold;
-    font-size: 28px;
-    background-color: #fff;
-    margin-top: -10px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    a {
-        position: absolute;
-        top: 110px;
-    }
-}
-
 .transparent {
     background-color: transparent !important;
     justify-content: space-between;
     margin: 0px;
+    font-size: 60px;
+    position: relative;
+    top: -5px;
+
+    a i {
+        color: #555;
+    }
 }
 
 @media (max-width: 767px){

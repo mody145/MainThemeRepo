@@ -26,6 +26,60 @@
 
 	<!-- Section Slider -->
 	<div class="mini-slider hidden-xs wow fadeIn">
+
+	<?php if ( isset($_COOKIE['what_small_slider']) && $_COOKIE['what_small_slider'] == 'hide' ) { ?>
+
+		<i class="icon-show-two toggel-opacity hide_item show_mini_slider reload_again_small_slider" data-toggle="tooltip" data-placement="top" title="Reload Slider"></i>
+
+	<?php } elseif ( isset($_COOKIE['what_small_slider']) && $_COOKIE['what_small_slider'] == 'show' ) { ?>
+
+		<i class="icon-close-one toggel-opacity hide_mini_slider hide_item rotate--90" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
+			<div class="skitter skitter-large with-dots">
+				<ul>
+				<?php 
+
+				/* --||  Start Loop (WP-Query)  ||-- */
+
+				$args = array(
+					'post_type' 	=> 'slider',
+					'post_per_post' => 10,
+				    'tax_query' => array(
+				        array(
+				            'taxonomy' => 'wich_slider',
+				            'field'    => 'slug',
+				            'terms'    => 'small-slider',
+				        ),
+				    ),
+				);
+				
+				$slides = new WP_Query($args);
+
+				if ($slides->have_posts()) {
+					while ($slides->have_posts()) {
+						$slides->the_post(); ?>
+						 
+					<li>
+						<a href="#cut">
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>" class="" />
+						</a>
+						<div class="label_text">
+							<p>
+								<h4><?php the_title(); ?></h4>
+								<?php the_content(); ?>
+								<a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>" class="btn btn-xs btn-warning">See more</a>
+							</p>
+						</div>
+					</li>
+
+					<!--||  End Loop (WP-QUery)  ||-->
+					<?php }} ?>
+					<?php wp_reset_postdata(); ?>	
+
+				</ul>
+			</div>
+	<?php } else { ?>
+
+	<i class="icon-close-one toggel-opacity hide_mini_slider hide_item rotate--90" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
 		<div class="skitter skitter-large with-dots">
 			<ul>
 			<?php 
@@ -69,6 +123,8 @@
 
 			</ul>
 		</div>
+
+	<?php } ?>
 	</div><!-- End Section Slider -->
 
 	<!-- Section Features -->

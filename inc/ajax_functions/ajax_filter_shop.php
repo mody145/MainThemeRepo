@@ -260,7 +260,7 @@ function sorting_by_tag_name() { ?>
 
 		$args = array(
 			'post_type' 		=> 'product',
-			'posts_per_page' 	=> 1,
+			'posts_per_page' 	=> 6,
 			'product_tag' 		=> $tag ,
 			'paged' 			=> $paged
 			);
