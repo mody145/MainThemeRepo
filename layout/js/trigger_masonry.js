@@ -4,12 +4,12 @@ jQuery(document).ready(function($) {
 
 	var windowWidth = $(window).width(); console.log(windowWidth);
 	var columnWidthShop = 3;
-
+	// For Tablet Screen
 	if (windowWidth <= 850) {
 
 		var columnWidthShop = 2;
 	}
-
+	// For Mobile Screen
 	if (windowWidth <= 767) {
 
 		var columnWidthShop = 1;

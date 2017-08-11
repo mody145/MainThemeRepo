@@ -4,8 +4,8 @@
 
 .brand-name {
     font-weight: bold;
-    font-size: 28px;
-    background-color: #fff;
+    font-size: $font-size + 8;
+    background-color: $color2;
     margin-top: -10px;
     height: 60px;
     display: flex;
@@ -17,12 +17,12 @@
     background-color: transparent !important;
     justify-content: space-between;
     margin: 0px;
-    font-size: 60px;
+    font-size: $font-size + 40;
     position: relative;
     top: -5px;
 
     a i {
-        color: #555;
+        color: $logo_color;
     }
 }
 
@@ -47,7 +47,7 @@
     margin-right: $main-margin;
 
     .login-register {
-        color: #8a8a8a;
+        color: $infoColor;
 
         a {
             color: $color6 !important;

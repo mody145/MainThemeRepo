@@ -127,6 +127,65 @@
 	<?php } ?>
 	</div><!-- End Section Slider -->
 
+	<!-- Section Testimonials -->
+	<div class="testimonials hidden-xs">
+		<div class="container-testimonials wow fadeIn">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+				<?php  
+				$args_testimonials1 = array('post_type' => 'wpm-testimonial'); ?>
+				<?php 
+				$testimonial1 = new WP_Query($args_testimonials1);
+				$number = 0; 
+				if ($testimonial1->have_posts()) {
+					while ($testimonial1->have_posts()) {
+						$testimonial1->the_post(); ?>
+						
+					<li <?php if ($testimonial1->current_post == 0) { echo 'class="active"'; } ?> data-target="#carousel-example-generic" data-slide-to="<?php echo $number++; ?>"><?php get_the_title(); ?></li>
+				
+				<?php }} ?>
+				<?php wp_reset_postdata(); ?>	
+				</ol>
+				<div class="carousel-inner" role="listbox">
+				<?php 
+
+				/* --||  Start Loop (WP-Query)  ||-- */
+
+				$args_testimonials = array(
+					'post_type' 				=> 'wpm-testimonial',
+					'post_per_post' 			=> 10,
+					);
+				
+				$testimonial = new WP_Query($args_testimonials);
+
+				if ($testimonial->have_posts()) {
+					while ($testimonial->have_posts()) {
+						$testimonial->the_post(); ?>
+
+				<!-- Wrapper for slides -->
+
+					<div class="item <?php if ($testimonial->current_post == 0) { echo 'active'; } ?>">
+						<div class="image-testimonials">
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						</div>
+
+						<div class="carousel-caption">
+						<h4><i class="icon-fountain-pen-head-2"></i> <?php the_title(); ?></h4>
+						<p><?php the_content(); ?></p>
+						<span><?php echo get_post_meta( get_the_ID(), 'company_name', true ); ?></span>
+						</div>
+					</div>
+
+				<!--||  End Loop (WP-QUery)  ||-->
+				<?php }} ?>
+				<?php wp_reset_postdata(); ?>				
+								
+				</div>
+			</div>
+		</div>
+	</div><!-- End Section Testimonials -->
+
 	<!-- Section Features -->
 	<div class="feat wow fadeIn">
 		<div class="col-md-6 col-sm-6 nopadding">
@@ -216,67 +275,7 @@
 		</div>
 	</div><!-- Start Grid Images -->
 
-	<div class="clearfix"></div>
-
-
-	<!-- Section Testimonials -->
-	<div class="testimonials hidden-xs">
-		<div class="container-testimonials wow fadeIn">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-				<?php  
-				$args_testimonials1 = array('post_type' => 'wpm-testimonial'); ?>
-				<?php 
-				$testimonial1 = new WP_Query($args_testimonials1);
-				$number = 0; 
-				if ($testimonial1->have_posts()) {
-					while ($testimonial1->have_posts()) {
-						$testimonial1->the_post(); ?>
-						
-					<li <?php if ($testimonial1->current_post == 0) { echo 'class="active"'; } ?> data-target="#carousel-example-generic" data-slide-to="<?php echo $number++; ?>"><?php get_the_title(); ?></li>
-				
-				<?php }} ?>
-				<?php wp_reset_postdata(); ?>	
-				</ol>
-				<div class="carousel-inner" role="listbox">
-				<?php 
-
-				/* --||  Start Loop (WP-Query)  ||-- */
-
-				$args_testimonials = array(
-					'post_type' 				=> 'wpm-testimonial',
-					'post_per_post' 			=> 10,
-					);
-				
-				$testimonial = new WP_Query($args_testimonials);
-
-				if ($testimonial->have_posts()) {
-					while ($testimonial->have_posts()) {
-						$testimonial->the_post(); ?>
-
-				<!-- Wrapper for slides -->
-
-					<div class="item <?php if ($testimonial->current_post == 0) { echo 'active'; } ?>">
-						<div class="image-testimonials">
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
-						</div>
-
-						<div class="carousel-caption">
-						<h4><i class="icon-fountain-pen-head-2"></i> <?php the_title(); ?></h4>
-						<p><?php the_content(); ?></p>
-						<span><?php echo get_post_meta( get_the_ID(), 'company_name', true ); ?></span>
-						</div>
-					</div>
-
-				<!--||  End Loop (WP-QUery)  ||-->
-				<?php }} ?>
-				<?php wp_reset_postdata(); ?>				
-								
-				</div>
-			</div>
-		</div>
-	</div><!-- End Section Testimonials -->
+	<?php dynamic_sidebar( 'big_advertise_here' ); ?>
 
 	<!-- Section GridPosts -->
 	<div class="services">

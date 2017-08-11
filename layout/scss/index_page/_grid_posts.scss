@@ -8,12 +8,12 @@
         margin-left: 0;
         margin-right: 0;
         padding: $main-padding;
-        border-bottom: 2px solid #1aafd0;
+        border-bottom: 2px solid $color4;
 
         .Sorting_grid {
             padding: 3px;
             background-color: $color1;
-            color: #696767;
+            color: $infoColor;
             margin: 0 2px;
             border-radius: 3px;
             cursor: pointer;
@@ -21,7 +21,7 @@
 
         @media (max-width: 767px){
             .Sorting_grid {
-                font-size: 13px;
+                font-size: $font-size - 7;
                 margin: 0 1px;
                 padding: 1px;
             }
@@ -46,7 +46,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba($color2, 0.7);
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -84,7 +84,6 @@
                 justify-content: center;
                 overflow: hidden;
                 border-radius: 3px;
-                border: 5px solid #efefef;
 
                 img {
                     max-width: 150%;
@@ -113,7 +112,6 @@
 
                 img {
                     height: 110%;
-                    border: 5px solid #efefef;
                     transition: all .5s ease;
 
                     &:hover {

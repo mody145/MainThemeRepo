@@ -4,8 +4,30 @@
 
 .list_categories {
     background-color: $color2;
-    padding: 5px;
     margin-bottom: $main-margin * 2;
+
+    h4 {
+        background-color: $color2;
+        color: $color8;
+        padding: $main-padding;
+        margin: 0;
+        border-bottom: 1px solid $color4;
+
+        i {
+            font-size: 13px;
+            background-color: $color4;
+            color: $color2;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            position: relative;
+            margin-right: 5px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+        }
+    }
+    
     li {
         list-style: none;
         margin: $main-margin / 2 0;
@@ -14,7 +36,7 @@
 
         &:hover {
             margin: 0;
-            background-color: #eaeaea;
+            background-color: $color1;
         }
 
         a:before {

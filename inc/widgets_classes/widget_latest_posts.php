@@ -41,7 +41,7 @@ class latest_posts_blog extends WP_Widget {
 		echo '<div class="latest-posts-blog-widget">';
 
 		echo $args['before_title'];
-		echo '<i class="icon-chronometer"> </i> ' . $instace['title'];
+		echo '<i class="icon-clock4"> </i> ' . $instace['title'];
 		echo $args['after_title'];
 
 		$count = $instace['count']; 

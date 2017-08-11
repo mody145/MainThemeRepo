@@ -11,6 +11,20 @@
     color: $color8;
     padding: $main-padding;
     margin: 0;
+
+    i {
+		font-size: 13px;
+		background-color: $color4;
+		color: $color2;
+		width: 25px;
+		height: 25px;
+		display: inline-flex;
+		position: relative;
+		margin-right: 5px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 2px;
+    }
 }
 
 .dwwp-sidebar-custom-widget-about-us img {

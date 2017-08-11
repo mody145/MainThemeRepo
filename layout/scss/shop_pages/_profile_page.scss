@@ -50,7 +50,7 @@
 
 	    input {
 		    padding: $main-padding;
-		    border: 1px solid #DDD;
+		    border: 1px solid $borderInput;
 		    background-color: $color1;
 	    }
 
@@ -58,12 +58,12 @@
 		    display: block !important;
 		    width: 100%;
 		    margin-top: 10px;
-		    background-color: #fc636b !important;
-		    color: #fff !important;
+		    background-color: $color7 !important;
+		    color: $color2 !important;
 		}
 
 		p.woocommerce-LostPassword.lost_password a {
-		    color: #969595 !important;
+		    color: lighten($borderInput, 10%) !important;
 		}
 	}
 
@@ -82,7 +82,7 @@
 
 		input {
 			padding: $main-margin / 2;
-		    border: 1px solid #d2d2d2;
+		    border: 1px solid $borderInput;
 		}
 	}
 }

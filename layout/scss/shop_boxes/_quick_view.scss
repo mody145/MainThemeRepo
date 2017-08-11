@@ -12,7 +12,7 @@
     width: 0%;
     height: 0%;
     display: none;
-    box-shadow: 1px -1px 2px 0.5px rgba(0, 0, 0, 0.22);
+    box-shadow: 1px -1px 2px 0.5px rgba($black, 0.22);
     padding: 10px;
     opacity: 0;
 
@@ -36,7 +36,7 @@
         cursor: pointer;
         z-index: 40;
         display: flex;
-        background-color: #eaeaea;
+        background-color: $color1;
         width: 30px;
         height: 30px;
         justify-content: center;
@@ -46,7 +46,7 @@
     .container-quick-veiw {
         height: 100%;
         overflow: hidden;
-        background-color: #fff;
+        background-color: $color2;
         margin: 10px;
 
         > div {
@@ -123,7 +123,7 @@
                 width: 150px;
 
                 span.price-without-disc {
-                    font-size: 12px;
+                    font-size: $font-size - 8;
                 }
 
                 span.main-price i {
@@ -133,7 +133,7 @@
                 }
 
                 span.no-disc {
-                    font-size: 12px;
+                    font-size: $font-size - 8;
                 }
             }
 
@@ -145,36 +145,36 @@
             }
 
             p.note-currency {
-                background-color: #82daca;
+                background-color: $green;
                 display: inline-block;
                 padding: 5px;
                 cursor: pointer;
-                color: #fff;
+                color: $color2;
                 border-radius: 2px;
             }
 
             p.price-currency {
-                background-color: #82daca;
+                background-color: $green;
                 display: inline-block;
                 padding: 5px;
-                color: #fff;
+                color: $color2;
                 border-radius: 2px;
 
                 span {
-                    color: #545451;
+                    color: $infoColor;
                 }
             }
 
             span.discount-number {
-                font-size: 15px;
+                font-size: $font-size - 5;
                 font-weight: bold;
-                color: #0088ff;
-                font-family: roboto;
+                color: $green;
+                font-family: $fontThree;
 
                 span.sale-circle {
                     width: 40px;
                     height: 40px;
-                    background-color: #82daca;
+                    background-color: $green;
                     display: flex;
                     color: white;
                     justify-content: center;
@@ -204,8 +204,8 @@
                 margin-left: 0;
 
                 i {
-                    background-color: #08f;
-                    color: #fff;
+                    background-color: $blue;
+                    color: $color2;
                     padding: 5px;
                     margin: 0 5px;
                     font-size: 30px;
@@ -234,7 +234,7 @@
 
     h3 {
         margin-bottom: 20px;
-        background-color: #fff;
+        background-color: $color2;
         padding: 10px;
         margin-top: 0;
     }
@@ -244,7 +244,7 @@
         li.media {
             margin: 10px 0;
             display: block;
-            background-color: #fff;
+            background-color: $color2;
             margin-bottom: 20px;
             padding: 5px;
             border-radius: 5px;
@@ -267,12 +267,12 @@
         }
 
         h4.media-heading {
-            font-size: 15px;
+            font-size: $font-size - 5;
         }
 
         p.rev-content {
             margin-bottom: 0;
-            color: #545353;
+            color: $infoColor;
             max-width: 70%;
             font-style: italic;
 
@@ -294,10 +294,10 @@
         }
 
         p.rev-date {
-            color: #868686;
-            font-size: 12px;
+            color: $infoColor;
+            font-size: $font-size - 8;
             margin: 0;
-            font-family: roboto;
+            font-family: $fontThree;
             font-weight: bold;
         }
     }

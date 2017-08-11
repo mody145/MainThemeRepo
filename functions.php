@@ -33,6 +33,7 @@ require get_template_directory() . '/inc/widgets_classes/widget_welcom.php';
 require get_template_directory() . '/inc/widgets_classes/widget_tags_posts.php';
 require get_template_directory() . '/inc/widgets_classes/widget_tags_product.php';
 require get_template_directory() . '/inc/widgets_classes/widget_ads_here_sidebar.php';
+require get_template_directory() . '/inc/widgets_classes/widget_big_ads_here.php';
 
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_widgets.php';
 require get_template_directory() . '/inc/reg_widget_and_sidebar/register_sidebar.php';

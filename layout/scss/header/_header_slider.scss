@@ -5,12 +5,12 @@
 	    z-index: 5;
 	    top: 50%;
 	    left: -26px;
-	    font-size: 30px;
+	    font-size: $font-size + 10;
 	    cursor: pointer;
 	}
 
 	.reload_again {
-	    font-size: 21px !important;
+	    font-size: $font-size + 1 !important;
 	    left: -30px !important;
 	}
 }
@@ -36,10 +36,10 @@
 
 	.test-title {
 	    font-weight: bold;
-	    font-size: 40px;
+	    font-size: $font-size + 20;
 	    padding: 5px 10px;
 	    background-color: $color1;
-	    color: #666;
+	    color: lighten($color8, 10%);
 	    display: inline-block;
 	    transition: all .5s ease-in-out;
 	    margin-bottom: 3px;
@@ -47,15 +47,15 @@
 
 	.label_skitter p {
 	    background-color: $color1;
-	    color: #666;
+	    color: lighten($color8, 10%);
 	    margin: 10px 0;
 	    margin-bottom: 25px;
 	}
 
 	span.cat-pubble {
-	    background-color: #673AB7;
+	    background-color: $color5;
 	    padding: 5px;
-	    color: #fff;
+	    color: $color2;
 	    position: relative;
 
 	    a {

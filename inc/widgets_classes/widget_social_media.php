@@ -17,6 +17,14 @@ class social_media_icon_Widget extends WP_Widget {
 	public function form($instace) {
 		?>
 		<p>
+			<label for="<?php echo $this->get_field_id('titleSocialMedia'); ?>">The Title : </label>
+			<input id="<?php echo $this->get_field_id('titleSocialMedia'); ?>" 
+			value="<?php echo $instace['titleSocialMedia'] ?>" 
+			name="<?php echo $this->get_field_name('titleSocialMedia'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
 			<label for="<?php echo $this->get_field_id('YouTube'); ?>">YouTube Link : </label>
 			<input id="<?php echo $this->get_field_id('YouTube'); ?>" 
 			value="<?php echo $instace['YouTube'] ?>" 
@@ -103,6 +111,11 @@ class social_media_icon_Widget extends WP_Widget {
 	public function Widget($args, $instace) {
 
 		echo $args['before_widget'];
+
+		echo $args['before_title'];
+		echo '<i class="icon-share-alt"></i>&nbsp;' . $instace['titleSocialMedia'];
+		echo $args['after_title'];
+
 		echo '<div class="social-media-icon-widget">';
 
 		?>

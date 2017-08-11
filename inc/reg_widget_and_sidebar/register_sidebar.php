@@ -195,4 +195,27 @@ add_action('widgets_init', 'ourWidgetsInit_advertise_here');
 
 /*============  End of Welcome advertise here  =============*/
 
+
+/*======================================================
+=                advertise here BIG  	          	   =
+======================================================*/
+
+function ourWidgetsInit_big_advertise_here() {
+
+	register_sidebar(array(
+		'name' 			=> 'Big advertise here',
+		'id' 			=> 'big_advertise_here',
+		'description' 	=> 'The Widget To Show Ads In Index Page',
+		'class' 		=> 'ads-here-big',
+		'before_widget' => '',
+		'after_widget' 	=> "",
+		'before_title' 	=> '',
+		'after_title' 	=> "",
+		));
+
+}
+add_action('widgets_init', 'ourWidgetsInit_big_advertise_here');
+
+/*============  End of Welcome advertise here BIG  =============*/
+
 ?>

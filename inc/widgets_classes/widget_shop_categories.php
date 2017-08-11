@@ -36,6 +36,11 @@ class custom_shop_categories_wigdet extends WP_Widget {
 		<div class="list_categories">
 
 		<?php
+		echo $args['before_title'];
+		echo '<i class="icon-folder-open"> </i> ' . $instace['shop_categories_title2'];
+		echo $args['after_title']; ?>
+
+		<?php
 
 		$links = wp_list_categories( array(
 			'show_count' 			=> true,

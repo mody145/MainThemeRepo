@@ -42,7 +42,7 @@ class top_items_in_shop extends WP_Widget {
 		echo '<div class="top-items-shop-widget">';
 
 		echo $args['before_title'];
-		echo '<i class="icon-chronometer"> </i> ' . $instace['Title_top'];
+		echo '<i class="icon-clock4"> </i> ' . $instace['Title_top'];
 		echo $args['after_title']; ?>
 
 		<div id="top_items_widget" class="carousel slide" data-ride="carousel">

@@ -10,6 +10,7 @@
     align-items: center;
     padding-top: $main-padding +  5;
     position: relative;
+    margin-top: 20px;
 
     &:before {
         content: "\f10d";
@@ -53,7 +54,7 @@
         align-items: center;
         overflow: hidden;
         border-radius: 50%;
-        border: 6px solid #DDD;
+        border: 6px solid lighten($infoColor, 40%);
     }
 
     .image-testimonials img {
@@ -92,7 +93,7 @@
         margin: 1px;
         text-indent: -999px;
         cursor: pointer;
-        background-color: #d6d6d6;
+        background-color: lighten($infoColor, 40%);
         border-radius: 10px;
     }
 
@@ -100,7 +101,7 @@
         width: 12px;
         height: 12px;
         margin: 0;
-        background-color: #797878;
+        background-color: $infoColor;
     }
 }
 

@@ -13,8 +13,8 @@
     				th {
 					    background-color: $color2;
 					    padding: 5px;
-					    color: #716b6b;
-					    border: 1px solid rgba(221, 221, 221, 0.7);
+					    color: $infoColor;
+					    border: 1px solid rgba($infoColor, 0.2);
     				}
     			}
     		}
@@ -24,13 +24,13 @@
 
     				td {
 					    background-color: $color2;
-					    border: 1px solid rgba(218, 218, 218, 0.48);
+					    border: 1px solid rgba($infoColor, 0.15);
 					    padding: $main-padding / 2;
 					    div.quantity {
 					    	text-align: center;
 					    	input {
 							    padding: $main-padding / 2;
-							    border: 1px solid #d4d4d4;
+							    border: 1px solid $borderInput;
 							    text-align: center;
 							    border-radius: 2px;
 						    }
@@ -81,7 +81,7 @@
     background-color: $color2;
 	.cart_totals {
 		padding: $main-padding;
-	    border: 1px solid rgba(221, 221, 221, 0.75);
+	    border: 1px solid rgba($infoColor, 0.2);
 	    margin-right: $main-margin *2;
 	    margin-bottom: $main-margin *2;
 	}
@@ -95,13 +95,13 @@
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item:nth-of-type(even) {
-	    background-color: #ececec;
+	    background-color: $borderInput;
 	}
 }
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item {
-	    border: 1px solid #333;
+	    border: 1px solid $color8;
 	}
 
 	td.actions {
@@ -122,18 +122,18 @@
 	}
 
 	tr.woocommerce-cart-form__cart-item.cart_item td:first-of-type {
-	    background-color: #333333 !important;
+	    background-color: $color1 !important;
 	}
 
 	a.remove i {
-	    background-color: rgba(221, 221, 221, 0.22);
+	    background-color: rgba($infoColor, 0.2);
 	    display: inline-block;
 	    width: 20px;
 	    height: 20px;
 	    text-align: center;
 	    line-height: 19.5px;
 	    border-radius: 50%;
-	    color: #fff;
+	    color: $color2;
 	    position: relative;
 	    top: -1px;
 	}

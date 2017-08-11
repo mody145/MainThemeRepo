@@ -57,8 +57,8 @@ select#search-tag + span:before {
 =========================================*/
 
 .select2-container--default .select2-selection--single {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+    background-color: $color2;
+    border: 1px solid $borderInput;
     border-radius: 0;
     height: 35px;
     display: flex;

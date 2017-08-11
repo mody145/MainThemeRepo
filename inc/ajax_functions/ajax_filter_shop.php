@@ -564,7 +564,7 @@ function filter_by_date2() { ?>
 		$args = array(
 		    'post_type'      => 'product',
 		    'post_status'    => 'any',
-		    'posts_per_page' => 1,
+		    'posts_per_page' => 9,
 		    'orderby'        => 'date',
 		    'order'          => 'DESC',
 		    'paged' 		 => $paged,

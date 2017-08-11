@@ -14,28 +14,71 @@ jQuery(document).ready(function($) {
 	var color8 		= $('.color8').css('background-color');
 	var color9 		= $('.color9').css('background-color');
 	var color10 	= $('.color10').css('background-color');
-
 	var infoColor 	= $('.infoColor').css('background-color');
-
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
-	// Fire Skitter Slider
-    $('.skitter-large-for-header').skitter({
-        navigation: true,
-        dots: false,
-        with_animations: [ 'cube', 'cubeRandom', 'block', 'cubeStop', 'cubeStopRandom', 'cubeHide', 'cubeSize', 'horizontal', 'showBars', 'showBarsRandom', 'tube', 'fade', 'fadeFour', 'paralell', 'blind', 'blindHeight', 'blindWidth', 'directionTop', 'directionBottom', 'directionRight', 'directionLeft', 'cubeSpread', 'glassCube', 'glassBlock', 'circles', 'circlesInside', 'circlesRotate', 'cubeShow', 'upBars', 'downBars', 'hideBars', 'swapBars', 'swapBarsBack', 'swapBlocks', 'cut' ],
-        label_animation: 'fixed',
-    });
+	try{
 
-	// Run Select2 Plugin
-	$('.select_filter').select2({
-		tags: "true",
-		maximumSelectionLength: 5
-	});
+		$('.carousel-one').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    dots:false,
+		    nav:false,
+		    responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:true
+		        },
+		        600:{
+		            items:3,
+		            nav:false
+		        },
+		        1000:{
+		            items:5,
+		            nav:true,
+		            loop:false
+		        }
+		    }
+		});
 
-	// Run Skitter Slider
-	$(function() {
+	}catch(e){
+
+	console.log(e);
+	}
+
+	try{
+
+		// Fire Skitter Slider
+	    $('.skitter-large-for-header').skitter({
+	        navigation: true,
+	        dots: false,
+	        with_animations: [ 'cube', 'cubeRandom', 'block', 'cubeStop', 'cubeStopRandom', 'cubeHide', 'cubeSize', 'horizontal', 'showBars', 'showBarsRandom', 'tube', 'fade', 'fadeFour', 'paralell', 'blind', 'blindHeight', 'blindWidth', 'directionTop', 'directionBottom', 'directionRight', 'directionLeft', 'cubeSpread', 'glassCube', 'glassBlock', 'circles', 'circlesInside', 'circlesRotate', 'cubeShow', 'upBars', 'downBars', 'hideBars', 'swapBars', 'swapBarsBack', 'swapBlocks', 'cut' ],
+	        label_animation: 'fixed',
+	    });
+
+	}catch(e){
+
+	console.log(e);
+	}
+
+	try{
+
+		// Run Select2 Plugin
+		$('.select_filter').select2({
+			tags: "true",
+			maximumSelectionLength: 5
+		});
+
+	}catch(e){
+
+	console.log(e);
+	}
+
+	try{
+
+		// Run Skitter Slider
 		$('.skitter-large').skitter({
 
 			'dots'				: false,
@@ -46,18 +89,29 @@ jQuery(document).ready(function($) {
 			'with_animations' 	: ["fade"],
 			'theme' 			: 'clean',
 		});
-	});
 
-	// Trigger Nice Scroll
-	$("html").niceScroll({
+	}catch(e){
 
-		cursorcolor: 		'#23282d',
-		cursorwidth: 		"10px",
-		cursorborder: 		"0",
-		cursorborderradius: "1px",
-		cursoropacitymin: 	"0.1",
-		zindex: 			"999999",
-	});
+	console.log(e);
+	}	
+
+	try{
+
+		// Trigger Nice Scroll
+		$("html").niceScroll({
+
+			cursorcolor: 		'#23282d',
+			cursorwidth: 		"10px",
+			cursorborder: 		"0",
+			cursorborderradius: "1px",
+			cursoropacitymin: 	"0.1",
+			zindex: 			"999999",
+		});
+
+	}catch(e){
+
+	console.log(e);
+	}			
 
 	//Trigger Tooltip Bootstarp
 	$(function () {
@@ -69,28 +123,6 @@ jQuery(document).ready(function($) {
 
 	$('input').attr('autocomplete', 'off');
 
-	$('.carousel-one').owlCarousel({
-	    loop:true,
-	    margin:10,
-	    dots:false,
-	    nav:false,
-	    responsiveClass:true,
-	    responsive:{
-	        0:{
-	            items:1,
-	            nav:true
-	        },
-	        600:{
-	            items:3,
-	            nav:false
-	        },
-	        1000:{
-	            items:5,
-	            nav:true,
-	            loop:false
-	        }
-	    }
-	});
 
 /*====================================================
 =            Spinner Loading With Counter            =
@@ -170,28 +202,34 @@ jQuery(document).ready(function($) {
 /*============================================================
 =            Section Zoom Image In Single Product            =
 ============================================================*/
+	try{
 
-$("#zoom_01").elevateZoom({
-	gallery : "gallery_09",
-	galleryActiveClass: "active"
-	}); 
-
-
-	$(".img_gallary_box img").click(function(e){
-	var currentValue = $(this).attr('src');
-
-	var smallImage = currentValue;
-	var largeImage = currentValue;
-
-	// Example of using Active Gallery
-	$('#gallery_09 a').removeClass('active').eq(currentValue-1).addClass('active');		
+		$("#zoom_01").elevateZoom({
+			gallery : "gallery_09",
+			galleryActiveClass: "active"
+			}); 
 
 
-	var ez =   $('#zoom_01').data('elevateZoom');	  
+			$(".img_gallary_box img").click(function(e){
+			var currentValue = $(this).attr('src');
 
-	ez.swaptheimage(smallImage, largeImage); 
+			var smallImage = currentValue;
+			var largeImage = currentValue;
 
-});
+			// Example of using Active Gallery
+			$('#gallery_09 a').removeClass('active').eq(currentValue-1).addClass('active');		
+
+
+			var ez =   $('#zoom_01').data('elevateZoom');	  
+
+			ez.swaptheimage(smallImage, largeImage); 
+
+		});
+
+	}catch(e){
+
+	console.log(e);
+	}	
 
 /*=====  End of Section Zoom Image In Single Product  ======*/
 
@@ -203,7 +241,7 @@ $("#zoom_01").elevateZoom({
 	$(window).ready(function () {
 
 		$('body').css("overflow", "auto");
-		$('.loading_overlay span').fadeOut(200, function() {
+		$('.loading_overlay .custom-loader').fadeOut(200, function() {
 
 			$(this).parent().fadeOut(200, function () {
 
@@ -419,7 +457,6 @@ $("#zoom_01").elevateZoom({
 
 	$('.main_image_product').css('min-height', mainImageHeight);
 
-/*=====  End of Modify Height Main Product Image  ======*/
-	
+/*=====  End of Modify Height Main Product Image  ======*/	
 
 });

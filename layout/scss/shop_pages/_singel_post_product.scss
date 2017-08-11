@@ -22,20 +22,20 @@ section.related.products {
 
 		p.price-currency {
 		    display: inline-block;
-		    background-color: #78cfbf;
-		    color: #fff;
+		    background-color: $green;
+		    color: $color2;
 		    padding: 2px 5px;
-		    font-size: 15px;
+		    font-size: $font-size - 5;
 		    margin: 16px 0px;
 		    border-radius: 5px;
 		}
 
 		p.note-currency {
 		    display: inline-block;
-		    background-color: #78cfbf;
-		    color: #fff;
+		    background-color: $green;
+		    color: $color2;
 		    padding: 2px 5px;
-		    font-size: 15px;
+		    font-size: $font-size - 5;
 		    margin: 16px 0px;
 		    border-radius: 5px;
 		    cursor: pointer;
@@ -46,7 +46,7 @@ section.related.products {
 		    margin-top: 10px;
 
 		    > .panel-heading {
-		    	font-size: 13px;
+		    	font-size: $font-size - 7;
 		    }
 
 			span.main-price i {
@@ -56,11 +56,11 @@ section.related.products {
 			}
 
 			span.price-without-disc {
-			    font-size: 13px;
+			    font-size: $font-size - 7;
 			}
 
 			span.no-disc {
-			    font-size: 12px;
+			    font-size: $font-size - 8;
 			}
 		}
 
@@ -97,12 +97,11 @@ section.related.products {
 
 			i {
 			    font-size: 30px;
-			    color: $color10;
-			    background-color: #3be6ae;
-			    color: #fff;
+			    background-color: $green;
+			    color: $color2;
 			    padding: 5px 10px;
 			    border-radius: 5px;
-			    border-bottom: 5px solid #47d2a4;
+			    border-bottom: 5px solid darken($green, 14%);
 			}
 
 			a:link, a:hover, a:visited {
@@ -119,11 +118,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
-			    background-color: #3be6ae;
-			    color: #fff;
+			    background-color: $green;
+			    color: $color2;
 			    padding: 5px 10px;
 			    border-radius: 5px;
-			    border-bottom: 5px solid #47d2a4;
+			    border-bottom: 5px solid darken($green, 14%);
 			}
 
 			a:link, a:hover, a:visited {
@@ -140,11 +139,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
-			    background-color: #ffb900;
-			    color: #fff;
+			    background-color: $color6;
+			    color: $color2;
 			    padding: 5px 10px;
 			    border-radius: 5px;
-			    border-bottom: 5px solid #d2a222;
+			    border-bottom: 5px solid darken($color6, 14%);
 			}
 
 			a:link, a:hover, a:visited {
@@ -170,11 +169,11 @@ section.related.products {
 			i {
 			    font-size: 30px;
 			    color: $color10;
-			    background-color: #ffb900;
-			    color: #fff;
+			    background-color: $color6;
+			    color: $color2;
 			    padding: 5px 10px;
 			    border-radius: 5px;
-			    border-bottom: 5px solid #d2a222;
+			    border-bottom: 5px solid darken($color6, 14%);
 			}
 
 			a:link, a:hover, a:visited {
@@ -200,11 +199,11 @@ section.related.products {
 				i {
 				    font-size: 30px;
 				    position: absolute;
-				    background-color: #6966cc;
-				    color: #fff;
+				    background-color: $color5;
+				    color: $color2;
 				    padding: 5px 10px;
 				    border-radius: 5px;
-				    border-bottom: 5px solid #5856b3;
+				    border-bottom: 5px solid darken($color5, 14%);
 				}
 		    }
 
@@ -219,11 +218,11 @@ section.related.products {
 			    i {
 					font-size: 30px;
 					position: absolute;
-				    background-color: #6966cc;
-				    color: #fff;
+				    background-color: $color5;
+				    color: $color2;
 				    padding: 5px 10px;
 				    border-radius: 5px;
-				    border-bottom: 5px solid #5856b3;
+				    border-bottom: 5px solid darken($color5, 14%);
 			    }
 		    }
 		}
@@ -253,7 +252,7 @@ section.related.products {
 		}
 
 		.product_meta {
-		    font-size: 12px !important;
+		    font-size: $font-size - 8 !important;
 
 			> span {
 			    margin: -5px 0;
@@ -307,8 +306,8 @@ section.related.products {
 		    width: 21px;
 		    height: 21px;
 		    background-color: transparent;
-		    border-top: 4px solid #333;
-		    border-left: 4px solid #333;
+		    border-top: 4px solid $color8;
+		    border-left: 4px solid $color8;
 		}
 
 		&:after {
@@ -319,8 +318,8 @@ section.related.products {
 		    width: 21px;
 		    height: 21px;
 		    background-color: transparent;
-		    border-bottom: 4px solid #333;
-		    border-right: 4px solid #333;
+		    border-bottom: 4px solid $color8;
+		    border-right: 4px solid $color8;
 		}
 	}
 

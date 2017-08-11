@@ -11,5 +11,6 @@ register_widget( 'top_items_in_shop' );
 register_widget( 'tags_cloud_widget' );
 register_widget( 'tags_product_cloud_widget' );
 register_widget( 'ads_here_sidebar' );
+register_widget( 'big_ads_here_sidebar' );
 
 ?>

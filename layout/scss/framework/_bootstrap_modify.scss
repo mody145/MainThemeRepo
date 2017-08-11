@@ -16,24 +16,24 @@
 .dropdown-menu > .active > a,
  .dropdown-menu > .active > a:hover,
   .dropdown-menu > .active > a:focus {
-    color: #656060;
+    color: lighten( $color8, 10% );
     text-decoration: none;
     outline: 0;
-    background-color: rgba(220, 220, 220, 0.7)
+    background-color: rgba($color6, .7);
 }
 
 .input-group-addon {
     padding: 0px 0px 0 $main-padding +  2;
     font-size: $font-size - 2;
     background-color: $color2;
-    border-left: 1px solid #ccc !important;
-    border-top: 1px solid #ccc !important;
-    border-bottom: 1px solid #ccc !important;
+    border-left: 1px solid $borderInput !important;
+    border-top: 1px solid $borderInput !important;
+    border-bottom: 1px solid $borderInput !important;
 }
 
 input.form-control:focus {
     box-shadow: none;
-    border: 1px solid #CCC;
+    border: 1px solid $borderInput;
     border-left: 0;
 }
 
@@ -57,12 +57,12 @@ input.form-control {
 .btn-primary {
     border-radius: 2px;
     border: 0;
-    color: #ffffff !important;
+    color: $color2 !important;
     background-color: $green;
     border-bottom: 4px solid darken($green, 10);
-    font-family: roboto,tahoma,arial;
+    font-family: $fontThree;
     font-weight: bold;
-    font-size: 13px;
+    font-size: $font-size - 7;
 
     &:hover {
         background-color: $green;
@@ -111,12 +111,12 @@ input.form-control {
 .btn-info {
     border-radius: 2px;
     border: 0;
-    color: #ffffff !important;
+    color: $color2 !important;
     background-color: $blue;
     border-bottom: 4px solid darken($blue, 10);
-    font-family: roboto,tahoma,arial;
+    font-family: $fontThree;
     font-weight: bold;
-    font-size: 13px;
+    font-size: $font-size - 7;
 
     &:hover {
         background-color: $blue;
@@ -195,12 +195,12 @@ select:-webkit-autofill {
 }
 
 .panel-primary > .panel-heading {
-    color: #fff;
-    background-color: #78CFBF;
-    border-color: #78CFBF;
+    color: $color2;
+    background-color: darken($green, 10%);
+    border-color: darken($green, 10%);
     overflow: hidden;
     text-align: center;
-    font-size: 10px;
+    font-size: $font-size - 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,11 +209,11 @@ select:-webkit-autofill {
 
 .panel-body {
     padding: 5px;
-    background-color: #82DACA;
-    color: #fff;
+    background-color: $green;
+    color: $color2;
     text-align: center;
     padding: 5px;
-    font-family: 'Droid Sans', sans-serif;
+    font-family: $fontOne;
     position: relative;
 }
 
@@ -224,10 +224,10 @@ select:-webkit-autofill {
     height: 5px;
     bottom: -10px;
     left: 49%;
-    border-top: 5px solid rgb(130, 218, 202);
-    border-bottom: 5px solid rgba(130, 218, 202, 0);
-    border-right: 5px solid rgba(130, 218, 202, 0);
-    border-left: 5px solid rgba(130, 218, 202, 0);
+    border-top: 5px solid $green;
+    border-bottom: 5px solid rgba($green, 0);
+    border-right: 5px solid rgba($green, 0);
+    border-left: 5px solid rgba($green, 0);
 }
 
 /*======================================

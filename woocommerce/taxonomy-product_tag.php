@@ -89,7 +89,7 @@ if (is_product_tag()) {
 			<!-- Here Is Result Filter -->
 			<!-- <div class="result_search_shop grid for-pagination for-load-more"> -->
 				
-			</div><!-- Here Is Result Filter -->
+			<!-- Here Is Result Filter -->
 
 	</div><!-- End Container Shop -->
 

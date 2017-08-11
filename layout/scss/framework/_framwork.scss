@@ -2,13 +2,13 @@
 
 body {
   background-color: $color1;
-  font-family: 'Dosis', sans-serif;
+  font-family: $mainFont;
   overflow: hidden;
 }
 
 .mark {
     background-color: orange;
-    color: #fff;
+    color: $color2;
     padding: 0;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .round2 {
-    background-color: #eaeaea;
+    background-color: $color1;
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -83,16 +83,16 @@ a:visited {
 
 .round-info-span {
     display: inline-block;
-    font-family: 'Nunito', 'arial';
+    font-family: $fontTwo;
     min-width: 10px;
     padding: 2px 7px;
     font-size: $font-size - 8;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
-    background-color: #e8e8e8;
+    background-color: lighten($infoColor, 45%);
     border-radius: 10px;
-    color: #909090;
+    color: $infoColor;
 }
 
 

@@ -42,14 +42,11 @@
 	
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
-		<span>
-			<div class="loader3">
-				<span id="counter3">
-
-				</span>
-				<div class="spinner3"></div>
-			</div>
-		</span>
+		<div class="custom-loader">
+			<div class="circle one"></div>
+			<div class="circle two"></div>
+			<div class="circle three"></div>
+		</div>
 	</div><!-- Section Overlay Loading -->
 
 	<!-- Section Search FullScrean -->
@@ -104,7 +101,7 @@
 
 		<div id="headToggile" class="col-md-12 nopadding hidden-xs parent_hide_show">
 
-		<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' ) { ?>
+		<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' && is_home() ) { ?>
 			<header class="site-header">
 				<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
 
@@ -228,6 +225,18 @@
 			<?php } else { ?>
 
 			<div class="small-header">
+				<div class="container-img-header">
+					<div class="overlay"></div>
+
+					<?php 
+
+					$urlImage = get_template_directory_uri() . '/layout/images/header/';
+					$ImagesArray = array('1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', );
+					$random_image = array_rand($ImagesArray);
+
+					?>
+					<img src="<?php echo $urlImage . $ImagesArray[$random_image]; ?>" class="">
+				</div>
 				<?php dynamic_sidebar( 'advertise_here' ); ?>
 			</div>
 

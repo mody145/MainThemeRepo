@@ -35,7 +35,7 @@
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba(255, 255, 255, 0.1);
+				    background-color: rgba($color2, 0.1);
 				}
 		    }
 		}
@@ -66,7 +66,7 @@
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba(255, 255, 255, 0.1);
+				    background-color: rgba($color2, 0.1);
 				}
 		    }
 		}
@@ -97,7 +97,7 @@
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba(255, 255, 255, 0.1);
+				    background-color: rgba($color2, 0.1);
 				}
 		    }
 		}
@@ -128,7 +128,7 @@
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba(255, 255, 255, 0.1);
+				    background-color: rgba($color2, 0.1);
 				}
 		    }
 		}
@@ -139,7 +139,7 @@
 	}
 
 	p.info-for-the-post {
-    	color: rgba(255, 255, 255, 0.63);
+    	color: rgba($color2, 0.63);
     	margin-top: -$main-margin;
 	}
 }
