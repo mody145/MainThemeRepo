@@ -22,6 +22,7 @@ function sorting_grid_bosts_in_blog_box() {
 				<div class="col-md-6 nopadding">
 			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
+				    		<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -46,6 +47,7 @@ function sorting_grid_bosts_in_blog_box() {
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -74,6 +76,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -102,6 +105,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -149,6 +153,7 @@ function sorting_grid_bosts_in_blog_box() {
 				<div class="col-md-6 nopadding">
 			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
+				    		<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -173,6 +178,7 @@ function sorting_grid_bosts_in_blog_box() {
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -201,6 +207,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -229,6 +236,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -276,6 +284,7 @@ function sorting_grid_bosts_in_blog_box() {
 				<div class="col-md-6 nopadding">
 			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
+				    		<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -300,6 +309,7 @@ function sorting_grid_bosts_in_blog_box() {
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -328,6 +338,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -356,6 +367,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -399,6 +411,7 @@ function sorting_grid_bosts_in_blog_box() {
 				<div class="col-md-6 nopadding">
 			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
+				    		<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -423,6 +436,7 @@ function sorting_grid_bosts_in_blog_box() {
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -451,6 +465,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -479,6 +494,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -521,6 +537,7 @@ function sorting_grid_bosts_in_blog_box() {
 				<div class="col-md-6 nopadding">
 			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
+				    		<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -545,6 +562,7 @@ function sorting_grid_bosts_in_blog_box() {
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -573,6 +591,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -601,6 +620,7 @@ function sorting_grid_bosts_in_blog_box() {
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>

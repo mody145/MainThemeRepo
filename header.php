@@ -269,7 +269,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo home_url(); ?>">Brand</a>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>">Smile</a>
 				</div>
 
 				<?php wp_nav_menu( $args ); ?>
@@ -281,7 +281,7 @@
 
 			<div class="col-md-3 col-sm-6 nopadding hidden-xs" style="position: static;">
 				<div class="brand-name transparent wow fadeIn">
-					<a href="<?php echo home_url(); ?>"><i class="icon-logo-1"></i></a>
+					<a href="<?php echo home_url(); ?>"><i class="icon-smile-logo"></i></a>
 				</div>
 			</div>
 

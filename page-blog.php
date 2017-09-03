@@ -27,7 +27,8 @@ if($posts->have_posts()) {
 
 		<!-- ||  Posts Content  || -->
 		
-			<?php get_template_part( 'template/content-plog-1', get_post_format() ); ?>
+			<?php //get_template_part( 'template/content-plog-1', get_post_format() ); ?>
+			<?php include( locate_template( 'template/content-plog-1.php', false, false ) ); ?>
 
 		<!-- ||  Posts Content  || -->
 

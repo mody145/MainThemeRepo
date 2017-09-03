@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: $color2;
+    color: $color8;
 }
 
 .feat .box-feat i {
@@ -39,9 +39,10 @@
 }
 
 .feat .box-feat {
-    background-color: $color4;
+    background-color: $color2;
     padding: $main-padding;
     height: 300px;
+    width: calc(100% - 10px);
 }
 
 @media (max-width: 767px){
@@ -52,13 +53,16 @@
 }
 
 .feat .box-feat-2 {
-    background-color: $color6;
+    background-color: $color2;
     padding: $main-padding;
     height: 300px;
+    width: calc(100% - 10px);
+    float: right;
 }
 
 @media (max-width: 767px){
     .feat .box-feat-2 {
         width: 100%;
+        float: none;
     }
 }

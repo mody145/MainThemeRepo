@@ -30,6 +30,7 @@ function sorting_grid_images_box() {
 
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
+					<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
@@ -82,6 +83,7 @@ function sorting_grid_images_box() {
 
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
+					<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
@@ -133,6 +135,7 @@ function sorting_grid_images_box() {
 
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
+					<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
@@ -182,6 +185,7 @@ function sorting_grid_images_box() {
 
 			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<div class="image-box align-v">
+					<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 				</div>
@@ -227,6 +231,7 @@ function sorting_grid_images_box() {
 
 		<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			<div class="image-box align-v">
+				<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 				<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 			</div>

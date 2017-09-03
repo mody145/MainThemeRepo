@@ -4,34 +4,37 @@
 	$mainFont: 'Dosis', sans-serif;
 	$fontOne: 'Droid Sans', sans-serif;
 	$fontTwo: 'Nunito', 'arial';
-	$fontThree: 'Roboto', 'arial';
+	$fontThree: $fontOne;
 	$fontFour: 'Russo One', 'cursive', 'arial';
 
 	$main-margin: 10px;
 	$main-padding: 10px;
 
-	$color1: #eaeaea;
+	$color1: #efefef;
 	$color2: #fff;
-	$color3: #3be8b0;
+
+	$color3: #82daca;
 	$color4: #1aafd0;
 	$color5: #6a67ce;
 	$color6: #ffb900;
 	$color7: #fc636b;
-	$color8: #333;
-	$color9: #42b72a;
-	$color10: #1aafd0;
 
-	$infoColor: #777;
+	$color8: #777;
 
-	$green: #82daca;
-	$blue: #08f;
+	$color9: $color4;
+	$color10: $color5;
+
+	$infoColor: $color8;
+
+	$green: $color3;
+	$blue: $color5;
 	$black: #000;
 
 	$borderInput: #ccc;
 
-	$logo_color: #555;
+	$logo_color: $color8;
 
-	$backgroungTransparentImage: #e4e0dd;
+	$backgroungTransparentImage: #fff;
 
 /*====================================
 =            Color JQuery            =

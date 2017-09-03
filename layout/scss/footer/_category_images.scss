@@ -1,0 +1,115 @@
+.category_by_images {
+    padding: 10px;
+    background-color: $color2;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	.__box_categorey {
+	    min-width: calc(25% - 10px);
+	    height: 80px;
+	    color: $color2;
+	    overflow: hidden;
+	    position: relative;
+	    border-radius: 5px;
+	    margin: 5px;
+
+		h4 {
+		    position: absolute;
+		    z-index: 7;
+		    font-size: 25px;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -85%);
+
+		    a {
+		    	color: $color2;
+		    }
+
+		    span {
+				display: block;
+				font-size: $font-size - 6;
+				color: darken($color2, 15%);	
+		    }
+		}
+
+		.overlay_category_box {
+		    background-color: $black;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 6;
+		    opacity: .4;
+		}
+
+		img {
+		    position: absolute;
+		    z-index: 4;
+		    max-width: 100%;
+		    height: auto;
+		    top: 50%;
+		    transform: translate(0%, -50%);
+		}
+	}
+}
+
+.category_by_images_blog {
+    padding: 10px;
+    background-color: $color2;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	.__box_categorey {
+	    min-width: calc(33.333% - 10px);
+	    height: 200px;
+	    color: $color2;
+	    overflow: hidden;
+	    position: relative;
+	    border-radius: 5px;
+	    margin: 5px;
+
+		h4 {
+		    position: absolute;
+		    z-index: 7;
+		    font-size: 25px;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -85%);
+
+		    a {
+		    	color: $color2;
+		    }
+
+		    span {
+				display: block;
+				font-size: $font-size - 6;
+				color: darken($color2, 15%);	
+		    }
+		}
+
+		.overlay_category_box {
+		    background-color: $black;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 6;
+		    opacity: .4;
+		}
+
+		img {
+		    position: absolute;
+		    z-index: 4;
+		    max-width: 100%;
+		    height: auto;
+		    top: 50%;
+		    transform: translate(0%, -50%);
+		}
+	}
+}

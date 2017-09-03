@@ -62,8 +62,12 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_script( 'jscroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.jscroll.js', array('jquery'), '', true );
 	// easying
 	wp_enqueue_script( 'easying-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.easing.1.3.js', array('jquery'), '', true );
-	// Masonry
-	wp_enqueue_script( 'Masonry', 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', array('jquery'), '', true );
+
+	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
+
+		// Masonry
+		wp_enqueue_script( 'Masonry', get_template_directory_uri() . '/layout/js/pugins_JQuery/masonry.pkgd.min.js', array('jquery'), '', true );
+	}
 
 	if ( is_shop() || is_product() || is_product_tag() || is_product_category() ) {
 		//thumbelina
@@ -78,6 +82,11 @@ function dwwp_styles_and_scripts() {
 	if ( is_product() ) {
 		// elevateZoom
 		wp_enqueue_script( 'elevateZoom', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.elevateZoom-3.0.8.min.js', array('jquery'), '', true );
+	}
+
+	if ( is_home() ) {
+		// final countdown
+		wp_enqueue_script( 'final-countdown', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.countdown.js', array('jquery'), '', true );
 	}
 
 	// For Sticky Sidebar

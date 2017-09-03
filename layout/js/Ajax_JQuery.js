@@ -21,34 +21,6 @@ jQuery(document).ready(function($) {
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
 
-	/*====================================================
-	=            Spinner Loading With Counter            =
-	====================================================*/
-	
-	function startCounter($status) {
-
-		if ($status == 'start') {
-
-		  	$('.line_spinner10').css('width');
-			var interval = setInterval(increment,80);
-			var current = 0;
-		  
-			function increment(){
-				current++;
-				$('.line_spinner10').css('width',current+'%');
-		    	$('.counter_spinner10').html(current+'%');
-		    	
-				if(current == 100) { current = 0; }
-			}
-		} else {
-			return;
-		}
-	}
-
-	//startCounter()
-
-	/*=====  End of Spinner Loading With Counter  ======*/
-
 	/*===========================================
 	=            Section Filter Shop            =
 	===========================================*/
@@ -984,6 +956,7 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('.image-box').css('position', 'relative');
 		})
 		.fail(function() {
 			console.log("error");
@@ -1017,6 +990,7 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('.image-box').css('position', 'relative');
 		})
 		.fail(function() {
 			console.log("error");
@@ -1050,6 +1024,7 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('.image-box').css('position', 'relative');
 		})
 		.fail(function() {
 			console.log("error");
@@ -1083,6 +1058,7 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color1
 			});
+			$('.image-box').css('position', 'relative');
 		})
 		.fail(function() {
 			console.log("error");
@@ -1116,6 +1092,7 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('.image-box').css('position', 'relative');
 		})
 		.fail(function() {
 			console.log("error");
@@ -1387,6 +1364,9 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('span.gradiant_overlay').parent().css({
+				position: 'relative'
+			});
 		})
 		.fail(function() {
 			console.log("error");
@@ -1419,6 +1399,9 @@ jQuery(document).ready(function($) {
 			thisElement.css({
 				backgroundColor: blue,
 				color: color2
+			});
+			$('span.gradiant_overlay').parent().css({
+				position: 'relative'
 			});
 		})
 		.fail(function() {
@@ -1453,6 +1436,9 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color2
 			});
+			$('span.gradiant_overlay').parent().css({
+				position: 'relative'
+			});
 		})
 		.fail(function() {
 			console.log("error");
@@ -1486,6 +1472,9 @@ jQuery(document).ready(function($) {
 				backgroundColor: blue,
 				color: color1
 			});
+			$('span.gradiant_overlay').parent().css({
+				position: 'relative'
+			});
 		})
 		.fail(function() {
 			console.log("error");
@@ -1518,6 +1507,9 @@ jQuery(document).ready(function($) {
 			thisElement.css({
 				backgroundColor: blue,
 				color: color2
+			});
+			$('span.gradiant_overlay').parent().css({
+				position: 'relative'
 			});
 		})
 		.fail(function() {

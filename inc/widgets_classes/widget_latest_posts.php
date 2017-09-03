@@ -62,7 +62,10 @@ class latest_posts_blog extends WP_Widget {
 		        if ($post->have_posts()) { while ($post->have_posts()) { $post->the_post(); ?>
 
 				<div class="item <?php if ($post->current_post == 0) { echo 'active'; } ?>">
-					<a href="<?php echo get_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Image"></a>
+					<a href="<?php echo get_permalink(); ?>">
+						<span class="gradiant_overlay two"></span>
+						<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Image">
+					</a>
 					<div class="date">
 						<span class="day"><?php echo get_the_date('d'); ?></span>
 						<span class="mounth"><?php echo get_the_date('M'); ?></span>

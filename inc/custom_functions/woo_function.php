@@ -212,5 +212,28 @@ add_action( 'wp_enqueue_scripts', 'enqueue_files_masonry' );
 
 /*=====  End of Section Start Masonry.js In Page ...  ======*/
 
+/*=============================================
+=            Get Random Categories            =
+=============================================*/
+
+function get_random_categories( $number, $args = null ) {
+  $categories = get_categories( $args ); // Get all the categories, optionally with additional arguments
+
+  // If there aren't enough categories, use as many as possible to avoid an error
+  if( $number > count( $categories ) )
+    $number = count( $categories );
+
+  // If no categories are available or none were requested, return an empty array
+  if( $number === 0 )
+    return array();
+
+  shuffle( $categories ); // Mix up the category array randomly
+
+  // Return the first $number categories from the shuffled list
+  return array_slice( $categories, 0, $number );
+}
+
+/*=====  End of Get Random Categories  ======*/
+
 
 ?>

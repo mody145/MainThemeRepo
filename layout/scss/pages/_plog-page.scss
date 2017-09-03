@@ -13,6 +13,10 @@
 	width: 100%;
     position: relative;
 
+    > a {
+        display: block;
+    }
+
     span.date-bost {
         position: absolute;
         top: 20px;
@@ -21,6 +25,7 @@
         padding: 3px 7px;
         color: $infoColor;
         font-family: $fontFour;
+        z-index: 5;
     }
 
     @media (max-width: 767px) {
@@ -57,10 +62,10 @@ h1.post-title {
     position: absolute;
     top: 10px;
     left: 0;
-    background-color: rgba($color2, 0.6);
     padding: $main-padding /  2 $main-padding;
     font-size: $font-size + 8;
     z-index: 1;
+    color: $color2;
 }
 
 @media (max-width: 767px) {
@@ -70,27 +75,29 @@ h1.post-title {
 }
 
 h1.post-title a {
-    color: rgba($black, 0.64);
+    color: rgba($color2, 1);
 }
 
 .post-thumbnail-img .post-info {
     position: absolute;
     top: 75px;
     left: 0;
-    background-color: rgba($color2, 0.6);
     padding: 2px $main-padding /  2;
-    color: rgba($black, 0.6);
+    color: rgba($color2, 1);
     z-index: 1;
+    font-family: $fontTwo;
+    font-size: $font-size - 9;
 }
 
 .post-thumbnail-img p.info_post-2 {
     position: absolute;
     top: 105px;
-    background-color: rgba($color2, 0.6);
+    color: rgba($color2, 1);
+    padding-left: 5px;
 }
 
 .post-thumbnail-img .post-info a {
-	color: rgba($black, 0.8);
+	color: rgba($color2, 1);
 }
 
 p.some-content-post {

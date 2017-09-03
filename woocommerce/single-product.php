@@ -102,7 +102,7 @@ get_header(); ?>
 								if ( $product->is_on_sale() ) { echo $product->get_sale_price(); } else { echo $product->get_regular_price(); }
 								echo '</span>'; ?>
 								<!-- Check If On Sale -->
-								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'> <i class='icon-usd'></i> " . $product->get_regular_price() . " </span>"; } else { echo '<span class="no-disc">No Disc</span>'; } ?>
+								<?php if ( $product->is_on_sale() ) { echo "<span class='price-without-disc'>/<i class='icon-usd'></i>" . $product->get_regular_price() . " </span>"; } else { echo '<span class="no-disc">No Disc</span>'; } ?>
 							</span>
 						</div>
 					</div>

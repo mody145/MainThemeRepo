@@ -11,6 +11,7 @@
 
 					<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					<a href="<?php the_permalink(); ?>">
+						<?php if ($posts->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($posts->current_post == 1) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($posts->current_post == 2) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($posts->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 						<?php echo '<img src="' . get_the_post_thumbnail_url() . '" />'; ?>
 					</a>
 					<p class="post-info hidden-xs">
@@ -36,7 +37,7 @@
 					<p class="info_post-2">
 						<i class="icon-thumbs-o-up"> </i>&nbsp;<?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> &nbsp;
 						<i class="icon-bubble"> </i>&nbsp;<?php echo  get_comments_number(); ?>  &nbsp;
-						<i class="icon-eye"> </i>&nbsp;<?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> &nbsp;
+						<i class="icon-fire"> </i>&nbsp;<?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> &nbsp;
 					</p>
 				</div>
 				<p class="some-content-post"><?php echo $str = substr(get_the_content(), 0, 180) . " ..." ?><a href="<?php echo the_permalink() ?>"> Read More</a></p>

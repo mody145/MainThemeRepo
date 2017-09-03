@@ -75,7 +75,7 @@
         font-size: 15px;
         line-height: 39px;
         background-color: $color1;
-        color: rgba($color7, 0.62);
+        color: rgba($green, 0.62);
         margin-right: 5px;
     }
   }
@@ -272,7 +272,6 @@
       i.icons-option.exists {
           background-color: $green !important;
           color: $color2 !important;
-          border-bottom: 3px solid darken($green, 14%);
       }
   }
 

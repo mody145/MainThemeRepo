@@ -123,7 +123,33 @@ jQuery(document).ready(function($) {
 
 	$('input').attr('autocomplete', 'off');
 
+	$('span.gradiant_overlay').parent().css({
+		position: 'relative',
+	});
 
+	$('.latest-posts-blog-widget').find('.gradiant_overlay').parent().css({
+		position: 'relative',
+		display: 'block'
+	});
+
+	try{
+
+		// Run Countdown In Index Page
+		var endDateSale = $('.container_image_closest_sale').attr('data-saleTo');
+		$('#clock').countdown(endDateSale, function(event) {
+			var $this = $(this).html(event.strftime(''
+			+ '<span>%w <sub>weeks</sub></span> '
+			+ '<span>%d <sub>days</sub></span> '
+			+ '<span>%H <sub>hr</sub></span> '
+			+ '<span>%M <sub>min</sub></span> '
+			+ '<span>%S <sub>sec</sub></span>'));
+		});
+
+	}catch(e){
+
+	console.log(e);
+	}	
+	
 /*====================================================
 =            Spinner Loading With Counter            =
 ====================================================*/
@@ -458,5 +484,32 @@ jQuery(document).ready(function($) {
 	$('.main_image_product').css('min-height', mainImageHeight);
 
 /*=====  End of Modify Height Main Product Image  ======*/	
+
+/*=========================================================
+=            Add Background To Info GridImages            =
+=========================================================*/
+
+	$('span.gradiant_overlay').hover(function() {
+		
+		var that = $(this);
+		var info = that.parent().parent().find('.info');
+
+		info.css({
+			backgroundImage: '-webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000))',
+			display: 'block',
+		    width: 'calc(100% - 0px)'
+		});
+
+	}, function() {
+		var that = $(this);
+		var info = that.parent().parent().find('.info');
+
+		info.css({
+			backgroundImage: 'none'
+		});
+	});
+
+/*=====  End of Add Background To Info GridImages  ======*/
+
 
 });

@@ -4,6 +4,7 @@ body {
   background-color: $color1;
   font-family: $mainFont;
   overflow: hidden;
+  color: $color8;
 }
 
 .mark {
@@ -67,7 +68,7 @@ a:link,
 a:hover,
 a:visited {
 	text-decoration: none;
-	color: $color5;
+	color: $color8;
 }
 
 .grid-item {
@@ -93,6 +94,36 @@ a:visited {
     background-color: lighten($infoColor, 45%);
     border-radius: 10px;
     color: $infoColor;
+}
+
+span.gradiant_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        opacity: 0;
+    }
+}
+
+span.gradiant_overlay.one {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, $color5), color-stop(1.0, $color4));
+}
+
+span.gradiant_overlay.two {
+    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, $color3), color-stop(1.0, $color6));
+}
+
+span.gradiant_overlay.three {
+    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, $color7), color-stop(1.0, $color5));
+}
+
+span.gradiant_overlay.four {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, $green), color-stop(0.84, $color5));
 }
 
 

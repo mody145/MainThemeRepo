@@ -59,39 +59,32 @@ input.form-control {
     border: 0;
     color: $color2 !important;
     background-color: $green;
-    border-bottom: 4px solid darken($green, 10);
-    font-family: $fontThree;
-    font-weight: bold;
-    font-size: $font-size - 7;
+    font-family: $mainFont;
+    font-size: $font-size - 6;
+    letter-spacing: 1px;
 
     &:hover {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 
     &:focus {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 
     &:active {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 
     &:visited {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 
     &::active:focus {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 
     &::active:hover {
         background-color: $green;
-        border-bottom: 4px solid darken($green, 20);
     }
 }
 
@@ -113,39 +106,32 @@ input.form-control {
     border: 0;
     color: $color2 !important;
     background-color: $blue;
-    border-bottom: 4px solid darken($blue, 10);
-    font-family: $fontThree;
-    font-weight: bold;
-    font-size: $font-size - 7;
+    font-family: $mainFont;
+    font-size: $font-size - 6;
+    letter-spacing: 1px;
 
     &:hover {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 
     &:focus {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 
     &:active {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 
     &:visited {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 
     &::active:focus {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 
     &::active:hover {
         background-color: $blue;
-        border-bottom: 4px solid darken($blue, 20);
     }
 }
 

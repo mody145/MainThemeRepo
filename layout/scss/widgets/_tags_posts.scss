@@ -5,12 +5,13 @@
 	h4 {
 		display: flex;
 		align-items: center;
-		border-bottom: 1px solid $color4;
 		padding: 10px 5px;
+		font-size: 18px;
+	    letter-spacing: 1px;
 
 		i {
 			font-size: 13px;
-			background-color: $color4;
+			background-color: $color3;
 			color: $color2;
 			width: 25px;
 			height: 25px;

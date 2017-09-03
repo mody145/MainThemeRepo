@@ -24,6 +24,48 @@
 		<?php dynamic_sidebar( 'welcome_msg' ); ?>
 	</div><!-- End Section Welcome -->
 
+	<!-- Section Closest Sale -->
+	<div class="conatiner-closest-sale">
+
+	<?php 
+
+		global $wpdb;
+		$sales = $wpdb->get_results( "SELECT * FROM `wp_postmeta` WHERE `meta_key` = '_sale_price_dates_to' AND `meta_value` > 1", ARRAY_A );
+		$count_sales = count($sales);
+		$avilbale_sales = array();
+
+		for ($i=0; $i < $count_sales; $i++) {
+			if ( $sales[$i]['meta_value'] > time() ) {
+				$avilbale_sales[] = $sales[$i]['post_id'];
+			}
+		}
+
+		$random_sale = array_rand( $avilbale_sales );
+		$id_random_sale = $avilbale_sales[$random_sale];
+
+		$_product = wc_get_product( $id_random_sale );
+
+		//pre( $_product );
+
+	?>
+
+		<div class="container_image_closest_sale" data-saleTo="<?php echo date_format($_product->date_on_sale_to, "Y/m/d") ?>">
+			<!-- <span class="gradiant_overlay three"></span> -->
+	    	<?php if(has_post_thumbnail( $_product->id )) { echo '<img src="' . get_the_post_thumbnail_url( $_product->id ) . '" />'; } ?>
+	    </div>
+	    <div class="clock">
+	    	<span class="title_sale">This Item Have Discount<span class="numberCircle"><?php $discount = ( ($_product->regular_price - $_product->sale_price ) * 100) / $_product->regular_price; echo floor($discount) . "%"; ?></span></span>
+	    	<div id="clock"></div>
+			<h3>
+				<a href="<?php echo get_post_permalink( $_product->id ) ?>"><?php echo $_product->name ?></a>
+				<span class="sale_price"><i class="icon-usd"></i>&nbsp;<?php echo $_product->sale_price ?></span>
+				<span class="reg_price">&nbsp;/&nbsp;<i class="icon-usd"></i>&nbsp;<?php echo $_product->regular_price ?></span>
+			</h3>
+			<p><?php echo $_product->description ?></p>
+	    </div>
+
+	</div><!-- Section Closest Sale -->
+
 	<!-- Section Slider -->
 	<div class="mini-slider hidden-xs wow fadeIn">
 
@@ -187,13 +229,13 @@
 	</div><!-- End Section Testimonials -->
 
 	<!-- Section Features -->
-	<div class="feat wow fadeIn">
+	<!-- <div class="feat wow fadeIn">
 		<div class="col-md-6 col-sm-6 nopadding">
 			<div class="box-feat">
 				<i class="icon-monocle"></i>
 				<h3 class="bold text-uppercase">our experience</h3>
 				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-				<a href="<?php echo home_url( 'about-us' ); ?>" class="btn btn-info">Read More</a>
+				<a href="<?php //echo home_url( 'about-us' ); ?>" class="btn btn-info">Read More</a>
 			</div>
 		</div>
 		<div class="col-md-6 col-sm-6 nopadding">
@@ -201,10 +243,10 @@
 				<i class="icon-bomb"></i>
 				<h3 class="bold">OUR SERVICES</h3>
 				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-				<a href="<?php echo home_url( 'services' ); ?>" class="btn btn-info">Read More</a>
+				<a href="<?php //echo home_url( 'services' ); ?>" class="btn btn-info">Read More</a>
 			</div>
 		</div>
-	</div><!-- End Section Features -->
+	</div> --><!-- End Section Features -->
 
 	<!-- Start Grid Images -->
 	<div class="col-md-12 nopadding">
@@ -243,6 +285,7 @@
 				<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding'; } ?>">
 					<a href="<?php echo get_permalink(); ?>">	
 						<div class="image-box align-v">
+						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 							<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 						</div>
@@ -253,7 +296,9 @@
 							<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 							<?php } else { echo ''; } ?>
 							<span>
+								<?php if ($query->current_post !== 3 && $query->current_post !== 2) { ?>
 								<i class="icon-time2"> </i> <?php echo get_the_date(); ?>,
+								<?php } else { echo ''; } ?>
 
 								<?php if ($query->current_post == 0 || $query->current_post == 1) { ?> 
 								<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
@@ -311,6 +356,7 @@
 				<div class="col-md-6 nopadding">
 			    	<div class="item one">
 			    		<div class="img-box align-v">
+			    			<span class="gradiant_overlay four"></span>
 							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
@@ -335,6 +381,7 @@
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
+										<span class="gradiant_overlay one"></span>
 										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 									</a>
 								</div>
@@ -363,6 +410,7 @@
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay two"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -391,6 +439,7 @@
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
+									<span class="gradiant_overlay three"></span>
 									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 								</a>
 							</div>
@@ -416,35 +465,6 @@
 		    </div>
 		</div>
 	</div><!-- Section Services -->
-
-	<!-- Start Section Latest Posts -->
-	<div class="latest-posts-blog wow fadeIn">
-
-    	<?php global $query_string;
-        query_posts ('posts_per_page=6');
-        if (have_posts()) { while (have_posts()) { the_post(); ?>
-        
-		<div class="col-md-6 col-sm-6">
-			<div class="post-image-home">
-				<img src="<?php echo get_the_post_thumbnail_url(); ?>">
-				<span class="date-bost">
-				    <span class="munth"><?php echo get_the_date('M'); ?></span>
-				    <span class="day"><?php echo get_the_date('d'); ?></span>
-				    <span class="year"><?php echo get_the_date('Y'); ?></span>
-				</span>
-			</div>
-			<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
-			<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
-			<p class="info_post">
-				<i class="icon-thumbs-o-up"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?> </span>
-				<i class="icon-bubble"> </i><span class="round-info-span"> <?php echo  get_comments_number(); ?>  </span>
-				<i class="icon-fire"> </i><span class="round-info-span"> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?> </span>
-				<i class="icon-clock-o"> </i><span class="round-info-span"> <?php echo get_the_date(); ?></span>
-			</p>
-		</div>
-
-		<?php }} ?>
-	</div><!-- End Section Latest Posts -->
 
 </div><!--End Content Page Here -->
 
