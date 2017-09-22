@@ -222,7 +222,7 @@ function dwwp_register_custom_settings_sevices() {
 }
 
 function service_main__options() {
-	echo 'Main Settings';
+	echo '<i class="icon-smile-logo" style=" font-size: 55px; "></i>';
 }
 // Function To Creat Field In Admin Page
 function costum_setting_service_title_callback() {

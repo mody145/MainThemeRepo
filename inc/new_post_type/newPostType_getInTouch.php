@@ -54,7 +54,7 @@ function dwwp_register_custom_settings_touch() {
 }
 
 function touch_settings_callback() {
-	echo 'Main Settings';
+	echo '<i class="icon-smile-logo" style=" font-size: 55px; "></i>';
 }
 // Title Field
 function touch_title_callback() {

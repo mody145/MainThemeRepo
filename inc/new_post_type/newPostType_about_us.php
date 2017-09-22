@@ -179,7 +179,7 @@ function dwwp_register_custom_settings_about_page() {
 }
 
 function About_main__options() {
-	echo 'Main Settings';
+	echo '<i class="icon-smile-logo" style=" font-size: 55px; "></i>';
 }
 // Function To Creat Field In Admin Page
 function costum_setting_about_title_callback() {

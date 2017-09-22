@@ -1,3 +1,21 @@
 .show_image img {
 	width: 100%;
 }
+
+.input-color-container {
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border: solid 2px #ddd;
+    border-radius: 50%;
+}
+
+.input-color {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 60px;
+    height: 60px;
+    border: none !important;
+}

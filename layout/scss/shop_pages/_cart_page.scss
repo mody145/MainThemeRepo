@@ -95,13 +95,13 @@
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item:nth-of-type(even) {
-	    background-color: $borderInput;
+	    background-color: $color2;
 	}
 }
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item {
-	    border: 1px solid $color8;
+	    border: 5px solid $color2;
 	}
 
 	td.actions {

@@ -108,6 +108,8 @@ function dwwp_admin_custom_script() {
 	wp_enqueue_media();
 	// Admin Css
 	wp_enqueue_style( 'admin-css', get_template_directory_uri() . '/layout/css/custom-admin.css?' . time() . '' );
+	// Fonts
+	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css?' . time() . '' );
 
 	// Admin Js
 	wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/layout/js/custom-admin.js', array('jquery'), '', true );

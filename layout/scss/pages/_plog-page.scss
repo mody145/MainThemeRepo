@@ -66,6 +66,7 @@ h1.post-title {
     font-size: $font-size + 8;
     z-index: 1;
     color: $color2;
+    background-color: $color5;
 }
 
 @media (max-width: 767px) {
@@ -87,6 +88,7 @@ h1.post-title a {
     z-index: 1;
     font-family: $fontTwo;
     font-size: $font-size - 9;
+    background-color: $color7;
 }
 
 .post-thumbnail-img p.info_post-2 {
@@ -94,6 +96,7 @@ h1.post-title a {
     top: 105px;
     color: rgba($color2, 1);
     padding-left: 5px;
+    background-color: $color6;
 }
 
 .post-thumbnail-img .post-info a {

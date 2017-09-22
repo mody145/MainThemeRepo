@@ -511,5 +511,13 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Add Background To Info GridImages  ======*/
 
+/*=========================================================
+=            Redirect Shop And Blog When Click            =
+=========================================================*/
+
+
+
+/*=====  End of Redirect Shop And Blog When Click  ======*/
+
 
 });

@@ -15,7 +15,7 @@ class big_ads_here_sidebar extends WP_Widget {
 	
 		<div class="ads-here-big">
 			<a href="<?php echo $two['big_ads__link']; ?>">
-				<img class="ads-here" src="<?php echo $two['big_ads_image_link']; ?>" />
+				<img class="ads-here img-responsive" src="<?php echo $two['big_ads_image_link']; ?>" />
 			</a>
 		</div>
 

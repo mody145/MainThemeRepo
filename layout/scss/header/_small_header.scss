@@ -10,6 +10,12 @@
 	    right: 70px;
 	    transform: translate(0%, -55%);
 	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		img.ads-here {
+			z-index: 5;
+		}
+	}
 }
 
 .container-img-header {
@@ -19,7 +25,6 @@
 	display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 
 	.overlay {
 	    position: absolute;

@@ -2100,5 +2100,39 @@ jQuery(document).ready(function($) {
 	
 	/*=====  End of Section Show Small Slider  ======*/
 	
+	/*====================================================
+	=            Section Refresh Sale Product            =
+	====================================================*/
+	
+	$('body').on('click', '#refresh_sale', function(event) {
+
+		var containerSaleBox = $('.conatiner-closest-sale');
+		var idCurrentProduct = $('#clock').attr('data-idProduct');
+
+		containerSaleBox.prepend('<div class="overlay_sale_today"> <i class="fa fa-refresh fa-spin"></i> </div>');
+
+		$.ajax({
+			url: MyAjax.ajaxurl,
+			type: 'GET',
+			data: {action: 'get_random_sale_in_home_page', idCurrentProduct: idCurrentProduct},
+		})
+		.done(function(data) {
+			$('.overlay_sale_today').remove();
+			containerSaleBox.html(data);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+
+		event.preventDefault();
+		/* Act on the event */
+	});
+	
+	/*=====  End of Section Refresh Sale Product  ======*/
+		
 
 });

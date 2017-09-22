@@ -2,10 +2,11 @@
 
 
 require get_template_directory() . '/inc/ajax_functions/ajax_get_posts_by_category_in_header_menu.php';
-require get_template_directory() . '/inc/ajax_functions/ajax_show_followed_dropdown_box.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_get_random_sale_in_home_page.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_view_products_cart_in_header.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_system_follow_like_addtocart.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_calculate_value_by_country.php';
+require get_template_directory() . '/inc/ajax_functions/ajax_show_followed_dropdown_box.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_get_price_by_my_currency.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_remove_cookie_country.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_grid_posts_in_index.php';
@@ -18,6 +19,7 @@ require get_template_directory() . '/inc/ajax_functions/ajax_filter_shop.php';
 require get_template_directory() . '/inc/ajax_functions/ajax_dont_reload_again.php';
 
 require get_template_directory() . '/inc/new_post_type/newPostType_getInTouch.php';
+require get_template_directory() . '/inc/new_post_type/newPostType_colors.php';
 require get_template_directory() . '/inc/new_post_type/newPostType_slider.php';
 require get_template_directory() . '/inc/new_post_type/newPostType_services.php';
 require get_template_directory() . '/inc/new_post_type/newPostType_about_us.php';

@@ -29,7 +29,7 @@ function show_followed_dropdown_box() {
 		<?php }} ?>
 
 		<div class="buttons">
-			<a class="text-center" href="<?php echo home_url( 'wishlist' ); ?>"><button class="btn btn-default btn-sm btn-block">Whitelist Page</button></a>
+			<a class="text-center" href="<?php echo home_url( 'wishlist' ); ?>"><button class="btn btn-primary btn-sm btn-block">Whitelist Page</button></a>
 		</div>
 
 	<?php } 

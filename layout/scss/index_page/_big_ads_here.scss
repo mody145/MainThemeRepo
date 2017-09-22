@@ -3,3 +3,10 @@
     max-width: calc(100% - 10px);
     margin-right: 0;
 }
+
+@media (max-width: 767px) {
+	.ads-here-big {
+		max-width: 100%;
+	    margin-bottom: -10px;
+	}
+}

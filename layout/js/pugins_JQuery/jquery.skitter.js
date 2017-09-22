@@ -2636,7 +2636,7 @@
           case 'fixed' : 
             self.skitter_box.find('.label_skitter').animate({
               opacity: '1',
-              top: 10
+              top: 100
             }, 300, function() {
               self.skitter_box.find('.test-title').css({
                     'transform': 'rotateX(0deg)',
@@ -2677,7 +2677,7 @@
         case 'fixed' : 
             self.skitter_box.find('.label_skitter').animate({
               opacity: '0',
-              top: 0
+              top: 90
             },600, function() {
               self.skitter_box.find('.test-title').css({
                 'transform': 'rotateX(90deg)',
