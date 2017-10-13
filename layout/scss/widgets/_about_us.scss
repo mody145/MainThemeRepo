@@ -3,12 +3,12 @@
 =======================================*/
 
 .dwwp-sidebar-custom-widget-about-us {
-    background-color: $color2;
+    background-color: var(--color2);
 }
 
 .dwwp-sidebar-custom-widget-about-us h4 {
-    background-color: $color2;
-    color: $color8;
+    background-color: var(--color2);
+    color: var(--color8);
     padding: $main-padding;
     margin: 0;
     font-size: 18px;
@@ -16,8 +16,8 @@
 
     i {
 		font-size: 13px;
-		background-color: $color3;
-		color: $color2;
+		background-color: var(--color3);
+		color: var(--fontColorHaveBackground);
 		width: 25px;
 		height: 25px;
 		display: inline-flex;

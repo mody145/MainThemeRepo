@@ -1,5 +1,5 @@
 .container-404-page {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin;
     margin-left: 0;
     margin-right: 0;
@@ -12,5 +12,5 @@
 
 .container-404-page i {
     font-size: 200px;
-    color: $color7;
+    color: var(--color7);
 }

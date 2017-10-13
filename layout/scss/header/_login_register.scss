@@ -15,9 +15,9 @@
 			h2 {
 			    margin: 0;
 			    text-align: center;
-			    color: $color2;
+			    color: var(--color2);
 			    font-weight: lighter;
-			    background-color: $color5;
+			    background-color: var(--color5);
 			    padding: 15px;
 
 				&:before {
@@ -56,14 +56,14 @@
 
 				input#password[type="password"], 
 				input#username[type="text"] {
-				    background-color: $color1 !important;
+				    background-color: var(--color1) !important;
 				    border: 0 !important;
 				    border-radius: 2px;
 				}
 
 				input[type="submit"] {
-				    background-color: $color5 !important;
-				    color: $color1 !important;
+				    background-color: var(--color5) !important;
+				    color: var(--color1) !important;
 			        padding: 10px !important;
 				}
 			}
@@ -74,9 +74,9 @@
 			h2 {
 			    margin: 0;
 			    text-align: center;
-			    color: $color2;
+			    color: var(--color2);
 			    font-weight: lighter;
-			    background-color: $color5;
+			    background-color: var(--color5);
 			    padding: 15px;
 
 			    &:before {
@@ -116,14 +116,14 @@
 
 				input#reg_email_header[type="email"], 
 				input#reg_password_header[type="password"] {
-				    background-color: $color1 !important;
+				    background-color: var(--color1) !important;
 				    border: 0 !important;
 				    border-radius: 2px;
 				}
 
 				input[type="submit"] {
-				    background-color: $color5 !important;
-				    color: $color1 !important;
+				    background-color: var(--color5) !important;
+				    color: var(--color1) !important;
 			        padding: 10px !important;
 				}
 			}

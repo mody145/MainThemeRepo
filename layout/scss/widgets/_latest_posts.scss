@@ -8,8 +8,8 @@
 }
 
 .latest-posts-blog-widget h4 {
-    background-color: $color2;
-    color: $color8;
+    background-color: var(--color2);
+    color: var(--color8);
     padding: $main-padding;
     margin: 0;
     font-size: 18px;
@@ -17,8 +17,8 @@
 
     i {
         font-size: 13px;
-        background-color: $color3;
-        color: $color2;
+        background-color: var(--color3);
+        color: var(--fontColorHaveBackground);
         width: 25px;
         height: 25px;
         display: inline-flex;
@@ -42,7 +42,7 @@ position: static;
 }
 
 .latest-posts-blog-widget .carousel-inner {
-    background-color: $color2;
+    background-color: var(--color2);
 }
 
 .latest-posts-blog-widget .carousel-inner img {
@@ -55,7 +55,7 @@ position: static;
     right: 35px;
     text-shadow: none;
     padding-right: 1px;
-    color: lighten($infoColor, 20%);
+    
     border-radius: 2px;
     font-size: 20px;
 }
@@ -66,13 +66,13 @@ position: static;
     right: 11px;
     text-shadow: none;
     padding-left: 1px;
-    color: lighten($infoColor, 20%);
+    
     border-radius: 2px;
     font-size: 20px;
 }
 
 .latest-posts-blog-widget .date {
-    background-color: $color2;
+    background-color: var(--color2);
     position: absolute;
     top: 20px;
     left: 20px;
@@ -96,26 +96,26 @@ position: static;
 
     .mounth {
     background-color: #4081d1;
-    color: $color2;
+    color: var(--color2);
     width: 100%;
     }
 }
 
 .latest-posts-blog-widget .carousel-caption {
     bottom: 0;
-    color: $color8;
+    color: var(--color8);
     position: static;
     padding: $main-padding;
     text-align: left;
 
     .info-for-the-post {
-        color: $infoColor;
+        color: var(--infoColor);
         margin: 0;
     }
 
     .decsription {
         margin: $main-margin 0;
-        color: $infoColor;
+        color: var(--infoColor);
         padding: $main-padding /  2 0;
     }
 }

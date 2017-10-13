@@ -1,15 +1,15 @@
 
 
 body {
-  background-color: $color1;
+  background-color: var(--color1);
   font-family: $mainFont;
   overflow: hidden;
-  color: $color8;
+  color: var(--color8);
 }
 
 .mark {
     background-color: orange;
-    color: $color2;
+    color: var(--color2);
     padding: 0;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .round2 {
-    background-color: $color1;
+    background-color: var(--color1);
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -68,7 +68,7 @@ a:link,
 a:hover,
 a:visited {
 	text-decoration: none;
-	color: $color8;
+	color: var(--color8);
 }
 
 .grid-item {
@@ -91,9 +91,9 @@ a:visited {
     line-height: 1;
     text-align: center;
     white-space: nowrap;
-    background-color: lighten($infoColor, 45%);
+    
     border-radius: 10px;
-    color: $infoColor;
+    color: var(--infoColor);
 }
 
 span.gradiant_overlay {
@@ -111,19 +111,19 @@ span.gradiant_overlay {
 }
 
 span.gradiant_overlay.one {
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, $color5), color-stop(1.0, $color4));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, var(--color5)), color-stop(1.0, var(--color4)));
 }
 
 span.gradiant_overlay.two {
-    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, $color3), color-stop(1.0, $color6));
+    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, var(--color3)), color-stop(1.0, var(--color6)));
 }
 
 span.gradiant_overlay.three {
-    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, $color7), color-stop(1.0, $color5));
+    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0.00, var(--color7)), color-stop(1.0, var(--color5)));
 }
 
 span.gradiant_overlay.four {
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, $green), color-stop(0.84, $color5));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, var(--color3)), color-stop(0.84, var(--color5)));
 }
 
 

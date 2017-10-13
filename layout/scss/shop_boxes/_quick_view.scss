@@ -8,11 +8,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999999;
-    background-color: $color1;
+    background-color: var(--color1);
     width: 0%;
     height: 0%;
     display: none;
-    box-shadow: 1px -1px 2px 0.5px rgba($black, 0.22);
+    box-shadow: 1px -1px 2px 0.5px rgba(#000, 0.22);
     padding: 10px;
     opacity: 0;
 
@@ -36,7 +36,7 @@
         cursor: pointer;
         z-index: 40;
         display: flex;
-        background-color: $color1;
+        background-color: var(--color1);
         width: 30px;
         height: 30px;
         justify-content: center;
@@ -46,7 +46,7 @@
     .container-quick-veiw {
         height: 100%;
         overflow: hidden;
-        background-color: $color2;
+        background-color: var(--color2);
         margin: 10px;
 
         > div {
@@ -78,9 +78,9 @@
             }
 
             .thumbelina-but {
-                background-color: $blue;
+                background-color: var(--color5);
                 box-shadow: none;
-                color: $color2;
+                color: var(--color2);
             }
 
             .thumbelina-but.vert.top,
@@ -109,7 +109,7 @@
         .the-content {
             position: relative;
             height: 100%;
-            background-color: $color2;
+            background-color: var(--color2);
             padding: 10px;
 
             h3 {
@@ -145,36 +145,36 @@
             }
 
             p.note-currency {
-                background-color: $green;
+                background-color: var(--color3);
                 display: inline-block;
                 padding: 5px;
                 cursor: pointer;
-                color: $color2;
+                color: var(--color2);
                 border-radius: 2px;
             }
 
             p.price-currency {
-                background-color: $green;
+                background-color: var(--color3);
                 display: inline-block;
                 padding: 5px;
-                color: $color2;
+                color: var(--color2);
                 border-radius: 2px;
 
                 span {
-                    color: $infoColor;
+                    color: var(--infoColor);
                 }
             }
 
             span.discount-number {
                 font-size: $font-size - 5;
                 font-weight: bold;
-                color: $green;
+                color: var(--color3);
                 font-family: $fontThree;
 
                 span.sale-circle {
                     width: 40px;
                     height: 40px;
-                    background-color: $green;
+                    background-color: var(--color3);
                     display: flex;
                     color: white;
                     justify-content: center;
@@ -190,7 +190,7 @@
                     position: absolute;
                     top: 50px;
                     right: 70px;
-                    color: $color7;
+                    color: var(--color7);
                 }
             }
 
@@ -204,8 +204,8 @@
                 margin-left: 0;
 
                 i {
-                    background-color: $blue;
-                    color: $color2;
+                    background-color: var(--color5);
+                    color: var(--color2);
                     padding: 5px;
                     margin: 0 5px;
                     font-size: 30px;
@@ -234,7 +234,7 @@
 
     h3 {
         margin-bottom: 20px;
-        background-color: $color2;
+        background-color: var(--color2);
         padding: 10px;
         margin-top: 0;
     }
@@ -244,7 +244,7 @@
         li.media {
             margin: 10px 0;
             display: block;
-            background-color: $color2;
+            background-color: var(--color2);
             margin-bottom: 20px;
             padding: 5px;
             border-radius: 5px;
@@ -272,7 +272,7 @@
 
         p.rev-content {
             margin-bottom: 0;
-            color: $infoColor;
+            color: var(--infoColor);
             max-width: 70%;
             font-style: italic;
 
@@ -294,7 +294,7 @@
         }
 
         p.rev-date {
-            color: $infoColor;
+            color: var(--infoColor);
             font-size: $font-size - 8;
             margin: 0;
             font-family: $fontThree;
@@ -307,7 +307,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: $color5;
+    background-color: var(--color5);
     opacity: .8;
     width: 100%;
     height: 100%;

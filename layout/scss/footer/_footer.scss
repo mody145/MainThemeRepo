@@ -3,7 +3,7 @@
 .site-footer {
 	margin: $main-margin 0;
 	overflow: hidden;
-	background-color: $color2;
+	background-color: var(--color2);
 	padding: $main-padding * 2;
 	margin-bottom: 0;
 }
@@ -49,7 +49,7 @@
 }
 
 .menu-footer-menu-links-container ul li:before {
-    color: $color4;
+    color: var(--color4);
 }
 
 .custom-sidebar-widget-footer2 ul {
@@ -71,5 +71,5 @@
 .custom-sidebar-widget-footer2 ul li a img {
     max-width: 80px;
     margin: $main-margin /  2;
-    border: 4px solid lighten( $infoColor, 40% );
+    
 }

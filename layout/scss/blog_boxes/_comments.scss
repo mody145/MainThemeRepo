@@ -13,7 +13,7 @@
 
     .comments-container h1 {
         font-size: $font-size + 16;
-        color: $color8;
+        color: var(--color8);
         font-weight: 400;
     }
 
@@ -34,7 +34,7 @@
         content: '';
         width: 2px;
         height: 100%;
-        background: lighten( $infoColor, 30% );
+        
         position: absolute;
         left: 32px;
         top: 0;
@@ -49,12 +49,12 @@
     .comments-list:after {
         content: '';
         position: absolute;
-        background: lighten( $infoColor, 30% );
+        
         bottom: 0;
         left: 27px;
         width: 7px;
         height: 7px;
-        border: 3px solid lighten( $infoColor, 30% );
+        
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
@@ -65,7 +65,7 @@
         content: '';
         width: 60px;
         height: 2px;
-        background: lighten( $infoColor, 30% );
+        
         position: absolute;
         top: 25px;
         left: -55px;
@@ -112,7 +112,7 @@
         position: relative;
         z-index: 99;
         float: left;
-        border: 3px solid $color2;
+        border: 3px solid var(--color2);
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
@@ -165,7 +165,7 @@
         display: block;
         border-width: 10px 12px 10px 0;
         border-style: solid;
-        border-color: transparent $color2;
+        border-color: transparent var(--color2);
         top: 8px;
         left: -11px;
     }
@@ -180,9 +180,9 @@
         width: 90%;
     }
     .comment-box .comment-head {
-        background: $color2;
+        background: var(--color2);
         padding: 4px 12px;
-        border-bottom: 1px solid lighten($infoColor, 41%);
+        
         overflow: hidden;
         -webkit-border-radius: 4px 4px 0 0;
         -moz-border-radius: 4px 4px 0 0;
@@ -194,7 +194,7 @@
         margin-left: 14px;
         position: relative;
         top: 2px;
-        color: $infoColor;
+        color: var(--infoColor);
         cursor: pointer;
         -webkit-transition: color 0.3s ease;
         -o-transition: color 0.3s ease;
@@ -202,11 +202,11 @@
     }
 
     .comment-box .comment-head i:hover {
-        color: darken( $infoColor, 10% );
+        
     }
 
     .comment-box .comment-name {
-        color: $color8;
+        color: var(--color8);
         font-size: $font-size - 6;
         font-weight: 700;
         float: left;
@@ -214,22 +214,22 @@
     }
 
     .comment-box .comment-name a {
-        color: $color8;
+        color: var(--color8);
     }
 
     .comment-box .comment-head span {
         float: left;
-        color: lighten( $color8, 10% );
+        
         font-size: $font-size - 7;
         position: relative;
         top: 9px;
     }
 
     .comment-box .comment-content {
-        background: $color2;
+        background: var(--color2);
         padding: 12px;
         font-size: $font-size - 5;
-        color: $color8;
+        color: var(--color8);
         -webkit-border-radius: 0 0 4px 4px;
         -moz-border-radius: 0 0 4px 4px;
         border-radius: 0 0 4px 4px;
@@ -268,11 +268,11 @@
 .comments-form-container {
     text-align: center;
     margin: 10px auto;
-    background-color: $color2;
+    background-color: var(--color2);
     padding: 10px;
     margin-top: 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    border-top: 5px solid $color4;
+    border-top: 5px solid var(--color4);
     position: relative;
     padding-top: 50px;
 
@@ -281,10 +281,10 @@
         top: 0;
         left: 0;
         position: absolute;
-        background-color: $color4;
+        background-color: var(--color4);
         padding: 5px 10px;
         font-size: $font-size - 5;
-        color: $color2;
+        color: var(--fontColorHaveBackground);
     }
 
     .fields-container {
@@ -292,7 +292,7 @@
         margin: 10px auto;
 
         h4 {
-            color: $infoColor;
+            color: var(--infoColor);
         }
 
         .container-textarea {
@@ -300,26 +300,28 @@
 
             .avatar-comment {
                 position: absolute;
-                left: -120px;
+                left: -110px;
                 top: 0;
                 max-width: 80px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
+                max-height: 80px;
+                border-radius: 50%;
             }
 
             &:before {
                 content: "";
                 position: absolute;
-                top: 25px;
-                left: -40px;
-                width: 20px;
+                top: 40px;
+                left: -20px;
+                width: 10px;
                 height: 20px;
-                border-bottom: 20px solid rgba(51, 51, 51, 0);
-                border-top: 20px solid $color1;
-                border-right: 20px solid $color1;
-                border-left: 20px solid rgba(51, 51, 51, 0);
+                border-bottom: 10px solid rgba(51, 51, 51, 0);
+                border-top: 10px solid var(--color1);
+                border-right: 10px solid var(--color1);
+                border-left: 10px solid rgba(51, 51, 51, 0);
                 z-index: 2;
             }
 
@@ -333,20 +335,20 @@
         textarea {
             width: 100% !important;
             margin-top: 15px;
-            background-color: $color1;
+            background-color: var(--color1);
             border-radius: 10px;
             border: 0;
         }
 
         span.input-group-addon {
             border-radius: 0;
-            background-color: $color1;
+            background-color: var(--color1);
             border: 0 !important;
             box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
         }
 
         input:not([type="submit"]) {
-           background-color: $color1;
+           background-color: var(--color1);
            border: 0; 
 
         }

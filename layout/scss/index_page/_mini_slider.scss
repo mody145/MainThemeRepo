@@ -1,5 +1,5 @@
 .mini-slider {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin;
     margin-left: 0;
     margin-top: $main-margin * 2;
@@ -39,7 +39,7 @@
 
 .skitter .image {
     overflow: hidden;
-    background-color: $color2;
+    background-color: var(--color2);
 }
 
 .skitter.with-dots {
@@ -54,6 +54,6 @@
     margin-left: $main-margin +  3;
     font-size: $font-size + 5;
     font-weight: bold;
-    color: $color1;
+    color: var(--color1);
 }
 

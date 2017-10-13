@@ -28,7 +28,7 @@
             left: 10px !important;
             width: calc(100% - 20px);
             height: calc(100% - 20px);
-            background: $color5;
+            background: var(--color5);
             z-index: 1000;
             animation: loadingPagination 6s linear infinite;
         }
@@ -36,15 +36,15 @@
         @keyframes loadingPagination {
 
             0% {
-                background: $color5;
+                background: var(--color5);
             }
 
             50% {
-                background: $color6;
+                background: var(--color6);
             }
 
             100% {
-                background: $color5;
+                background: var(--color5);
             }
         }
 	}

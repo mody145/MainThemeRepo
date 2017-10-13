@@ -1,11 +1,11 @@
 .content-post {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin;
     margin-left: 0;
 
     p.tags_container a {
-        background-color: $blue;
-        color: $color2;
+        background-color: var(--color5);
+        color: var(--color2);
         padding: 2px;
         border-radius: 2px;
         margin: 0 2px;
@@ -16,7 +16,7 @@
         font-family: 'icomoon' !important;
         margin-right: 5px;
         margin-left: 3px;
-        color: $color2;
+        color: var(--color2);
     }
 }
 
@@ -37,8 +37,8 @@
         position: relative;
         top: 3px;
         display: inline-block;
-        background-color: $blue;
-        color: $color2;
+        background-color: var(--color5);
+        color: var(--fontColorHaveBackground);
         width: 30px;
         height: 30px;
         line-height: 30px;
@@ -47,9 +47,9 @@
     }
 
     span.date-bost {
-        background-color: $color2;
+        background-color: var(--color2);
         padding: 3px 7px;
-        color: $infoColor;
+        color: var(--infoColor);
         font-family: $fontFour;
         display: block;
         margin-bottom: $main-margin + 23;
@@ -86,7 +86,7 @@
 
         #like {
             font-size: $font-size - 6;
-            color: $blue;
+            color: var(--color5);
             position: relative;
             margin-right: $main-margin /  2;
             width: 15px;
@@ -101,12 +101,12 @@
         }
 
         span.badge.likes-count {
-            color: $color10;
+            color: var(--color1)0;
         }
 
         #unlike {
             font-size: $font-size - 6;
-            color: $blue;
+            color: var(--color5);
             position: relative;
             top: 0px;
             left: -25px;
@@ -123,7 +123,7 @@
         }
 
         span.badge.likes-count {
-            color: $color10;
+            color: var(--color1)0;
         }
     }
 
@@ -136,7 +136,7 @@
     }
 
     p.info_post {
-        color: $infoColor;
+        color: var(--infoColor);
     }
 
 }
@@ -152,12 +152,12 @@ ol.comment-list .parent {
 }
 
 .subscribe-container {
-    background-color: $color6;
+    background-color: var(--color6);
     padding: $main-padding;
     margin: $main-margin;
     margin-left: 0;
     margin-top: $main-margin * 2;
-    color: $color2;
+    color: var(--color2);
 
     @media (max-width: 767px){
         .subscribe-container {
@@ -189,7 +189,7 @@ ol.comment-list .parent {
         .es_msg {
             padding-top: $main-padding / 2;
             padding-bottom: $main-padding / 2;
-            color: $color7;
+            color: var(--color7);
             margin-bottom: $main-margin + 5;
         }
 
@@ -206,7 +206,7 @@ ol.comment-list .parent {
             width: 385px;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
-            border: 1px solid $color2;
+            border: 1px solid var(--color2);
         }
 
         @media (max-width: 767px){
@@ -218,9 +218,9 @@ ol.comment-list .parent {
 
         input#es_txt_button_pg {
             padding: $main-padding / 2;
-            border: 1px solid rgba($color7, 0.84);
-            background-color: $color7;
-            color: $color2;
+            
+            background-color: var(--color7);
+            color: var(--fontColorHaveBackground);
             border-bottom-right-radius: 5px;
             border-top-right-radius: 5px;
         }
@@ -240,7 +240,7 @@ ol.comment-list .parent {
 }
 
 h3.related-posts {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: 10px;
     margin: 10px !important;
     font-size: $font-size;

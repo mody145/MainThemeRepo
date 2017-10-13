@@ -3,7 +3,7 @@
 ==========================================*/
 
 .page-about-us-container {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin 0;
     overflow: hidden;
     display: flex;
@@ -59,7 +59,7 @@
     align-items: center;
     border-radius: 50%;
     border-top-left-radius: 0;
-    border: 10px solid rgba($black, 0.08);
+    border: 10px solid rgba(#000, 0.08);
 }
 
 @media (max-width: 767px){
@@ -93,13 +93,13 @@
     left: 0;
     font-weight: bold;
     font-size: $font-size - 4;
-    background: rgba($color2, 0.92);
-    color: $color8;
+    
+    color: var(--color8);
     padding: $main-padding / 2 $main-padding;
 }
 
 span.social-media-team a {
-    color: $color2;
+    color: var(--color2);
 }
 
 span.social-media-team {
@@ -107,8 +107,8 @@ span.social-media-team {
     top: 65px;
     left: 0;
     padding: 0px $main-padding;
-    color: $color8;
-    background-color: rgba($color2, 0.92);
+    color: var(--color8);
+    
     font-size: $font-size + 3;
 }
 
@@ -117,13 +117,13 @@ span.social-media-team {
     top: 40px;
     left: 0px;
     padding: 2px $main-padding;
-    background-color: rgba($color2, 0.92);
-    color: $color8;
+    
+    color: var(--color8);
     font-size: $font-size - 7;
 }
 
 .person .overlay {
-    background-color: rgba($black, 0.67);
+    background-color: rgba(#000, 0.67);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -137,7 +137,7 @@ span.social-media-team {
 }
 
 .our-team-container {
-    background-color: $color2;
+    background-color: var(--color2);
     margin-top: $main-margin;
     padding: $main-padding;
     margin-bottom: $main-margin;
@@ -149,7 +149,7 @@ span.social-media-team {
 }
 
 .our-experiance-container {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding*2;
     margin-top: $main-margin*2;
     margin-bottom: $main-margin;

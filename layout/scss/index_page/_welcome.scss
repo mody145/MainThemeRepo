@@ -1,9 +1,9 @@
 .welcome {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin;
     margin-left: 0;
     padding: $main-padding;
-    border-left: 5px solid $color6;
+    border-left: 5px solid var(--color6);
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -41,21 +41,14 @@ class go_to_shop_widget extends WP_Widget {
 			class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('icon_go_to_shop_color'); ?>">Color : </label>
-			<input id="<?php echo $this->get_field_id('icon_go_to_shop_color'); ?>" 
-			value="<?php echo $instace['icon_go_to_shop_color']; ?>" 
-			name="<?php echo $this->get_field_name('icon_go_to_shop_color'); ?>" 
+			<label for="<?php echo $this->get_field_id('color_go_to_shop'); ?>">Color : </label>
+			<input id="<?php echo $this->get_field_id('color_go_to_shop'); ?>" 
+			value="<?php echo $instace['color_go_to_shop']; ?>" 
+			name="<?php echo $this->get_field_name('color_go_to_shop'); ?>" 
 			type="text" 
 			class="widefat" />
 		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id('Background-Color'); ?>">Background-Color : </label>
-			<input id="<?php echo $this->get_field_id('Background-Color'); ?>" 
-			value="<?php echo $instace['Background-Color']; ?>" 
-			name="<?php echo $this->get_field_name('Background-Color'); ?>" 
-			type="text" 
-			class="widefat" />
-		</p>	
+	
 		<?php
 	}
 
@@ -66,11 +59,44 @@ class go_to_shop_widget extends WP_Widget {
 
 		echo '<div class="go-to-shop-widget">';
 
+		$colorsMain = array();
+
+		$color2 = esc_attr( get_option( 'color2' ) ); 
+		$color3 = esc_attr( get_option( 'color3' ) ); 
+		$color4 = esc_attr( get_option( 'color4' ) ); 
+		$color5 = esc_attr( get_option( 'color5' ) ); 
+		$color6 = esc_attr( get_option( 'color6' ) ); 
+		$color7 = esc_attr( get_option( 'color7' ) );
+
+		$colorsMain[] = $color3;
+		$colorsMain[] = $color4;
+		$colorsMain[] = $color5;
+		$colorsMain[] = $color6;
+		$colorsMain[] = $color7;
+
+		//pre($colorsMain);
+
+		$randomColor = array_rand($colorsMain);
+
+		//pre($colorsMain[$randomColor]);
+
 		?>
+			<?php
+
+			 $theColor = '#fff';
+
+			if ( $instace['color_go_to_shop'] == 1 ) { $theColor = $colorsMain[0]; }
+			elseif( $instace['color_go_to_shop'] == 2 ) { $theColor = $colorsMain[1]; } 
+			elseif( $instace['color_go_to_shop'] == 3 ) { $theColor = $colorsMain[2]; } 
+			elseif( $instace['color_go_to_shop'] == 4 ) { $theColor = $colorsMain[3]; } 
+			elseif( $instace['color_go_to_shop'] == 5 ) { $theColor = $colorsMain[4]; } 
+			else { echo $colorsMain[$randomColor];  } 
+
+			 ?>
 			<a href='<?php echo $instace['Link'] ?>'>
-			<div style="color:<?php echo $instace['icon_go_to_shop_color'] ?>;background-color: <?php echo $instace['Background-Color'] ?>">
-				<?php echo $instace['icon_go_to_shop']; ?>
-				<p><?php echo $instace['Title_to_shop']; ?></p>
+			<div style="color:<?php echo $theColor; ?>;background-color: <?php echo $color2;  ?>">
+				<?php echo '<i class="' . $instace['icon_go_to_shop'] . '"></i>'; ?>
+				<p style="color:<?php echo $theColor; ?>"><?php echo $instace['Title_to_shop']; ?></p>
 			</div>
 			</a>
 

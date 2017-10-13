@@ -58,7 +58,7 @@ function dwwp_shoose_colors_submenu_bage() {
 		'Shoose Colors',
 		'Shoose Colors', 
 		'manage_options', 
-		'status_Product', 
+		'choose_colors', 
 		'shoose_colors_custom_submenu_page_callback' );
 }
 add_action('admin_menu', 'dwwp_shoose_colors_submenu_bage');
@@ -101,8 +101,13 @@ function dwwp_register_custom_settings_colors() {
 	register_setting( 'colors-settings-group','infoColor' );
 	// Register Transparent Image Background Color
 	register_setting( 'colors-settings-group','transparentColor' );
+	// Register Font Color Have Deffrent Background
+	register_setting( 'colors-settings-group','fontColorHaveBackground' );
+	// Register Scroll Color
+	register_setting( 'colors-settings-group','mainScrollColor' );
 
 	add_settings_section( 'main-colors-settings', '', 'colors_main__options', 'colors_setting' );
+
 	// Color Background One
 	add_settings_field( 'color1', 'background One', 'costum_setting_colors_background1_callback', 'colors_setting', 'main-colors-settings' );
 	// Color Background Two
@@ -121,8 +126,12 @@ function dwwp_register_custom_settings_colors() {
 	add_settings_field( 'color8', 'Fonts Color One', 'costum_setting_colors_color8_callback', 'colors_setting', 'main-colors-settings' );
 	// Fonts Color Two
 	add_settings_field( 'infoColor', 'Fonts Color Two', 'costum_setting_colors_infoColor_callback', 'colors_setting', 'main-colors-settings' );
+	// font Color Have Background
+	add_settings_field( 'fontColorHaveBackground', 'Font Color Three', 'costum_setting_colors_fontColorHaveBackground_callback', 'colors_setting', 'main-colors-settings' );
 	// Transparent Image
 	add_settings_field( 'transparentColor', 'Transparent Image', 'costum_setting_colors_transparentColor_callback', 'colors_setting', 'main-colors-settings' );
+	// Transparent Image
+	add_settings_field( 'mainScrollColor', 'main Scroll Color', 'costum_setting_colors_mainScrollColor_callback', 'colors_setting', 'main-colors-settings' );
 
 }
 
@@ -230,6 +239,17 @@ function costum_setting_colors_infoColor_callback() {
 }
 
 // Function To Creat Field In Admin Page
+function costum_setting_colors_fontColorHaveBackground_callback() {
+	$fontColorHaveBackground = esc_attr( get_option( 'fontColorHaveBackground' ) ); ?>
+
+	<div class="input-color-container">
+		<input name="fontColorHaveBackground" id="input-fontColorHaveBackground" value="<?php echo $fontColorHaveBackground; ?>" class="input-color" type="color">
+	</div>
+
+	<?php
+}
+
+// Function To Creat Field In Admin Page
 function costum_setting_colors_transparentColor_callback() {
 	$transparentColor = esc_attr( get_option( 'transparentColor' ) ); ?>
 
@@ -239,3 +259,15 @@ function costum_setting_colors_transparentColor_callback() {
 
 	<?php
 }
+
+// Function To Creat Field In Admin Page
+function costum_setting_colors_mainScrollColor_callback() {
+	$mainScrollColor = esc_attr( get_option( 'mainScrollColor' ) ); ?>
+
+	<div class="input-color-container">
+		<input name="mainScrollColor" id="input-mainScrollColor" value="<?php echo $mainScrollColor; ?>" class="input-color" type="color">
+	</div>
+
+	<?php
+}
+

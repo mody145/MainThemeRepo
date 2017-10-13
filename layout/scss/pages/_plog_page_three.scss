@@ -1,5 +1,5 @@
 .all-posts-blog-page-3 .post {
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin;
     margin-left: 0;
     margin-bottom: $main-margin * 2;
@@ -22,7 +22,7 @@
 	width: 65%;
 
     p.post-information {
-        color: $infoColor;
+        color: var(--infoColor);
     }
 }
 

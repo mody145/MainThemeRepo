@@ -21,9 +21,9 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        background-color: $color2;
+        background-color: var(--color2);
         padding: 3px 7px;
-        color: $infoColor;
+        color: var(--infoColor);
         font-family: $fontFour;
         z-index: 5;
     }
@@ -65,8 +65,8 @@ h1.post-title {
     padding: $main-padding /  2 $main-padding;
     font-size: $font-size + 8;
     z-index: 1;
-    color: $color2;
-    background-color: $color5;
+    color: var(--fontColorHaveBackground);
+    background-color: var(--color5);
 }
 
 @media (max-width: 767px) {
@@ -75,38 +75,34 @@ h1.post-title {
     }
 }
 
-h1.post-title a {
-    color: rgba($color2, 1);
-}
-
 .post-thumbnail-img .post-info {
     position: absolute;
     top: 75px;
     left: 0;
     padding: 2px $main-padding /  2;
-    color: rgba($color2, 1);
+    color: var(--fontColorHaveBackground);
     z-index: 1;
     font-family: $fontTwo;
     font-size: $font-size - 9;
-    background-color: $color7;
+    background-color: var(--color7);
 }
 
 .post-thumbnail-img p.info_post-2 {
     position: absolute;
     top: 105px;
-    color: rgba($color2, 1);
+    color: var(--fontColorHaveBackground);
     padding-left: 5px;
-    background-color: $color6;
+    background-color: var(--color6);
 }
 
 .post-thumbnail-img .post-info a {
-	color: rgba($color2, 1);
+	color: var(--fontColorHaveBackground);
 }
 
 p.some-content-post {
     padding: $main-padding;
-    background-color: $color2;
+    background-color: var(--color2);
     margin-bottom: $main-margin * 2;
-    border-bottom: 5px solid $color6;
+    border-bottom: 5px solid var(--color6);
 }
 

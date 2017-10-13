@@ -14,7 +14,7 @@ section.related.products {
 
 	.meta_product {
 	    margin: $main-margin;
-	    background-color: $color2;
+	    background-color: var(--color2);
 	    padding: $main-padding;
 	    margin-top: $main-margin * 2;
 	    margin-right: 0;
@@ -22,8 +22,8 @@ section.related.products {
 
 		p.price-currency {
 		    display: inline-block;
-		    background-color: $green;
-		    color: $color2;
+		    background-color: var(--color3);
+		    color: var(--color2);
 		    padding: 2px 5px;
 		    font-size: $font-size - 5;
 		    margin: 16px 0px;
@@ -32,8 +32,8 @@ section.related.products {
 
 		p.note-currency {
 		    display: inline-block;
-		    background-color: $green;
-		    color: $color2;
+		    background-color: var(--color3);
+		    color: var(--color2);
 		    padding: 2px 5px;
 		    font-size: $font-size - 5;
 		    margin: 16px 0px;
@@ -97,15 +97,15 @@ section.related.products {
 
 			i {
 			    font-size: 30px;
-			    background-color: $green;
-			    color: $color2;
+			    background-color: var(--color3);
+			    color: var(--fontColorHaveBackground);
 			    padding: 5px 10px;
 			    border-radius: 5px;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: $color4;
+			    color: var(--color4);
 			}
 		}
 
@@ -116,16 +116,16 @@ section.related.products {
 
 			i {
 			    font-size: 30px;
-			    color: $color10;
-			    background-color: $green;
-			    color: $color2;
+			    color: var(--color1)0;
+			    background-color: var(--color3);
+			    color: var(--fontColorHaveBackground);
 			    padding: 5px 10px;
 			    border-radius: 5px;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: $color4;
+			    color: var(--color4);
 			}
 		}
 
@@ -136,16 +136,16 @@ section.related.products {
 
 			i {
 			    font-size: 30px;
-			    color: $color10;
-			    background-color: $color6;
-			    color: $color2;
+			    color: var(--color1)0;
+			    background-color: var(--color6);
+			    color: var(--fontColorHaveBackground);
 			    padding: 5px 10px;
 			    border-radius: 5px;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: $color4;
+			    color: var(--color4);
 			}
 		}
 
@@ -165,16 +165,16 @@ section.related.products {
 
 			i {
 			    font-size: 30px;
-			    color: $color10;
-			    background-color: $color6;
-			    color: $color2;
+			    color: var(--color1)0;
+			    background-color: var(--color6);
+			    color: var(--fontColorHaveBackground);
 			    padding: 5px 10px;
 			    border-radius: 5px;
 			}
 
 			a:link, a:hover, a:visited {
 			    text-decoration: none;
-			    color: $color4;
+			    color: var(--color4);
 			}
 		}
 
@@ -186,7 +186,7 @@ section.related.products {
 
 		    #like {
 			    font-size: $font-size;
-			    color: $color10;
+			    color: var(--color1)0;
 			    margin-right: $main-margin / 2;
 			    position: relative;
 			    width: 36px;
@@ -195,8 +195,8 @@ section.related.products {
 				i {
 				    font-size: 30px;
 				    position: absolute;
-				    background-color: $color5;
-				    color: $color2;
+				    background-color: var(--color5);
+				    color: var(--fontColorHaveBackground);
 				    padding: 5px 10px;
 				    border-radius: 5px;
 				}
@@ -204,7 +204,7 @@ section.related.products {
 
 		    #unlike {
 			    font-size: $font-size;
-			    color: $color10;
+			    color: var(--color1)0;
 			    margin-right: $main-margin / 2;
 			    position: relative;
 			    width: 36px;
@@ -213,8 +213,8 @@ section.related.products {
 			    i {
 					font-size: 30px;
 					position: absolute;
-				    background-color: $color5;
-				    color: $color2;
+				    background-color: var(--color5);
+				    color: var(--fontColorHaveBackground);
 				    padding: 5px 10px;
 				    border-radius: 5px;
 			    }
@@ -241,7 +241,7 @@ section.related.products {
 
 			i {
 			    font-size: 45px;
-			    color: $color3;
+			    color: var(--color3);
 			}
 		}
 
@@ -265,19 +265,19 @@ section.related.products {
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: 10px;
-	    background-color: $color2;
-	    color: $infoColor;
+	    background-color: var(--color2);
+	    color: var(--infoColor);
 	    width: 100%;
 
 		a:link, 
 		a:hover, 
 		a:visited {
 		    text-decoration: none;
-		    color: $infoColor;
+		    color: var(--infoColor);
 		}
 
 		i {
-		    color: $color6;
+		    color: var(--color6);
 		}
 	}
 
@@ -292,7 +292,7 @@ section.related.products {
 	    align-items: center;
 	    position: relative;
 
-		&:before {
+		/* &:before {
 		    content: "";
 		    position: absolute;
 		    top: 0;
@@ -300,8 +300,8 @@ section.related.products {
 		    width: 21px;
 		    height: 21px;
 		    background-color: transparent;
-		    border-top: 4px solid $color8;
-		    border-left: 4px solid $color8;
+		    border-top: 4px solid var(--color8);
+		    border-left: 4px solid var(--color8);
 		}
 
 		&:after {
@@ -312,9 +312,9 @@ section.related.products {
 		    width: 21px;
 		    height: 21px;
 		    background-color: transparent;
-		    border-bottom: 4px solid $color8;
-		    border-right: 4px solid $color8;
-		}
+		    border-bottom: 4px solid var(--color8);
+		    border-right: 4px solid var(--color8);
+		} */
 	}
 
     @media (min-width: 768px) and (max-width: 991px){
@@ -330,7 +330,7 @@ section.related.products {
 	}
 
 	.gallery-box {
-	    background-color: $color2;
+	    background-color: var(--color2);
 	    padding: $main-padding / 2;
 	    margin: $main-margin;
 	    margin-right: 0;
@@ -342,16 +342,16 @@ section.related.products {
 		    margin: 4px;
 
 			.owl-prev {
-			    background-color: $blue;
-			    color: $color2;
+			    background-color: var(--color5);
+			    color: var(--color2);
 			    padding: 0 4px;
 			    margin: 0 4px;
 			    border-radius: 3px;
 			}
 
 			.owl-next {
-			    background-color: $blue;
-			    color: $color2;
+			    background-color: var(--color5);
+			    color: var(--color2);
 			    padding: 0 4px;
 			    margin: 0 4px;
 			    border-radius: 3px;
@@ -365,7 +365,7 @@ section.related.products {
 			    width: 5px;
 			    height: 5px;
 			    display: inline-block;
-			    background-color: $blue;
+			    background-color: var(--color5);
 			    margin: 0 2px;
 			    border-radius: 50%;
 			}
@@ -386,7 +386,7 @@ section.related.products {
 	}
 
 	.woocommerce-Reviews {
-		background-color: $color2;
+		background-color: var(--color2);
 	    padding: $main-padding;
 	    margin: $main-margin;
 	    margin-right: 0;
@@ -411,11 +411,11 @@ section.related.products {
 	.comments-form-container {
 
 		h2.woocommerce-Reviews-title {
-			color: $infoColor;
+			color: var(--infoColor);
 		}
 
 		span#reply-title {
-		    color: $infoColor;
+		    color: var(--infoColor);
 		}
 
 		label {
@@ -423,11 +423,11 @@ section.related.products {
 		}
 
 		p.comment-notes {
-		    color: $infoColor;
+		    color: var(--infoColor);
 		}
 		
 		input#submit {
-		    background-color: $green !important;
+		    background-color: var(--color3) !important;
 		}
 	}
 }

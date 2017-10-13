@@ -1,5 +1,5 @@
 .parent-cart-page {
-	background-color: $color2;
+	background-color: var(--color2);
     margin: 10px 0;
     form.woocommerce-cart-form {
     	padding: $main-padding *2;
@@ -11,10 +11,10 @@
     			tr {
 
     				th {
-					    background-color: $color2;
+					    background-color: var(--color2);
 					    padding: 5px;
-					    color: $infoColor;
-					    border: 1px solid rgba($infoColor, 0.2);
+					    color: var(--infoColor);
+					    
     				}
     			}
     		}
@@ -23,8 +23,8 @@
     			tr {
 
     				td {
-					    background-color: $color2;
-					    border: 1px solid rgba($infoColor, 0.15);
+					    background-color: var(--color2);
+					    
 					    padding: $main-padding / 2;
 					    div.quantity {
 					    	text-align: center;
@@ -33,6 +33,7 @@
 							    border: 1px solid $borderInput;
 							    text-align: center;
 							    border-radius: 2px;
+							    color: #555;
 						    }
 							@media (max-width: 767px){
 								input {
@@ -78,30 +79,30 @@
 .cart-collaterals {
     margin: $main-margin 0;
     margin-top: $main-margin *2;
-    background-color: $color2;
+    background-color: var(--color2);
 	.cart_totals {
 		padding: $main-padding;
-	    border: 1px solid rgba($infoColor, 0.2);
+	    
 	    margin-right: $main-margin *2;
 	    margin-bottom: $main-margin *2;
 	}
 	.wc-proceed-to-checkout {
 	    margin-right: $main-margin;
 	    a {
-	    	color: $color8;
+	    	color: var(--color8);
 	    }
 	}
 }
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item:nth-of-type(even) {
-	    background-color: $color2;
+	    background-color: var(--color2);
 	}
 }
 
 @media (max-width: 767px){
 	tr.woocommerce-cart-form__cart-item.cart_item {
-	    border: 5px solid $color2;
+	    border: 5px solid var(--color2);
 	}
 
 	td.actions {
@@ -122,18 +123,18 @@
 	}
 
 	tr.woocommerce-cart-form__cart-item.cart_item td:first-of-type {
-	    background-color: $color1 !important;
+	    background-color: var(--color1) !important;
 	}
 
 	a.remove i {
-	    background-color: rgba($infoColor, 0.2);
+	   
 	    display: inline-block;
 	    width: 20px;
 	    height: 20px;
 	    text-align: center;
 	    line-height: 19.5px;
 	    border-radius: 50%;
-	    color: $color2;
+	    color: var(--color2);
 	    position: relative;
 	    top: -1px;
 	}

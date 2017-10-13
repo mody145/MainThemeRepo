@@ -5,7 +5,7 @@
 .brand-name {
     font-weight: bold;
     font-size: $font-size + 8;
-    background-color: $color2;
+    background-color: var(--color2);
     margin-top: -10px;
     height: 60px;
     display: flex;
@@ -45,14 +45,14 @@
 .add-register-login {
     padding: $main-padding 0;
     margin: $main-margin;
-    background-color: $color2;
+    background-color: var(--color2);
     margin-right: $main-margin;
 
     .login-register {
-        color: $infoColor;
+        color: var(--infoColor);
 
         a {
-            color: $color8 !important;
+            color: var(--color8) !important;
         }
 
         a:hover,
@@ -61,7 +61,7 @@
         a:visited {
             border: 0;
             outline: none;
-            color: $color8;
+            color: var(--color8);
         }
 
         a.header_login:before {

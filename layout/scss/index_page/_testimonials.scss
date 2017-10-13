@@ -1,5 +1,5 @@
 .testimonials {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     margin: $main-margin;
     margin-left: 0;
@@ -54,7 +54,7 @@
         align-items: center;
         overflow: hidden;
         border-radius: 50%;
-        border: 6px solid lighten($infoColor, 40%);
+        
     }
 
     .image-testimonials img {
@@ -64,7 +64,7 @@
     .carousel-caption {
         position: static;
         padding-top: $main-padding * 2;
-        color: $infoColor;
+        color: var(--infoColor);
         text-align: center;
         text-shadow: none;
     }
@@ -88,20 +88,26 @@
 
     .carousel-indicators li {
         display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin: 1px;
+        width: 15px;
+        height: 5px;
+        margin: 0 2px;
         text-indent: -999px;
         cursor: pointer;
-        background-color: lighten($infoColor, 40%);
-        border-radius: 10px;
+        border-radius: 0;
+        transition: all .4s ease;
+        opacity: .6;
     }
 
     .carousel-indicators .active {
-        width: 12px;
-        height: 12px;
-        margin: 0;
-        background-color: $infoColor;
+        display: inline-block;
+        width: 15px;
+        height: 8px;
+        margin: 0 2px;
+        text-indent: -999px;
+        cursor: pointer;
+        border-radius: 0;
+        transition: all .4s ease;
+        opacity: 1;
     }
 }
 

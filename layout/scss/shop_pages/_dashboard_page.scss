@@ -1,6 +1,6 @@
 .parent-dashboard-page {
     overflow: hidden;
-    background-color: $color2;
+    background-color: var(--color2);
     margin: $main-margin 0;
 
     .boxes {
@@ -10,11 +10,11 @@
     	}
 
 		div.parent-box:nth-of-type(1) .box1 {
-		    background-color: $color6;
-		    border: 10px solid $color2;
-		    color: $color2;
+		    background-color: var(--color6);
+		    border: 10px solid var(--color2);
+		    color: var(--color2);
 		    .head {
-				background-color: $color8;
+				background-color: var(--color8);
 			    padding: $main-padding;
 		    }
 		    .body {
@@ -22,30 +22,32 @@
 		    	.item {
 		    		position: relative;
 		    		padding: $main-padding;
+		    		color: var(--fontColorHaveBackground);
 		    		h5 {
 	    			    font-size: $font-size;
 					    font-weight: bold;
 				        margin-top: 0;
+				        color: var(--fontColorHaveBackground);
 					    i {
 					    	font-size: 30px;
 					    }
 		    		}
 		    		a {
-		    			color: $color2;
+		    			color: var(--fontColorHaveBackground);
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba($color2, 0.1);
+				    background-color: var(--color4);
 				}
 		    }
 		}
 
 		div.parent-box:nth-of-type(1) .box2 {
-		    background-color: $color5;
-		    border: 10px solid $color2;
-		    color: $color2;
+		    background-color: var(--color5);
+		    border: 10px solid var(--color2);
+		    color: var(--color2);
 		    .head {
-				background-color: $color8;
+				background-color: var(--color8);
 			    padding: $main-padding;
 		    }
 		    .body {
@@ -53,30 +55,32 @@
 		    	.item {
 		    		position: relative;
 		    		padding: $main-padding;
+		    		color: var(--fontColorHaveBackground);
 		    		h5 {
 	    			    font-size: $font-size;
 					    font-weight: bold;
 					    margin-top: 0;
+					    color: var(--fontColorHaveBackground);
 					    i {
 					    	font-size: 30px;
 					    }
 		    		}
 		    		a {
-		    			color: $color2;
+		    			color: var(--fontColorHaveBackground);
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba($color2, 0.1);
+				    background-color: var(--color4);
 				}
 		    }
 		}
 
 		div.parent-box:nth-of-type(2) .box1 {
-		    background-color: $color7;
-		    border: 10px solid $color2;
-		    color: $color2;
+		    background-color: var(--color7);
+		    border: 10px solid var(--color2);
+		    color: var(--color2);
 		    .head {
-				background-color: $color8;
+				background-color: var(--color8);
 			    padding: $main-padding;
 		    }
 		    .body {
@@ -84,30 +88,32 @@
 		    	.item {
 		    		position: relative;
 		    		padding: $main-padding;
+		    		color: var(--fontColorHaveBackground);
 		    		h5 {
 	    			    font-size: $font-size;
 					    font-weight: bold;
 					    margin-top: 0;
+					    color: var(--fontColorHaveBackground);
 					    i {
 					    	font-size: 30px;
 					    }
 		    		}
 		    		a {
-		    			color: $color2;
+		    			color: var(--fontColorHaveBackground);
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba($color2, 0.1);
+				    background-color: var(--color4);
 				}
 		    }
 		}
 
 		div.parent-box:nth-of-type(2) .box2 {
-		    background-color: $color4;
-		    border: 10px solid $color2;
-		    color: $color2;
+		    background-color: var(--color4);
+		    border: 10px solid var(--color2);
+		    color: var(--color2);
 		    .head {
-				background-color: $color8;
+				background-color: var(--color8);
 			    padding: $main-padding;
 		    }
 		    .body {
@@ -115,20 +121,22 @@
 		    	.item {
 		    		position: relative;
 		    		padding: $main-padding;
+		    		color: var(--fontColorHaveBackground);
 		    		h5 {
 	    			    font-size: $font-size;
 					    font-weight: bold;
 					    margin-top: 0;
+					    color: var(--fontColorHaveBackground);
 					    i {
 					    	font-size: 30px;
 					    }
 		    		}
 		    		a {
-		    			color: $color2;
+		    			color: var(--fontColorHaveBackground);
 		    		}
 		    	}
 				.item:nth-child(even) {
-				    background-color: rgba($color2, 0.1);
+				    background-color: var(--color4);
 				}
 		    }
 		}
@@ -139,7 +147,7 @@
 	}
 
 	p.info-for-the-post {
-    	color: rgba($color2, 0.63);
+    	
     	margin-top: -$main-margin;
 	}
 }

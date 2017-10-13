@@ -1,7 +1,7 @@
 .checkout-container {
     padding: $main-padding;
     margin: $main-margin 0;
-    background-color: $color2;
+    background-color: var(--color2);
 
 	input {
 	    padding: $main-padding;

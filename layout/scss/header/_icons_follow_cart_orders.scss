@@ -37,7 +37,7 @@
 .icon-header1 i span {
     position: absolute;
     font-size: $font-size - 9;
-    color: $color2;
+    color: var(--fontColorHaveBackground);
     width: 22px;
     text-align: center;
     border-radius: 8px;
@@ -50,20 +50,20 @@
 }
 
 .icon-header1 i:nth-of-type(1) span {
-    background-color: $color5 !important;
+    background-color: var(--color5) !important;
 }
 
 .icon-header1 i:nth-of-type(2) span {
-    background-color: $color6;
+    background-color: var(--color6);
 }
 
 .icon-header1 i:nth-of-type(3) span {
-    background-color: $color7;
+    background-color: var(--color7);
 }
 
 .icon-header1 i:nth-of-type(1) span:before {
     content: '';
-    border-top: 7px solid $color5;
+    border-top: 7px solid var(--color5);
     border-bottom: 7px solid rgba(0, 0, 0, 0);
     border-right: 7px solid rgba(0, 0, 0, 0);
     border-left: 7px solid rgba(0, 0, 0, 0);
@@ -74,7 +74,7 @@
 
 .icon-header1 i:nth-of-type(2) span:before {
     content: '';
-    border-top: 7px solid $color6;
+    border-top: 7px solid var(--color6);
     border-bottom: 7px solid rgba(0, 0, 0, 0);
     border-right: 7px solid rgba(0, 0, 0, 0);
     border-left: 7px solid rgba(0, 0, 0, 0);
@@ -85,7 +85,7 @@
 
 .icon-header1 i:nth-of-type(3) span:before {
     content: '';
-    border-top: 7px solid $color7;
+    border-top: 7px solid var(--color7);
     border-bottom: 7px solid rgba(0, 0, 0, 0);
     border-right: 7px solid rgba(0, 0, 0, 0);
     border-left: 7px solid rgba(0, 0, 0, 0);
@@ -96,15 +96,15 @@
 
 
 .icon-header1 i:nth-of-type(1) {
-    color: $color6 !important
+    color: var(--color6) !important
 }
 
 .icon-header1 i:nth-of-type(2) {
-    color: $color6;
+    color: var(--color6);
 }
 
 .icon-header1 i:nth-of-type(3) {
-    color: $color7;
+    color: var(--color7);
 }
 
 /*=====  End of Icon Like,Cart,Follow  ======*/

@@ -4,11 +4,11 @@
 
 .total-cart {
     margin: $main-margin;
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     margin-right: 0;
     margin-left: $main-margin;
-    color: $infoColor;
+    color: var(--infoColor);
     position: relative;
     perspective: 800px;
     perspective-origin: bottom;
@@ -24,14 +24,13 @@
 
         span.show-value-box-dropdown {
             position: absolute;
-            background-color: rgba($color2, 0.89);
-            color: lighten($color8, 10%);
+            
             top: 40px;
             left: 0;
             padding: 10px;
             z-index: 50;
             min-width: 100%;
-            border: 1px solid $color1;
+            border: 1px solid var(--color1);
             border-top: none;
             transform: rotateX(-90deg);
             transform-origin: top;
@@ -43,9 +42,7 @@
                 padding: 2px;
 
                 &:nth-child(even) {
-                    background-color: rgba($color2, 0.14);
-                    background-color: rgba($color2, 0.77) !important;
-                    color: lighten($color8, 20%);
+                    
                 }
             }
 
@@ -67,7 +64,7 @@
             top: -35px;
             font-size: $font-size + 10;
             top: -3px;
-            color: $color5;
+            color: var(--color5);
             animation: 1s linear 0s infinite alternate clickHere;
         }
 
@@ -95,12 +92,11 @@
         span.calc-total-box-dropdown {
             position: absolute;
             width: 100%;
-            background-color: rgba($color2, 0.89);
             top: 40px;
             right: 0;
             z-index: 50;
-            color: $color8;
-            border: 1px solid $color1;
+            color: var(--color8);
+            border: 1px solid var(--color1);
             border-top: none;
             transform: rotateX(-90deg);
             transform-origin: top;
@@ -109,7 +105,7 @@
             padding-bottom: 10px;
 
             span.select-country {
-                color: $infoColor;
+                color: var(--infoColor);
                 display: block;
                 padding: $main-padding;
             }
@@ -123,11 +119,12 @@
                 select {
                     padding: $main-padding / 2;
                     margin: $main-margin / 2;
+                    color: #555;
                 }
 
                 span.text-center.convert_result {
                     font-size: $font-size - 5;
-                    color: $color8;
+                    color: var(--color8);
                     padding: 10px 0;
                     font-weight: bold;
                     font-family: $fontThree;
@@ -152,12 +149,12 @@
     span.show-followed-dropdown-box {
         position: absolute;
         width: 100%;
-        background-color: rgba($color2, 0.89);
+        
         top: 40px;
         right: 0;
         z-index: 50;
-        color: $color8;
-        border: 1px solid $color1;
+        color: var(--color8);
+        border: 1px solid var(--color1);
         border-top: none;
         transform: rotateX(-90deg);
         transform-origin: top;
@@ -171,9 +168,7 @@
             padding: 2px;
 
             &:nth-child(even) {
-                background-color: rgba($color2, 0.14);
-                background-color: rgba($color2, 0.77) !important;
-                color: lighten($color8, 10%);
+                
             }
         }
 
@@ -200,11 +195,11 @@
 .search-in-header {
     margin: $main-padding;
     padding: 6px;
-    background-color: $color2;
+    background-color: var(--color2);
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    border: 4px solid $color2;
+    border: 4px solid var(--color2);
 
     i {
         position: absolute;
@@ -216,9 +211,9 @@
         justify-content: center;
         align-items: center;
         font-size: 19px;
-        color: $color5;
-        border: 6px solid $color2;
-        background-color: $color2;
+        color: var(--color5);
+        border: 6px solid var(--color2);
+        background-color: var(--color2);
     }
 }
 

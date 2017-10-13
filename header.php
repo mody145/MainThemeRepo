@@ -34,6 +34,7 @@
 	<div class="color10"></div>
 
 	<div class="infoColor"></div>
+	<div class="colormainScroll" data-color="<?php $mainScrollColor = esc_attr( get_option( 'mainScrollColor' ) ); echo $mainScrollColor; ?>"></div>
 
 	<div class="green"></div>
 	<div class="blue"></div>

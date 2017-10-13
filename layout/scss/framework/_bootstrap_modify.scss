@@ -16,16 +16,15 @@
 .dropdown-menu > .active > a,
  .dropdown-menu > .active > a:hover,
   .dropdown-menu > .active > a:focus {
-    color: lighten( $color8, 10% );
+    
     text-decoration: none;
     outline: 0;
-    background-color: rgba($color6, .7);
 }
 
 .input-group-addon {
     padding: 0px 0px 0 $main-padding +  2;
     font-size: $font-size - 2;
-    background-color: $color2;
+    background-color: #fff;
     border-left: 1px solid $borderInput !important;
     border-top: 1px solid $borderInput !important;
     border-bottom: 1px solid $borderInput !important;
@@ -48,43 +47,43 @@ input.form-control {
 }
 
 .btn-info {
-    color: $color2 !important;
+    color: var(--color2) !important;
     border-radius: 3px;
     border: 0;
-    background-color: $blue;
+    background-color: var(--color5);
 }
 
 .btn-primary {
     border-radius: 2px;
     border: 0;
-    color: $color2 !important;
-    background-color: $green;
+    color: var(--fontColorHaveBackground) !important;
+    background-color: var(--color3);
     font-family: $mainFont;
     font-size: $font-size - 6;
     letter-spacing: 1px;
 
     &:hover {
-        background-color: $green;
+        background-color: var(--color3);
     }
 
     &:focus {
-        background-color: $green;
+        background-color: var(--color3);
     }
 
     &:active {
-        background-color: $green;
+        background-color: var(--color3);
     }
 
     &:visited {
-        background-color: $green;
+        background-color: var(--color3);
     }
 
     &::active:focus {
-        background-color: $green;
+        background-color: var(--color3);
     }
 
     &::active:hover {
-        background-color: $green;
+        background-color: var(--color3);
     }
 }
 
@@ -97,41 +96,41 @@ input.form-control {
 .open>.dropdown-toggle.btn-primary.focus, 
 .open>.dropdown-toggle.btn-primary:focus, 
 .open>.dropdown-toggle.btn-primary:hover {
-    background-color: $green;
-    border-bottom: 4px solid darken($green, 20);
+    background-color: var(--color3);
+    
 }
 
 .btn-info {
     border-radius: 2px;
     border: 0;
-    color: $color2 !important;
-    background-color: $blue;
+    color: var(--fontColorHaveBackground) !important;
+    background-color: var(--color5);
     font-family: $mainFont;
     font-size: $font-size - 6;
     letter-spacing: 1px;
 
     &:hover {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 
     &:focus {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 
     &:active {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 
     &:visited {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 
     &::active:focus {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 
     &::active:hover {
-        background-color: $blue;
+        background-color: var(--color5);
     }
 }
 
@@ -144,8 +143,8 @@ input.form-control {
 .open>.dropdown-toggle.btn-info.focus, 
 .open>.dropdown-toggle.btn-info:focus, 
 .open>.dropdown-toggle.btn-info:hover {
-    background-color: $blue;
-    border-bottom: 4px solid darken($blue, 20);
+    background-color: var(--color5);
+    
 }
 
 .carousel-caption {
@@ -181,9 +180,8 @@ select:-webkit-autofill {
 }
 
 .panel-primary > .panel-heading {
-    color: $color2;
-    background-color: darken($green, 10%);
-    border-color: darken($green, 10%);
+    color: var(--color2);
+
     overflow: hidden;
     text-align: center;
     font-size: $font-size - 10;
@@ -195,8 +193,8 @@ select:-webkit-autofill {
 
 .panel-body {
     padding: 5px;
-    background-color: $green;
-    color: $color2;
+    background-color: var(--color3);
+    color: var(--fontColorHaveBackground);
     text-align: center;
     padding: 5px;
     font-family: $fontOne;
@@ -210,10 +208,7 @@ select:-webkit-autofill {
     height: 5px;
     bottom: -10px;
     left: 49%;
-    border-top: 5px solid $green;
-    border-bottom: 5px solid rgba($green, 0);
-    border-right: 5px solid rgba($green, 0);
-    border-left: 5px solid rgba($green, 0);
+    border-top: 5px solid var(--color3);
 }
 
 /*======================================
@@ -221,35 +216,35 @@ select:-webkit-autofill {
 ======================================*/
 
 .tooltip.bottom .tooltip-inner {
-    background-color: $color5;
+    background-color: var(--color5);
 }
 
 .tooltip.bottom .tooltip-arrow {
-      border-bottom-color: $color5;
+      border-bottom-color: var(--color5);
 }
 
 .tooltip.left .tooltip-inner {
-    background-color: $color6;
+    background-color: var(--color6);
 }
 
 .tooltip.left .tooltip-arrow {
-      border-left-color: $color6;
+      border-left-color: var(--color6);
 }
 
 .tooltip.right .tooltip-inner {
-    background-color: $color4;
+    background-color: var(--color4);
 }
 
 .tooltip.right .tooltip-arrow {
-      border-right-color: $color4;
+      border-right-color: var(--color4);
 }
 
 .tooltip.top .tooltip-inner {
-    background-color: $color4;
+    background-color: var(--color4);
 }
 
 .tooltip.top .tooltip-arrow {
-      border-top-color: $color4;
+      border-top-color: var(--color4);
 }
 
 /*=====  End of Tooltip Modify  ======*/

@@ -3,8 +3,8 @@
 =========================================*/
 
 .go-to-shop-widget div {
-    background-color: $color5;
-    color: $color2;
+    background-color: var(--color5);
+    color: var(--color2);
     padding: $main-padding;
     height: 250px;
     display: flex;
@@ -19,6 +19,7 @@
 .go-to-shop-widget div p {
     font-size: $font-size - 4;
     margin-top: $main-margin * 2;
+    color: var(--fontColorHaveBackground);
 }
 
 /*=====  End of Go To Shop Widget  ======*/

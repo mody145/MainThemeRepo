@@ -7,11 +7,11 @@
     margin-bottom: 0;
 
     .info_post {
-        color: $infoColor;
+        color: var(--infoColor);
     }
 
     .post_title {
-        border-bottom: 1px solid lighten($infoColor, 40%);
+        
         padding-bottom: $main-padding /  2;
     }
 }
@@ -23,7 +23,7 @@
 }
 
 .latest-posts-blog > div {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     min-height: 340px;
     margin: $main-margin;
@@ -55,7 +55,7 @@
 .latest-posts-blog > div .post-image-home {
     width: 110%;
     height: 185px;
-    background-color: $color8;
+    background-color: var(--color8);
     overflow: hidden;
     margin-top: -$main-margin;
     margin-right: -$main-margin;
@@ -69,9 +69,9 @@
         position: absolute;
         right: 15px;
         bottom: -5px;
-        background-color: $color2;
+        background-color: var(--color2);
         padding: 3px 16px;
-        color: $infoColor;
+        color: var(--infoColor);
         font-family: $fontFour;
     }
 

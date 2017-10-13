@@ -98,9 +98,11 @@ jQuery(document).ready(function($) {
 	try{
 
 		// Trigger Nice Scroll
+
+		var mainColorScroll = $('.colormainScroll').data('color'); console.log(mainColorScroll);
 		$("html").niceScroll({
 
-			cursorcolor: 		'#23282d',
+			cursorcolor: 		mainColorScroll,
 			cursorwidth: 		"10px",
 			cursorborder: 		"0",
 			cursorborderradius: "1px",

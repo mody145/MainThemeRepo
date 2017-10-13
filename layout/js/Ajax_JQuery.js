@@ -17,6 +17,7 @@ jQuery(document).ready(function($) {
 	var color10 	= $('.color10').css('background-color');
 
 	var infoColor 	= $('.infoColor').css('background-color');
+	var fontColorHaveBackground 	= $('.fontColorHaveBackground').css('background-color');
 
 	var green 		= $('.green').css('background-color');
 	var blue 		= $('.blue').css('background-color');
@@ -950,11 +951,11 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
 		})
@@ -984,11 +985,11 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
 		})
@@ -1018,11 +1019,11 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
 		})
@@ -1052,11 +1053,11 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color1
+				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
 		})
@@ -1086,11 +1087,11 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
 		})
@@ -1358,11 +1359,11 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('span.gradiant_overlay').parent().css({
 				position: 'relative'
@@ -1394,11 +1395,11 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('span.gradiant_overlay').parent().css({
 				position: 'relative'
@@ -1430,11 +1431,11 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('span.gradiant_overlay').parent().css({
 				position: 'relative'
@@ -1466,11 +1467,11 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color1
+				color: fontColorHaveBackground
 			});
 			$('span.gradiant_overlay').parent().css({
 				position: 'relative'
@@ -1502,11 +1503,11 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: '#696767'
+				color: fontColorHaveBackground
 			});
 			thisElement.css({
 				backgroundColor: blue,
-				color: color2
+				color: fontColorHaveBackground
 			});
 			$('span.gradiant_overlay').parent().css({
 				position: 'relative'

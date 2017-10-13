@@ -8,8 +8,8 @@
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: $main-padding;
-	    background-color: $color2;
-        color: $infoColor;
+	    background-color: var(--color2);
+        color: var(--infoColor);
 	    width: 100%;
 	}
 
@@ -17,18 +17,18 @@
 	    margin: 0;
 	    margin-bottom: 0px !important;
 	    padding: $main-padding;
-	    background-color: $color2;
-	    color: $infoColor;
+	    background-color: var(--color2);
+	    color: var(--infoColor);
 	    width: 100%;
 
 		i {
-		    color: $color6;
+		    color: var(--color6);
 		}
 	}
 
 	a:link, a:hover, a:visited {
 	    text-decoration: none;
-	    color: $color8;
+	    color: var(--color8);
 	}
 
 	form.woocommerce-ordering {

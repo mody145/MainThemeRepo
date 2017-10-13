@@ -1,0 +1,262 @@
+:root {
+	--color1: #efefef;
+	--color2: #fff;
+	--color3: #82daca;
+	--color4: #1aafd0;
+	--color5: #6a67ce;
+	--color6: #ffb900;
+	--color7: #fc636b;
+	--color8: #777;
+	--infoColor: #777;
+	--backgroungTransparentImage: #fff;
+}
+
+/*  [ Opacity ]
+-------------------- */
+
+.dropdown-menu > .active > a,
+ .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+    color: lighten( var(--color8), 10% );
+    background-color: rgba(var(--color6), .7);
+}
+
+.panel-body:before {
+    border-bottom: 5px solid rgba(var(--color3), 0);
+    border-right: 5px solid rgba(var(--color3), 0);
+    border-left: 5px solid rgba(var(--color3), 0);
+}
+
+.counter_spinner10 {
+	background-color: rgba(var(--color2), .2);
+}
+
+ul.dropdown-menu li {
+	border-bottom: 1px solid rgba(var(--color2), 0.6);
+}
+
+div.get-posts-in-menu .post-box .info-box > p {
+	color: rgba(var(--color2), 0.65);
+}
+
+.search_fullscrean {
+	background-color: rgba(var(--color5), 0.88);
+}
+
+.search_fullscrean .results_search {
+	color: rgba(var(--color2), 0.75);
+}
+
+.total-cart span.update-total span.show-value-box-dropdown {
+	background-color: rgba(var(--color2), 0.89);
+}
+
+.total-cart span.update-total span.show-value-box-dropdown .items:nth-child(even) {
+	background-color: rgba(var(--color2), 0.14);
+	background-color: rgba(var(--color2), 0.77) !important;
+}
+
+span.calc-total-box-dropdown {
+	background-color: rgba(var(--color2), 0.89);
+}
+
+span.show-followed-dropdown-box {
+	background-color: rgba(var(--color2), 0.89);
+}
+
+span.show-followed-dropdown-box .items:nth-child(even) {
+	background-color: rgba(var(--color2), 0.14);
+    background-color: rgba(var(--color2), 0.77) !important;
+}
+
+.container-grid-images .grid-images .overlay {
+	background: rgba(var(--color2), 0.7);
+}
+
+.services-container-box .overlay {
+	background: rgba(var(--color2), 0.7);
+}
+
+.person h4 {
+	background: rgba(var(--color2), 0.92);
+}
+
+span.social-media-team {
+	background-color: rgba(var(--color2), 0.92);
+}
+
+.person .jop {
+	background-color: rgba(var(--color2), 0.92);
+}
+
+.su-spoiler-content.su-clearfix {
+	background-color: rgba(var(--color2), 0.34);
+}
+
+h1.post-title a {
+    color: rgba(var(--color2), 1);
+}
+
+form.es_shortcode_form input#es_txt_button_pg {
+	border: 1px solid rgba(var(--color7), 0.84);
+}
+
+.products .overlay i#remove_from_cart_sd {
+	color: rgba(var(--color3), 0.62);
+}
+
+.parent-cart-page form.woocommerce-cart-form table thead tr th {
+	border: 1px solid rgba(var(--infoColor), 0.2);
+}
+
+.parent-cart-page form.woocommerce-cart-form table tbody tr td {
+	border: 1px solid rgba(var(--infoColor), 0.15);
+}
+
+.cart-collaterals .cart_totals {
+	border: 1px solid rgba(var(--infoColor), 0.2);
+}
+
+@media (max-width: 767px) {
+	a.remove i {
+		background-color: rgba(var(--infoColor), 0.2);
+	}
+}
+
+p.info-for-the-post {
+	color: rgba(var(--color2), 0.63);
+}
+
+/*  [ Lighten ]
+-------------------- */
+
+.container-comments .comment-box .comment-head {
+	border-bottom: 1px solid lighten(var(--infoColor), 41%);
+}
+
+.container-comments .comments-list:before {
+	background: lighten( var(--infoColor), 30% );
+}
+
+.container-comments .comments-list:after {
+	background: lighten( var(--infoColor), 30% );
+	border: 3px solid lighten( var(--infoColor), 30% );
+}
+
+.container-comments .reply-list li:before {
+	background: lighten( var(--infoColor), 30% );
+}
+
+.container-comments .comment-box .comment-head span {
+	color: lighten( var(--color8), 10% );
+}
+
+.custom-sidebar-widget-footer2 ul li a img {
+	border: 4px solid lighten( var(--infoColor), 40% );
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    color: lighten( var(--color8), 10% );
+}
+
+.round-info-span {
+	background-color: lighten(var(--infoColor), 45%);
+}
+
+.site-header .test-title {
+	color: lighten(var(--color8), 10%);
+}
+
+.site-header .label_skitter p {
+	color: lighten(var(--color8), 10%);
+}
+
+.total-cart span.update-total span.show-value-box-dropdown {
+	color: lighten(var(--color8), 10%);
+}
+
+span.show-value-box-dropdown .items:nth-child(even) {
+	color: lighten(var(--color8), 20%);
+}
+
+span.show-followed-dropdown-box .items:nth-child(even) {
+	color: lighten(var(--color8), 10%);
+}
+
+.latest-posts-blog .post_title {
+	border-bottom: 1px solid lighten(var(--infoColor), 40%);
+}
+
+.testimonials .image-testimonials {
+	border: 6px solid lighten(var(--infoColor), 40%);
+}
+
+.testimonials .carousel-indicators li {
+	background-color: lighten(var(--infoColor), 40%);
+}
+
+.profile-container form.woocomerce-form.woocommerce-form-login.login p.woocommerce-LostPassword.lost_password a {
+	color: lighten(var(--infoColor), 10%) !important;
+}
+
+.latest-posts-blog-widget a.left.carousel-control i {
+	color: lighten(var(--infoColor), 20%);
+}
+
+.latest-posts-blog-widget a.right.carousel-control i {
+	color: lighten(var(--infoColor), 20%);
+}
+
+.top-items-shop-widget a.left.carousel-control i {
+	color: lighten(var(--infoColor), 20%);
+}
+
+.top-items-shop-widget a.right.carousel-control i {
+	color: lighten(var(--infoColor), 20%);
+}
+
+/*  [ Darken ]
+-------------------- */
+
+.container-comments .comment-box .comment-head i:hover {
+	color: darken( var(--infoColor), 10% );
+}
+
+.category_by_images .__box_categorey h4 span {
+	color: darken(var(--color2), 15%);
+}
+
+.category_by_images_blog .__box_categorey h4 span {
+	color: darken(var(--color2), 15%);
+}
+
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover, 
+.open>.dropdown-toggle.btn-primary.focus, 
+.open>.dropdown-toggle.btn-primary:focus, 
+.open>.dropdown-toggle.btn-primary:hover {
+	border-bottom: 4px solid darken(var(--color3), 20);
+}
+
+.btn-info.active.focus, 
+.btn-info.active:focus, 
+.btn-info.active:hover, 
+.btn-info:active.focus, 
+.btn-info:active:focus, 
+.btn-info:active:hover, 
+.open>.dropdown-toggle.btn-info.focus, 
+.open>.dropdown-toggle.btn-info:focus, 
+.open>.dropdown-toggle.btn-info:hover {
+	border-bottom: 4px solid darken(var(--color5), 20);
+}
+
+.panel-primary > .panel-heading {
+    background-color: darken(var(--color3), 10%);
+    border-color: darken(var(--color3), 10%);
+}

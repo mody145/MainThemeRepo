@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: $color8;
+    color: var(--color8);
 }
 
 .feat .box-feat i {
@@ -39,7 +39,7 @@
 }
 
 .feat .box-feat {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     height: 300px;
     width: calc(100% - 10px);
@@ -53,7 +53,7 @@
 }
 
 .feat .box-feat-2 {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     height: 300px;
     width: calc(100% - 10px);

@@ -41,6 +41,8 @@ function dwwp_styles_and_scripts() {
 	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css?' . time() . '' );
 	// Main File Css
 	wp_enqueue_style( 'main-css', get_template_directory_uri() . '/layout/css/main.css?' . time() . '' );
+	// PHP File To Use Function Darken And Lighten Colors
+	wp_enqueue_style( 'function-colors', get_template_directory_uri() . '/layout/css/function-colors.php', false, false );
 	
 	// Remove Register JQuery
 	wp_deregister_script( 'jquery' );

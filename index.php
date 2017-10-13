@@ -25,7 +25,6 @@
 	</div><!-- End Section Welcome -->
 
 	<!-- Section Closest Sale -->
-	<div class="conatiner-closest-sale hidden-xs" style="position: relative;">
 
 	<?php 
 
@@ -45,16 +44,19 @@
 
 		$_product = wc_get_product( $id_random_sale );
 
-		//pre( $_product );
+		if( !empty($avilbale_sales) ) {
 
 	?>
+	<div class="conatiner-closest-sale hidden-xs" style="position: relative;">
 
 		<div class="container_image_closest_sale" data-saleTo="<?php echo date_format($_product->date_on_sale_to, "Y/m/d") ?>">
 			<!-- <span class="gradiant_overlay three"></span> -->
 	    	<?php if(has_post_thumbnail( $_product->id )) { echo '<img src="' . get_the_post_thumbnail_url( $_product->id ) . '" />'; } ?>
 	    </div>
 	    <div class="clock">
+	    	<?php if ( count($avilbale_sales) > 1 ) { ?>
 		    <i id="refresh_sale" class="icon-refresh3 round-info-span"></i>
+		    <?php } ?>
 	    	<span class="title_sale">This Item Have Discount<span class="numberCircle"><?php $discount = ( ($_product->regular_price - $_product->sale_price ) * 100) / $_product->regular_price; echo floor($discount) . "%"; ?></span></span>
 	    	<div id="clock" data-idProduct="<?php echo $_product->id; ?>"></div>
 			<h3>
@@ -66,6 +68,8 @@
 	    </div>
 
 	</div><!-- Section Closest Sale -->
+
+	<?php } else { echo ''; } ?>
 
 	<!-- Section Slider -->
 	<div class="mini-slider hidden-xs wow fadeIn">

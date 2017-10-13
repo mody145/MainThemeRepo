@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: $color2;
+    background-color: var(--color2);
     padding: $main-padding;
     padding-bottom: 0;
 }
@@ -25,7 +25,7 @@
 #social_media-11 h4,
 #social_media-12 h4,
 #social_media-13 h4 {
-    background-color: $color2;
+    background-color: var(--color2);
     padding: 10px 5px;
     margin-bottom: 0;
     margin-top: 20px;
@@ -34,8 +34,8 @@
 
     i {
         font-size: 13px;
-        background-color: $color3;
-        color: $color2;
+        background-color: var(--color3);
+        color: var(--fontColorHaveBackground);
         width: 25px;
         height: 25px;
         display: inline-flex;
@@ -52,6 +52,7 @@
     margin: $main-margin 0;
     text-align: center;
     border-radius: 2px;
+    color: var(--fontColorHaveBackground) !important;
 }
 
 .social-media-icon-widget i {
@@ -66,7 +67,7 @@
 .social-media-icon-widget a:nth-of-type(1) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #dc4d3c;
     margin-top: 0;
 }
@@ -74,7 +75,7 @@
 .social-media-icon-widget a:nth-of-type(2) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #425c9d;
     margin-top: 0;
 }
@@ -82,56 +83,56 @@
 .social-media-icon-widget a:nth-of-type(3) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #44cefd;
 }
 
 .social-media-icon-widget a:nth-of-type(4) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #df6c5e;
 }
 
 .social-media-icon-widget a:nth-of-type(5) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #f7659c !important;
 }
 
 .social-media-icon-widget a:nth-of-type(6) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #35c6ea !important;
 }
 
 .social-media-icon-widget a:nth-of-type(7) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #ff7e30 !important;
 }
 
 .social-media-icon-widget a:nth-of-type(8) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #1879fd !important;
 }
 
 .social-media-icon-widget a:nth-of-type(9) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #3897f0 !important;
 }
 
 .social-media-icon-widget a:nth-of-type(10) {
     display: block;
     padding: $main-padding;
-    color: $color2;
+    color: var(--color2);
     background-color: #3f91cb !important;
 }
 
