@@ -288,6 +288,15 @@
 						$query->the_post(); ?>
 
 				<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding'; } ?>">
+					<!-- Section Queck View Product -->
+					
+					<div class="queck-view-container hidden-xs">
+						<a href="#" id="queck_view_button" data-id="<?php echo $product->get_id() ?>">
+							<i class="icons-option icon-magnifier"></i>
+						</a>
+					</div>
+					
+					<!-- End of Section Queck View Product -->
 					<a href="<?php echo get_permalink(); ?>">	
 						<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
@@ -295,24 +304,12 @@
 							<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 						</div>
 						<div class="info">
+
 							<h3><?php echo get_the_title(); ?></h3><br>
 
 							<?php if ($query->current_post == 0) { ?>
 							<p><?php echo $str = substr(filter_var(get_the_content(), FILTER_SANITIZE_STRING), 0, 100) . ' ...'; ?></p>
 							<?php } else { echo ''; } ?>
-							<span>
-								<?php if ($query->current_post !== 3 && $query->current_post !== 2) { ?>
-								<i class="icon-time2"> </i> <?php echo get_the_date(); ?>,
-								<?php } else { echo ''; } ?>
-
-								<?php if ($query->current_post == 0 || $query->current_post == 1) { ?> 
-								<i class="icon-comment-o"> </i> <?php echo comments_number(); ?>, 
-								<?php } else { echo ''; } ?>
-
-								<i class="icon-thumbs-o-up"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'likes' )) { echo get_post_meta( get_the_id(), 'likes', true ); } else { echo 0; } ?>, 
-								<i class="icon-fire"> </i> <?php if (metadata_exists( 'post', get_the_id(), 'views' )) { echo get_post_meta( get_the_id(), 'views', true ); } else { echo 0; }  ?>,
-								<i class="icon-star-o"> </i> <?php echo $rating = $product->get_average_rating(); ?>
-							</span>
 						</div>
 					</a>
 				</div>

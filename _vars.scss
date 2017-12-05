@@ -1,0 +1,85 @@
+
+	$font-size: 20px;
+
+	$mainFont: 'Dosis', sans-serif;
+	$fontOne: 'Droid Sans', sans-serif;
+	$fontTwo: 'Nunito', 'arial';
+	$fontThree: $fontOne;
+	$fontFour: 'Russo One', 'cursive', 'arial';
+
+	$main-margin: 10px;
+	$main-padding: 10px;
+
+	$color1: #efefef;
+	$color2: #000;
+
+	$color3: #82daca;
+	$color4: #1aafd0;
+	$color5: #6a67ce;
+	$color6: #ffb900;
+	$color7: #fc636b;
+
+	$color8: #777;
+
+	$color9: $color4;
+	$color10: $color5;
+
+	$infoColor: $color8;
+
+	$green: $color3;
+	$blue: $color5;
+	$black: #000;
+
+	$borderInput: #ccc;
+
+	$logo_color: $color8;
+
+	$backgroungTransparentImage: #fff;
+
+/*====================================
+=            Color JQuery            =
+====================================*/
+
+.color1 {
+	background-color: $color1;
+}
+.color2 {
+	background-color: $color2;
+}
+.color3 {
+	background-color: $color3;
+}
+.color4 {
+	background-color: $color4;
+}
+.color5 {
+	background-color: $color5;
+}
+.color6 {
+	background-color: $color6;
+}
+.color7 {
+	background-color: $color7;
+}
+.color8 {
+	background-color: $color8;
+}
+.color9 {
+	background-color: $color9;
+}
+.color10 {
+	background-color: $color10;
+}
+
+.infoColor {
+	background-color: $infoColor;
+}
+
+.green {
+	background-color: $green;
+}
+.blue {
+	background-color: $blue;
+}
+
+/*=====  End of Color JQuery  ======*/	

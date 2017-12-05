@@ -201,7 +201,7 @@ p.info-for-the-post {
 -------------------- */
 
 .container-comments .reply-list li:before {
-	background: <?php makeLighten($infoColor, 0.3) ?>;
+	background: <?php makeDarken($color1, 0.8) ?>;
 }
 
 .container-comments .comment-box .comment-head span {
@@ -209,7 +209,7 @@ p.info-for-the-post {
 }
 
 .custom-sidebar-widget-footer2 ul li a img {
-	border: 4px solid <?php makeLighten($infoColor, 0.4) ?>;
+	border: 4px solid <?php makeLighten($color2, 0.8) ?>;
 }
 
 .dropdown-menu > .active > a,
@@ -222,24 +222,16 @@ p.info-for-the-post {
 	background-color: <?php makeDarken($color2, 0.9) ?>;
 }
 
-.site-header .test-title {
-	color: <?php makeLighten($color8, 0.1) ?>;
-}
-
-.site-header .label_skitter p {
-	color: <?php makeLighten($color8, 0.1) ?>;
-}
-
 .total-cart span.update-total span.show-value-box-dropdown {
-	color: <?php makeLighten($color8, 0.1) ?>;
+	color: <?php makeLighten($infoColor, 0.9) ?>;
 }
 
 span.show-value-box-dropdown .items:nth-child(even) {
-	color: <?php makeLighten($color8, 0.2) ?>;
+	color: <?php makeLighten($infoColor, 0.9) ?>;
 }
 
 span.show-followed-dropdown-box .items:nth-child(even) {
-	color: <?php makeLighten($color8, 0.1) ?>;
+	color: <?php makeLighten($infoColor, 0.9) ?>;
 }
 
 .latest-posts-blog .post_title {
@@ -327,8 +319,8 @@ span.show-followed-dropdown-box .items:nth-child(even) {
 }
 
 .panel-primary > .panel-heading {
-    background-color: <?php makeDarken($color3, .9) ?>;
-    border-color: <?php makeDarken($color3, .9) ?>;
+    background-color: <?php makeDarken($color3, .95) ?>;
+    border-color: <?php makeDarken($color3, .95) ?>;
 }
 
 <?php /* End Style Sheet Here

@@ -11,6 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/icon.png';  ?>">
 		<title><?php if(is_home()) { echo bloginfo( 'name' ); } else { echo wp_title( $sep = '-' ); } ?></title>
 		<?php wp_head(); ?>
 	</head>
@@ -38,6 +39,8 @@
 
 	<div class="green"></div>
 	<div class="blue"></div>
+	
+	<div class="fontColorHaveBackground"></div>
 	
 	<!--====  End of This Divs To Get variables For Main Colors For JQuery  ====-->
 	

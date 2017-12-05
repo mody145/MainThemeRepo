@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
 
 			'dots'				: false,
 			'numbers'			: true,
-			'label' 			: false,
+			'label' 			: true,
 			'controls'			: true,
 			'hide_tools'		: true,
 			'with_animations' 	: ["fade"],
@@ -303,9 +303,15 @@ jQuery(document).ready(function($) {
 
 		$('.click-here').remove();
 
-		var body = $("body");
-		body.animate({scrollTop:0}, 500, 'swing', function() { 
+		var body = $("html");
+		var icoPosition = $('i.icon-cog4').position();
+
+		body.animate({
+			scrollTop: 0},
+			500, 'swing', function() {
 			$('.calc-total').append('<span class="click-here"><i class="icon-hand-o-down"></i></span>');
+
+			$('.click-here').css({left: icoPosition.left, width: 0});
 		});
 
 		event.preventDefault();

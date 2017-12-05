@@ -7,6 +7,15 @@
 					
 					<div class="parent-image-in-loop-products">
 						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
+						<?php 
+							global $product;
+							$list_colors_product = $product->get_attribute( 'pa_color' );
+							$array_colors = explode(',', $list_colors_product);
+
+							foreach ($array_colors as $color_product) {
+								echo '<div title="' . $color_product . '" class="colors_product" style="background-color: ' . $color_product . ' "></div>'; 
+							}
+						 ?>
 					</div>
 
 					<!-- This OverLay Will Be Show If The Product Allready In Cart -->

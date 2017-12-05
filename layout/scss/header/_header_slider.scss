@@ -35,11 +35,19 @@
 	    text-align: center;
 	}
 
+	.label_skitter p {
+		color: #777;
+	}
+
+	.test-title {
+		color: #777;
+	}
+
 	.test-title {
 	    font-weight: bold;
 	    font-size: $font-size + 20;
 	    padding: 5px 10px;
-	    background-color: var(--color1);
+	    background-color: #eee;
 	    
 	    display: inline-block;
 	    transition: all .5s ease-in-out;
@@ -47,7 +55,7 @@
 	}
 
 	.label_skitter p {
-	    background-color: var(--color1);
+	    background-color: #eee;
 	    
 	    margin: 10px 0;
 	    margin-bottom: 25px;

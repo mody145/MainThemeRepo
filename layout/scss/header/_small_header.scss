@@ -9,6 +9,7 @@
 	    top: 50%;
 	    right: 70px;
 	    transform: translate(0%, -55%);
+	    z-index: 6;
 	}
 
 	@media (min-width: 768px) and (max-width: 991px) {
@@ -19,24 +20,29 @@
 }
 
 .container-img-header {
-    max-height: 200px;
+    height: 200px;
     position: relative;
-    max-width: 500px;
-	display: flex;
+    max-width: 700px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
 	.overlay {
 	    position: absolute;
 	    top: 0;
-	    left: 0;
-	    width: 100%;
+	    right: 0;
+	    width: 60%;
 	    height: 100%;
 	    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.00, rgba(211, 211, 211, 0)), color-stop(1.0, var(--color2)));
-	    z-index: 2;
+	    z-index: 4;
 	}
 
 	img {
-	    opacity: .5;
+	    opacity: .8;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    z-index: 2;
 	}
 }

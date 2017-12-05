@@ -89,3 +89,57 @@ select#search-tag + span:before {
 }
 
 /*=====  End of OWL Modify   ======*/
+
+/*===========================================
+=            Small Slider Modify            =
+===========================================*/
+
+.mini-slider {
+
+    .label_skitter {
+        background: #fff;
+        color: #000;
+        bottom: 50%;
+        left: 20px;
+        width: 250px;
+        padding: 10px;
+        transform: translate(0,50%);
+        border-radius: 5px;
+        opacity: .7;
+    }
+
+    .label_skitter p:first-of-type {
+        display: none;
+    }
+
+    .label_skitter p {
+        color: #666;
+    }
+
+    .container_skitter h4 {
+        color: #666;
+    }
+
+    .label_skitter a {
+        color: #fff !important;
+        background-color: #666 !important;
+        border: none !important;
+    }
+
+}
+
+/*=====  End of Small Slider Modify  ======*/
+
+/*==============================================
+=            Start Thubmlina Modify            =
+==============================================*/
+
+.thumbelina li img {
+    max-width: 100%;
+}
+
+.queck-view-window .container-quick-veiw .main-image img {
+    max-width: 100%;
+}
+
+/*=====  of Start Thubmlina Modify  ======*/

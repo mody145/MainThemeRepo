@@ -951,10 +951,10 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
-				backgroundColor: blue,
+				backgroundColor: color4,
 				color: fontColorHaveBackground
 			});
 			$('.image-box').css('position', 'relative');
@@ -985,7 +985,7 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1019,7 +1019,7 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1053,7 +1053,7 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1087,7 +1087,7 @@ jQuery(document).ready(function($) {
 			$('.grid-images').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1359,7 +1359,7 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1395,7 +1395,7 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1431,7 +1431,7 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1467,7 +1467,7 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,
@@ -1503,7 +1503,7 @@ jQuery(document).ready(function($) {
 			$('.services-container-box').html(data);
 			thisElement.siblings('span').css({
 				backgroundColor: color1,
-				color: fontColorHaveBackground
+				color: color8
 			});
 			thisElement.css({
 				backgroundColor: blue,

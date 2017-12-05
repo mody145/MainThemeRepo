@@ -37,23 +37,25 @@
 	}
 }
 
-.skitter .image {
-    overflow: hidden;
-    background-color: var(--color2);
-}
+.mini-slider {
 
-.skitter.with-dots {
-    margin-bottom: 0;
-}
+    .skitter .image {
+        overflow: hidden;
+        background-color: var(--color2);
+    }
 
-.label_skitter p {
-    display: inline-block;
-}
+    .skitter.with-dots {
+        margin-bottom: 0;
+    }
 
-.container_skitter h4 {
-    margin-left: $main-margin +  3;
-    font-size: $font-size + 5;
-    font-weight: bold;
-    color: var(--color1);
+    .label_skitter p {
+        display: inline-block;
+    }
+
+    .container_skitter h4 {
+        margin-left: $main-margin +  3;
+        font-size: $font-size + 5;
+        font-weight: bold;
+    }
 }
 
