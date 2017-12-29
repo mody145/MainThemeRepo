@@ -47,9 +47,10 @@
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
 		<div class="custom-loader">
-			<div class="circle one"></div>
-			<div class="circle two"></div>
-			<div class="circle three"></div>
+			<div class="custom-spinner33">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>
 		</div>
 	</div><!-- Section Overlay Loading -->
 
@@ -314,7 +315,17 @@
 					<div class="col-md-6 col-sm-6 nopadding">
 						<div class="add-register-login wow fadeIn">
 							<div class="login-register text-center">
-								<?php echo do_shortcode('[lsphe-header]' ); ?>
+								<?php 
+								
+								$arr_strings = array('Login','Sign Up');
+								$arr_strings_empty = array('','');
+
+								$all_output = do_shortcode('[lsphe-header]' );
+								$remove_strings = str_replace($arr_strings, $arr_strings_empty, $all_output);
+
+								echo $remove_strings;
+
+								 ?>
 							</div>
 						</div>
 					</div>

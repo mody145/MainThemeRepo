@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 
 			},
 			error: function(response) {
@@ -66,7 +66,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -160,7 +160,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 
@@ -184,7 +184,7 @@ jQuery(document).ready(function($) {
 
 			type: "POST",
 			beforeSend: function() {
-				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div></div>');
+				$('body').prepend('<div class="small-overlay-loading"><div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div></div>');
 			},
 			error: function() {
 				alert("Some Thing Error"); 

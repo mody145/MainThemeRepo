@@ -1,5 +1,5 @@
 .parent_hide_show {
-	
+
 	.hide_item {
 	    position: absolute;
 	    z-index: 5;
@@ -48,7 +48,6 @@
 	    font-size: $font-size + 20;
 	    padding: 5px 10px;
 	    background-color: #eee;
-	    
 	    display: inline-block;
 	    transition: all .5s ease-in-out;
 	    margin-bottom: 3px;
@@ -56,7 +55,7 @@
 
 	.label_skitter p {
 	    background-color: #eee;
-	    
+
 	    margin: 10px 0;
 	    margin-bottom: 25px;
 	}

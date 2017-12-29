@@ -290,108 +290,51 @@ div.parent_spinner10 {
 /*======================================
 =            Sircle Loading            =
 ======================================*/
-/* <div class="loader"> <div class="circle one"></div> <div class="circle two"></div> <div class="circle three"></div> </div> */
+/* <div class="custom-loader"> <div class="custom-spinner33"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div> */
 
 .custom-loader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.custom-spinner33 {
+  width: 65px;
+  height: 65px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -90px 0 0 -90px;
+  transform: translate(-50%, -50%);
 }
-.circle {
-  position: absolute;
-  border: 3px solid transparent;
-  border-top-color: var(--color5);
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  -webkit-animation: rotate linear infinite;
-  -moz-animation: rotate linear infinite;
-  -o-animation: rotate linear infinite;
-  animation: rotate linear infinite;
+  background-color: var(--color4);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
 }
-.circle.one {
-  height: 50px;
-  width: 50px;
-  left: 50px;
-  top: 50px;
-  -webkit-animation-duration: 0.85s;
-  -moz-animation-duration: 0.85s;
-  -o-animation-duration: 0.85s;
-  animation-duration: 0.85s;
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
 }
-.circle.two {
-  height: 75px;
-  width: 75px;
-  top: 38px;
-  left: 38px;
-  -webkit-animation-duration: 0.95s;
-  -moz-animation-duration: 0.95s;
-  -o-animation-duration: 0.95s;
-  animation-duration: 0.95s;
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
 }
-.circle.three {
-  height: 100px;
-  width: 100px;
-  top: 25px;
-  left: 25px;
-  -webkit-animation-duration: 1.05s;
-  -moz-animation-duration: 1.05s;
-  -o-animation-duration: 1.05s;
-  animation-duration: 1.05s;
-}
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -o-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-  }
-  to {
-    -webkit-transform: rotateZ(0deg);
-    -moz-transform: rotateZ(0deg);
-    -o-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
-  }
-}
-@-moz-keyframes rotate {
-  from {
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -o-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-  }
-  to {
-    -webkit-transform: rotateZ(0deg);
-    -moz-transform: rotateZ(0deg);
-    -o-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
-  }
-}
-@-o-keyframes rotate {
-  from {
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -o-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-  }
-  to {
-    -webkit-transform: rotateZ(0deg);
-    -moz-transform: rotateZ(0deg);
-    -o-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
-  }
-}
-@keyframes rotate {
-  from {
-    -webkit-transform: rotateZ(360deg);
-    -moz-transform: rotateZ(360deg);
-    -o-transform: rotateZ(360deg);
-    transform: rotateZ(360deg);
-  }
-  to {
-    -webkit-transform: rotateZ(0deg);
-    -moz-transform: rotateZ(0deg);
-    -o-transform: rotateZ(0deg);
-    transform: rotateZ(0deg);
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
   }
 }
 

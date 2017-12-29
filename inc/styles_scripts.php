@@ -40,7 +40,7 @@ function dwwp_styles_and_scripts() {
 	// Fonts
 	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css?' . time() . '' );
 	// Main File Css
-	wp_enqueue_style( 'main-css', get_template_directory_uri() . '/layout/css/main.css?' . time() . '' );
+	wp_enqueue_style( 'main-css', get_template_directory_uri() . '/layout/css/mainify_css/main.css?' . time() . '' );
 	// PHP File To Use Function Darken And Lighten Colors
 	wp_enqueue_style( 'function-colors', get_template_directory_uri() . '/layout/css/function-colors.php', false, false );
 	
@@ -96,9 +96,9 @@ function dwwp_styles_and_scripts() {
 	// Enqueue JQuery
 	wp_enqueue_script( 'jquery' );
 	// Ajax JQuery
-	wp_enqueue_script( 'ajax-js', get_template_directory_uri() . '/layout/js/Ajax_JQuery.js?' . time() . '', array('jquery'), '', true );
+	wp_enqueue_script( 'ajax-js', get_template_directory_uri() . '/layout/js/mainify_js/Ajax_JQuery.js?' . time() . '', array('jquery'), '', true );
 	// Main File Js
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/layout/js/main.js?' . time() . '', array('jquery'), '', true );
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/layout/js/mainify_js/main.js?' . time() . '', array('jquery'), '', true );
 
 	// DECLARE JAVASCRIPT GLOBAL VARIABLES FOR WORDPRESS
 	wp_localize_script( 'ajax-js', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

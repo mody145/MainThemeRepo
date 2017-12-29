@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2017-12-17 21:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.3\n"
+
+#: 404.php:5
+msgid "That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:6
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: functions.php:58
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:59
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:60
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:61
+msgid "Mobile Menu"
+msgstr ""
+
+#: functions.php:62
+msgid "Tablet Menu"
+msgstr ""
+
+#: index.php:331
+msgid "Top Four Posts"
+msgstr "افضل اربعة مواضيع"
+
+#: page-cart.php:40 page-cart.php:83 woocommerce/cart/cart.php:40
+#: woocommerce/cart/cart.php:83
+msgid "Product"
+msgstr ""
+
+#: page-cart.php:41 page-cart.php:101 woocommerce/cart/cart.php:41
+#: woocommerce/cart/cart.php:101
+msgid "Price"
+msgstr ""
+
+#: page-cart.php:42 page-cart.php:107 woocommerce/cart/cart.php:42
+#: woocommerce/cart/cart.php:107
+msgid "Quantity"
+msgstr ""
+
+#: page-cart.php:43 page-cart.php:124 woocommerce/cart/cart-totals.php:92
+#: woocommerce/cart/cart-totals.php:93 woocommerce/cart/cart.php:43
+#: woocommerce/cart/cart.php:124
+msgid "Total"
+msgstr ""
+
+#: page-cart.php:64 woocommerce/cart/cart.php:64
+#: woocommerce/cart/mini-cart.php:51
+msgid "Remove this item"
+msgstr ""
+
+#: page-cart.php:96 woocommerce/cart/cart.php:96
+msgid "Available on backorder"
+msgstr ""
+
+#: page-cart.php:142 woocommerce/cart/cart.php:142
+msgid "Coupon:"
+msgstr ""
+
+#: page-cart.php:142 woocommerce/cart/cart.php:142
+msgid "Coupon code"
+msgstr ""
+
+#: page-cart.php:142 woocommerce/cart/cart.php:142
+msgid "Apply coupon"
+msgstr ""
+
+#: page-cart.php:147 woocommerce/cart/cart.php:147
+msgid "Update cart"
+msgstr ""
+
+#: inc/new_post_type/newPostType_about_us.php:29
+#: inc/new_post_type/newPostType_colors.php:29
+#: inc/new_post_type/newPostType_services.php:28
+#: inc/new_post_type/newPostType_slider.php:28
+msgid "Description."
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:141
+msgctxt "Sliders"
+msgid "Sliders"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:142
+msgctxt "Slider"
+msgid "Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:143
+msgid "Search Sliders"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:144
+msgid "Popular Sliders"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:145
+msgid "All Sliders"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:146
+#: inc/new_post_type/newPostType_slider.php:147
+msgid "Parent Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:148
+msgid "Edit Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:149
+msgid "Update Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:150
+msgid "Add New Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:151
+msgid "New Slider"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:152
+msgid "Add or remove Sliders"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:153
+msgid "Choose from most used Theme"
+msgstr ""
+
+#: inc/new_post_type/newPostType_slider.php:154
+msgid "Slider"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:36
+#, php-format
+msgid "%1$s review for %2$s"
+msgid_plural "%1$s reviews for %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product-reviews.php:38
+msgid "Reviews"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:95
+msgid "Send Reviews"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:102
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a review."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:106
+msgid "Your rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:107
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:108
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:109
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:110
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:111
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:112
+msgid "Very poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:128
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/single-product.php:56 woocommerce/taxonomy-product_cat.php:28
+#: woocommerce/taxonomy-product_tag.php:27
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: woocommerce/single-product.php:227
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product.php:227
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:28
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:36
+msgid "Return to shop"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:48
+msgid "Shipping costs will be calculated once you have provided your address."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:50
+msgid ""
+"There are no shipping methods available. Please double check your address, "
+"or contact us if you need any help."
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:28
+msgid "Cart totals"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:33 woocommerce/cart/cart-totals.php:34
+#: woocommerce/cart/mini-cart.php:84
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:55 woocommerce/cart/cart-totals.php:56
+msgid "Shipping"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:71
+#, php-format
+msgid "(estimated for %s)"
+msgstr ""
+
+#: woocommerce/cart/cross-sells.php:27
+msgid "You may be interested in&hellip;"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:76
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/proceed-to-checkout-button.php:27
+msgid "Proceed to checkout"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:33
+msgid "Calculate shipping"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:39
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:56
+#: woocommerce/cart/shipping-calculator.php:62
+#: woocommerce/cart/shipping-calculator.php:74
+msgid "State / County"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:63
+msgid "Select a state&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:83
+msgid "City"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:91
+msgid "Postcode / ZIP"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:96
+msgid "Update totals"
+msgstr ""

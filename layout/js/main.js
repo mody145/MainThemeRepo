@@ -303,6 +303,9 @@ jQuery(document).ready(function($) {
 
 		$('.click-here').remove();
 
+		$('.fullscreen_overlay').hide(400).delay(600).remove();
+		$('.queck-view-window').hide(400).delay(600).remove();
+
 		var body = $("html");
 		var icoPosition = $('i.icon-cog4').position();
 
@@ -497,7 +500,7 @@ jQuery(document).ready(function($) {
 =            Add Background To Info GridImages            =
 =========================================================*/
 
-	$('span.gradiant_overlay').hover(function() {
+	/*$('span.gradiant_overlay').hover(function() {
 		
 		var that = $(this);
 		var info = that.parent().parent().find('.info');
@@ -505,7 +508,8 @@ jQuery(document).ready(function($) {
 		info.css({
 			backgroundImage: '-webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000))',
 			display: 'block',
-		    width: 'calc(100% - 0px)'
+		    width: 'calc(100% - 4px)',
+		    left: '2px'
 		});
 
 	}, function() {
@@ -515,7 +519,7 @@ jQuery(document).ready(function($) {
 		info.css({
 			backgroundImage: 'none'
 		});
-	});
+	});*/
 
 /*=====  End of Add Background To Info GridImages  ======*/
 

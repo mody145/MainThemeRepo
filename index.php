@@ -328,7 +328,7 @@
 	<div class="services">
 
 		<div class="buttons-section">
-			<span class="hidden-xs">Top Four Posts</span>
+			<span class="hidden-xs"><?php echo __('Top Four Posts', 'smile') ?></span>
 			<span class="pull-right">
 				<span class="Sorting_grid" id="sorting_posts_by_latest"><i class="icon-clock-o"></i>&nbsp;Latest</span>
 				<span class="Sorting_grid" id="sorting_posts_by_like"><i class="icon-thumbs-o-up"></i>&nbsp;Like</span>

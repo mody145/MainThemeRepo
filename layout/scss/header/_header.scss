@@ -67,13 +67,25 @@
         a.header_login:before {
             content: "\f2c0";
             font-family: 'icomoon' !important;
-            margin: $main-margin / 2;
+            margin: 0;
+            position: absolute;
+            left: 45px;
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size: 20px;
+            color: var(--color4);
         }
 
         a.header_signup:before {
             content: "\f234";
             font-family: 'icomoon' !important;
-            margin: $main-margin / 2;
+            margin: 0;
+            position: absolute;
+            right: 45px;
+            top: 50%;
+            transform: translate(0,-50%);
+            font-size: 20px;
+            color: var(--color4);
         }
 
         span.phoe-span-3, 
@@ -87,6 +99,8 @@
         padding: 0;
         display: flex;
         justify-content: space-around;
+        position: relative;
+        height: 20px;
     }
 }
 
