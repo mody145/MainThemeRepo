@@ -19,7 +19,7 @@ class custom_widget_welcome extends WP_Widget {
 		echo $one['before_widget']; ?>
 
 		<div class="welcome">
-		<h3><i class="icon-sound"> </i><?php echo $two['welcome_title'] ?></h3>
+		<h3><i class="<?php echo $two['welcome_icon'] ?>"> </i><?php echo $two['welcome_title'] ?></h3>
 		<p><?php echo $two['welcome_msg']; ?></p>
 
 		<?php echo $one['after_widget'];
@@ -28,6 +28,15 @@ class custom_widget_welcome extends WP_Widget {
 	/* ---||  Form In Admin Page  ||--- */
 
 	public function form($two) { ?>
+
+		<p> <!-- Icon Field -->
+			<label for="<?php echo $this->get_field_id('welcome_icon'); ?>">Icon : </label>
+			<input id="<?php echo $this->get_field_id('welcome_icon'); ?>" 
+			value="<?php echo $two['welcome_icon'] ?>" 
+			name="<?php echo $this->get_field_name('welcome_icon'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
 
 		<p> <!-- Title Field -->
 			<label for="<?php echo $this->get_field_id('welcome_title'); ?>">Title : </label>

@@ -47,6 +47,7 @@ require get_template_directory() . '/inc/Facebook/autoload.php';
 require get_template_directory() . '/inc/facebook_init.php';
 
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+require get_template_directory() . '/inc/required_plugins.php';
 
 require get_template_directory() . '/inc/styles_scripts.php';
 

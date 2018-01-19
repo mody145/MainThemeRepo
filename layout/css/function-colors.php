@@ -85,6 +85,10 @@ function makeDarken($hex, $percent) {
 /*  [ Opacity ]
 -------------------- */
 
+.transparent a span {
+	color: rgba(<?php replaceHashHex($infoColor) ?>, .7);
+}
+
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {

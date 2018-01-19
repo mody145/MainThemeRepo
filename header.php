@@ -11,6 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/icon.png';  ?>">
 		<title><?php if(is_home()) { echo bloginfo( 'name' ); } else { echo wp_title( $sep = '-' ); } ?></title>
 		<?php wp_head(); ?>
@@ -43,6 +44,46 @@
 	<div class="fontColorHaveBackground"></div>
 	
 	<!--====  End of This Divs To Get variables For Main Colors For JQuery  ====-->
+
+	<!-- Start Top UpperBar -->
+	<div class="upper-bar-top" style="margin-bottom: 10px;">
+	    <div class="container">
+
+			<div class="section one">
+			    <i class="icon-location2"></i>
+			    <span>
+			    	<?php 
+						$address = esc_attr( get_option( 'address_get_touch', 'None' ) );
+						echo $address;
+			    	 ?>
+			    </span>
+			</div>
+
+			<div class="section two">
+			    <i class="icon-volume-up"></i>
+			    <span>
+			    	<a href="<?php echo esc_attr( get_option( 'notificationUpperbarLink' ) ); ?>">
+			    		<?php 
+			    		$notificationUpperbar = esc_attr( get_option( 'notificationUpperbar' ) );
+			    		echo $notificationUpperbar;
+			    		 ?>
+			    	</a>
+			    </span>
+			</div>
+
+			<div class="section three">
+			    <i class="icon-phone3"></i>
+			    <span>
+			    	<?php 
+						$phone = esc_attr( get_option( 'phone_get_touch', 'None' ) );
+						echo $phone;
+			    	 ?>
+			    </span>
+			</div>
+
+		</div>
+	</div>
+	<!-- End Top UpperBar -->
 	
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
@@ -102,155 +143,7 @@
 	<div class="container">
 		<div class="row">
 
-		<!-- Header Here -->
 
-		<div id="headToggile" class="col-md-12 nopadding hidden-xs parent_hide_show">
-
-		<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' && is_home() ) { ?>
-			<header class="site-header">
-				<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
-
-		        <div class="skitter-large-box">
-		            <div class="skitter skitter-large-for-header with-thumbs">
-		                <ul>
-							<?php 
-
-							/* --||  Start Loop (WP-Query)  ||-- */
-
-							$args = array(
-								'post_type' 	=> 'slider',
-								'post_per_post' => 10,
-							    'tax_query' => array(
-							        array(
-							            'taxonomy' => 'wich_slider',
-							            'field'    => 'slug',
-							            'terms'    => 'header-slider',
-							        ),
-							    ),
-							);
-							
-							$slides = new WP_Query($args);
-
-							if ($slides->have_posts()) {
-								while ($slides->have_posts()) {
-									$slides->the_post(); ?>
-
-		                    <li>
-		                        <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
-		                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
-		                        </a>
-		                        <div class="label_text">
-		                            <h3 class="test-title"><?php the_title(); ?></h3>
-		                            <?php the_content(); ?>
-		                            <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
-		                        </div>
-		                    </li>
-
-							<!--||  End Loop (WP-QUery)  ||-->
-							<?php }} ?>
-							<?php wp_reset_postdata(); ?>	
-
-		                </ul>
-		            </div>
-		        </div>
-
-			</header>
-		<?php } elseif ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'small' ) { ?>
-			<div class="small-header parent_hide_show">
-
-				<div class="container-img-header">
-					<div class="overlay"></div>
-
-					<?php 
-
-					$urlImage = get_template_directory_uri() . '/layout/images/header/';
-					$ImagesArray = array('1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', );
-					$random_image = array_rand($ImagesArray);
-
-					?>
-					<img src="<?php echo $urlImage . $ImagesArray[$random_image]; ?>" class="">
-				</div>
-
-				<?php if ( is_home() ) { ?>
-				<i class="icon-show-two toggel-opacity hide_item reload_again" style="font-size: 21px !important;" data-toggle="tooltip" data-placement="top" title="Reload Slider"></i>
-				<?php } ?>
-				<?php dynamic_sidebar( 'advertise_here' ); ?>
-			</div>
-		<?php } else { ?>
-
-			<?php if ( is_home() ) {  ?>
-				<header class="site-header">
-					<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
-
-	                <div class="skitter-large-box">
-	                    <div class="skitter skitter-large-for-header with-thumbs">
-	                        <ul>
-								<?php 
-
-								/* --||  Start Loop (WP-Query)  ||-- */
-
-								$args = array(
-									'post_type' 	=> 'slider',
-									'post_per_post' => 10,
-								    'tax_query' => array(
-								        array(
-								            'taxonomy' => 'wich_slider',
-								            'field'    => 'slug',
-								            'terms'    => 'header-slider',
-								        ),
-								    ),
-								);
-								
-								$slides = new WP_Query($args);
-
-								if ($slides->have_posts()) {
-									while ($slides->have_posts()) {
-										$slides->the_post(); ?>
-
-	                            <li>
-	                                <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
-	                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
-	                                </a>
-	                                <div class="label_text">
-	                                    <h3 class="test-title"><?php the_title(); ?></h3>
-	                                    <?php the_content(); ?>
-	                                    <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
-	                                </div>
-	                            </li>
-
-								<!--||  End Loop (WP-QUery)  ||-->
-								<?php }} ?>
-								<?php wp_reset_postdata(); ?>	
-
-	                        </ul>
-	                    </div>
-	                </div>
-
-				</header>
-			<?php } else { ?>
-
-			<div class="small-header">
-				<div class="container-img-header">
-					<div class="overlay"></div>
-
-					<?php 
-
-					$urlImage = get_template_directory_uri() . '/layout/images/header/';
-					$ImagesArray = array('1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', );
-					$random_image = array_rand($ImagesArray);
-
-					?>
-					<img src="<?php echo $urlImage . $ImagesArray[$random_image]; ?>" class="">
-				</div>
-				<?php dynamic_sidebar( 'advertise_here' ); ?>
-			</div>
-
-			<?php } ?>
-
-		<?php } ?>
-		</div>
-
-		<!-- End Header Here -->
 		<!-- Start Menu And Prand In Mobile Screen -->
 		
 		<!-- <header class="site-header"> -->
@@ -286,7 +179,13 @@
 
 			<div class="col-md-3 col-sm-6 nopadding hidden-xs" style="position: static;">
 				<div class="brand-name transparent wow fadeIn">
-					<a href="<?php echo home_url(); ?>"><i class="icon-smile-logo"></i></a>
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo esc_attr( get_option( 'logoImages' ) ); ?>">
+						<?php 
+						$wordsUnderLogo = esc_attr( get_option( 'wordsUnderLogo' ) );
+						?>
+						<span id="typed" link-data="<?php echo $wordsUnderLogo; ?>"></span>
+					</a>
 				</div>
 			</div>
 
@@ -447,6 +346,155 @@
 				</div>
 
 			<!-- End Form Search -->
+			<!-- Header Here -->
+
+			<div id="headToggile" style="margin-top: 10px;" class="col-md-12 nopadding hidden-xs parent_hide_show">
+
+			<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' && is_home() ) { ?>
+				<header class="site-header">
+					<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
+
+			        <div class="skitter-large-box">
+			            <div class="skitter skitter-large-for-header with-thumbs">
+			                <ul>
+								<?php 
+
+								/* --||  Start Loop (WP-Query)  ||-- */
+
+								$args = array(
+									'post_type' 	=> 'slider',
+									'post_per_post' => 10,
+								    'tax_query' => array(
+								        array(
+								            'taxonomy' => 'wich_slider',
+								            'field'    => 'slug',
+								            'terms'    => 'header-slider',
+								        ),
+								    ),
+								);
+								
+								$slides = new WP_Query($args);
+
+								if ($slides->have_posts()) {
+									while ($slides->have_posts()) {
+										$slides->the_post(); ?>
+
+			                    <li>
+			                        <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
+			                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
+			                        </a>
+			                        <div class="label_text">
+			                            <h3 class="test-title"><?php the_title(); ?></h3>
+			                            <?php the_content(); ?>
+			                            <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
+			                        </div>
+			                    </li>
+
+								<!--||  End Loop (WP-QUery)  ||-->
+								<?php }} ?>
+								<?php wp_reset_postdata(); ?>	
+
+			                </ul>
+			            </div>
+			        </div>
+
+				</header>
+			<?php } elseif ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'small' ) { ?>
+
+					<div class="small-header parent_hide_show">
+
+						<div class="container-img-header">
+							<div class="overlay"></div>
+
+							<?php 
+							$headerImagesString = esc_attr( get_option( 'headerImages' ) );
+							$arrayImagesHeader = explode(',', $headerImagesString);
+							$random_image = array_rand($arrayImagesHeader);
+
+							?>
+							<img src="<?php echo $arrayImagesHeader[$random_image]; ?>" class="">
+						</div>
+
+						<?php if ( is_home() ) { ?>
+						<i class="icon-show-two toggel-opacity hide_item reload_again" style="font-size: 21px !important;" data-toggle="tooltip" data-placement="top" title="Reload Slider"></i>
+						<?php } ?>
+						<?php dynamic_sidebar( 'advertise_here' ); ?>
+				</div>
+
+			<?php } else { ?>
+
+				<?php if ( is_home() ) {  ?>
+					<header class="site-header">
+						<i class="icon-close-one toggel-opacity hide_item rotate--90 dont_reload_again" data-toggle="tooltip" data-placement="top" title="Don't Reload Again"></i>
+
+		                <div class="skitter-large-box">
+		                    <div class="skitter skitter-large-for-header with-thumbs">
+		                        <ul>
+									<?php 
+
+									/* --||  Start Loop (WP-Query)  ||-- */
+
+									$args = array(
+										'post_type' 	=> 'slider',
+										'post_per_post' => 10,
+									    'tax_query' => array(
+									        array(
+									            'taxonomy' => 'wich_slider',
+									            'field'    => 'slug',
+									            'terms'    => 'header-slider',
+									        ),
+									    ),
+									);
+									
+									$slides = new WP_Query($args);
+
+									if ($slides->have_posts()) {
+										while ($slides->have_posts()) {
+											$slides->the_post(); ?>
+
+		                            <li>
+		                                <a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">
+		                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="cubeHide" />
+		                                </a>
+		                                <div class="label_text">
+		                                    <h3 class="test-title"><?php the_title(); ?></h3>
+		                                    <?php the_content(); ?>
+		                                    <span class="cat-pubble"><a href="<?php echo get_post_meta( get_the_ID(), 'slide-link', true ); ?>">Read more</a></span>
+		                                </div>
+		                            </li>
+
+									<!--||  End Loop (WP-QUery)  ||-->
+									<?php }} ?>
+									<?php wp_reset_postdata(); ?>	
+
+		                        </ul>
+		                    </div>
+		                </div>
+
+					</header>
+				<?php } else { ?>
+
+					<div class="small-header">
+						<div class="container-img-header">
+							<div class="overlay"></div>
+
+							<?php 
+							$headerImagesString = esc_attr( get_option( 'headerImages' ) );
+							$arrayImagesHeader = explode(',', $headerImagesString);
+							$random_image = array_rand($arrayImagesHeader);
+
+							?>
+							<img src="<?php echo $arrayImagesHeader[$random_image]; ?>" class="">
+						</div>
+						<?php dynamic_sidebar( 'advertise_here' ); ?>
+					</div>
+
+				<?php } ?>
+
+			<?php } ?>
+			</div>
+
+			<!-- End Header Here -->
 			<!-- navbar Header -->
 
 			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding" style="z-index: 20;">

@@ -1,3 +1,46 @@
+/*============================================
+=            Top UpperBar Section            =
+============================================*/
+
+.upper-bar-top {
+    background-color: var(--color4);
+    color: var(--fontColorHaveBackground);
+    padding: 5px;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-family: roboto;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .section {
+        flex-grow: 1;
+
+        span a {
+            color: var(--fontColorHaveBackground);
+            text-decoration: underline;
+        }
+    }
+
+    .section:first-of-type {
+        text-align: left;
+    }
+
+    .section.two {
+        text-align: center;
+    }
+
+    .section:last-of-type {
+        text-align: right;
+    }
+}
+
+/*=====  End of UpperBar Section  ======*/
 /*==========================================
 =            Brand Name Section            =
 ==========================================*/
@@ -21,10 +64,20 @@
     position: relative;
     top: -5px;
 
-    a i {
-        color: $logo_color;
+    a img {
+        position: absolute;
+        margin-left: -25px;
+        margin-top: 6px;
+        transition: all .3s ease;
+        max-width: 140px;
+    }
+
+    a span {
         position: relative;
-        left: -25px;
+        left: 0;
+        bottom: -5px;
+        font-size: 15px;
+        opacity: .8; 
     }
 }
 

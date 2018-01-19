@@ -68,6 +68,50 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Upload Image About Us Page  ======*/
 
+/*==============================================
+=            Creat Button To Upload 		   =
+=          		(Header Images)				   =
+==============================================*/
+
+	var parentImage = $('.show_header_images');
+
+	$('button#header_Image').on('click', function(e) {
+
+		e.preventDefault();
+
+		var that = $(this);
+
+		var imageUploader = wp.media({
+			'title' 	: 'Upload Header Images',
+			'button' 	: { 'Text' : 'Set The Images' },
+			'multiple' 	: true
+		});
+
+		imageUploader.open();
+
+		imageUploader.on('select', function() {
+
+			var image   = imageUploader.state().get('selection').toJSON();
+
+			var link 	= [];
+
+			parentImage.html('');
+
+            for (var i = image.length - 1; i >= 0; i--) {
+
+                link[link.length] = image[i]['url'];
+                parentImage.append('<img src="' + image[i]['url'] + '" />');
+            }
+
+            var st = link.toString();
+
+            $('input.header_image_er_link').val(st);
+
+		});
+	});
+
+/*=====  End of Creat Button To Upload  ======*/
+
 
 
 });

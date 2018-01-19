@@ -45,7 +45,24 @@ jQuery(document).ready(function($) {
 
 	}catch(e){
 
-	console.log(e);
+		console.log(e);
+	}
+
+	try{
+
+		var strings_to_array = $('#typed').attr('link-data');
+		var array_strings = strings_to_array.split(',', 10);
+
+		var typed = new Typed('#typed', {
+		strings: array_strings,
+		typeSpeed: 100,
+		loop: true,
+		loopCount: Infinity,
+		fadeOut: true,
+		});
+
+	}catch(e){
+		console.log(e);
 	}
 
 	try{
@@ -60,7 +77,7 @@ jQuery(document).ready(function($) {
 
 	}catch(e){
 
-	console.log(e);
+		console.log(e);
 	}
 
 	try{
@@ -73,7 +90,7 @@ jQuery(document).ready(function($) {
 
 	}catch(e){
 
-	console.log(e);
+		console.log(e);
 	}
 
 	try{
@@ -92,7 +109,7 @@ jQuery(document).ready(function($) {
 
 	}catch(e){
 
-	console.log(e);
+		console.log(e);
 	}	
 
 	try{
@@ -112,7 +129,7 @@ jQuery(document).ready(function($) {
 
 	}catch(e){
 
-	console.log(e);
+		console.log(e);
 	}			
 
 	//Trigger Tooltip Bootstarp
@@ -495,33 +512,6 @@ jQuery(document).ready(function($) {
 	$('.main_image_product').css('min-height', mainImageHeight);
 
 /*=====  End of Modify Height Main Product Image  ======*/	
-
-/*=========================================================
-=            Add Background To Info GridImages            =
-=========================================================*/
-
-	/*$('span.gradiant_overlay').hover(function() {
-		
-		var that = $(this);
-		var info = that.parent().parent().find('.info');
-
-		info.css({
-			backgroundImage: '-webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000))',
-			display: 'block',
-		    width: 'calc(100% - 4px)',
-		    left: '2px'
-		});
-
-	}, function() {
-		var that = $(this);
-		var info = that.parent().parent().find('.info');
-
-		info.css({
-			backgroundImage: 'none'
-		});
-	});*/
-
-/*=====  End of Add Background To Info GridImages  ======*/
 
 /*=========================================================
 =            Redirect Shop And Blog When Click            =

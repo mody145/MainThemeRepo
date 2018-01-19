@@ -13,7 +13,7 @@
 							$array_colors = explode(',', $list_colors_product);
 
 							foreach ($array_colors as $color_product) {
-								echo '<div title="' . $color_product . '" class="colors_product" style="background-color: ' . $color_product . ' "></div>'; 
+								echo '<div title="' . $color_product . '" data-toggle="tooltip" data-placement="top" class="colors_product" style="background-color: ' . $color_product . ' "></div>'; 
 							}
 						 ?>
 					</div>

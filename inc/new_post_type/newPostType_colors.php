@@ -11,7 +11,7 @@ function dwwp_register_post_type_colors() {
 	$plural 	= 'Colors';
 
 	$lables = array(
-		'name' 				=> 'Colors',
+		'name' 				=> 'Colors & Header',
 		'singular_name' 	=> $singular,
 		'add_new' 			=> 'Add New ' . $singular,
 		'add_new_item' 		=> 'Add New ' . $singular,
@@ -55,8 +55,8 @@ function dwwp_shoose_colors_submenu_bage() {
 
 	add_submenu_page(
 		'edit.php?post_type=color', 
-		'Shoose Colors',
-		'Shoose Colors', 
+		'Settings',
+		'Settings', 
 		'manage_options', 
 		'choose_colors', 
 		'shoose_colors_custom_submenu_page_callback' );
@@ -64,7 +64,7 @@ function dwwp_shoose_colors_submenu_bage() {
 add_action('admin_menu', 'dwwp_shoose_colors_submenu_bage');
 
 function shoose_colors_custom_submenu_page_callback() {
-	echo '<br /><h2 class="">Choose Your Main Colors</h2>';
+	echo '<br /><h2 class="">Choose Your Main Colors & Settings</h2>';
 	echo '<i class="icon-smile-logo" style=" font-size: 55px; "></i>';
 
 	settings_errors(); ?>
@@ -105,6 +105,16 @@ function dwwp_register_custom_settings_colors() {
 	register_setting( 'colors-settings-group','fontColorHaveBackground' );
 	// Register Scroll Color
 	register_setting( 'colors-settings-group','mainScrollColor' );
+	// Register Words Under Logo
+	register_setting( 'colors-settings-group','wordsUnderLogo' );
+	// Register Notification Upperbar
+	register_setting( 'colors-settings-group','notificationUpperbar' );
+	// Register Notification Upperbar Link
+	register_setting( 'colors-settings-group','notificationUpperbarLink' );
+	// Shoose Your Logo Image
+	register_setting( 'colors-settings-group','logoImages' );
+	// Shoose Your Images For Header
+	register_setting( 'colors-settings-group','headerImages' );
 
 	add_settings_section( 'main-colors-settings', '', 'colors_main__options', 'colors_setting' );
 
@@ -130,8 +140,18 @@ function dwwp_register_custom_settings_colors() {
 	add_settings_field( 'fontColorHaveBackground', 'Font Color Three', 'costum_setting_colors_fontColorHaveBackground_callback', 'colors_setting', 'main-colors-settings' );
 	// Transparent Image
 	add_settings_field( 'transparentColor', 'Transparent Image', 'costum_setting_colors_transparentColor_callback', 'colors_setting', 'main-colors-settings' );
-	// Transparent Image
+	// Scroll Image
 	add_settings_field( 'mainScrollColor', 'main Scroll Color', 'costum_setting_colors_mainScrollColor_callback', 'colors_setting', 'main-colors-settings' );
+	// Words Under Logo
+	add_settings_field( 'wordsUnderLogo', 'Words Under Logo', 'costum_setting_colors_wordsUnderLogo_callback', 'colors_setting', 'main-colors-settings' );
+	// Notification Upperbar
+	add_settings_field( 'notificationUpperbar', 'Notification Upperbar', 'costum_setting_notificationUpperbar_callback', 'colors_setting', 'main-colors-settings' );
+	// Notification Upperbar
+	add_settings_field( 'notificationUpperbarLink', 'Notification Upperbar Link', 'costum_setting_notificationUpperbarLink_callback', 'colors_setting', 'main-colors-settings' );
+	// Shoose Your Logo Image
+	add_settings_field( 'logoImages', 'Logo Images', 'costum_setting_LogoImages_callback', 'colors_setting', 'main-colors-settings' );
+	// Shoose Your Images For Header
+	add_settings_field( 'headerImages', 'Header Images', 'costum_setting_headerImages_callback', 'colors_setting', 'main-colors-settings' );
 
 }
 
@@ -271,3 +291,71 @@ function costum_setting_colors_mainScrollColor_callback() {
 	<?php
 }
 
+// Function To Creat Field In Admin Page
+function costum_setting_colors_wordsUnderLogo_callback() {
+	$wordsUnderLogo = esc_attr( get_option( 'wordsUnderLogo' ) ); ?>
+
+	<div class="input-text-container">
+		<input name="wordsUnderLogo" placeholder="separate by comma" id="input-wordsUnderLogo" value="<?php echo $wordsUnderLogo; ?>" class="input-wordsUnderLogo" type="text">
+	</div>
+
+	<?php
+}
+
+// Function To Creat Field In Admin Page
+function costum_setting_notificationUpperbar_callback() {
+	$notificationUpperbar = esc_attr( get_option( 'notificationUpperbar' ) ); ?>
+
+	<div class="input-text-container">
+		<input name="notificationUpperbar" id="input-notificationUpperbar" value="<?php echo $notificationUpperbar; ?>" class="input-notificationUpperbar" type="text">
+	</div>
+
+	<?php
+}
+
+// Function To Creat Field In Admin Page
+function costum_setting_notificationUpperbarLink_callback() {
+	$notificationUpperbarLink = esc_attr( get_option( 'notificationUpperbarLink' ) ); ?>
+
+	<div class="input-text-container">
+		<input name="notificationUpperbarLink" id="input-notificationUpperbarLink" value="<?php echo $notificationUpperbarLink; ?>" class="input-notificationUpperbarLink" type="text">
+	</div>
+
+	<?php
+}
+
+// Function To Creat Field In Admin Page
+function costum_setting_LogoImages_callback() {
+	
+	$LogoImages = esc_attr( get_option( 'logoImages' ) ); ?>
+
+	<div class="input-text-container">
+		<input name="logoImages" value="<?php echo $LogoImages; ?>" class="image_er_link" type="hidden">
+		<button id="Author_Info_Image">Upload Image</button>
+	</div>
+	<div class="show_image logo-image-show">
+		<img src="<?php echo $LogoImages; ?>" />
+	<?php
+}
+
+// Function To Creat Field In Admin Page
+function costum_setting_headerImages_callback() {
+	
+	$headerImagesString = esc_attr( get_option( 'headerImages' ) ); ?>
+
+	<div class="input-text-container">
+		<input name="headerImages" value="<?php echo $headerImagesString; ?>" class="header_image_er_link" type="hidden">
+		<button id="header_Image">Upload Images</button>
+	</div>
+	<div class="show_header_images">
+		<?php 
+		$arrayImagesHeader = explode(',', $headerImagesString);
+		//pre($arrayImagesHeader);
+
+		foreach ($arrayImagesHeader as $oneImageHeader) {
+			echo '<img src="' . $oneImageHeader . '" />';
+		}
+		 ?>
+	</div>
+	<?php
+}

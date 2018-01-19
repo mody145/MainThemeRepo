@@ -12,13 +12,12 @@ function dont_reload_again() {
 				<div class="overlay"></div>
 
 				<?php 
-
-				$urlImage = get_template_directory_uri() . '/layout/images/header/';
-				$ImagesArray = array('1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', );
-				$random_image = array_rand($ImagesArray);
+				$headerImagesString = esc_attr( get_option( 'headerImages' ) );
+				$arrayImagesHeader = explode(',', $headerImagesString);
+				$random_image = array_rand($arrayImagesHeader);
 
 				?>
-				<img src="<?php echo $urlImage . $ImagesArray[$random_image]; ?>" class="">
+				<img src="<?php echo $arrayImagesHeader[$random_image]; ?>" class="">
 			</div>
 			<i class="icon-show-two toggel-opacity hide_item reload_again" style="font-size: 21px !important;" data-toggle="tooltip" data-placement="top" title="Reload Slider"></i>
 			<?php dynamic_sidebar( 'advertise_here' ); ?>
