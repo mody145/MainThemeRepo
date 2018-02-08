@@ -324,14 +324,15 @@ jQuery(document).ready(function($) {
 		$('.queck-view-window').hide(400).delay(600).remove();
 
 		var body = $("html");
-		var icoPosition = $('i.icon-cog4').position();
+
+		$('.total-cart').css('z-index', '1001');
+		$('.fullscreen-overlay').fadeIn(200);
 
 		body.animate({
 			scrollTop: 0},
 			500, 'swing', function() {
-			$('.calc-total').append('<span class="click-here"><i class="icon-hand-o-down"></i></span>');
-
-			$('.click-here').css({left: icoPosition.left, width: 0});
+				$('.calc-total i').removeClass('no-after');
+			$('body').append('<style>.total-cart span.calc-total i:after { content: "\\f077"; font-family: "icomoon" !important; position: absolute; bottom: -32px; left: 50%; transform: translate(-50%); font-size: 25px; color: var(--color4); animation: 1s linear 0s infinite alternate clickHere; }</style>');
 		});
 
 		event.preventDefault();
@@ -339,7 +340,9 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.calc-total').hover(function() {
-		$('.click-here').remove();
+		$('.calc-total i').addClass('no-after');
+		$('.fullscreen-overlay').fadeOut(200);
+		$('.total-cart').css('z-index', '100');
 	}, function() {
 		/* Stuff to do when the mouse leaves the element */
 	});
@@ -513,13 +516,21 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Modify Height Main Product Image  ======*/	
 
-/*=========================================================
-=            Redirect Shop And Blog When Click            =
-=========================================================*/
+/*==========================================================
+=            Hide Icons Social Media Empty href            =
+==========================================================*/
 
+	$('.social-media-icon-widget a').each(function() {
 
+		var that = $(this);
 
-/*=====  End of Redirect Shop And Blog When Click  ======*/
+		if ( that.attr('href') == '' ) {
+			that.remove();
+		}
+	});
 
+/*=====  End of Hide Icons Social Media Empty href  ======*/
+
+	$("#cboxContent form input[type='submit']").attr('value', 'GO');
 
 });

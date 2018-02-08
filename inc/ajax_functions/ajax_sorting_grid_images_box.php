@@ -28,7 +28,7 @@ function sorting_grid_images_box() {
 				while($query->have_posts()) {
 					$query->the_post(); ?>
 
-			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow bounceIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<!-- Section Queck View Product -->
 				
 				<div class="queck-view-container hidden-xs">
@@ -41,7 +41,15 @@ function sorting_grid_images_box() {
 				<a href="<?php echo get_permalink(); ?>">
 					<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 						<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 					</div>
 					<div class="info">
@@ -81,7 +89,7 @@ function sorting_grid_images_box() {
 				while($query->have_posts()) {
 					$query->the_post(); ?>
 
-			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow bounceIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<!-- Section Queck View Product -->
 				
 				<div class="queck-view-container hidden-xs">
@@ -94,7 +102,15 @@ function sorting_grid_images_box() {
 				<a href="<?php echo get_permalink(); ?>">
 					<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 						<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 					</div>
 					<div class="info">
@@ -133,7 +149,7 @@ function sorting_grid_images_box() {
 				while($query->have_posts()) {
 					$query->the_post(); ?>
 
-			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow bounceIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<!-- Section Queck View Product -->
 				
 				<div class="queck-view-container hidden-xs">
@@ -146,7 +162,15 @@ function sorting_grid_images_box() {
 				<a href="<?php echo get_permalink(); ?>">
 					<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 						<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 					</div>
 					<div class="info">
@@ -183,7 +207,7 @@ function sorting_grid_images_box() {
 				while($query->have_posts()) {
 					$query->the_post(); ?>
 
-			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow bounceIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<!-- Section Queck View Product -->
 				
 				<div class="queck-view-container hidden-xs">
@@ -196,7 +220,15 @@ function sorting_grid_images_box() {
 				<a href="<?php echo get_permalink(); ?>">
 					<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 						<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 					</div>
 					<div class="info">
@@ -229,7 +261,7 @@ function sorting_grid_images_box() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow fadeIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow fadeIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			<div class="<?php if ($query->current_post == 0) { echo 'col-md-6 col-sm-12 nopadding wow bounceIn'; } elseif ($query->current_post == 1) { echo 'col-md-6 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 2) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } elseif ($query->current_post == 3) { echo 'col-md-3 col-sm-4 nopadding wow bounceIn'; } ?>" data-wow-delay=".<?php $i++; echo $i; ?>s">
 				<!-- Section Queck View Product -->
 				
 				<div class="queck-view-container hidden-xs">
@@ -242,7 +274,15 @@ function sorting_grid_images_box() {
 				<a href="<?php echo get_permalink(); ?>">
 					<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 						<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 					</div>
 					<div class="info">

@@ -1,9 +1,3 @@
-/*
-
-This Is Main Tasks For Gulp
-
-*/
-
 /* ----- basic diff for all using staff ----- */
 
 var gulp 			= require('gulp'),

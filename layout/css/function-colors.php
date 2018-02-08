@@ -55,17 +55,17 @@ function makeDarken($hex, $percent) {
 
 <?php 
 
-	$color1 = esc_attr( get_option( 'color1' ) ); 
-	$color2 = esc_attr( get_option( 'color2' ) ); 
-	$color3 = esc_attr( get_option( 'color3' ) ); 
-	$color4 = esc_attr( get_option( 'color4' ) ); 
-	$color5 = esc_attr( get_option( 'color5' ) ); 
-	$color6 = esc_attr( get_option( 'color6' ) ); 
-	$color7 = esc_attr( get_option( 'color7' ) ); 
-	$color8 = esc_attr( get_option( 'color8' ) ); 
-	$infoColor = esc_attr( get_option( 'infoColor' ) ); 
-	$backgroungTransparentImage = esc_attr( get_option( 'transparentColor' ) ); 
-	$fontColorHaveBackground = esc_attr( get_option( 'fontColorHaveBackground' ) ); 
+	$color1 = esc_attr( get_option( 'color1', '#ffffff' ) ); 
+	$color2 = esc_attr( get_option( 'color2', '#efefef' ) ); 
+	$color3 = esc_attr( get_option( 'color3', '#d9c7a1' ) ); 
+	$color4 = esc_attr( get_option( 'color4', '#d9c7a1' ) ); 
+	$color5 = esc_attr( get_option( 'color5', '#d9c7a1' ) ); 
+	$color6 = esc_attr( get_option( 'color6', '#d9c7a1' ) ); 
+	$color7 = esc_attr( get_option( 'color7', '#d9c7a1' ) ); 
+	$color8 = esc_attr( get_option( 'color8', '#444444' ) ); 
+	$infoColor = esc_attr( get_option( 'infoColor', '#444444' ) ); 
+	$backgroungTransparentImage = esc_attr( get_option( 'transparentColor', '#eeeeee' ) ); 
+	$fontColorHaveBackground = esc_attr( get_option( 'fontColorHaveBackground', '#ffffff' ) ); 
 
 ?>
 :root {

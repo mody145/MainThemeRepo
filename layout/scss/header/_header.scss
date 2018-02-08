@@ -76,8 +76,10 @@
         position: relative;
         left: 0;
         bottom: -5px;
-        font-size: 15px;
+        font-size: 14px;
         opacity: .8; 
+        font-family: Open Sans;
+        font-weight: normal;
     }
 }
 
@@ -151,7 +153,7 @@
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         position: relative;
         height: 20px;
     }
@@ -161,12 +163,6 @@
     .add-register-login{
         margin: $main-margin 0;
         margin-right: 10px;
-    }
-}
-
-@media (max-width: 767px){
-    .add-register-login {
-        margin: $main-margin 0px;
     }
 }
 

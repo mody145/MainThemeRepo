@@ -135,83 +135,87 @@ get_header(); ?>
 
 				<!--====  End of Title | Rate | Description  ====-->
 
-				<!--================================================
-				=            Add To Cart Button Section            =
-				=================================================-->
-				
-					<!-- Check If This Item In Cart -->
-					<?php if( woo_in_cart( $product->id ) ) { ?>
+				<div class="icons-container-single-product">
+
+					<!--================================================
+					=            Add To Cart Button Section            =
+					=================================================-->
+					
+						<!-- Check If This Item In Cart -->
+						<?php if( woo_in_cart( $product->id ) ) { ?>
+							<!-- If True Echo ... -->
+							<div class="add-to-cart-container-true">
+								<h3><i id="cart_icon" class="icon-shopping-bag"></i></h3>
+							</div>
+
+						<?php } else { ?>
+							<!-- If False Echo ... -->
+							<div class="add-to-cart-container-false">
+								<h3>
+									<a href="#" id="add_to_cart_shop" data-id="<?php echo $product->get_id(); ?>">
+										<i id="cart_icon" class="icon-add_shopping_cart"></i>
+									</a>
+								</h3>
+							</div>
+
+						<?php } ?>
+					
+					<!--====  End of Add To Cart Button Section  ====-->
+
+					<!--===============================================
+					=            Add To White List Button             =
+					================================================-->
+
+					<!-- Check If This Item In Current List -->
+					<?php if (check_if_is_product_in_session( $_SESSION['follow'], $product->get_id() ) == true) { ?>
 						<!-- If True Echo ... -->
-						<div class="add-to-cart-container-true">
-							<h3><i id="cart_icon" class="icon-shopping-bag"></i></h3>
+						<div class="add-to-follow-container-false">
+							<h3>
+								<a id="unfollow" href="#" data-id="<?php echo $product->get_id() ?>" class="unfollow">
+									<i id="follow_icon" class="icon-heart8"></i>
+								</a>
+							</h3>
 						</div>
 
 					<?php } else { ?>
 						<!-- If False Echo ... -->
-						<div class="add-to-cart-container-false">
+						<div class="add-to-follow-container-true">
 							<h3>
-								<a href="#" id="add_to_cart_shop" data-id="<?php echo $product->get_id(); ?>">
-									<i id="cart_icon" class="icon-add_shopping_cart"></i>
+								<a id="follow" href="#" data-id="<?php echo $product->get_id() ?>" class="follow">
+									<i id="follow_icon" class="icon-heart-o"></i>
 								</a>
 							</h3>
 						</div>
 
 					<?php } ?>
-				
-				<!--====  End of Add To Cart Button Section  ====-->
+					
+					<!--====  End of Add To White List Button   ====-->
 
-				<!--===============================================
-				=            Add To White List Button             =
-				================================================-->
+					<!--=============================================
+					=             Button Like And Unlike            =
+					==============================================-->
 
-				<!-- Check If This Item In Current List -->
-				<?php if (check_if_is_product_in_session( $_SESSION['follow'], $product->get_id() ) == true) { ?>
-					<!-- If True Echo ... -->
-					<div class="add-to-follow-container-false">
-						<h3>
-							<a id="unfollow" href="#" data-id="<?php echo $product->get_id() ?>" class="unfollow">
-								<i id="follow_icon" class="icon-heart8"></i>
-							</a>
-						</h3>
+					<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
+
+					<div class="like-container">
+						<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
+							<i id="like_icon" class="icon-check"></i>
+						</a>
 					</div>
 
-				<?php } else { ?>
-					<!-- If False Echo ... -->
-					<div class="add-to-follow-container-true">
-						<h3>
-							<a id="follow" href="#" data-id="<?php echo $product->get_id() ?>" class="follow">
-								<i id="follow_icon" class="icon-heart-o"></i>
-							</a>
-						</h3>
+					<?php } else { ?>
+
+					<div class="like-container">
+						<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
+							<i id="like_icon" class="icon-thumbs-o-up"></i>
+						</a>
 					</div>
 
-				<?php } ?>
-				
-				<!--====  End of Add To White List Button   ====-->
+					<?php } ?>
 
-				<!--=============================================
-				=             Button Like And Unlike            =
-				==============================================-->
+					<!--====  End of  Button Like And Unlike  ====-->
 
-				<?php if (check_if_is_product_in_session( $_SESSION['likes'], $product->get_id() ) == true) { ?>
-
-				<div class="like-container">
-					<a id="unlike" data-id="<?php echo $product->get_id() ?>" href="#">
-						<i id="like_icon" class="icon-check"></i>
-					</a>
-				</div>
-
-				<?php } else { ?>
-
-				<div class="like-container">
-					<a id="like" data-id="<?php echo $product->get_id() ?>" href="#">
-						<i id="like_icon" class="icon-thumbs-o-up"></i>
-					</a>
-				</div>
-
-				<?php } ?>
-
-				<!--====  End of  Button Like And Unlike  ====-->
+				</div><!-- End Of .icons-container-single-product -->
 				
 				<!--==============================================
 				=            Section Get Meta Product            =
@@ -251,9 +255,13 @@ get_header(); ?>
 			<div class="col-md-6 nopadding wow fadeIn">
 				<div class="gallery-box">
 					<div class="owl-carousel owl-theme carousel-one">
+						<div class="img_gallary_box item">
+				    		<?php echo '<img src="' . get_the_post_thumbnail_url( $product->get_id() ) . '" data-number="0" />'; ?>
+				    	</div>
 
 						<?php foreach( $attachment_ids as $attachment_id ) { ?>
-					    	<div class="img_gallary_box item"><img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id ) ?>" data-number="<?php $i++; echo $i; ?>" /></div>
+					    	<div class="img_gallary_box item">
+					    		<img src="<?php echo $image_link = wp_get_attachment_url( $attachment_id ) ?>" data-number="<?php $i++; echo $i; ?>" /></div>
 					    <?php } ?>
 					</div>
 				</div>

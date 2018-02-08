@@ -20,10 +20,10 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 0) { ?>
 
 				<div class="col-md-6 nopadding">
-			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			    	<div class="item one wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
 				    		<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
@@ -42,13 +42,13 @@ function sorting_grid_bosts_in_blog_box() {
 
 			    <div class="col-md-6 nopadding">
 			        <div class="col-md-12 nopadding">
-			        	<div class="item two wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			        	<div class="item two wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -71,13 +71,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 2) { ?>
 
 		        <div class="col-md-12 nopadding">
-		        	<div class="item three wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item three wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -100,13 +100,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 3) { ?>
 
 				<div class="col-md-12 nopadding">
-		        	<div class="item four wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item four wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -151,10 +151,10 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 0) { ?>
 
 				<div class="col-md-6 nopadding">
-			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			    	<div class="item one wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
 				    		<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
@@ -173,13 +173,13 @@ function sorting_grid_bosts_in_blog_box() {
 
 			    <div class="col-md-6 nopadding">
 			        <div class="col-md-12 nopadding">
-			        	<div class="item two wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			        	<div class="item two wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -202,13 +202,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 2) { ?>
 
 		        <div class="col-md-12 nopadding">
-		        	<div class="item three wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item three wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -231,13 +231,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 3) { ?>
 
 				<div class="col-md-12 nopadding">
-		        	<div class="item four wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item four wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -282,10 +282,10 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 0) { ?>
 
 				<div class="col-md-6 nopadding">
-			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			    	<div class="item one wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
 				    		<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
@@ -304,13 +304,13 @@ function sorting_grid_bosts_in_blog_box() {
 
 			    <div class="col-md-6 nopadding">
 			        <div class="col-md-12 nopadding">
-			        	<div class="item two wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			        	<div class="item two wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -333,13 +333,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 2) { ?>
 
 		        <div class="col-md-12 nopadding">
-		        	<div class="item three wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item three wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -362,13 +362,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 3) { ?>
 
 				<div class="col-md-12 nopadding">
-		        	<div class="item four wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item four wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -409,10 +409,10 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 0) { ?>
 
 				<div class="col-md-6 nopadding">
-			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			    	<div class="item one wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
 				    		<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
@@ -431,13 +431,13 @@ function sorting_grid_bosts_in_blog_box() {
 
 			    <div class="col-md-6 nopadding">
 			        <div class="col-md-12 nopadding">
-			        	<div class="item two wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			        	<div class="item two wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -460,13 +460,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 2) { ?>
 
 		        <div class="col-md-12 nopadding">
-		        	<div class="item three wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item three wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -489,13 +489,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 3) { ?>
 
 				<div class="col-md-12 nopadding">
-		        	<div class="item four wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item four wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -535,10 +535,10 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 0) { ?>
 
 				<div class="col-md-6 nopadding">
-			    	<div class="item one wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			    	<div class="item one wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 			    		<div class="img-box align-v">
 				    		<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>">
 						</div>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
@@ -557,13 +557,13 @@ function sorting_grid_bosts_in_blog_box() {
 
 			    <div class="col-md-6 nopadding">
 			        <div class="col-md-12 nopadding">
-			        	<div class="item two wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+			        	<div class="item two wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 							<div class="media">
 								<div class="media-left media-middle">
 									<a href="#">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -586,13 +586,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 2) { ?>
 
 		        <div class="col-md-12 nopadding">
-		        	<div class="item three wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item three wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -615,13 +615,13 @@ function sorting_grid_bosts_in_blog_box() {
 				<?php if ($top_posts->current_post == 3) { ?>
 
 				<div class="col-md-12 nopadding">
-		        	<div class="item four wow fadeIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
+		        	<div class="item four wow bounceIn" data-wow-delay=".<?php $i++; echo $i; ?>s">
 
 		        		<div class="media">
 							<div class="media-left media-middle">
 								<a href="#">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">

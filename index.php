@@ -51,7 +51,7 @@
 
 		<div class="container_image_closest_sale" data-saleTo="<?php echo date_format($_product->date_on_sale_to, "Y/m/d") ?>">
 			<!-- <span class="gradiant_overlay three"></span> -->
-	    	<?php if(has_post_thumbnail( $_product->id )) { echo '<img src="' . get_the_post_thumbnail_url( $_product->id ) . '" />'; } ?>
+	    	<?php if(has_post_thumbnail( $_product->id )) { echo '<a href="' . get_post_permalink( $_product->id ) . '"><img src="' . get_the_post_thumbnail_url( $_product->id, 'medium_large' ) . '" /></a>'; } ?>
 	    </div>
 	    <div class="clock">
 	    	<?php if ( count($avilbale_sales) > 1 ) { ?>
@@ -233,26 +233,6 @@
 		</div>
 	</div><!-- End Section Testimonials -->
 
-	<!-- Section Features -->
-	<!-- <div class="feat wow fadeIn">
-		<div class="col-md-6 col-sm-6 nopadding">
-			<div class="box-feat">
-				<i class="icon-monocle"></i>
-				<h3 class="bold text-uppercase">our experience</h3>
-				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-				<a href="<?php //echo home_url( 'about-us' ); ?>" class="btn btn-info">Read More</a>
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-6 nopadding">
-			<div class="box-feat-2">
-				<i class="icon-bomb"></i>
-				<h3 class="bold">OUR SERVICES</h3>
-				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-				<a href="<?php //echo home_url( 'services' ); ?>" class="btn btn-info">Read More</a>
-			</div>
-		</div>
-	</div> --><!-- End Section Features -->
-
 	<!-- Start Grid Images -->
 	<div class="col-md-12 nopadding">
 		<div class="container-grid-images wow fadeIn">
@@ -300,7 +280,15 @@
 					<a href="<?php echo get_permalink(); ?>">	
 						<div class="image-box align-v">
 						<?php if ($query->current_post == 0) { echo '<span class="gradiant_overlay four"></span>'; } elseif ($query->current_post == 1) { echo '<span class="gradiant_overlay one"></span>'; } elseif ($query->current_post == 2) { echo '<span class="gradiant_overlay two"></span>'; } elseif ($query->current_post == 3) { echo '<span class="gradiant_overlay three"></span>'; } ?>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+						<?php
+						$sizeThumb = 'medium_large';
+						if ($query->current_post == 2 || $query->current_post == 3) {
+							$sizeThumb = 'medium';
+						} else {
+							$sizeThumb = 'medium_large';
+						}
+						 ?>
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), $sizeThumb); ?>">
 							<span class="price-item"><?php global $product; echo $product->get_price(); ?></span>
 						</div>
 						<div class="info">
@@ -357,10 +345,12 @@
 
 				<div class="col-md-6 nopadding">
 			    	<div class="item one">
-			    		<div class="img-box align-v">
-			    			<span class="gradiant_overlay four"></span>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
-						</div>
+			    		<a href="<?php echo get_permalink(); ?>">
+			    			<div class="img-box align-v">
+				    			<span class="gradiant_overlay four"></span>
+								<img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>">
+							</div>
+						</a>
 						<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
 						<p><?php echo $str = substr(get_the_content(), 0, 110) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>
 						<p class="info_post">
@@ -382,9 +372,9 @@
 
 							<div class="media">
 								<div class="media-left media-middle">
-									<a href="#">
+									<a href="<?php echo get_permalink(); ?>">
 										<span class="gradiant_overlay one"></span>
-										<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 									</a>
 								</div>
 								<div class="media-body">
@@ -411,9 +401,9 @@
 
 		        		<div class="media">
 							<div class="media-left media-middle">
-								<a href="#">
+								<a href="<?php echo get_permalink(); ?>">
 									<span class="gradiant_overlay two"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">
@@ -440,9 +430,9 @@
 
 		        		<div class="media">
 							<div class="media-left media-middle">
-								<a href="#">
+								<a href="<?php echo get_permalink(); ?>">
 									<span class="gradiant_overlay three"></span>
-									<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+									<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 								</a>
 							</div>
 							<div class="media-body">

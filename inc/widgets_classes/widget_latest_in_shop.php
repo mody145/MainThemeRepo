@@ -76,7 +76,7 @@ class top_items_in_shop extends WP_Widget {
 				<?php } ?>
 					<a href="<?php echo get_the_permalink(); ?>">
 						<div class="parent-image-in-loop-products">
-							<?php if(has_post_thumbnail( $shop->post->ID )) { echo '<img src="' . get_the_post_thumbnail_url( $shop->post->ID ) . '" />'; } ?>
+							<?php if(has_post_thumbnail( $shop->post->ID )) { echo '<img src="' . get_the_post_thumbnail_url( $shop->post->ID, 'medium_large' ) . '" />'; } ?>
 						</div>
 					</a>
 

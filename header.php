@@ -7,19 +7,17 @@
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/icon.png';  ?>">
 		<title><?php if(is_home()) { echo bloginfo( 'name' ); } else { echo wp_title( $sep = '-' ); } ?></title>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 
-
-
+	<div class="fullscreen-overlay"></div>
 	<!--===========================================================================
 	=            This Divs To Get variables For Main Colors For JQuery            =
 	============================================================================-->
@@ -36,7 +34,7 @@
 	<div class="color10"></div>
 
 	<div class="infoColor"></div>
-	<div class="colormainScroll" data-color="<?php $mainScrollColor = esc_attr( get_option( 'mainScrollColor' ) ); echo $mainScrollColor; ?>"></div>
+	<div class="colormainScroll" data-color="<?php $mainScrollColor = esc_attr( get_option( 'mainScrollColor', '#ddd' ) ); echo $mainScrollColor; ?>"></div>
 
 	<div class="green"></div>
 	<div class="blue"></div>
@@ -59,12 +57,12 @@
 			    </span>
 			</div>
 
-			<div class="section two">
+			<div class="section two hidden-xs">
 			    <i class="icon-volume-up"></i>
 			    <span>
 			    	<a href="<?php echo esc_attr( get_option( 'notificationUpperbarLink' ) ); ?>">
 			    		<?php 
-			    		$notificationUpperbar = esc_attr( get_option( 'notificationUpperbar' ) );
+			    		$notificationUpperbar = esc_attr( get_option( 'notificationUpperbar', 'No Notifications' ) );
 			    		echo $notificationUpperbar;
 			    		 ?>
 			    	</a>
@@ -167,7 +165,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?php echo home_url(); ?>">Smile</a>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>"><i style="font-size: 45px; position: relative; top: -15px; left: -15px;" class="icon-smile-logo"></i></a>
 				</div>
 
 				<?php wp_nav_menu( $args ); ?>
@@ -180,9 +178,9 @@
 			<div class="col-md-3 col-sm-6 nopadding hidden-xs" style="position: static;">
 				<div class="brand-name transparent wow fadeIn">
 					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo esc_attr( get_option( 'logoImages' ) ); ?>">
+						<img src="<?php echo esc_attr( get_option( 'logoImages', get_template_directory_uri() . '/logo.png' ) ); ?>">
 						<?php 
-						$wordsUnderLogo = esc_attr( get_option( 'wordsUnderLogo' ) );
+						$wordsUnderLogo = esc_attr( get_option( 'wordsUnderLogo', 'You Can Type,Any Text Here,Dummy Text' ) );
 						?>
 						<span id="typed" link-data="<?php echo $wordsUnderLogo; ?>"></span>
 					</a>
@@ -211,7 +209,7 @@
 			
 				<div class="col-md-4 col-sm-12 nopadding">
 
-					<div class="col-md-6 col-sm-6 nopadding">
+					<div class="col-md-6 col-sm-6 col-xs-6 nopadding">
 						<div class="add-register-login wow fadeIn">
 							<div class="login-register text-center">
 								<?php 
@@ -229,13 +227,15 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 col-sm-6 nopadding">
+					<div class="col-md-6 col-sm-6 col-xs-6 nopadding">
 						<div class="search-in-header wow fadeIn">&nbsp;
 							<i class="icon-search"></i>
 						</div>
 					</div>
 
 				</div>
+
+				<div class="clearfix visible-xs"></div>
 			
 			<!-- End Login/Rgister Form And Add Item -->
 			<!-- Srart Form Search -->
@@ -348,7 +348,7 @@
 			<!-- End Form Search -->
 			<!-- Header Here -->
 
-			<div id="headToggile" style="margin-top: 10px;" class="col-md-12 nopadding hidden-xs parent_hide_show">
+			<div id="headToggile" style="margin-top: 10px;" class="col-md-12 nopadding hidden-xs hidden-sm parent_hide_show">
 
 			<?php if ( isset( $_COOKIE['what_header'] ) && $_COOKIE['what_header'] == 'slider' && is_home() ) { ?>
 				<header class="site-header">

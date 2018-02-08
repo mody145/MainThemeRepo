@@ -107,7 +107,7 @@ function my_theme_register_required_plugins() {
 		),
 		array(
 			'name'               => 'Social Icons Widget', // The plugin name.
-			'slug'               => 'social-icons-widget', // The plugin slug (typically the folder name).
+			'slug'               => 'social-icons-widget-by-wpzoom', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -115,6 +115,13 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'               => 'Strong Testimonials', // The plugin name.
 			'slug'               => 'strong-testimonials', // The plugin slug (typically the folder name).
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+		array(
+			'name'               => 'All-in-One WP Migration', // The plugin name.
+			'slug'               => 'all-in-one-wp-migration', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -129,6 +136,13 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'               => 'Woocommerce Login / Signup Lite', // The plugin name.
 			'slug'               => 'woocommerce-login-and-registration', // The plugin slug (typically the folder name).
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+		array(
+			'name'               => 'wp instagram widget', // The plugin name.
+			'slug'               => 'wp-instagram-widget', // The plugin slug (typically the folder name).
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.

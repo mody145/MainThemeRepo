@@ -58,29 +58,27 @@
         margin: 0 $main-margin + 5;
         cursor: pointer;
 
-        span.click-here {
-            position: absolute;
-            right: 94px;
-            top: -35px;
-            font-size: $font-size + 10;
-            top: -3px;
-            color: var(--color5);
-            animation: 1s linear 0s infinite alternate clickHere;
+        i.no-after:after {
+            content: none;
+        }
+
+        i {
+            position: relative;
         }
 
         @keyframes clickHere {
             0% {
-                top: -35px;
+                bottom: -39px;
                 opacity: .5;
             }
 
             50% {
-                top: -30px;
+                bottom: -33px;
                 opacity: 1;
             }
 
             100% {
-                top: -35px;
+                bottom: -39px;
                 opacity: .5;
             }
         }
@@ -214,12 +212,6 @@
         color: var(--color5);
         border: 6px solid var(--color2);
         background-color: var(--color2);
-    }
-}
-
-@media (max-width: 767px){
-    .search-in-header {
-        margin: 20px 0 10px 0;
     }
 }
 

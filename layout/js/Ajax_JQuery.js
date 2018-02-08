@@ -213,7 +213,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'add_follow'},
 			beforeSend: function() {
-				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
@@ -271,7 +271,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'remove_follow'},
 			beforeSend: function() {
-				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
@@ -329,7 +329,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'add_to_cart_single_post'},
 			beforeSend: function() {
-				that.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:0 !important;" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
+				that.html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>');
 			}
 		})
 		.done(function(data) {
@@ -407,7 +407,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'like_product'},
 			beforeSend: function() {
-				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:10px 5px !important;" class="fa fa-spinner fa-spin"></i>');
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
 			}
 		})
 		.done(function(data) {
@@ -444,7 +444,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			data: {id : id, action: 'unlike_product'},
 			beforeSend: function() {
-				thisItem.html('<i style="background-color:transparent !important;color:#333;border:0 !important;padding:10px 5px !important;" class="fa fa-spinner fa-spin"></i>');
+				thisItem.html('<i class="fa fa-spinner fa-spin"></i>');
 			}
 		})
 		.done(function(data) {

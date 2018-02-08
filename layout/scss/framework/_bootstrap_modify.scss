@@ -170,6 +170,10 @@ select:-webkit-autofill {
     -webkit-text-fill-color: black !important;
 }
 
+.img-responsive {
+    display: unset;
+}
+
 .panel-primary {
     border-color: transparent;
     margin-left: 10px;
