@@ -21,7 +21,7 @@ function dwwp_styles_and_scripts() {
 	}
 
 	// Animate Lip
-	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/layout/css/animate.css' );
+	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/layout/css/mainify_css/animate.css' );
 
 	if ( is_product() ) {
 		// OWL Carousel
@@ -30,7 +30,7 @@ function dwwp_styles_and_scripts() {
 
 	if ( is_shop() || is_product() || is_product_tag() || is_product_category() || is_home() ) {
 		// thumbelina
-		wp_enqueue_style( 'thumbelina-css', get_template_directory_uri() . '/layout/css/thumbelina.css' );
+		wp_enqueue_style( 'thumbelina-css', get_template_directory_uri() . '/layout/css//mainify_css/thumbelina.css' );
 	}
 
 	// Bootstrap css
@@ -53,7 +53,7 @@ function dwwp_styles_and_scripts() {
 
 	if ( is_home() ) {
 		// skitter slider
-		wp_enqueue_script( 'skitter-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.skitter.js', array('jquery'), '', true );
+		wp_enqueue_script( 'skitter-js', get_template_directory_uri() . '/layout/js/mainify_js/jquery.skitter.js', array('jquery'), '', true );
 	}
 
 	// WOW Lip
@@ -63,9 +63,9 @@ function dwwp_styles_and_scripts() {
 	// Nice Scroll
 	wp_enqueue_script( 'NiceScroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.nicescroll.min.js', array('jquery'), '', true );
 	// jquery jscroll
-	wp_enqueue_script( 'jscroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.jscroll.js', array('jquery'), '', true );
+	wp_enqueue_script( 'jscroll-js', get_template_directory_uri() . '/layout/js/mainify_js/jquery.jscroll.js', array('jquery'), '', true );
 	// easying
-	wp_enqueue_script( 'easying-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.easing.1.3.js', array('jquery'), '', true );
+	wp_enqueue_script( 'easying-js', get_template_directory_uri() . '/layout/js/mainify_js/jquery.easing.1.3.js', array('jquery'), '', true );
 
 	if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
 
@@ -75,7 +75,7 @@ function dwwp_styles_and_scripts() {
 
 	if ( is_shop() || is_product() || is_product_tag() || is_product_category() || is_home() ) {
 		//thumbelina
-		wp_enqueue_script( 'thumbelina-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/thumbelina.js', array('jquery'), '', true );
+		wp_enqueue_script( 'thumbelina-js', get_template_directory_uri() . '/layout/js/mainify_js/thumbelina.js', array('jquery'), '', true );
 	}
 
 	if ( is_product() ) {
@@ -90,7 +90,7 @@ function dwwp_styles_and_scripts() {
 
 	if ( is_home() ) {
 		// final countdown
-		wp_enqueue_script( 'final-countdown', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.countdown.js', array('jquery'), '', true );
+		wp_enqueue_script( 'final-countdown', get_template_directory_uri() . '/layout/js/mainify_js/jquery.countdown.js', array('jquery'), '', true );
 	}
 
 	// For Sticky Sidebar

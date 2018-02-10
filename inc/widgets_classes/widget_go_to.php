@@ -95,7 +95,8 @@ class go_to_shop_widget extends WP_Widget {
 			 ?>
 			<a href='<?php echo $instace['Link'] ?>'>
 			<div style="color:<?php echo $theColor; ?>;background-color: <?php echo $color2;  ?>">
-				<?php echo '<i class="' . $instace['icon_go_to_shop'] . '"></i>'; ?>
+				<?php echo '<span class="wrap-icon"><i class="' . $instace['icon_go_to_shop'] . '"></i></span>'; ?>
+				<?php echo '<span class="wrap-icon"><i class="' . $instace['icon_go_to_shop'] . '"></i></span>'; ?>
 				<p style="color:<?php echo $theColor; ?>"><?php echo $instace['Title_to_shop']; ?></p>
 			</div>
 			</a>

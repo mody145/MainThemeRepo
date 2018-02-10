@@ -214,7 +214,7 @@
 
 					<div class="item <?php if ($testimonial->current_post == 0) { echo 'active'; } ?>">
 						<div class="image-testimonials">
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>">
 						</div>
 
 						<div class="carousel-caption">

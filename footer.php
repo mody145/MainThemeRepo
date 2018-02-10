@@ -115,7 +115,6 @@
 		</div>
 		<!-- End Of Container -->
 	<?php wp_footer(); ?>
-	<script>new WOW().init();</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 	</body>
 </html>

@@ -119,16 +119,16 @@ class social_media_icon_Widget extends WP_Widget {
 		echo '<div class="social-media-icon-widget">';
 
 		?>
-			<a href='<?php echo $instace['YouTube'] ?>'><i class="icon-youtube-play"> </i> <span>YouTube</span></a>
-			<a href='<?php echo $instace['facebook']; ?>'><i class="icon-facebook2"> </i> <span>Facebook</span></a>
-			<a href='<?php echo $instace['twitter'] ?>'><i class="icon-twitter2"> </i> <span>Twitter</span></a>
-			<a href='<?php echo $instace['google_plus'] ?>'><i class="icon-google-plus"> </i> <span>Google+</span></a>
-			<a href='<?php echo $instace['Dribbble'] ?>'><i class="icon-dribbble2"> </i> <span>Dribbble</span></a>
-			<a href='<?php echo $instace['Vimeo'] ?>'><i class="icon-vimeo"> </i> <span>Vimeo</span></a>
-			<a href='<?php echo $instace['soundcloud'] ?>'><i class="icon-soundcloud"> </i> <span>Soundcloud</span></a>
-			<a href='<?php echo $instace['behance'] ?>'><i class="icon-behance"> </i> <span>behance</span></a>
-			<a href='<?php echo $instace['instagram'] ?>'><i class="icon-instagram"> </i> <span>instagram</span></a>
-			<a href='<?php echo $instace['github'] ?>'><i class="icon-github"> </i> <span>github</span></a>
+			<a class="YouTube" href='<?php echo $instace['YouTube'] ?>'><span class="overlay"></span><i class="icon-youtube-play"> </i> <span>YouTube</span></a>
+			<a class="facebook" href='<?php echo $instace['facebook']; ?>'><span class="overlay"></span><i class="icon-facebook2"> </i> <span>Facebook</span></a>
+			<a class="twitter" href='<?php echo $instace['twitter'] ?>'><span class="overlay"></span><i class="icon-twitter2"> </i> <span>Twitter</span></a>
+			<a class="google_plus" href='<?php echo $instace['google_plus'] ?>'><span class="overlay"></span><i class="icon-google-plus"> </i> <span>Google+</span></a>
+			<a class="Dribbble" href='<?php echo $instace['Dribbble'] ?>'><span class="overlay"></span><i class="icon-dribbble2"> </i> <span>Dribbble</span></a>
+			<a class="Vimeo" href='<?php echo $instace['Vimeo'] ?>'><span class="overlay"></span><i class="icon-vimeo"> </i> <span>Vimeo</span></a>
+			<a class="soundcloud" href='<?php echo $instace['soundcloud'] ?>'><span class="overlay"></span><i class="icon-soundcloud"> </i> <span>Soundcloud</span></a>
+			<a class="behance" href='<?php echo $instace['behance'] ?>'><span class="overlay"></span><i class="icon-behance"> </i> <span>behance</span></a>
+			<a class="instagram" href='<?php echo $instace['instagram'] ?>'><span class="overlay"></span><i class="icon-instagram"> </i> <span>instagram</span></a>
+			<a class="github" href='<?php echo $instace['github'] ?>'><span class="overlay"></span><i class="icon-github"> </i> <span>github</span></a>
 		<?php
 		echo '</div>';
 		echo $args['after_widget'];

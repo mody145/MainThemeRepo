@@ -2,6 +2,9 @@
 
 jQuery(document).ready(function($) {
 	'use strict';
+	
+	// Run WOW lip
+	new WOW().init();
 
 	// This Is Main Colors
 	var color1 		= $('.color1').css('background-color');
@@ -199,8 +202,10 @@ jQuery(document).ready(function($) {
 	$('.login-register.text-center p').on('click', 'a.header_login', function(event) {
 
 		$('#js_login').ready(function() {
-			$('#js_login #username').attr('placeholder', 'Type Your Username')
-			$('#js_login #password').attr('placeholder', 'Type Your Password')
+			$('#js_login #username').attr('placeholder', 'Type Your Username');
+			$('#js_login #password').attr('placeholder', 'Type Your Password');
+			$('#login_data').find('h2').text('Login');
+			$('#login_data').find('.js_login_log').attr('value', 'Login');
 		});
 
 		event.preventDefault();
@@ -531,6 +536,34 @@ jQuery(document).ready(function($) {
 
 /*=====  End of Hide Icons Social Media Empty href  ======*/
 
-	$("#cboxContent form input[type='submit']").attr('value', 'GO');
+/*==================================================================
+=            Change Color Social media Icons When Hover            =
+==================================================================*/
+
+	$('.social-media-icon-widget a').hover(function() {
+		$(this).find('.overlay').animate({
+			width: '100%'},800);
+	}, function() {
+		$(this).find('.overlay').animate({
+			width: '0%'},800);
+	});
+
+/*=====  Change Color Social media Icons When Hover  ======*/
+
+/*================================================================
+=            Add Full Opacity To Icon GoTo When Hover            =
+================================================================*/
+
+	$('.go-to-shop-widget').hover(function() {
+		$(this).find('span:last-of-type').animate({
+			height: '100%'
+		}, 500);
+	}, function() {
+		$(this).find('span:last-of-type').animate({
+			height: '0'
+		}, 500);
+	});
+
+/*=====  Add Full Opacity To Icon GoTo When Hover  ======*/
 
 });

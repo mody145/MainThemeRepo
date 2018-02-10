@@ -52,88 +52,115 @@
     margin: $main-margin 0;
     text-align: center;
     border-radius: 2px;
-    color: var(--fontColorHaveBackground) !important;
+    display: block;
+    padding: $main-padding;
+    color: var(--color2);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .social-media-icon-widget i {
     font-size: 20px;
-}
-
-.social-media-icon-widget a span {
     position: relative;
+    z-index: 5;
+    color: #fff;
+}
+
+.social-media-icon-widget a span:last-of-type {
+    position: relative;
+    z-index: 5;
     bottom: 2px;
+    color: #fff;
 }
 
-.social-media-icon-widget a:nth-of-type(1) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
+.social-media-icon-widget a span.overlay {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.social-media-icon-widget a.YouTube {
     background-color: #dc4d3c;
-    margin-top: 0;
+
+    span.overlay {
+       background-color: darken(#dc4d3c, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(2) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
+.social-media-icon-widget a.facebook {
     background-color: #425c9d;
-    margin-top: 0;
+
+    span.overlay {
+       background-color: darken(#425c9d, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(3) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
+.social-media-icon-widget a.twitter {
     background-color: #44cefd;
+
+    span.overlay {
+       background-color: darken(#44cefd, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(4) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
+.social-media-icon-widget a.google_plus {
     background-color: #df6c5e;
+
+    span.overlay {
+       background-color: darken(#df6c5e, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(5) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #f7659c !important;
+.social-media-icon-widget a.Dribbble {
+    background-color: #f7659c;
+
+    span.overlay {
+       background-color: darken(#f7659c, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(6) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #35c6ea !important;
+.social-media-icon-widget a.Vimeo {
+    background-color: #35c6ea;
+
+    span.overlay {
+       background-color: darken(#35c6ea, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(7) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #ff7e30 !important;
+.social-media-icon-widget a.soundcloud {
+    background-color: #ff7e30;
+
+    span.overlay {
+       background-color: darken(#ff7e30, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(8) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #1879fd !important;
+.social-media-icon-widget a.behance {
+    background-color: #1879fd;
+
+    span.overlay {
+       background-color: darken(#1879fd, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(9) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #3897f0 !important;
+.social-media-icon-widget a.instagram {
+    background-color: #3897f0;
+
+    span.overlay {
+       background-color: darken(#3897f0, 15%);
+    }
 }
 
-.social-media-icon-widget a:nth-of-type(10) {
-    display: block;
-    padding: $main-padding;
-    color: var(--color2);
-    background-color: #3f91cb !important;
+.social-media-icon-widget a.github {
+    background-color: #3f91cb;
+
+    span.overlay {
+       background-color: darken(#3f91cb, 15%);
+    }
 }
 
 /*=====  End of Social Media Widget  ======*/

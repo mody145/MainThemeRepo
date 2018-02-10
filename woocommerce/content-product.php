@@ -6,7 +6,7 @@
 				<a id="parent_overlay" href="<?php echo get_the_permalink(); ?>"  data-getTheID="<?php echo $product->get_id(); ?>">
 					
 					<div class="parent-image-in-loop-products">
-						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID ) . '" />'; } ?>
+						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID, 'medium_large' ) . '" />'; } ?>
 						<?php 
 							global $product;
 							$list_colors_product = $product->get_attribute( 'pa_color' );

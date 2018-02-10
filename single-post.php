@@ -105,7 +105,7 @@
 		
 			<div class="col-md-6 col-sm-6">
 				<div class="post-image-home">
-					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
 				</div>
 				<h3 class="post_title"><a href="<?php echo get_permalink(); ?>"><i class="icon-chevron-right2"> </i> <?php echo the_title(); ?></a></h3>
 				<p><?php echo $str = substr(get_the_content(), 0, 150) . ' ... <a class="" href="' . get_permalink() . '">Read More</a>'; ?></p>

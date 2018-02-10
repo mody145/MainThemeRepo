@@ -41,7 +41,7 @@
 				<!-- Start Loop Member -->
 				<div class="person">
 					<div class="layout"></div>
-					<img src="<?php echo get_the_post_thumbnail_url(); ?>" />
+					<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" />
 					<div class="info-member">
 						<h4 class="text-center"><?php echo get_the_title(); ?></h4>
 						<span class="jop"><?php echo get_post_meta( get_the_ID(), 'jop', true ); ?></span>
