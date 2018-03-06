@@ -4,6 +4,8 @@
 =            Section Sort By ....             =
 ============================================ */
 
+$num = 0;
+
 add_action('wp_ajax_nopriv_sorting_by_date', 'sorting_by_date'); 
 add_action('wp_ajax_sorting_by_date', 'sorting_by_date');
 
@@ -33,7 +35,9 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
@@ -41,14 +45,16 @@ function sorting_by_date() {
 
 		if (isset($_POST['page'])) { ''; } else { ?>
 		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php } 
 
 
@@ -75,22 +81,25 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query();
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php } 
  
 
@@ -119,22 +128,25 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query();
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php } 
 
 
@@ -163,22 +175,25 @@ function sorting_by_date() {
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query();
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="order" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php } 
  
 	}
@@ -217,22 +232,25 @@ function sorting_by_category() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query(); 
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="cat" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="cat" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php }
 
 	} 
@@ -271,22 +289,25 @@ function sorting_by_tag_name() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query(); 
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="tag" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="tag" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php }
 	} 
 
@@ -311,41 +332,49 @@ function sorting_by_product_name() { ?>
 
 		$name = $_POST['name'];
 
-		$posttitle = '%' . $name . '%';
-		$postid = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_title LIKE '" . $posttitle . "'" );
+		if ( $name == '' ) {
 
-		$result_count = count($postid);
-		$ids = array();
+			echo '<span class="no-res"><i class="icon-notice2"> </i> Please Type Anything</span>';
 
-		for ($i=0; $i < $result_count; $i++) { 
-			
-			$ids[] = $postid[$i]->ID;
-		}
+		} else { 
+		
+			$posttitle = '%' . $name . '%';
+			$postid = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_title LIKE '" . $posttitle . "'" );
 
-		if ( empty($ids) ) {
+			$result_count = count($postid);
+			$ids = array();
 
-			echo "<div class='filter_no_results'><h3>There's No Products Have This Name</h3></div>";
-		} else {
+			for ($i=0; $i < $result_count; $i++) { 
+				
+				$ids[] = $postid[$i]->ID;
+			}
 
-			$query_d = new WP_Query( array(
-				'post_type' 		=> 'product',
-				'posts_per_page' 	=> -1,
-				'post__in' 			=> $ids
+			if ( empty($ids) ) {
 
-			) );
+				echo "<span class='no-res'><i class='icon-notice2'> </i> There's No Products Have This Name</span>";
+			} else {
 
-			if($query_d->have_posts()) {
-				while($query_d->have_posts()) {
-					$query_d->the_post(); ?>
+				$query_d = new WP_Query( array(
+					'post_type' 		=> 'product',
+					'posts_per_page' 	=> -1,
+					'post__in' 			=> $ids
 
-					<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				) );
 
-			<?php }} ?>
+				if($query_d->have_posts()) {
+					while($query_d->have_posts()) {
+						$query_d->the_post(); ?>
 
-			<?php wp_reset_query(); ?>
+						<?php 
+						$num++;
+						include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
-			<?php } ?>
+				<?php }} ?>
+				<?php if ($num == 0 ) { echo '<span class="no-res"><i class="icon-notice2"> </i> No Products</span>'; } ?>
+				<?php wp_reset_query(); ?>
 
+				<?php } ?>
+		<?php } ?>
 	<?php
 
 	} 
@@ -392,22 +421,25 @@ function sorting_by_product_price_range() { ?>
 			while($query->have_posts()) {
 				$query->the_post(); ?>
 
-				<?php include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
+				<?php 
+				$num++;
+				include( locate_template( 'woocommerce/content-product.php', false, false ) ); ?>
 
 		<?php }} ?>
 
 		<?php wp_reset_query(); 
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="price" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="price" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php }
 	} 
 
@@ -458,6 +490,7 @@ function filter_by_color() { ?>
 		while ( $loop->have_posts() ) {
 		    $loop->the_post();
 
+		    $num++;
 		    include( locate_template( 'woocommerce/content-product.php', false, false ) );
 		}
 		wp_reset_postdata();
@@ -466,15 +499,16 @@ function filter_by_color() { ?>
 		-----------------------*/
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="color" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="color" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php }
 
 	} 
@@ -572,25 +606,34 @@ function filter_by_date2() { ?>
 		);
 		$loop = new WP_Query( $args );
 		while ( $loop->have_posts() ) {
-		    $loop->the_post();
 
+			if ( $loop->have_posts() ){
+			    $loop->the_post();
+			} else {
+				echo $num;
+			}
+			$num++;
 		    include( locate_template( 'woocommerce/content-product.php', false, false ) );
 		}
+
+		if ($num == 0 ) { echo '<span class="no-res"><i class="icon-notice2"> </i> No Products</span>'; }
+		
 		wp_reset_postdata();
 
 		/* End Of Filter Here
 		-----------------------*/
 
 		if (isset($_POST['page'])) { ''; } else { ?>
-		
-		<div class="load-more-container text-center">
-		<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
-			<a class="btn btn-default show-more-products text-center" data-page="1" data-query="date2" data-link="<?php echo admin_url('admin-ajax.php')?>">
-				<i class="icon-lightbulb-o"></i>&nbsp;
-				Show More
-			</a>
-		<?php } ?>
-		</div>
+			<?php if ($num == 0 || $num < 9) { echo ''; } else {  ?>
+				<div class="load-more-container text-center">
+				<?php if ($query->max_num_pages == 1) { echo ''; } else { ?>
+					<a class="btn btn-default show-more-products text-center" data-page="1" data-query="date2" data-link="<?php echo admin_url('admin-ajax.php')?>">
+						<i class="icon-lightbulb-o"></i>&nbsp;
+						Show More
+					</a>
+				<?php } ?>
+				</div>
+			<?php } ?>
 		<?php }
 	} 
 

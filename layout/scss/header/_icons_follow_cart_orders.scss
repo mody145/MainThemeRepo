@@ -9,6 +9,9 @@
     position: relative;
     top: 12px;
     text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 @media (max-width: 767px){

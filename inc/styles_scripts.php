@@ -36,7 +36,7 @@ function dwwp_styles_and_scripts() {
 	// Bootstrap css
 	wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 	// CDN FontAwsome
-	wp_enqueue_style( 'font-awesome-cdn', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+	//wp_enqueue_style( 'font-awesome-cdn', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	// Fonts
 	wp_enqueue_style( 'fonts-css', get_template_directory_uri() . '/layout/css/fonts.css?' . time() . '' );
 	// Main File Css
@@ -50,6 +50,8 @@ function dwwp_styles_and_scripts() {
 	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', null, null, true );
 	// Bootstrap js
 	wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), '', true );
+ 	// FontAwesome-js
+	//wp_enqueue_script( 'fontAwesome-js', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js', array('jquery'), '', true );
 
 	if ( is_home() ) {
 		// skitter slider
@@ -58,8 +60,6 @@ function dwwp_styles_and_scripts() {
 
 	// WOW Lip
 	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/wow.min.js', array('jquery'), '', true );
-	// Typed
-	wp_enqueue_script( 'typed-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/typed.min.js', array('jquery'), '', true );
 	// Nice Scroll
 	wp_enqueue_script( 'NiceScroll-js', get_template_directory_uri() . '/layout/js/pugins_JQuery/jquery.nicescroll.min.js', array('jquery'), '', true );
 	// jquery jscroll

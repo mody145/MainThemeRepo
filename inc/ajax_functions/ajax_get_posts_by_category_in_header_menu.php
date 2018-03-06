@@ -47,7 +47,9 @@ function get_posts_by_category_in_header_menu() {
 
 			<div class="post-box wow fadeIn" data-wow-duration=".5" data-wow-delay=".<?php $i++; echo $i; ?>s">
 		        <div class="post-image-box preload">
-		        	<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>">
+		        	<a href="<?php echo get_permalink(); ?>">
+			        	<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>">
+			        </a>
 		        </div>
 		        <div class="info-box">
 		            <h4 class=""><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -75,7 +77,9 @@ function get_posts_by_category_in_header_menu() {
 
 			<div class="post-box wow fadeIn" data-wow-duration=".5" data-wow-delay=".<?php $i++; echo $i; ?>s">
 		        <div class="post-image-box preload">
-		        	<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>">
+		        	<a href="<?php echo get_permalink(); ?>">
+			        	<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>">
+			        </a>
 		        </div>
 		        <div class="info-box">
 		            <h4 class=""><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>

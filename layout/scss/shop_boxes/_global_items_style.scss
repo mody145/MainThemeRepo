@@ -10,12 +10,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
 
     div.colors_product {
         position: absolute;
         width: 12px;
         height: 12px;
-        bottom: 150px;
+        bottom: 15px;
         border-radius: 50%;
         opacity: .4;
     }
@@ -50,7 +51,72 @@
 
     div.colors_product:nth-of-type(8) {
         right: 150px;
-    } 
+    }
+    .imgs-bullets {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: row;
+        z-index: 5;
+        cursor: pointer;
+
+        .show-img-box-in-hover {
+            position: absolute;
+            top: -370px;
+            left: 50%;
+            width: 300px;
+            height: 350px;
+            background-color: var(--color5);
+            transform: translate(-50%);
+            border-radius: 3px;
+            border: 2px solid var(--color5);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            display: none;
+
+            .box-img {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                img {
+                  max-width: 100%;
+                }
+            }
+
+            &:before {
+              content: "";
+              position: absolute;
+              left: 50%;
+              bottom: -20px;
+              transform: translate(-50%);
+              border-top: 10px solid var(--color5);
+              border-right: 10px solid transparent;
+              border-left: 10px solid transparent;
+              border-bottom: 10px solid transparent;
+            }
+        }
+
+        span {
+          background-color: var(--color6);
+          color: var(--fontColorHaveBackground) !important;
+          display: block;
+          width: 15px;
+          height: 15px;
+          margin: 2px;
+          text-align: center;
+          line-height: 15px;
+          font-size: 10px;
+          opacity: .5;
+        }
+    }
   }
 
   .parent-image-in-loop-products:before {

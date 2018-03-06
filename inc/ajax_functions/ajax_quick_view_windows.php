@@ -27,6 +27,8 @@ function queick_view_windows() {
 						<div class="thumbelina-but vert top"></div>
 							<ul>
 
+								<li class="img_gallary_box"><img class="img_gallery" src="<?php echo wp_get_attachment_image_src( $mainImageID, false, false )[0]; ?>"></li>
+
 							<?php foreach ($galleryImagesIDS as $oneImageId) { ?>
 							    <li class="img_gallary_box"><img class="img_gallery" src="<?php echo wp_get_attachment_image_src( $oneImageId, false, false )[0] ?>"></li>
 						    <?php } ?>

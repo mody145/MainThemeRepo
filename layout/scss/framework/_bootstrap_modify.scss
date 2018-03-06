@@ -25,6 +25,10 @@
     outline: 0;
 }
 
+.navbar-toggle {
+    border: none;
+}
+
 .input-group-addon {
     padding: 0px 0px 0 $main-padding +  2;
     font-size: $font-size - 2;

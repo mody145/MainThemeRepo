@@ -93,7 +93,7 @@
                 bottom: 0;
                 left: 0;
                 padding: $main-padding +  5;
-                opacity: 0.3;
+                opacity: 0;
                 transition: all .5s ease-in-out;
                 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000));
                 display: block;
@@ -143,7 +143,7 @@
                 bottom: 0;
                 left: 0;
                 padding: $main-padding +  5;
-                opacity: 0.3;
+                opacity: 0;
                 transition: all .5s ease-in-out;
                 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000));
                 display: block;
@@ -199,7 +199,7 @@
                 position: absolute;
                 bottom: 0;
                 padding: $main-padding -  5;
-                opacity: 0.3;
+                opacity: 0;
                 transition: all .5s ease-in-out;
                 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, transparent), color-stop(1.0, #000));
                 display: block;

@@ -25,6 +25,14 @@ class go_to_shop_widget extends WP_Widget {
 			class="widefat" />
 		</p>
 		<p>
+			<label for="<?php echo $this->get_field_id('Short_Description_go_to'); ?>">Short Description : </label>
+			<input id="<?php echo $this->get_field_id('Short_Description_go_to'); ?>" 
+			value="<?php echo $instace['Short_Description_go_to'] ?>" 
+			name="<?php echo $this->get_field_name('Short_Description_go_to'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
 			<label for="<?php echo $this->get_field_id('Link'); ?>">Link : </label>
 			<input id="<?php echo $this->get_field_id('Link'); ?>" 
 			value="<?php echo $instace['Link']; ?>" 
@@ -37,6 +45,14 @@ class go_to_shop_widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id('icon_go_to_shop'); ?>" 
 			value="<?php echo $instace['icon_go_to_shop']; ?>" 
 			name="<?php echo $this->get_field_name('icon_go_to_shop'); ?>" 
+			type="text" 
+			class="widefat" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('icon_go_to_shop_light'); ?>">Icon Light : </label>
+			<input id="<?php echo $this->get_field_id('icon_go_to_shop_light'); ?>" 
+			value="<?php echo $instace['icon_go_to_shop_light']; ?>" 
+			name="<?php echo $this->get_field_name('icon_go_to_shop_light'); ?>" 
 			type="text" 
 			class="widefat" />
 		</p>
@@ -96,8 +112,9 @@ class go_to_shop_widget extends WP_Widget {
 			<a href='<?php echo $instace['Link'] ?>'>
 			<div style="color:<?php echo $theColor; ?>;background-color: <?php echo $color2;  ?>">
 				<?php echo '<span class="wrap-icon"><i class="' . $instace['icon_go_to_shop'] . '"></i></span>'; ?>
-				<?php echo '<span class="wrap-icon"><i class="' . $instace['icon_go_to_shop'] . '"></i></span>'; ?>
-				<p style="color:<?php echo $theColor; ?>"><?php echo $instace['Title_to_shop']; ?></p>
+				<?php echo '<span class="wrap-icon"><i class="' . $instace['icon_go_to_shop_light'] . '"></i></span>'; ?>
+				<p class="head-go-to" style="color:<?php echo $theColor; ?>"><?php echo $instace['Title_to_shop']; ?></p>
+				<p class="short-dis-go-to" style="color:<?php echo $theColor; ?>"><?php echo $instace['Short_Description_go_to']; ?></p>
 			</div>
 			</a>
 

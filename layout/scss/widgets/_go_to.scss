@@ -16,42 +16,44 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         overflow: hidden;
 
         i {
             color: var(--color5);
-            font-size: 110px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 
-    span:first-of-type {
-       height: 100%; 
-
-       i {
-        opacity: .5;
-       }
+    span:first-of-type i {
+        font-size: 110px;
     }
 
-    span:last-of-type {
-        height: 0;
-
-        i {
-            opacity: 1;
-            color: var(--color8);
-        }
-    }       
+    span:last-of-type i {
+        font-size: 0;
+    }      
 }
 
 .go-to-shop-widget div p {
-    font-size: 16px;
     text-transform: uppercase;
     position: absolute;
-    bottom: 15px;
     left: 50%;
     transform: translate(-50%,0);
+    width: 100%;
+    text-align: center;
+}
+
+.go-to-shop-widget div p.head-go-to {
+    font-size: 16px;
+    bottom: 15px;
+}
+
+.go-to-shop-widget div p.short-dis-go-to {
+    font-size: 12px;
+    bottom: 0px;
+    opacity: 0;
 }
 
 /*=====  End of Go To Shop Widget  ======*/

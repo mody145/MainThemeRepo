@@ -26,6 +26,10 @@
                 padding: $main-padding;
                 font-size: $font-size +  15;
                 color: var(--fontColorHaveBackground);
+
+                @media (max-width: 767px) {
+                    max-width: 250px;
+                }
             }
 
             input[type="text"]:focus, 

@@ -53,23 +53,6 @@ jQuery(document).ready(function($) {
 
 	try{
 
-		var strings_to_array = $('#typed').attr('link-data');
-		var array_strings = strings_to_array.split(',', 10);
-
-		var typed = new Typed('#typed', {
-		strings: array_strings,
-		typeSpeed: 100,
-		loop: true,
-		loopCount: Infinity,
-		fadeOut: true,
-		});
-
-	}catch(e){
-		console.log(e);
-	}
-
-	try{
-
 		// Fire Skitter Slider
 	    $('.skitter-large-for-header').skitter({
 	        navigation: true,
@@ -88,7 +71,8 @@ jQuery(document).ready(function($) {
 		// Run Select2 Plugin
 		$('.select_filter').select2({
 			tags: "true",
-			maximumSelectionLength: 5
+			maximumSelectionLength: 5,
+			minimumResultsForSearch: -1
 		});
 
 	}catch(e){
@@ -291,7 +275,7 @@ jQuery(document).ready(function($) {
 	$(window).ready(function () {
 
 		$('body').css("overflow", "auto");
-		$('.loading_overlay .custom-loader').fadeOut(200, function() {
+		$('.loading_overlay .loader3').fadeOut(200, function() {
 
 			$(this).parent().fadeOut(200, function () {
 
@@ -555,15 +539,132 @@ jQuery(document).ready(function($) {
 ================================================================*/
 
 	$('.go-to-shop-widget').hover(function() {
-		$(this).find('span:last-of-type').animate({
-			height: '100%'
-		}, 500);
+
+		var thatWedgit = $(this);
+
+		thatWedgit.find('span:first-of-type i').animate({
+			fontSize: '0'
+		}, 300, function() {
+			thatWedgit.find('span:last-of-type i').animate({
+				fontSize: '110px'
+			});
+		});
+
+		thatWedgit.find('p.head-go-to').animate({
+			bottom: '20px'
+		}, 300, function() {
+			thatWedgit.find('p.short-dis-go-to').animate({
+				bottom: '5px',
+				opacity: '.7'
+			});
+		});
+
 	}, function() {
-		$(this).find('span:last-of-type').animate({
-			height: '0'
-		}, 500);
+
+		var thatWedgit = $('.go-to-shop-widget');
+
+		thatWedgit.find('span:last-of-type i').animate({
+			fontSize: '0'
+		}, 300, function() {
+			thatWedgit.find('span:first-of-type i').animate({
+				fontSize: '110px'
+			});
+		});
+
+		thatWedgit.find('p.short-dis-go-to').animate({
+			bottom: '0px',
+			opacity: '0'
+		}, 300, function() {
+			thatWedgit.find('p.head-go-to').animate({
+				bottom: '15px'
+			});
+		});
+
 	});
 
-/*=====  Add Full Opacity To Icon GoTo When Hover  ======*/
+/*=====  End Add Full Opacity To Icon GoTo When Hover  ======*/
+
+/*===============================================================
+=            Show Gallery Images In Archive Products            =
+===============================================================*/
+
+	$('.imgs-bullets span').hover(function() {
+		var linkImg = $(this).attr('data-linkImg'),
+			that = $(this);
+		that.css('opacity', 1);
+		$(this).parent().find('.show-img-box-in-hover').append('<div class="box-img"> <img src="' + linkImg + '"> </div>')
+		$(this).parent().find('.show-img-box-in-hover').fadeIn(200);
+	}, function() {
+		var that = $(this);
+
+		that.css('opacity', .5);
+		$(this).parent().find('.show-img-box-in-hover').fadeOut(200);
+		$(this).parent().find('.show-img-box-in-hover').find('.box-img').delay(200).remove();
+	});
+
+/*=====  End AShow Gallery Images In Archive Products  ======*/
+
+/*===============================================
+=            Start Type Write Effect            =
+===============================================*/
+
+	var TxtType = function(el, toRotate, period) {
+	        this.toRotate = toRotate;
+	        this.el = el;
+	        this.loopNum = 0;
+	        this.period = parseInt(period, 10) || 2000;
+	        this.txt = '';
+	        this.tick();
+	        this.isDeleting = false;
+	    };
+	
+	    TxtType.prototype.tick = function() {
+	        var i = this.loopNum % this.toRotate.length;
+	        var fullTxt = this.toRotate[i];
+	
+	        if (this.isDeleting) {
+	        this.txt = fullTxt.substring(0, this.txt.length - 1);
+	        } else {
+	        this.txt = fullTxt.substring(0, this.txt.length + 1);
+	        }
+	
+	        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+	
+	        var that = this;
+	        var delta = 200 - Math.random() * 100;
+	
+	        if (this.isDeleting) { delta /= 2; }
+	
+	        if (!this.isDeleting && this.txt === fullTxt) {
+	        delta = this.period;
+	        this.isDeleting = true;
+	        } else if (this.isDeleting && this.txt === '') {
+	        this.isDeleting = false;
+	        this.loopNum++;
+	        delta = 500;
+	        }
+	
+	        setTimeout(function() {
+	        that.tick();
+	        }, delta);
+	    };
+	
+	    window.onload = function() {
+	        var elements = document.getElementsByClassName('typewrite');
+	        for (var i=0; i<elements.length; i++) {
+	            var toRotate = elements[i].getAttribute('data-type');
+	            var period = elements[i].getAttribute('data-period');
+	            if (toRotate) {
+	              new TxtType(elements[i], JSON.parse(toRotate), period);
+	            }
+	        }
+	        // INJECT CSS
+	        var css = document.createElement("style");
+	        css.type = "text/css";
+	        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000; animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;}";
+	        document.body.appendChild(css);
+	    };
+	
+/*=====  End End Type Write Effect   ======*/
 
 });

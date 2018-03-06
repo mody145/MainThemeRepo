@@ -16,7 +16,7 @@
 	<!--===========================================================================
 	=            This Divs To Get variables For Main Colors For JQuery            =
 	============================================================================-->
-	
+
 	<div class="color1"></div>
 	<div class="color2"></div>
 	<div class="color3"></div>
@@ -33,19 +33,19 @@
 
 	<div class="green"></div>
 	<div class="blue"></div>
-	
+
 	<div class="fontColorHaveBackground"></div>
-	
+
 	<!--====  End of This Divs To Get variables For Main Colors For JQuery  ====-->
 
 	<!-- Start Top UpperBar -->
-	<div class="upper-bar-top" style="margin-bottom: 10px;">
+	<div class="upper-bar-top">
 	    <div class="container">
 
 			<div class="section one">
 			    <i class="icon-location2"></i>
 			    <span>
-			    	<?php 
+			    	<?php
 						$address = esc_attr( get_option( 'address_get_touch', 'None' ) );
 						echo $address;
 			    	 ?>
@@ -56,7 +56,7 @@
 			    <i class="icon-volume-up"></i>
 			    <span>
 			    	<a href="<?php echo esc_attr( get_option( 'notificationUpperbarLink' ) ); ?>">
-			    		<?php 
+			    		<?php
 			    		$notificationUpperbar = esc_attr( get_option( 'notificationUpperbar', 'No Notifications' ) );
 			    		echo $notificationUpperbar;
 			    		 ?>
@@ -67,7 +67,7 @@
 			<div class="section three">
 			    <i class="icon-phone3"></i>
 			    <span>
-			    	<?php 
+			    	<?php
 						$phone = esc_attr( get_option( 'phone_get_touch', 'None' ) );
 						echo $phone;
 			    	 ?>
@@ -77,14 +77,12 @@
 		</div>
 	</div>
 	<!-- End Top UpperBar -->
-	
+
 	<!-- Section Overlay Loading -->
 	<div class="loading_overlay">
-		<div class="custom-loader">
-			<div class="custom-spinner33">
-				<div class="double-bounce1"></div>
-				<div class="double-bounce2"></div>
-			</div>
+		<div class="loader3">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Loading</p>
 		</div>
 	</div><!-- Section Overlay Loading -->
 
@@ -123,7 +121,7 @@
 				<!-- Results -->
 				<div class="for-scroll">
 					<div class="results_search">
-						
+
 					</div>
 				</div>
 			</div>
@@ -138,7 +136,7 @@
 
 
 		<!-- Start Menu And Prand In Mobile Screen -->
-		
+
 		<!-- <header class="site-header"> -->
 
 			<nav class="navbar navbar-default visible-xs">
@@ -174,10 +172,22 @@
 				<div class="brand-name transparent wow fadeIn">
 					<a href="<?php echo home_url(); ?>">
 						<img src="<?php echo esc_attr( get_option( 'logoImages', get_template_directory_uri() . '/logo.png' ) ); ?>">
-						<?php 
+						<?php
 						$wordsUnderLogo = esc_attr( get_option( 'wordsUnderLogo', 'You Can Type,Any Text Here,Dummy Text' ) );
+
+						$words = explode(',', $wordsUnderLogo);
+
+						$arrayWords = array();
+
+						foreach ($words as $word) {
+
+							$arrayWords[] = '"' . $word . '"';
+						}
+
+						$implodeText = implode(',', $arrayWords);
+
 						?>
-						<span id="typed" link-data="<?php echo $wordsUnderLogo; ?>"></span>
+						<span class="typewrite" data-period="2000" data-type='[<?php echo $implodeText ?>]'> <span class="wrap"></span> </span>
 					</a>
 				</div>
 			</div>
@@ -201,14 +211,14 @@
 
 			<!-- End Icon Like | Follow | Cart -->
 			<!-- Login/Rgister Form And Add Item -->
-			
+
 				<div class="col-md-4 col-sm-12 nopadding">
 
 					<div class="col-md-6 col-sm-6 col-xs-6 nopadding">
 						<div class="add-register-login wow fadeIn">
 							<div class="login-register text-center">
-								<?php 
-								
+								<?php
+
 								$arr_strings = array('Login','Sign Up');
 								$arr_strings_empty = array('','');
 
@@ -231,18 +241,18 @@
 				</div>
 
 				<div class="clearfix visible-xs"></div>
-			
+
 			<!-- End Login/Rgister Form And Add Item -->
 			<!-- Srart Form Search -->
 
 				<div class="col-md-3 col-sm-12 nopadding">
 					<div class="total-cart text-center wow fadeIn">
-						<?php 
+						<?php
 
 						global $woocommerce;
 
 						$amount = WC()->cart->cart_contents_total;
-						
+
 						?>
 
 						<i class="icon-shopping-cart"></i> : &nbsp;<i class="icon-usd"></i>&nbsp;<span class="total-number" data-toggle="tooltip" data-placement="bottom" title="Value"><?php echo $amount; ?></span>
@@ -253,7 +263,7 @@
 								<?php
 								global $woocommerce;
 
-								$infoCart = $woocommerce->cart->get_cart(); 
+								$infoCart = $woocommerce->cart->get_cart();
 
 								if ( empty($infoCart) ) {
 									echo "<span class='text-center'>Your Cart Is Empty</span>";
@@ -309,7 +319,7 @@
 									echo "<span class='text-center'>Your Whitelist Is Empty</span>";
 								} else {
 
-									$items_unique = array_unique($_SESSION['follow']); 
+									$items_unique = array_unique($_SESSION['follow']);
 
 										$args = array(
 											'post_type' 		=> 'product',
@@ -352,7 +362,7 @@
 			        <div class="skitter-large-box">
 			            <div class="skitter skitter-large-for-header with-thumbs">
 			                <ul>
-								<?php 
+								<?php
 
 								/* --||  Start Loop (WP-Query)  ||-- */
 
@@ -367,7 +377,7 @@
 								        ),
 								    ),
 								);
-								
+
 								$slides = new WP_Query($args);
 
 								if ($slides->have_posts()) {
@@ -387,7 +397,7 @@
 
 								<!--||  End Loop (WP-QUery)  ||-->
 								<?php }} ?>
-								<?php wp_reset_postdata(); ?>	
+								<?php wp_reset_postdata(); ?>
 
 			                </ul>
 			            </div>
@@ -401,7 +411,7 @@
 						<div class="container-img-header">
 							<div class="overlay"></div>
 
-							<?php 
+							<?php
 							$headerImagesString = esc_attr( get_option( 'headerImages' ) );
 							$arrayImagesHeader = explode(',', $headerImagesString);
 							$random_image = array_rand($arrayImagesHeader);
@@ -425,7 +435,7 @@
 		                <div class="skitter-large-box">
 		                    <div class="skitter skitter-large-for-header with-thumbs">
 		                        <ul>
-									<?php 
+									<?php
 
 									/* --||  Start Loop (WP-Query)  ||-- */
 
@@ -440,7 +450,7 @@
 									        ),
 									    ),
 									);
-									
+
 									$slides = new WP_Query($args);
 
 									if ($slides->have_posts()) {
@@ -460,7 +470,7 @@
 
 									<!--||  End Loop (WP-QUery)  ||-->
 									<?php }} ?>
-									<?php wp_reset_postdata(); ?>	
+									<?php wp_reset_postdata(); ?>
 
 		                        </ul>
 		                    </div>
@@ -473,7 +483,7 @@
 						<div class="container-img-header">
 							<div class="overlay"></div>
 
-							<?php 
+							<?php
 							$headerImagesString = esc_attr( get_option( 'headerImages' ) );
 							$arrayImagesHeader = explode(',', $headerImagesString);
 							$random_image = array_rand($arrayImagesHeader);
@@ -494,7 +504,7 @@
 
 			<div class="col-md-9 col-sm-12 hidden-xs hidden-sm nopadding" style="z-index: 20;">
 				<nav class="header-menu wow fadeIn">
-					<?php 
+					<?php
 
 					$args1 = array(
 						'theme_location' 	=> 'header',
@@ -508,7 +518,7 @@
 
 			<div class="col-md-9 col-sm-12 visible-sm nopadding" style="z-index: 20;">
 				<nav class="header-menu wow fadeIn">
-					<?php 
+					<?php
 
 					$args1 = array(
 						'theme_location' => 'tablet',
@@ -525,7 +535,7 @@
 
 			<div class="col-md-3 col-sm-12 nopadding">
 				<nav class="primary-menu wow fadeIn">
-					<?php 
+					<?php
 
 					$args = array(
 						'theme_location' => 'primary'

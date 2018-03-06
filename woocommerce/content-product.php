@@ -8,6 +8,10 @@
 					<div class="parent-image-in-loop-products">
 						<?php if(has_post_thumbnail()) { echo '<img src="' . get_the_post_thumbnail_url( $query->post->ID, 'medium_large' ) . '" />'; } ?>
 						<?php 
+						if (is_product()) {
+							echo '';
+						} else {
+
 							global $product;
 							$list_colors_product = $product->get_attribute( 'pa_color' );
 							$array_colors = explode(',', $list_colors_product);
@@ -15,7 +19,35 @@
 							foreach ($array_colors as $color_product) {
 								echo '<div title="' . $color_product . '" data-toggle="tooltip" data-placement="top" class="colors_product" style="background-color: ' . $color_product . ' "></div>'; 
 							}
+						}
 						 ?>
+
+						<?php
+						    global $product;
+
+						    $attachment_ids = $product->get_gallery_attachment_ids();
+						?>
+
+						<div class="imgs-bullets">
+							<div class="show-img-box-in-hover">
+
+							</div>
+
+							<?php 
+
+							if (is_product()) {
+								echo '';
+							} else {
+
+								$theNum = 1;
+							    foreach( $attachment_ids as $attachment_id ) {
+							        $theLink = wp_get_attachment_image_src( $attachment_id, false, false )[0];
+							        echo '<span data-linkImg="' . $theLink .'">' . $theNum++ . '</span>';
+							    }
+							}
+
+							 ?>
+						</div>
 					</div>
 
 					<!-- This OverLay Will Be Show If The Product Allready In Cart -->
